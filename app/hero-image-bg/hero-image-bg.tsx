@@ -5,29 +5,61 @@ import {
   Overlay,
   StyleProp,
   Title,
+  Text,
+  Flex,
+  rem,
 } from "@mantine/core";
 import React from "react";
 import classes from "./hero-image-bg.module.css";
+import { secondaryColor } from "../../public/colors";
 
 interface TextProps {
   text: String;
   imgFileName: String;
-  py?: StyleProp<MantineSpacing>;
+  pt?: StyleProp<MantineSpacing>;
+  pb?: StyleProp<MantineSpacing>;
+  subtitle?: String;
 }
 
-const HeroBgImg: React.FC<TextProps> = ({ text, imgFileName, py }) => {
+const renderTextWithLineBreaks = (text: String) => {
+  const lines = text.split("\n");
+  return lines.map((line, index) => (
+    <React.Fragment key={index}>
+      {line}
+      <br />
+    </React.Fragment>
+  ));
+};
+
+const HeroBgImg: React.FC<TextProps> = ({
+  text,
+  imgFileName,
+  pt,
+  pb,
+  subtitle,
+}) => {
   const backgroundImageUrl = `../../assets/images/${imgFileName}`;
 
   return (
     <Group
       className={classes.wrapper}
       style={{ backgroundImage: `url(${backgroundImageUrl})` }}
-      py={py}
+      pt={pt}
+      pb={pb}
     >
-      <Overlay color="#000F2E" opacity={0.7} zIndex={1} />
+      <Overlay color={secondaryColor} opacity={0.7} zIndex={1} />
 
-      <Center className={classes.inner}>
-        <Title className={classes.title}>{text}</Title>
+      <Center className={classes.inner} w={"100%"}>
+        <Flex direction={"column"} align={"center"} justify={"center"}>
+          <Title className={classes.title}>
+            {renderTextWithLineBreaks(text)}
+          </Title>
+          {subtitle && (
+            <>
+              <Text style={{fontWeight:600, fontSize:rem(32)}}>{subtitle}</Text>
+            </>
+          )}
+        </Flex>
       </Center>
     </Group>
   );

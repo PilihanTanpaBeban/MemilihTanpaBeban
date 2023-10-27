@@ -1,11 +1,18 @@
 import React from 'react';
+import HeroBgImg from '../app/hero-image-bg/hero-image-bg';
+import { rem } from '@mantine/core';
 
 function KonflikKepentinganPage() {
   return (
-    <div>
-      <h1>KonflikKepentingan</h1>
-      <p>This is the KonflikKepentingan page content.</p>
-    </div>
+    <>
+      <HeroBgImg
+        pt={rem(231)}
+        pb={rem(309)}
+        text={"Coming Soon!"}
+        subtitle={"Nantikan Launching di Pertengahan November"}
+        imgFileName={"prodigi_3_1.webp"}
+      ></HeroBgImg>
+    </>
   );
 }
 
