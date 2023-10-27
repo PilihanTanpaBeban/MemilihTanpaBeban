@@ -1,0 +1,9 @@
+.title {
+  font-size: rem(24);
+  font-weight: 700;
+  text-align: justify;
+}
+
+.wrapper {
+  background: "#F7FAFF";
+}

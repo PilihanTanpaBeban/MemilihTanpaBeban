@@ -1,0 +1,11 @@
+.Title {
+  font-size: rem(32);
+  color: var(--secondary-color);
+  font-weight: 800;
+}
+
+.blueText {
+  font-size: rem(92);
+  color: var(--primary-color);
+  font-weight: 800;
+}
