@@ -8,16 +8,18 @@ import {
   Title,
   rem,
 } from "@mantine/core";
-import React from "react";
+import React, { useEffect } from "react";
 import HeroBgImg from "../app/hero-image-bg/hero-image-bg";
 import { primaryColor, secondaryColor } from "../public/colors";
 import { PrimaryButton, SecondaryButton } from "../app/components/Button";
 import PieChart from "../app/components/PieChart";
-import { useMediaQuery } from "@mantine/hooks";
+import { readFirebaseData } from "../public/firebase.service";
 
 function Page2024() {
 
-  const matches = useMediaQuery('(min-width: 56.25em)');
+  useEffect(() => {
+    console.log("Try");
+  }, []);
 
   return (
     <>
@@ -52,36 +54,39 @@ function Page2024() {
           </Grid.Col>
           <Grid.Col p={20} span={{ base: 12, sm: 7 }}>
             <Grid>
-              <Grid.Col span={{ base: 12, sm: 6 }} >
+              <Grid.Col span={{ base: 12, sm: 6 }}>
                 <PieChart />
               </Grid.Col>
               <Grid.Col span={{ base: 12, sm: 6 }}>
-                  <Box style={{display:"flex",flexDirection:"row"}}>
-                    <div
-                      style={{
-                        backgroundColor: primaryColor,
-                        width: rem(20),
-                        height: rem(20),
-                      }}
-                    ></div>
-                    <Text ml={rem(10)} w={"70%"}>
-                      Jumlah responden yang Ingin memiliki yang pro terhadap
-                      kesehatan
-                    </Text>
-                  </Box>
-                  <Box mt={rem(20)} style={{display:"flex",flexDirection:"row"}}>
-                    <div
-                      style={{
-                        backgroundColor: secondaryColor,
-                        width: rem(20),
-                        height: rem(20),
-                      }}
-                    ></div>
-                    <Text ml={rem(10)} w={"70%"}>
-                      Jumlah responden yang Ingin memiliki yang pro terhadap
-                      kesehatan
-                    </Text>
-                  </Box>
+                <Box style={{ display: "flex", flexDirection: "row" }}>
+                  <div
+                    style={{
+                      backgroundColor: primaryColor,
+                      width: rem(20),
+                      height: rem(20),
+                    }}
+                  ></div>
+                  <Text ml={rem(10)} w={"70%"}>
+                    Jumlah responden yang Ingin memiliki yang pro terhadap
+                    kesehatan
+                  </Text>
+                </Box>
+                <Box
+                  mt={rem(20)}
+                  style={{ display: "flex", flexDirection: "row" }}
+                >
+                  <div
+                    style={{
+                      backgroundColor: secondaryColor,
+                      width: rem(20),
+                      height: rem(20),
+                    }}
+                  ></div>
+                  <Text ml={rem(10)} w={"70%"}>
+                    Jumlah responden yang Ingin memiliki yang pro terhadap
+                    kesehatan
+                  </Text>
+                </Box>
               </Grid.Col>
             </Grid>
           </Grid.Col>
