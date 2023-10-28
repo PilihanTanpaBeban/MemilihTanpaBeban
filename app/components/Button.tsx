@@ -8,6 +8,7 @@ interface ButtonProps {
   size?: string;
   onClick?: () => void;
   w?: number;
+  type?: "button" | "submit" | "reset" | undefined;
 }
 
 export const PrimaryButton: React.FC<ButtonProps> = ({
@@ -15,7 +16,8 @@ export const PrimaryButton: React.FC<ButtonProps> = ({
   radius,
   size,
   onClick,
-  w
+  w,
+  type,
 }) => {
   return (
     <Button
@@ -25,6 +27,7 @@ export const PrimaryButton: React.FC<ButtonProps> = ({
       size={size}
       onClick={onClick}
       color={primaryColor}
+      type={type}
     >
       {text}
     </Button>
@@ -36,7 +39,8 @@ export const SecondaryButton: React.FC<ButtonProps> = ({
   radius,
   size,
   onClick,
-  w
+  w,
+  type,
 }) => {
   return (
     <Button
@@ -44,8 +48,8 @@ export const SecondaryButton: React.FC<ButtonProps> = ({
       variant="filled"
       radius={radius}
       size={size}
-      onClick={onClick}
       w={w}
+      type={type}
     >
       {text}
     </Button>
