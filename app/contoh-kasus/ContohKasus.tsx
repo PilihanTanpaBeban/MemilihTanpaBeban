@@ -27,6 +27,7 @@ const data = [
   },
 ];
 
+
 const slides = data.map((item) => (
   <Carousel.Slide key={item.id}>
     <Grid gutter={{ base: 5, xs: "md", md: "xl", xl: 50 }} align="center">
@@ -35,7 +36,7 @@ const slides = data.map((item) => (
           <Image
             radius="md"
             src={`../../assets/images/${item.imageName}`}
-            w={437}
+            className={classes.imgCarousel}
           />
         </Flex>
       </Grid.Col>
@@ -43,7 +44,7 @@ const slides = data.map((item) => (
       <Grid.Col
         span={{ base: 12, md: 6 }}
         style={{ textAlign: "justify" }}
-        px={rem(34)}
+        className={classes.textCarousel}
       >
         <Text>{item.description}</Text>
       </Grid.Col>

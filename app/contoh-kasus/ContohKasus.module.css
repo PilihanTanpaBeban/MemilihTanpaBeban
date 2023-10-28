@@ -7,3 +7,21 @@
 .wrapper {
   background: "#F7FAFF";
 }
+
+.imgCarousel {
+  width: 432px;
+}
+
+.textCarousel{
+  padding: 0 rem(30);
+}
+
+@media (max-width: 600px) {
+  .imgCarousel {
+    width: 100%;
+  }
+
+  .textCarousel{
+    padding: 0 rem(10);
+  }
+}
