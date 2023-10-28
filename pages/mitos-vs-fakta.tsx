@@ -10,7 +10,7 @@ const data = [
     mitos:
       "Industri rokok banyak melakukan kegiatan tanam pohon/reboisasi, sebagai bentuk kepedulian terhadap lingkungan, sebagai salah satu bentuk tanggungjawab sosial perushaan.",
     fakta:
-      "Industri rokok banyak melakukan kegiatan tanam pohon/reboisasi, sebagai bentuk kepedulian terhadap lingkungan, sebagai salah satu bentuk tanggungjawab sosial perushaan.",
+      "Dampak lingkungan termasuk pembukaan lahan hutan, penebangan pohon, jauh lebih banyak dibandingkan pohon yang mereka tanam kembali. dan hal ini tidak disorot media.",
   },
   {
     id: 2,
@@ -51,7 +51,7 @@ const data = [
     mitos:
       "Penegakan peraturan Kawasan Tanpa Rokok akan merugikan industri pariwisata, hotel, dan restoran.",
     fakta:
-      "Peraturan KTR merupakan anjuran Organisasi Kesehatan Dunia (WHO). WHO menilai bahwa paparan asap rokok dari orang lain (perokok pasif) juga dapat menyebabkan penyakit kanker, paru, jantung, dan penyakit katastropik lainnya. Maka, KTR penting untuk melindungi orang lain dari paparan asap rokok.",
+      "Rokok elektronik sama-sama mengandung nikotin yang bersifat adiktif, dan merupakan faktor risiko kesehatan dari berbagai penyakit katastropik.",
   },
   {
     id: 8,
@@ -63,8 +63,14 @@ const data = [
 
 const slides = data.map((data) => (
   <React.Fragment key={data.id}>
-    <Grid.Col span={{ base: 12, md: 6 }} style={{padding:'30px'}}>
-      <Card id={data.id} style={{minHeight:rem(434)}} textMitos={data.mitos} textFakta={data.fakta} key={data.mitos} />
+    <Grid.Col span={{ base: 12, md: 6 }} style={{ padding: "30px" }}>
+      <Card
+        id={data.id}
+        style={{ minHeight: rem(434) }}
+        textMitos={data.mitos}
+        textFakta={data.fakta}
+        key={data.mitos}
+      />
     </Grid.Col>
   </React.Fragment>
 ));

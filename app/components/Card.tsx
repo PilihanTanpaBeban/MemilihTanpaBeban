@@ -42,11 +42,11 @@ const Card: React.FC<CardProps> = ({ id, textMitos, textFakta, style }) => {
           onClick={() => setIsModalOpen(!isModalOpen)}
         />
       </Flex>
-      <Title style={{ color: secondaryColor, fontSize: rem(24) }}>
+      <Title c={secondaryColor} fs={rem(24)}>
         Mitos :
       </Title>
       <Text style={{ textAlign: "justify" }}>{textMitos}</Text>
-      <Title mt={rem(21)} style={{ color: secondaryColor, fontSize: rem(24) }}>
+      <Title mt={rem(21)} c={secondaryColor} fs={rem(24)}>
         Fakta :
       </Title>
       <Text style={{ textAlign: "justify" }}>{textFakta}</Text>

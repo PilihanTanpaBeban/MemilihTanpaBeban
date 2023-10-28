@@ -10,6 +10,7 @@ import {
   List,
 } from "@mantine/core";
 import { primaryColor } from "../public/colors";
+import { renderTextWithLineBreaks } from "../app/components/LineBreakRender";
 
 const charactersList = [
   {
@@ -58,7 +59,7 @@ function DisclaimerPage() {
       </Accordion.Control>
       <Accordion.Panel p={rem(16)}>
         <Text ta={"justify"} fs={rem(16)} lh={1.5}>
-          {item.content.textBefore}
+          {renderTextWithLineBreaks(item.content.textBefore)}
         </Text>
         <List my={rem(16)}>
           {item.content.list.map((listItem) => (
@@ -68,7 +69,7 @@ function DisclaimerPage() {
           ))}
         </List>
         <Text ta={"justify"} fs={rem(16)}>
-          {item.content.textAfter}
+          {renderTextWithLineBreaks(item.content.textAfter)}
         </Text>
       </Accordion.Panel>
     </Accordion.Item>

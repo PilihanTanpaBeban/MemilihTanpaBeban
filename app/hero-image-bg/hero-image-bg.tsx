@@ -13,6 +13,7 @@ import {
 import React from "react";
 import classes from "./hero-image-bg.module.css";
 import { primaryColor, secondaryColor } from "../../public/colors";
+import { renderTextWithLineBreaks } from "../components/LineBreakRender";
 
 interface TextProps {
   text: String;
@@ -22,16 +23,6 @@ interface TextProps {
   subtitle?: String;
   backgroundColor?: String;
 }
-
-const renderTextWithLineBreaks = (text: String) => {
-  const lines = text.split("\n");
-  return lines.map((line, index) => (
-    <React.Fragment key={index}>
-      {line}
-      <br />
-    </React.Fragment>
-  ));
-};
 
 const HeroBgImg: React.FC<TextProps> = ({
   text,
@@ -45,7 +36,7 @@ const HeroBgImg: React.FC<TextProps> = ({
 
   return (
     <Group className={classes.wrapper} style={{ backgroundColor: primaryColor }}>
-      <BackgroundImage src={backgroundImageUrl} pt={pt} pb={pb}>
+      <BackgroundImage src={backgroundImageUrl} pt={pt} pb={pb} h={'100%'}>
         <Overlay color={"#120A23"} zIndex={1} />
 
         <Center className={classes.inner} w={"100%"}>
