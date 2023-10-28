@@ -36,7 +36,7 @@ const HeroBgImg: React.FC<TextProps> = ({
 
   return (
     <Group className={classes.wrapper} style={{ backgroundColor: primaryColor }}>
-      <BackgroundImage src={backgroundImageUrl} pt={pt} pb={pb} h={'100%'}>
+      <BackgroundImage src={backgroundImageUrl} pt={pt} pb={pb}>
         <Overlay color={"#120A23"} zIndex={1} />
 
         <Center className={classes.inner} w={"100%"}>

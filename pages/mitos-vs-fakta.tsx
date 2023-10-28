@@ -1,8 +1,8 @@
 import React from "react";
 import HeroBgImg from "../app/hero-image-bg/hero-image-bg";
-import { Container, Grid, Group, rem } from "@mantine/core";
+import { Text, Container, Grid, Group, Paper, rem } from "@mantine/core";
 import { bgGrayColor } from "../public/colors";
-import Card from "../app/components/Card";
+import CardMitosFakta from "../app/components/Card";
 
 const data = [
   {
@@ -64,7 +64,7 @@ const data = [
 const slides = data.map((data) => (
   <React.Fragment key={data.id}>
     <Grid.Col span={{ base: 12, md: 6 }} style={{ padding: "30px" }}>
-      <Card
+      <CardMitosFakta
         id={data.id}
         style={{ minHeight: rem(434) }}
         textMitos={data.mitos}
@@ -87,6 +87,16 @@ function MitosVsFaktaPage() {
       <Group py={rem(83)} style={{ backgroundColor: bgGrayColor }}>
         <Container size={"lg"}>
           <Grid gutter={{ base: 5, xs: "md", md: "lg", xl: 30 }}>{slides}</Grid>
+          <Paper shadow="xl" radius="lg" p="xl" mt={"lg"} mx="md">
+            <Text>
+              Untuk mengetahui lebih lanjut mengenai taktik industri rokok dalam
+              melemahkan kebijakan kesehatan masyarakat, berikut beberapa bahan
+              bacaan yang dapat dijadikan acuan:
+            </Text>
+            <a href="https://exposetobacco.org/wp-content/uploads/2019/09/Crooked-9-STOP.pdf">
+              https://exposetobacco.org/wp-content/uploads/2019/09/Crooked-9-STOP.pdf
+            </a>
+          </Paper>
         </Container>
       </Group>
     </>

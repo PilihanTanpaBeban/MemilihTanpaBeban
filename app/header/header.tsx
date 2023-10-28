@@ -1,9 +1,10 @@
-import { Container, Group, Burger } from "@mantine/core";
+import { Container, Group, Burger, Modal, Text } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import classes from "./header.module.css";
 import LogoPTB from "../components/logo";
-import {PrimaryButton} from "../components/Button";
-
+import { PrimaryButton } from "../components/Button";
+import Quiz from "../components/Quiz";
+import { useRouter } from "next/router";
 
 const links = [
   { link: "/", label: "Home" },
@@ -16,6 +17,8 @@ const links = [
 
 export function Header() {
   const [opened, { toggle }] = useDisclosure(false);
+  const [openModal, { open, close }] = useDisclosure(false);
+  const router = useRouter();
 
   const items = links.map((link) => (
     <a key={link.label} href={link.link} className={classes.link}>
@@ -29,10 +32,27 @@ export function Header() {
         <LogoPTB />
         <Group gap={5} visibleFrom="md">
           {items}
-          <PrimaryButton text="Ikuti Kuis" radius="xl" size="md" />
+          <PrimaryButton
+            text="Ikuti Kuis"
+            radius="xl"
+            size="md"
+            onClick={open}
+          />
         </Group>
 
         <Burger opened={opened} onClick={toggle} hiddenFrom="md" size="sm" />
+        <Group hiddenFrom="md"></Group>
+        <Modal
+          opened={openModal}
+          onClose={() => {
+            close;
+            router.reload();
+          }}
+          title="Quiz"
+          centered
+        >
+          <Quiz />
+        </Modal>
       </Container>
     </header>
   );

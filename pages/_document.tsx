@@ -5,6 +5,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        <script src="https://tally.so/widgets/embed.js" />
         <ColorSchemeScript />
       </Head>
       <body>

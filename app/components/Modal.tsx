@@ -1,4 +1,4 @@
-import { Group, Modal, Text, Title, rem } from "@mantine/core";
+import { Blockquote, Group, Modal, Text, Title, rem } from "@mantine/core";
 import React, { useEffect, useState } from "react";
 import { secondaryColor } from "../../public/colors";
 import { useMediaQuery } from "@mantine/hooks";
@@ -11,9 +11,19 @@ interface ModalDetailProps {
   onClose: () => void;
 }
 
+type datasets = {
+  id: number;
+  reference: string[];
+  mitos: string;
+  fakta: string;
+};
+
 const data = [
   {
     id: 1,
+    reference: [
+      "https://exposetobacco.org/wp-content/uploads/EnvironmentBriefID.pdf",
+    ],
     mitos:
       "Industri rokok banyak melakukan kegiatan tanam pohon/reboisasi, sebagai bentuk kepedulian terhadap lingkungan, sebagai salah satu bentuk tanggungjawab sosial perushaan.",
     fakta:
@@ -21,12 +31,17 @@ const data = [
   },
   {
     id: 2,
+    reference: [
+      "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3208785/",
+      "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4419584/",
+    ],
     mitos: "Rokok bukan candu.",
     fakta:
       'Industri rokok justru mengatur kadar nikotin dalam rokok agar perokok tetap ketagihan, dan Nikotin sama candunya dengan heroin, kokain, dan amfetamin. Penjualan produk "mild" yang diklaim lebih aman juga tidak didukung dengan penelitian ilmiah yang membuktikan kalau produk ini lebih aman.\nPenjualan  produk “mild” yang diklaim lebih aman juga tidak didukung dengan penelitian ilmiah yang membuktikan kalau produk ini lebih aman. Faktanya di lapangan, mereka yang merokok "mild" mengonsumsi lebih banyak batang per harinya dan menghisap lebih dalam asapnya.\nSetiap tahun, sekitar 225.700 orang di Indonesia meninggal akibat merokok atau penyakit lain yang berkaitan dengan konsumsi rokok (WHO, 2020).',
   },
   {
     id: 3,
+    reference: [],
     mitos:
       "Industri rokok berkontribusi terhadap pendapatan negara melalui cukai.",
     fakta:
@@ -34,6 +49,7 @@ const data = [
   },
   {
     id: 4,
+    reference: [],
     mitos:
       "Kenaikan cukai rokok berdampak buruk bagi pekerja industri rokok dan petani tembakau",
     fakta:
@@ -41,6 +57,7 @@ const data = [
   },
   {
     id: 5,
+    reference: [],
     mitos:
       "Kenaikan cukai rokok menyebabkan jumlah rokok ilegal meningkat di pasaran.",
     fakta:
@@ -48,6 +65,7 @@ const data = [
   },
   {
     id: 6,
+    reference: [],
     mitos:
       "Industri rokok tidak menargetkan anak dan remaja sebagai target pasar produk berbahaya mereka.",
     fakta:
@@ -55,6 +73,10 @@ const data = [
   },
   {
     id: 7,
+    reference: [
+      "https://www.emro.who.int/tobacco/tobacco-free-public-places/myth-8-smoke-free-laws-harm-the-hospitality-and-tourism-sectors.html",
+      "https://pubmed.ncbi.nlm.nih.gov/10349895/",
+    ],
     mitos:
       "Penegakan peraturan Kawasan Tanpa Rokok akan merugikan industri pariwisata, hotel, dan restoran.",
     fakta:
@@ -62,6 +84,9 @@ const data = [
   },
   {
     id: 8,
+    reference: [
+      "https://drive.google.com/file/d/1gzVcBzfICj6swym4XiGLLJ888F40Txga/view",
+    ],
     mitos: "Rokok elektronik lebih aman dari rokok konvensional.",
     fakta:
       "Rokok elektronik sama-sama mengandung nikotin yang bersifat adiktif, dan merupakan faktor risiko kesehatan dari berbagai penyakit katastropik.\nWorld Health Organization (WHO) mengistilahkan rokok elektronik  sebagai Electronic Nicotine Delivery System (ENDS) karena menghasilkan nikotin dalam bentuk uap yang kemudian dihirup oleh pengguna. Selain ENDS, adapula Heated Tobacco Products (HTP) atau tembakau yang dipanaskan. Kedua produk ini adalah produk baru industri rokok untuk menjual adiksi kepada penggunanya. Kedua produk ini terbukti dapat menyebabkan dampak buruk terhadap kesehatan karena berisiko menyebabkan adiksi, penyakit pernapasan, kanker, meningkatkan risiko asma, menjadi faktor risiko pneumotoraks, meningkatkan risiko terjadinya diffuse alveolar hemorrhage, merusak pertumbuhan janin, berdampak pada otak kaum muda, berhubungan dengan berbagai tipe pneumonitis, dan memiliki risiko terjadi ledakan pada pemakainya (Taylor et al., 2014; Kamada et al., 2016). Selain itu, perlu diketahui bahwa lebih dari 95% dari pengguna rokok elektronik di Indonesia merupakan dual users (juga menggunakan rokok konvensional). Ini artinya risiko kesehatan yang dialami oleh para pengguna menjadi lebih tinggi.\nSelain terhadap kesehatan, rokok elektronik juga merupakan ancaman baru bagi lingkungan. Rokok elektronik mengandung cukup racun untuk dikategorikan sebagai sampah bahan berbahaya beracun (B3).Berdasarkan uji laboratorium terhadap komponen rokok elektronik yang sudah dibuang, cemaran logam berat yang dihasilkan mencapai sepuluh kali lipat diatas nilai ambang batas yang ditentukan.",
@@ -70,20 +95,21 @@ const data = [
 
 const ModalDetail: React.FC<ModalDetailProps> = ({ id, isOpen, onClose }) => {
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.sm})`);
-  const [selectedData, setSelectedData] = useState({
+  const [selectedData, setSelectedData] = useState<datasets>({
     id: 0,
+    reference: [],
     mitos: "",
     fakta: "",
   });
 
   useEffect(() => {
     const result = data.find((item) => item.id === id);
-    setSelectedData(result ?? { id: 0, mitos: "", fakta: "" });
+    setSelectedData(result ?? { id: 0, reference: [], mitos: "", fakta: "" });
   }, [id]);
 
   return (
     <>
-      <Modal opened={isOpen} onClose={onClose} size={mobile?'100%':'xl'}>
+      <Modal opened={isOpen} onClose={onClose} size={mobile ? "100%" : "xl"}>
         <Group p={rem(16)}>
           <Title c={secondaryColor} order={3} w={"100%"}>
             Mitos:
@@ -97,6 +123,16 @@ const ModalDetail: React.FC<ModalDetailProps> = ({ id, isOpen, onClose }) => {
           <Text ta={"justify"} mt={rem(3)} fs={rem(16)}>
             {renderTextWithLineBreaks(selectedData.fakta)}
           </Text>
+          {selectedData.reference.length != 0 && (
+            <Blockquote color="violet" radius="xl" w={"100%"}>
+              <Text ta={"justify"}>Pelajari Selengkapnya:</Text>
+              {selectedData.reference.map((listReference) => (
+                <a href={listReference} key={listReference}>
+                  {listReference} {selectedData.reference.length >1 && (<br/>)}
+                </a>
+              ))}
+            </Blockquote>
+          )}
         </Group>
       </Modal>
     </>

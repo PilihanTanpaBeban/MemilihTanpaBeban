@@ -12,7 +12,7 @@ interface CardProps {
   style?: CSSProperties;
 }
 
-const Card: React.FC<CardProps> = ({ id, textMitos, textFakta, style }) => {
+const CardMitosFakta: React.FC<CardProps> = ({ id, textMitos, textFakta, style }) => {
   const { hovered, ref } = useHover();
   //   const { open } = useDisclosure();
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -59,4 +59,4 @@ const Card: React.FC<CardProps> = ({ id, textMitos, textFakta, style }) => {
   );
 };
 
-export default Card;
+export default CardMitosFakta;
