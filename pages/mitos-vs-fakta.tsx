@@ -63,8 +63,8 @@ function MitosVsFaktaPage() {
   return (
     <>
       <HeroBgImg
-        pt={rem(153)}
-        pb={rem(145)}
+        pt={rem(250)}
+        pb={rem(250)}
         text={"Mitos dan Fakta\nSeputar Rokok"}
         imgFileName={"prodigi_1.webp"}
       ></HeroBgImg>

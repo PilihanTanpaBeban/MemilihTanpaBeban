@@ -1,6 +1,6 @@
 import { Title, Text, Container, Overlay } from "@mantine/core";
 import classes from "./HeroLanding.module.css";
-import PrimaryButton from "../components/Button";
+import {PrimaryButton} from "../components/Button";
 
 export function HeroImageBackground() {
 

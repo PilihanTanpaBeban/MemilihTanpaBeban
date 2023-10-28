@@ -2,7 +2,7 @@ import { Container, Group, Burger } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import classes from "./header.module.css";
 import LogoPTB from "../components/logo";
-import PrimaryButton from "../components/Button";
+import {PrimaryButton} from "../components/Button";
 
 
 const links = [

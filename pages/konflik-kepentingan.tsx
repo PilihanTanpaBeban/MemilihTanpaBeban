@@ -6,8 +6,8 @@ function KonflikKepentinganPage() {
   return (
     <>
       <HeroBgImg
-        pt={rem(231)}
-        pb={rem(309)}
+        pt={rem(300)}
+        pb={rem(350)}
         text={"Coming Soon!"}
         subtitle={"Nantikan Launching di Pertengahan November"}
         imgFileName={"prodigi_3_1.webp"}

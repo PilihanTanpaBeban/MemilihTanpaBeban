@@ -12,7 +12,7 @@ import {
 import React, { useState } from "react";
 import TitleText from "../components/TitleText";
 import classes from "./FormAspirasi.module.css";
-import PrimaryButton from "../components/Button";
+import {PrimaryButton} from "../components/Button";
 
 const inputs = [
   { label: "Name" },
