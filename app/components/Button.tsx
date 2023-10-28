@@ -1,6 +1,6 @@
 import { Button } from "@mantine/core";
 import React from "react";
-import { secondaryColor } from "../../public/colors";
+import { primaryColor, secondaryColor } from "../../public/colors";
 
 interface ButtonProps {
   text: string;
@@ -15,7 +15,7 @@ export const PrimaryButton: React.FC<ButtonProps> = ({
   radius,
   size,
   onClick,
-  w,
+  w
 }) => {
   return (
     <Button
@@ -24,6 +24,7 @@ export const PrimaryButton: React.FC<ButtonProps> = ({
       radius={radius}
       size={size}
       onClick={onClick}
+      color={primaryColor}
     >
       {text}
     </Button>
@@ -39,7 +40,7 @@ export const SecondaryButton: React.FC<ButtonProps> = ({
 }) => {
   return (
     <Button
-      color={"#6FA3FF"}
+      color={secondaryColor}
       variant="filled"
       radius={radius}
       size={size}

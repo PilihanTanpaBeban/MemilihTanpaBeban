@@ -39,7 +39,7 @@
 
   @media (max-width: 600px) {
     font-size: var(--mantine-font-size-md);
-    text-align: left;
+    text-align: justify;
   }
 }
 

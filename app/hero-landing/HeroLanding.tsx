@@ -6,7 +6,7 @@ export function HeroImageBackground() {
 
   return (
     <div className={classes.wrapper}>
-      <Overlay color="#000" opacity={0.9} zIndex={1} />
+      <Overlay color="#120A23" zIndex={1} />
 
       <div className={classes.inner}>
         <Title className={classes.title}>Pilihan Tanpa Beban</Title>

@@ -60,9 +60,9 @@ const LatarBelakang = () => {
         </Grid.Col>
         <Grid.Col mb={78} span={{ base: 12, xs: 12 }}>
           <Text
+            fw={500}
             mt={38}
             style={{
-              fontWeight: "500",
               textAlign: "justify",
             }}
           >
@@ -83,7 +83,7 @@ const LatarBelakang = () => {
         </Grid.Col>
         <Grid.Col span={{ base: 12, xs: 5 }}>
           <Text
-          pl={12}
+            pl={12}
             style={{
               fontSize: 48,
               fontFamily: "Montserrat",
@@ -99,7 +99,21 @@ const LatarBelakang = () => {
           </Text>
         </Grid.Col>
         <Grid.Col span={{ base: 12, xs: 12 }}>
-          <Text style={{textAlign:'justify'}}>FCTC menegaskan bahwa <strong>“Ada konflik mendasar dan tak bisa diselaraskan antara kepentingan industri rokok dan kepentingan kebijakan di bidang kesehatan. Industri tembakau memproduksi dan mempromosikan penjualan produk yang telah secara ilmiah terbukti bersifat narkotik, menyebabkan penyakit dan kematian, serta berkontribusi pada perkembangan berbagai kejahatan sosial, termasuk meningkatnya tingkat kemiskinan. Oleh karena itu, Para Pihak harus, sejauh mungkin, melindungi formulasi dan pelaksanaan kebijakan perlindungan kesehatan masyarakat dalam perang melawan tembakau dari pengaruh industri tembakau.”</strong></Text>
+          <Text style={{ textAlign: "justify" }}>
+            FCTC menegaskan bahwa{" "}
+            <strong>
+              “Ada konflik mendasar dan tak bisa diselaraskan antara kepentingan
+              industri rokok dan kepentingan kebijakan di bidang kesehatan.
+              Industri tembakau memproduksi dan mempromosikan penjualan produk
+              yang telah secara ilmiah terbukti bersifat narkotik, menyebabkan
+              penyakit dan kematian, serta berkontribusi pada perkembangan
+              berbagai kejahatan sosial, termasuk meningkatnya tingkat
+              kemiskinan. Oleh karena itu, Para Pihak harus, sejauh mungkin,
+              melindungi formulasi dan pelaksanaan kebijakan perlindungan
+              kesehatan masyarakat dalam perang melawan tembakau dari pengaruh
+              industri tembakau.”
+            </strong>
+          </Text>
         </Grid.Col>
       </Grid>
     </Container>

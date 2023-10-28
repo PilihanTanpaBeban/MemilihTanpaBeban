@@ -13,8 +13,12 @@ import HeroBgImg from "../app/hero-image-bg/hero-image-bg";
 import { primaryColor, secondaryColor } from "../public/colors";
 import { PrimaryButton, SecondaryButton } from "../app/components/Button";
 import PieChart from "../app/components/PieChart";
+import { useMediaQuery } from "@mantine/hooks";
 
 function Page2024() {
+
+  const matches = useMediaQuery('(min-width: 56.25em)');
+
   return (
     <>
       <HeroBgImg
@@ -27,8 +31,8 @@ function Page2024() {
 
       <Container size={"xl"} py={rem(65)}>
         <Grid align={"center"}>
-          <Grid.Col p={20} span={{ base: 12, md: 5 }}>
-            <Title c={secondaryColor}>
+          <Grid.Col p={20} span={{ base: 12, sm: 5 }}>
+            <Title c={primaryColor} fs={rem(48)}>
               Apakah kalian ingin memiliki pemimpin yang pro terhadap kesehatan?
             </Title>
             <Flex mt={rem(25)} justify={"start"} gap="xl">
@@ -46,21 +50,13 @@ function Page2024() {
               ></SecondaryButton>
             </Flex>
           </Grid.Col>
-          <Grid.Col p={20} span={{ base: 12, md: 7 }}>
+          <Grid.Col p={20} span={{ base: 12, sm: 7 }}>
             <Grid>
-              <Grid.Col span={{ base: 12, md: 6 }}>
+              <Grid.Col span={{ base: 12, sm: 6 }} >
                 <PieChart />
               </Grid.Col>
-              <Grid.Col span={{ base: 12, md: 6 }}>
-                <Flex
-                  direction={"column"}
-                  align={"center"}
-                  justify={"center"}
-                  gap="md"
-                  w={"50%"}
-                  wrap="wrap"
-                >
-                  <Box>
+              <Grid.Col span={{ base: 12, sm: 6 }}>
+                  <Box style={{display:"flex",flexDirection:"row"}}>
                     <div
                       style={{
                         backgroundColor: primaryColor,
@@ -68,12 +64,12 @@ function Page2024() {
                         height: rem(20),
                       }}
                     ></div>
-                    <Text>
+                    <Text ml={rem(10)} w={"70%"}>
                       Jumlah responden yang Ingin memiliki yang pro terhadap
                       kesehatan
                     </Text>
                   </Box>
-                  <Box>
+                  <Box mt={rem(20)} style={{display:"flex",flexDirection:"row"}}>
                     <div
                       style={{
                         backgroundColor: secondaryColor,
@@ -81,12 +77,11 @@ function Page2024() {
                         height: rem(20),
                       }}
                     ></div>
-                    <Text>
+                    <Text ml={rem(10)} w={"70%"}>
                       Jumlah responden yang Ingin memiliki yang pro terhadap
                       kesehatan
                     </Text>
                   </Box>
-                </Flex>
               </Grid.Col>
             </Grid>
           </Grid.Col>

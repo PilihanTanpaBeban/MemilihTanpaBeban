@@ -12,7 +12,7 @@ import {
 } from "@mantine/core";
 import React from "react";
 import classes from "./hero-image-bg.module.css";
-import { secondaryColor } from "../../public/colors";
+import { primaryColor, secondaryColor } from "../../public/colors";
 
 interface TextProps {
   text: String;
@@ -44,9 +44,9 @@ const HeroBgImg: React.FC<TextProps> = ({
   const backgroundImageUrl = `../../assets/images/${imgFileName}`;
 
   return (
-    <Group className={classes.wrapper} style={{ backgroundColor: "#07183d" }}>
+    <Group className={classes.wrapper} style={{ backgroundColor: primaryColor }}>
       <BackgroundImage src={backgroundImageUrl} pt={pt} pb={pb}>
-        <Overlay color={"#000F2E"} zIndex={1} />
+        <Overlay color={"#120A23"} zIndex={1} />
 
         <Center className={classes.inner} w={"100%"}>
           <Flex direction={"column"} align={"center"} justify={"center"}>

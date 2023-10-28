@@ -3,6 +3,8 @@ import { Carousel } from "@mantine/carousel";
 import React from "react";
 import classes from "./ContohKasus.module.css";
 import "@mantine/carousel/styles.css";
+import { useMediaQuery } from "@mantine/hooks";
+import { theme } from "../../theme";
 
 const data = [
   {
@@ -40,8 +42,8 @@ const slides = data.map((item) => (
 
       <Grid.Col
         span={{ base: 12, md: 6 }}
-        pr={rem(70)}
         style={{ textAlign: "justify" }}
+        px={rem(34)}
       >
         <Text>{item.description}</Text>
       </Grid.Col>
@@ -50,38 +52,41 @@ const slides = data.map((item) => (
 ));
 
 const ContohKasus = () => {
+  const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.sm})`);
   return (
-    <Group bg={"#F7FAFF"}>
-      <Container size={"xl"} my={"md"} py={rem(38)} className={classes.wrapper}>
-        <Text className={classes.title}>
-          Beberapa Contoh Kasus intervensi industri rokok yang mengakibatkan
-          lemahnya peraturan kesehatan masyarakat di Indonesia antara lain:
-        </Text>
+    <Container
+      bg={"#F7FAFF"}
+      size={"xl"}
+      my={"md"}
+      py={rem(38)}
+      className={classes.wrapper}
+    >
+      <Text className={classes.title}>
+        Beberapa Contoh Kasus intervensi industri rokok yang mengakibatkan
+        lemahnya peraturan kesehatan masyarakat di Indonesia antara lain:
+      </Text>
 
-        <Carousel
-          style={{ borderRadius: "20px" }}
-          my={55}
-          px={50}
-          py={41}
-          slideGap="md"
-          align="start"
-          controlsOffset="xl"
-          controlSize={32}
-          loop
-          bg={"white"}
-        >
-          {slides}
-        </Carousel>
-        <Text style={{ textAlign: "justify" }}>
-          Situs ini bertujuan untuk mengedukasi dan membuka wawasan para
-          pengunjung mengenai konflik kepentingan yang mungkin terjadi pada
-          calon anggota legislatif, calon eksekutif, para incumbent baik di
-          tingkat legislatif maupun eksekutif, dengan industri rokok. Agar, para
-          pengunjung dapat lebih mengenal para calon yang benar-benar memihak
-          kepentingan masyarakat, dan menggunakan hak pilih dengan lebih bijak.
-        </Text>
-      </Container>
-    </Group>
+      <Carousel
+        style={{ borderRadius: "20px" }}
+        slideSize={{ base: "100%" }}
+        slideGap={{ base: rem(2), sm: "xl" }}
+        align="start"
+        slidesToScroll={mobile ? 1 : 2}
+        loop
+        bg={"white"}
+        py={rem(41)}
+      >
+        {slides}
+      </Carousel>
+      <Text mt={rem(25)} style={{ textAlign: "justify" }}>
+        Situs ini bertujuan untuk mengedukasi dan membuka wawasan para
+        pengunjung mengenai konflik kepentingan yang mungkin terjadi pada calon
+        anggota legislatif, calon eksekutif, para incumbent baik di tingkat
+        legislatif maupun eksekutif, dengan industri rokok. Agar, para
+        pengunjung dapat lebih mengenal para calon yang benar-benar memihak
+        kepentingan masyarakat, dan menggunakan hak pilih dengan lebih bijak.
+      </Text>
+    </Container>
   );
 };
 

@@ -40,7 +40,7 @@ const FormAspirasi: React.FC<FormAspirasiProps> = ({ id }) =>{
   };
 
   return (
-    <Container size="xl" mt={rem(77)} my="md" >
+    <Container size="xl" mt={rem(40)} px={rem(50)} my="md" >
       <Grid gutter="xl">
         <Grid.Col span={{ base: 12, xs: 6 }}>
           <TitleText text="Yuk sampaikan aspirasimu" size="32px" />
@@ -50,7 +50,7 @@ const FormAspirasi: React.FC<FormAspirasiProps> = ({ id }) =>{
             di Indonesia.
           </Text>
 
-          <Group mt={rem(20)}>
+          <Group mt={rem(20)} mb={rem(30)}>
             {inputs.map((input, index) => (
               <TextInput
                 radius="md"

@@ -14,15 +14,14 @@ import {
   IconBrandX,
 } from "@tabler/icons-react";
 import classes from "./footer.module.css";
+import { primaryColor } from "../../public/colors";
 
 export function Footer() {
-  const theme = useMantineTheme();
-  const darkBlueColor = theme.colors.darkblue[9];
 
   return (
     <footer
       className={classes.footer}
-      style={{ "--dark-blue-color": darkBlueColor } as React.CSSProperties}
+      style={{backgroundColor:primaryColor}}
     >
       <Container size="xl" className={classes.inner}>
         <div className={classes.logo}>
