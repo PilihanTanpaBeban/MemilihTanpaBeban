@@ -5,8 +5,9 @@ import { secondaryColor } from "../../public/colors";
 interface ButtonProps {
   text: string;
   radius: string;
-  size: string;
+  size?: string;
   onClick?: () => void;
+  w?: number;
 }
 
 export const PrimaryButton: React.FC<ButtonProps> = ({
@@ -14,9 +15,16 @@ export const PrimaryButton: React.FC<ButtonProps> = ({
   radius,
   size,
   onClick,
+  w,
 }) => {
   return (
-    <Button variant="filled" radius={radius} size={size} onClick={onClick}>
+    <Button
+      w={w}
+      variant="filled"
+      radius={radius}
+      size={size}
+      onClick={onClick}
+    >
       {text}
     </Button>
   );
@@ -27,9 +35,17 @@ export const SecondaryButton: React.FC<ButtonProps> = ({
   radius,
   size,
   onClick,
+  w
 }) => {
   return (
-    <Button color={"#6FA3FF"} variant="filled" radius={radius} size={size} onClick={onClick}>
+    <Button
+      color={"#6FA3FF"}
+      variant="filled"
+      radius={radius}
+      size={size}
+      onClick={onClick}
+      w={w}
+    >
       {text}
     </Button>
   );

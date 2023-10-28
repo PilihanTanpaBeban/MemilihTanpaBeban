@@ -1,5 +1,5 @@
-export const primaryColor = '#2770F1'
+export const primaryColor = '#4F3B78'
 
-export const secondaryColor = '#172E60'
+export const secondaryColor = '#A2668A'
 
 export const bgGrayColor = '#F7FAFF'

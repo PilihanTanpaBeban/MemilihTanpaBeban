@@ -59,7 +59,7 @@ const ContohKasus = () => {
         </Text>
 
         <Carousel
-        style={{borderRadius:'20px'}}
+          style={{ borderRadius: "20px" }}
           my={55}
           px={50}
           py={41}
@@ -72,7 +72,7 @@ const ContohKasus = () => {
         >
           {slides}
         </Carousel>
-        <Text style={{textAlign:"justify"}}>
+        <Text style={{ textAlign: "justify" }}>
           Situs ini bertujuan untuk mengedukasi dan membuka wawasan para
           pengunjung mengenai konflik kepentingan yang mungkin terjadi pada
           calon anggota legislatif, calon eksekutif, para incumbent baik di
