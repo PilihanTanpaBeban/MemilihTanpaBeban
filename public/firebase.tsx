@@ -1,17 +1,19 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
+import { getDatabase } from "firebase/database";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyACgXqQPIQPOzfW5SH7P0qYAlcxHvBoAm8",
-  authDomain: "bebas-97abf.firebaseapp.com",
-  projectId: "bebas-97abf",
-  storageBucket: "bebas-97abf.appspot.com",
-  messagingSenderId: "746390468006",
-  appId: "1:746390468006:web:6f9724d920549dc8efcb67"
+  apiKey: "AIzaSyC5kUQSnxuOnxjMN0jbUlj2sigH8UxCxis",
+  authDomain: "pilihantanpabeban-4e29b.firebaseapp.com",
+  projectId: "pilihantanpabeban-4e29b",
+  storageBucket: "pilihantanpabeban-4e29b.appspot.com",
+  messagingSenderId: "781572132153",
+  appId: "1:781572132153:web:6f4c1b54da9fd0de63ace8",
+  databaseURL: "https://asia-southeast1.firebaseio.com",
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig);
+export const database = getDatabase(app);
