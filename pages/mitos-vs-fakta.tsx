@@ -54,9 +54,11 @@ const data = [
 ];
 
 const slides = data.map((data) => (
-  <Grid.Col span={{ base: 12, md: 6 }} style={{padding:'30px'}}>
-    <Card id={data.id} style={{minHeight:rem(434)}} textMitos={data.mitos} textFakta={data.fakta} key={data.mitos} />
-  </Grid.Col>
+  <React.Fragment key={data.id}>
+    <Grid.Col span={{ base: 12, md: 6 }} style={{padding:'30px'}}>
+      <Card id={data.id} style={{minHeight:rem(434)}} textMitos={data.mitos} textFakta={data.fakta} key={data.mitos} />
+    </Grid.Col>
+  </React.Fragment>
 ));
 
 function MitosVsFaktaPage() {
