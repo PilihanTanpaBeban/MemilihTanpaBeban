@@ -3,37 +3,39 @@ import { Pie } from "react-chartjs-2";
 import "chart.js/auto";
 import { primaryColor, secondaryColor } from "../../public/colors";
 import { AspectRatio, rem } from "@mantine/core";
-import { ref } from "firebase/database";
+import { get, onValue, ref } from "firebase/database";
 import { database } from "../../public/firebase";
-import { readFirebaseData } from "../../public/firebase.service";
-
-const data = [
-  { id: 1, value: "Yes", count: 263 },
-  { id: 2, value: "No", count: 542 },
-];
-
-const votingPath = 'voting';
-
-// Define references for the two objects (obj1 and obj2)
-const yesValue = ref(database, `${votingPath}/yes/`);
-const noValue = ref(database, `${votingPath}/no/`);
 
 const PieChart = () => {
-  useEffect(() => {
-    readFirebaseData(yesValue);
-    readFirebaseData(noValue);
-  });
+  const [yesCount, setYesCount] = useState(5);
+  const [noCount, setNoCount] = useState(12);
 
-  const [userData, setUserData] = useState({
-    labels: data.map((data) => data.value),
-    datasets: [
-      {
-        label: "Users Gained",
-        data: data.map((data) => data.count),
-        backgroundColor: [secondaryColor, primaryColor],
-      },
-    ],
-  });
+  const votingPath = "voting";
+
+  // Define references for the two objects (obj1 and obj2)
+  const yesValue = ref(database, `${votingPath}/yes/`);
+  const noValue = ref(database, `${votingPath}/no/`);
+
+  useEffect(() => {
+    const yesVoteRef = yesValue;
+    const noVoteRef = noValue;
+
+    const unsubscribeYes = onValue(yesVoteRef, (snapshot) => {
+      const dataYes = snapshot.val();
+      setYesCount(dataYes !== null ? dataYes : 0);
+    });
+
+    const unsubscribeNo = onValue(noVoteRef, (snapshot) => {
+      const dataNo = snapshot.val();
+      setNoCount(dataNo !== null ? dataNo : 0);
+    });
+
+    return () => {
+      // Clean up the listeners when the component unmounts
+      unsubscribeYes();
+      unsubscribeNo();
+    };
+  }, []);
 
   const options = {
     plugins: {
@@ -45,7 +47,18 @@ const PieChart = () => {
 
   return (
     <AspectRatio ratio={1} w={rem(300)}>
-      <Pie data={userData} options={options} />
+        <Pie
+          data={{
+            datasets: [
+              {
+                label:"Respon:",
+                data:[yesCount,noCount],
+                backgroundColor: [primaryColor,secondaryColor],
+              },
+            ],
+          }}
+          options={options}
+        />
     </AspectRatio>
   );
 };

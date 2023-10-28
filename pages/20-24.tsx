@@ -3,7 +3,6 @@ import {
   Container,
   Flex,
   Grid,
-  Group,
   Text,
   Title,
   rem,
@@ -13,7 +12,7 @@ import HeroBgImg from "../app/hero-image-bg/hero-image-bg";
 import { primaryColor, secondaryColor } from "../public/colors";
 import { PrimaryButton, SecondaryButton } from "../app/components/Button";
 import PieChart from "../app/components/PieChart";
-import { readFirebaseData } from "../public/firebase.service";
+import { updateNoVote, updateYesVote } from "../public/firebase.service";
 
 function Page2024() {
 
@@ -43,12 +42,14 @@ function Page2024() {
                 radius={"xl"}
                 size={"lg"}
                 w={144}
+                onClick={updateYesVote}
               ></PrimaryButton>
               <SecondaryButton
                 text={"Tidak"}
                 radius={"xl"}
                 size={"lg"}
                 w={144}
+                onClick={updateNoVote}
               ></SecondaryButton>
             </Flex>
           </Grid.Col>

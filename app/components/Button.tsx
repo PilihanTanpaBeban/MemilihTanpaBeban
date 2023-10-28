@@ -48,6 +48,7 @@ export const SecondaryButton: React.FC<ButtonProps> = ({
       variant="filled"
       radius={radius}
       size={size}
+      onClick={onClick}
       w={w}
       type={type}
     >
