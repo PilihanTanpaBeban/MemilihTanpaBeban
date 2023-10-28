@@ -1,12 +1,12 @@
 {
   "name": "pilihan-tanpa-beban",
   "version": "0.1.0",
-  "homepage": "https://pilihantanpabeban.id/",
+  "homepage": "https://pilihantanpabeban.id",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "NODE_ENV=production node server.js",
     "lint": "next lint"
   },
   "dependencies": {
