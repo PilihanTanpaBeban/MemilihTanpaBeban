@@ -4,16 +4,15 @@ import Script from "next/script";
 export default function ContactUs() {
   return (
     <>
-    
       <iframe
-        data-tally-src="https://tally.so/embed/3Xo7xP?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+        data-tally-src="https://tally.so/embed/3qGqD9?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
         loading="lazy"
         width="100%"
-        height="200"
+        height="527"
         frameborder="0"
         marginheight="0"
         marginwidth="0"
-        title="Lead generation form"
+        title="Apakah kamu mengenal calon Pemimpin-mu?"
       ></iframe>
 
       <Script

@@ -1,9 +1,15 @@
 import { Title, Text, Container, Overlay } from "@mantine/core";
 import classes from "./HeroLanding.module.css";
-import {PrimaryButton} from "../components/Button";
+import { PrimaryButton, SecondaryButton } from "../components/Button";
+import { useEffect } from "react";
 
-export function HeroImageBackground() {
-
+export const HeroImageBackground = () => {
+  const scrollToBottom = () => {
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: "smooth",
+    });
+  };
   return (
     <div className={classes.wrapper}>
       <Overlay color="#120A23" zIndex={1} />
@@ -22,9 +28,14 @@ export function HeroImageBackground() {
         </Container>
 
         <div className={classes.controls}>
-        <PrimaryButton text="Sampaikan Aspirasi" radius={"xl"} size={"md"} />
+          <SecondaryButton
+            text="Sampaikan Aspirasi"
+            radius={"xl"}
+            size={"md"}
+            onClick={scrollToBottom}
+          />
         </div>
       </div>
     </div>
   );
-}
+};

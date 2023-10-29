@@ -8,6 +8,7 @@ import {
   rem,
   Container,
   List,
+  Image,
 } from "@mantine/core";
 import { primaryColor } from "../public/colors";
 import { renderTextWithLineBreaks } from "../app/components/LineBreakRender";
@@ -15,6 +16,7 @@ import { renderTextWithLineBreaks } from "../app/components/LineBreakRender";
 const charactersList = [
   {
     id: "1",
+    icon: "book.png",
     label: "1.1. Umum",
     content: {
       textBefore: "",
@@ -30,6 +32,7 @@ const charactersList = [
 
   {
     id: "2",
+    icon: "mail.png",
     label: "1.2. Sumber Data",
     content: {
       textBefore:
@@ -53,14 +56,19 @@ function DisclaimerPage() {
   const items = charactersList.map((item) => (
     <Accordion.Item key={item.label} value={item.id}>
       <Accordion.Control py={rem(10)}>
-        <Text fw={700} fs={rem(24)} c={primaryColor}>
-          {item.label}
-        </Text>
+        <Group>
+          <Image src={`../../assets/images/${item.icon}`}></Image>
+          <Text fw={700} style={{fontSize:rem(24)}} c={primaryColor}>
+            {item.label}
+          </Text>
+        </Group>
       </Accordion.Control>
       <Accordion.Panel p={rem(16)}>
-        <Text ta={"justify"} fs={rem(16)} lh={1.5}>
-          {renderTextWithLineBreaks(item.content.textBefore)}
-        </Text>
+        {item.content.textBefore != "" && (
+          <Text ta={"justify"} fs={rem(16)} lh={1.5}>
+            {renderTextWithLineBreaks(item.content.textBefore)}
+          </Text>
+        )}
         <List my={rem(16)}>
           {item.content.list.map((listItem) => (
             <List.Item mb={rem(16)} key={listItem}>
@@ -68,9 +76,11 @@ function DisclaimerPage() {
             </List.Item>
           ))}
         </List>
-        <Text ta={"justify"} fs={rem(16)}>
-          {renderTextWithLineBreaks(item.content.textAfter)}
-        </Text>
+        {item.content.textAfter != "" && (
+          <Text ta={"justify"} fs={rem(16)}>
+            {renderTextWithLineBreaks(item.content.textAfter)}
+          </Text>
+        )}
       </Accordion.Panel>
     </Accordion.Item>
   ));

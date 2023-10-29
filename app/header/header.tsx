@@ -41,14 +41,14 @@ export function Header() {
         </Group>
 
         <Burger opened={opened} onClick={toggle} hiddenFrom="md" size="sm" />
-        <Group hiddenFrom="md"></Group>
+        {/* <Group hiddenFrom="md"></ Group> */}
         <Modal
+          size="lg"
           opened={openModal}
           onClose={() => {
             close;
             router.reload();
           }}
-          title="Quiz"
           centered
         >
           <Quiz />

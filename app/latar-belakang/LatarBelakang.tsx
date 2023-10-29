@@ -7,20 +7,25 @@ import {
   Center,
   rem,
   Overlay,
+  Spoiler,
+  Box,
 } from "@mantine/core";
 import React from "react";
 import classes from "./LatarBelakang.module.css";
-import { primaryColor } from "../../public/colors";
+import { primaryColor, secondaryColor } from "../../public/colors";
 import TitleText from "../components/TitleText";
+import { useMediaQuery } from "@mantine/hooks";
+import { theme } from "../../theme";
 
 const LatarBelakang = () => {
+  const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.sm})`);
   return (
     <Container size="xl" my="md">
-      <Center my={60}>
+      <Center my={mobile ? rem(30) : rem(60)}>
         <TitleText text={"Latar Belakang"} size={"32px"}></TitleText>
       </Center>
       <Grid gutter="lg">
-        <Grid.Col span={{ base: 12, xs: 6 }}>
+        <Grid.Col span={{ base: 12, xs: 6 }} ta={mobile ? "center" : "left"}>
           <Text
             style={{
               fontSize: rem(92),
@@ -51,12 +56,14 @@ const LatarBelakang = () => {
           </Text>
         </Grid.Col>
         <Grid.Col span={{ base: 12, xs: 6 }}>
-          <Image
-            radius={"md"}
-            width={"100%"}
-            fit="contain"
-            src="/assets/images/cigarrets.png"
-          />
+          <Box>
+            <Image
+              radius={"md"}
+              width={"100%"}
+              fit="contain"
+              src="/assets/images/cigarrets.png"
+            />
+          </Box>
         </Grid.Col>
         <Grid.Col mb={78} span={{ base: 12, xs: 12 }}>
           <Text
@@ -81,7 +88,7 @@ const LatarBelakang = () => {
             src="/assets/images/fctc_2_1.webp"
           />
         </Grid.Col>
-        <Grid.Col span={{ base: 12, xs: 5 }}>
+        <Grid.Col span={{ base: 12, xs: 5 }} ta={mobile ? "center" : "left"}>
           <Text
             pl={12}
             style={{
@@ -89,31 +96,40 @@ const LatarBelakang = () => {
               fontFamily: "Montserrat",
               fontWeight: "800",
               wordWrap: "break-word",
+              lineHeight: 1.3
             }}
           >
             <span style={{ color: "black" }}>
               Indonesia adalah <br />
               satu-satunya negara di Asia yang{" "}
             </span>
-            <span style={{ color: "#2770F1" }}>belum meratifikasi FCTC</span>
+            <span style={{ color: secondaryColor }}>
+              belum meratifikasi FCTC
+            </span>
           </Text>
         </Grid.Col>
         <Grid.Col span={{ base: 12, xs: 12 }}>
-          <Text style={{ textAlign: "justify" }}>
-            FCTC menegaskan bahwa{" "}
-            <strong>
-              “Ada konflik mendasar dan tak bisa diselaraskan antara kepentingan
-              industri rokok dan kepentingan kebijakan di bidang kesehatan.
-              Industri tembakau memproduksi dan mempromosikan penjualan produk
-              yang telah secara ilmiah terbukti bersifat narkotik, menyebabkan
-              penyakit dan kematian, serta berkontribusi pada perkembangan
-              berbagai kejahatan sosial, termasuk meningkatnya tingkat
-              kemiskinan. Oleh karena itu, Para Pihak harus, sejauh mungkin,
-              melindungi formulasi dan pelaksanaan kebijakan perlindungan
-              kesehatan masyarakat dalam perang melawan tembakau dari pengaruh
-              industri tembakau.”
-            </strong>
-          </Text>
+          <Spoiler
+            maxHeight={55}
+            showLabel="Baca selengkapnya"
+            hideLabel="Sembunyikan"
+          >
+            <Text style={{ textAlign: "justify" }}>
+              FCTC menegaskan bahwa {" "}
+              <strong>
+                “Ada konflik mendasar dan tak bisa diselaraskan antara
+                kepentingan industri rokok dan kepentingan kebijakan di bidang
+                kesehatan. Industri tembakau memproduksi dan mempromosikan
+                penjualan produk yang telah secara ilmiah terbukti bersifat
+                narkotik, menyebabkan penyakit dan kematian, serta berkontribusi
+                pada perkembangan berbagai kejahatan sosial, termasuk
+                meningkatnya tingkat kemiskinan. Oleh karena itu, Para Pihak
+                harus, sejauh mungkin, melindungi formulasi dan pelaksanaan
+                kebijakan perlindungan kesehatan masyarakat dalam perang melawan
+                tembakau dari pengaruh industri tembakau.”
+              </strong>
+            </Text>
+          </Spoiler>
         </Grid.Col>
       </Grid>
     </Container>

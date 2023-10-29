@@ -30,8 +30,9 @@ const data = [
 
 const slides = data.map((item) => (
   <Carousel.Slide key={item.id}>
-    <Grid gutter={{ base: 5, xs: "md", md: "xl", xl: 50 }} align="center">
-      <Grid.Col span={{ base: 12, md: 6 }}>
+    <Grid columns={24} gutter={{ base: 5, xs: "md", md: "xl", xl: 50 }} align="center">
+      <Grid.Col span={{ base: 0, md: 1 }}/>
+      <Grid.Col span={{ base: 23, md: 11 }}>
         <Flex align={"center"} justify={"center"}>
           <Image
             radius="md"
@@ -42,12 +43,13 @@ const slides = data.map((item) => (
       </Grid.Col>
 
       <Grid.Col
-        span={{ base: 12, md: 6 }}
+        span={{ base: 23, md: 11 }}
         style={{ textAlign: "justify" }}
         className={classes.textCarousel}
       >
         <Text>{item.description}</Text>
       </Grid.Col>
+      <Grid.Col span={1}/>
     </Grid>
   </Carousel.Slide>
 ));
@@ -55,14 +57,14 @@ const slides = data.map((item) => (
 const ContohKasus = () => {
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.sm})`);
   return (
+    <div style={{backgroundColor:"#F7FAFF"}}>
     <Container
-      bg={"#F7FAFF"}
       size={"xl"}
       my={"md"}
       py={rem(38)}
-      className={classes.wrapper}
+      bga={"#F7FAFF"}
     >
-      <Text className={classes.title}>
+      <Text fw={700} mb={rem(10)} className={classes.title} ta={mobile?"center":"justify"}>
         Beberapa Contoh Kasus intervensi industri rokok yang mengakibatkan
         lemahnya peraturan kesehatan masyarakat di Indonesia antara lain:
       </Text>
@@ -88,6 +90,7 @@ const ContohKasus = () => {
         kepentingan masyarakat, dan menggunakan hak pilih dengan lebih bijak.
       </Text>
     </Container>
+    </div>
   );
 };
 

@@ -1,7 +1,5 @@
 .title {
   font-size: rem(24);
-  font-weight: 700;
-  text-align: justify;
 }
 
 .wrapper {
@@ -12,16 +10,28 @@
   width: 432px;
 }
 
-.textCarousel{
+.textCarousel {
   padding: 0 rem(30);
 }
 
+.controls {
+  transition: opacity 150ms ease;
+  opacity: 0;
+}
+
+.root {
+  &:hover {
+    .controls {
+      opacity: 1;
+    }
+  }
+}
 @media (max-width: 600px) {
   .imgCarousel {
     width: 100%;
   }
 
-  .textCarousel{
+  .textCarousel {
     padding: 0 rem(10);
   }
 }

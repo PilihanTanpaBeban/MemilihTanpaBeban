@@ -59,6 +59,7 @@ const PieChart = () => {
           }}
           options={options}
         />
+        
     </AspectRatio>
   );
 };

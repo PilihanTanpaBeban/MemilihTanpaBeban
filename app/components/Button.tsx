@@ -1,6 +1,7 @@
-import { Button } from "@mantine/core";
+import { Button,Text, rem } from "@mantine/core";
 import React from "react";
 import { primaryColor, secondaryColor } from "../../public/colors";
+import { IconLoader } from "@tabler/icons-react";
 
 interface ButtonProps {
   text: string;
@@ -9,6 +10,7 @@ interface ButtonProps {
   onClick?: () => void;
   w?: number;
   type?: "button" | "submit" | "reset" | undefined;
+  isLoading?:boolean
 }
 
 export const PrimaryButton: React.FC<ButtonProps> = ({
@@ -18,6 +20,7 @@ export const PrimaryButton: React.FC<ButtonProps> = ({
   onClick,
   w,
   type,
+  isLoading
 }) => {
   return (
     <Button
@@ -28,8 +31,9 @@ export const PrimaryButton: React.FC<ButtonProps> = ({
       onClick={onClick}
       color={primaryColor}
       type={type}
-    >
-      {text}
+      disabled={isLoading}
+      style={{display:"flex", alignItems:"center", justifyContent:"center"}}
+    >{isLoading?(<IconLoader style={{marginRight:rem(5)}}/>):null} {text}
     </Button>
   );
 };

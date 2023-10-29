@@ -3,18 +3,31 @@ import {
   Container,
   Flex,
   Grid,
+  Group,
   Text,
   Title,
   rem,
 } from "@mantine/core";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import HeroBgImg from "../app/hero-image-bg/hero-image-bg";
 import { primaryColor, secondaryColor } from "../public/colors";
 import { PrimaryButton, SecondaryButton } from "../app/components/Button";
 import PieChart from "../app/components/PieChart";
 import { updateNoVote, updateYesVote } from "../public/firebase.service";
+import { IconChecks } from "@tabler/icons-react";
 
 function Page2024() {
+  const [pressed, setPressed] = useState(false);
+
+  function switchPressedYes() {
+    updateYesVote;
+    setPressed(true);
+  }
+
+  function switchPressedNo() {
+    updateNoVote;
+    setPressed(true);
+  }
 
   useEffect(() => {
     console.log("Try");
@@ -36,22 +49,30 @@ function Page2024() {
             <Title c={primaryColor} fs={rem(48)}>
               Apakah kalian ingin memiliki pemimpin yang pro terhadap kesehatan?
             </Title>
-            <Flex mt={rem(25)} justify={"start"} gap="xl">
-              <PrimaryButton
-                text={"Ya"}
-                radius={"xl"}
-                size={"lg"}
-                w={144}
-                onClick={updateYesVote}
-              ></PrimaryButton>
-              <SecondaryButton
-                text={"Tidak"}
-                radius={"xl"}
-                size={"lg"}
-                w={144}
-                onClick={updateNoVote}
-              ></SecondaryButton>
-            </Flex>
+
+            {pressed ? (
+              <Group c={secondaryColor} justify="start" py={rem(40)}>
+                <IconChecks size={34} />
+                <Title order={3}>Terima kasih atas respon anda</Title>
+              </Group>
+            ) : (
+              <Flex mt={rem(25)} justify={"start"} gap="xl">
+                <PrimaryButton
+                  text={"Ya"}
+                  radius={"xl"}
+                  size={"lg"}
+                  w={144}
+                  onClick={switchPressedYes}
+                ></PrimaryButton>
+                <SecondaryButton
+                  text={"Tidak"}
+                  radius={"xl"}
+                  size={"lg"}
+                  w={144}
+                  onClick={switchPressedNo}
+                ></SecondaryButton>
+              </Flex>
+            )}
           </Grid.Col>
           <Grid.Col p={20} span={{ base: 12, sm: 7 }}>
             <Grid>
