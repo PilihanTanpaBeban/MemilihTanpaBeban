@@ -20,16 +20,16 @@ import { theme } from "../theme";
 
 function Page2024() {
   const [pressed, setPressed] = useState(false);
-  
+
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.sm})`);
 
   function switchPressedYes() {
-    updateYesVote;
+    updateYesVote();
     setPressed(true);
   }
 
   function switchPressedNo() {
-    updateNoVote;
+    updateNoVote();
     setPressed(true);
   }
 
@@ -52,8 +52,10 @@ function Page2024() {
 
             {pressed ? (
               <Group c={secondaryColor} justify="start" py={rem(40)}>
-                <IconChecks size={34} />
-                <Title order={3}>Terima kasih atas respon anda</Title>
+                <Text style={{display:"Flex",alignItems:"center", fontSize: rem(18) }} ta={mobile?"center":"left"}>
+                  <IconChecks size={34} />
+                  Terima kasih atas respon anda
+                </Text>
               </Group>
             ) : (
               <Flex mt={rem(25)} justify={"start"} gap="xl">
@@ -80,7 +82,13 @@ function Page2024() {
                 <PieChart />
               </Grid.Col>
               <Grid.Col span={{ base: 12, sm: 6 }}>
-                <Box style={{ display: "flex", flexDirection: "row", justifyContent:"center" }}>
+                <Box
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    justifyContent: "center",
+                  }}
+                >
                   <div
                     style={{
                       backgroundColor: primaryColor,
@@ -95,7 +103,11 @@ function Page2024() {
                 </Box>
                 <Box
                   mt={rem(20)}
-                  style={{ display: "flex", flexDirection: "row", justifyContent:"center" }}
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    justifyContent: "center",
+                  }}
                 >
                   <div
                     style={{
