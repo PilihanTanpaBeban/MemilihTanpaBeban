@@ -14,7 +14,6 @@ import Quiz from "../components/Quiz";
 import { useRouter } from "next/router";
 import { primaryColor, secondaryColor } from "../../public/colors";
 import { IconX } from "@tabler/icons-react";
-import { useState } from "react";
 import { theme } from "../../theme";
 
 const links = [
