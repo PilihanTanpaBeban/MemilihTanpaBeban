@@ -128,7 +128,8 @@ const ModalDetail: React.FC<ModalDetailProps> = ({ id, isOpen, onClose }) => {
               <Text ta={"justify"}>Pelajari Selengkapnya:</Text>
               {selectedData.reference.map((listReference) => (
                 <a href={listReference} key={listReference}>
-                  {listReference} {selectedData.reference.length >1 && (<br/>)}
+                  {listReference}
+                  {selectedData.reference.length > 1 && <br />}
                 </a>
               ))}
             </Blockquote>

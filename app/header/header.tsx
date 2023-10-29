@@ -5,11 +5,13 @@ import {
   Modal,
   Text,
   ActionIcon,
+  Flex,
+  rem,
 } from "@mantine/core";
 import { useDisclosure, useMediaQuery } from "@mantine/hooks";
 import classes from "./header.module.css";
 import LogoPTB from "../components/logo";
-import { PrimaryButton } from "../components/Button";
+import { PrimaryButton, SecondaryButton } from "../components/Button";
 import Quiz from "../components/Quiz";
 import { useRouter } from "next/router";
 import { primaryColor, secondaryColor } from "../../public/colors";
@@ -74,10 +76,20 @@ export function Header() {
             display: mobile ? "block" : "none",
           }}
         >
-          {burgerItems}
-          <ActionIcon variant="light" radius="md" color={secondaryColor}>
-            <IconX onClick={toggle} color="white" />
-          </ActionIcon>
+          <Flex h={"100%"} direction={"column"} align={"center"} justify={"space-between"}>
+            <div>
+              {burgerItems}
+              <SecondaryButton
+                text="Ikuti Kuis"
+                radius="xl"
+                size="md"
+                onClick={open}
+              />
+            </div>
+            <ActionIcon variant="light" radius="md" mb={rem(16)} color={secondaryColor}>
+              <IconX onClick={toggle} color="white" />
+            </ActionIcon>
+          </Flex>
         </div>
         <Modal
           size="lg"
