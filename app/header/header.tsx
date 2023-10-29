@@ -1,10 +1,21 @@
-import { Container, Group, Burger, Modal, Text } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
+import {
+  Container,
+  Group,
+  Burger,
+  Modal,
+  Text,
+  ActionIcon,
+} from "@mantine/core";
+import { useDisclosure, useMediaQuery } from "@mantine/hooks";
 import classes from "./header.module.css";
 import LogoPTB from "../components/logo";
 import { PrimaryButton } from "../components/Button";
 import Quiz from "../components/Quiz";
 import { useRouter } from "next/router";
+import { primaryColor, secondaryColor } from "../../public/colors";
+import { IconX } from "@tabler/icons-react";
+import { useState } from "react";
+import { theme } from "../../theme";
 
 const links = [
   { link: "/", label: "Home" },
@@ -26,6 +37,16 @@ export function Header() {
     </a>
   ));
 
+  const burgerItems = links.map((link) => (
+    <a key={link.label} href={link.link} className={classes.burgerLink}>
+      <strong>{link.label}</strong>
+    </a>
+  ));
+
+  const rightPosition = opened ? 0 : -300; // Replace with your colors
+
+  const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.sm})`);
+
   return (
     <header className={classes.header}>
       <Container size="xl" className={classes.inner}>
@@ -39,9 +60,26 @@ export function Header() {
             onClick={open}
           />
         </Group>
-
         <Burger opened={opened} onClick={toggle} hiddenFrom="md" size="sm" />
-        {/* <Group hiddenFrom="md"></ Group> */}
+        <div
+          style={{
+            textAlign: "center",
+            backgroundColor: primaryColor,
+            zIndex: 100,
+            position: "fixed",
+            width: "50vw",
+            height: "100vh",
+            top: 0,
+            right: rightPosition,
+            transition: "ease .3s",
+            display: mobile ? "block" : "none",
+          }}
+        >
+          {burgerItems}
+          <ActionIcon variant="light" radius="md" color={secondaryColor}>
+            <IconX onClick={toggle} color="white" />
+          </ActionIcon>
+        </div>
         <Modal
           size="lg"
           opened={openModal}

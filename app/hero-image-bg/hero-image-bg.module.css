@@ -1,15 +1,6 @@
 .wrapper {
   height: auto;
   position: relative;
-  /* padding-top: rem(202px);
-  padding-bottom: rem(259px); */
-  /* background-size:cover;
-  background-position: center; */
-
-  @media (max-width: 600px) {
-    padding-top: rem(80px);
-    padding-bottom: rem(50px);
-  }
 }
 
 .inner {

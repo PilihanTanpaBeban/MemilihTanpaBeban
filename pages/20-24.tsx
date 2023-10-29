@@ -15,9 +15,13 @@ import { PrimaryButton, SecondaryButton } from "../app/components/Button";
 import PieChart from "../app/components/PieChart";
 import { updateNoVote, updateYesVote } from "../public/firebase.service";
 import { IconChecks } from "@tabler/icons-react";
+import { useMediaQuery } from "@mantine/hooks";
+import { theme } from "../theme";
 
 function Page2024() {
   const [pressed, setPressed] = useState(false);
+  
+  const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.sm})`);
 
   function switchPressedYes() {
     updateYesVote;
@@ -28,10 +32,6 @@ function Page2024() {
     updateNoVote;
     setPressed(true);
   }
-
-  useEffect(() => {
-    console.log("Try");
-  }, []);
 
   return (
     <>
@@ -80,7 +80,7 @@ function Page2024() {
                 <PieChart />
               </Grid.Col>
               <Grid.Col span={{ base: 12, sm: 6 }}>
-                <Box style={{ display: "flex", flexDirection: "row" }}>
+                <Box style={{ display: "flex", flexDirection: "row", justifyContent:"center" }}>
                   <div
                     style={{
                       backgroundColor: primaryColor,
@@ -95,7 +95,7 @@ function Page2024() {
                 </Box>
                 <Box
                   mt={rem(20)}
-                  style={{ display: "flex", flexDirection: "row" }}
+                  style={{ display: "flex", flexDirection: "row", justifyContent:"center" }}
                 >
                   <div
                     style={{

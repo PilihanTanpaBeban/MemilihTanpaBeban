@@ -14,6 +14,8 @@ import React from "react";
 import classes from "./hero-image-bg.module.css";
 import { primaryColor, secondaryColor } from "../../public/colors";
 import { renderTextWithLineBreaks } from "../components/LineBreakRender";
+import { useMediaQuery } from "@mantine/hooks";
+import { theme } from "../../theme";
 
 interface TextProps {
   text: String;
@@ -34,8 +36,13 @@ const HeroBgImg: React.FC<TextProps> = ({
 }) => {
   const backgroundImageUrl = `../../assets/images/${imgFileName}`;
 
+  const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.sm})`);
+
   return (
-    <Group className={classes.wrapper} style={{ backgroundColor: primaryColor }}>
+    <Group
+      className={classes.wrapper}
+      style={{ backgroundColor: primaryColor }}
+    >
       <BackgroundImage src={backgroundImageUrl} pt={pt} pb={pb}>
         <Overlay color={"#120A23"} zIndex={1} />
 
@@ -46,7 +53,13 @@ const HeroBgImg: React.FC<TextProps> = ({
             </Title>
             {subtitle && (
               <>
-                <Text style={{ fontWeight: 600, fontSize: rem(32) }}>
+                <Text
+                  style={{
+                    fontWeight: 600,
+                    fontSize: mobile?rem(16):rem(32),
+                    textAlign: "center",
+                  }}
+                >
                   {subtitle}
                 </Text>
               </>
