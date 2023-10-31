@@ -4,6 +4,7 @@ import {
   Button,
   Group,
   Modal,
+  Overlay,
   Text,
   Title,
   rem,
@@ -148,19 +149,20 @@ const ModalDetail: React.FC<ModalDetailProps> = ({ id, isOpen, onClose }) => {
             position: "relative",
           }}
         >
+        <Overlay color="#000" backgroundOpacity={0.35} blur={4} />
           <IconX
             style={{
               width: rem(30),
               height: rem(30),
               color: "white",
-              marginTop:"1rem",
-              marginRight:"1rem"
+              marginTop: "1rem",
+              marginRight: "1rem",
             }}
             onClick={onClose}
             stroke={1.5}
           />
         </BackgroundImage>
-        <div style={{padding:rem(50)}}>
+        <div style={{ padding: rem(50) }}>
           <Title c={secondaryColor} order={3} w={"100%"}>
             Mitos:
           </Title>

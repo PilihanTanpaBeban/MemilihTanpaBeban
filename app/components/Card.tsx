@@ -43,7 +43,7 @@ const CardMitosFakta: React.FC<CardProps> = ({
         transform: hovered ? "scale(1.03)" : "scale(1)",
         transition: "transform 0.3s ease",
         cursor: "pointer",
-        minHeight:rem(550)
+        minHeight: rem(550),
       }}
       onClick={() => setIsModalOpen(!isModalOpen)}
       ref={ref}
@@ -51,12 +51,20 @@ const CardMitosFakta: React.FC<CardProps> = ({
       <Card.Section>
         <BackgroundImage
           src={backgroundImageUrl}
-          h={160}
+          h={200}
           ta={"right"}
           style={{
             position: "relative",
           }}
         >
+          {[2, 4, 5, 6].includes(id) ? (
+            <Overlay
+              zIndex={0}
+              color="#000"
+              backgroundOpacity={0}
+              blur={4}
+            />
+          ) : null}
           <div
             style={{
               position: "absolute",
