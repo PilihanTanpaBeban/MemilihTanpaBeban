@@ -31,7 +31,7 @@ const handleShareClick = (platform:string)=> {
       shareUrl = `instagram-threads://start?message=${customText}`;
       break;
     case 'whatsapp':
-      shareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(customText)}`;
+      shareUrl = `whatsapp://send?text=${encodeURIComponent(customText)}`;
       break;
     default:
       console.log('Invalid social media platform');
