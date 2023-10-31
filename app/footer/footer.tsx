@@ -15,6 +15,7 @@ import {
 } from "@tabler/icons-react";
 import classes from "./footer.module.css";
 import { primaryColor } from "../../public/colors";
+import Link from "next/link";
 
 const customText =
   "Pilihan yang Tanpa Beban 2024 https://pilihantanpabeban.id/ @iyctc.id";
@@ -54,10 +55,10 @@ export function Footer() {
         <div className={classes.logo}>
           <Text className={classes.title}>Pilihan Tanpa Beban</Text>
           <Text size="md" className={classes.description}>
-            <a href="https://iyctc.id/">Tentang IYCTC</a>
+            <Link href="https://iyctc.id/">Tentang IYCTC</Link>
           </Text>
           <Text size="md" className={classes.description}>
-            <a href="/disclaimer">Disclaimer</a>
+            <Link href="/disclaimer">Disclaimer</Link>
             
           </Text>
         </div>
