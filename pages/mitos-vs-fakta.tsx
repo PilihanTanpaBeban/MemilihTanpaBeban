@@ -48,16 +48,16 @@ const data = [
   },
   {
     id: 7,
-    mitos:
-      "Penegakan peraturan Kawasan Tanpa Rokok akan merugikan industri pariwisata, hotel, dan restoran.",
-    fakta:
-      "Rokok elektronik sama-sama mengandung nikotin yang bersifat adiktif, dan merupakan faktor risiko kesehatan dari berbagai penyakit katastropik.",
-  },
-  {
-    id: 8,
     mitos: "Rokok elektronik lebih aman dari rokok konvensional.",
     fakta:
       "World Health Organization (WHO) mengistilahkan rokok elektronik sebagai Electronic Nicotine Delivery System (ENDS) karena menghasilkan nikotin dalam bentuk uap yang kemudian dihirup oleh pengguna. Selain ENDS, adapula Heated Tobacco Products (HTP) atau tembakau yang dipanaskan. Kedua produk ini adalah produk baru industri rokok untuk menjual adiksi kepada penggunanya.",
+  },
+  {
+    id: 8,
+    mitos:
+      "Penegakan peraturan Kawasan Tanpa Rokok akan merugikan industri pariwisata, hotel, dan restoran.",
+    fakta:
+      "Tidak ditemukan penelitian objektif dan metodologi yang valid, yang menyatakan dampak negatif penerapan KTR pada industri pariwisata, perhotelan, restauran, dan bar",
   },
 ];
 
@@ -82,7 +82,7 @@ function MitosVsFaktaPage() {
         pt={rem(250)}
         pb={rem(250)}
         text={"Mitos dan Fakta\nSeputar Rokok"}
-        imgFileName={"prodigi_1.webp"}
+        imgFileName={"prodigi_1.png"}
       ></HeroBgImg>
       <Group py={rem(83)} style={{ backgroundColor: bgGrayColor }}>
         <Container size={"lg"}>

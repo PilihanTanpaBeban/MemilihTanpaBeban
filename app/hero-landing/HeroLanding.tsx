@@ -19,11 +19,13 @@ export const HeroImageBackground = () => {
 
         <Container mt={36} size={640}>
           <Text className={classes.description}>
-            Media informasi yang menyediakan informasi tentang calon legislatif
-            dan eksekutif yang terafiliasi dengan industri rokok dan pro
-            kesehatan. Informasi ini dapat membantu Anda membuat pilihan politik
-            yang sehat, yaitu pilihan yang didasari oleh informasi yang akurat
-            dan berkualitas.
+            Situs ini bertujuan untuk mengedukasi dan membuka wawasan para
+            pengunjung mengenai konflik kepentingan yang mungkin terjadi pada
+            calon anggota legislatif, calon eksekutif, para incumbent baik di
+            tingkat legislatif maupun eksekutif, dengan industri rokok. Agar,
+            para pengunjung dapat lebih mengenal para calon yang benar-benar
+            memihak kepentingan masyarakat, dan menggunakan hak pilih dengan
+            lebih bijak.
           </Text>
         </Container>
 

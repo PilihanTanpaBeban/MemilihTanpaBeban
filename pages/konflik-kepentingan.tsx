@@ -10,7 +10,7 @@ function KonflikKepentinganPage() {
         pb={rem(350)}
         text={"Coming Soon!"}
         subtitle={"Nantikan Launching di Pertengahan November"}
-        imgFileName={"prodigi_3_1.webp"}
+        imgFileName={"prodigi_3_1.png"}
       ></HeroBgImg>
     </>
   );

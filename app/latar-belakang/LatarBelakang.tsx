@@ -20,7 +20,7 @@ import { theme } from "../../theme";
 const LatarBelakang = () => {
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.sm})`);
   return (
-    <Container size="xl" my="md">
+    <Container size="md" my="md">
       <Center my={mobile ? rem(30) : rem(60)}>
         <TitleText text={"Latar Belakang"} size={"32px"}></TitleText>
       </Center>
@@ -96,7 +96,7 @@ const LatarBelakang = () => {
               fontFamily: "Montserrat",
               fontWeight: "800",
               wordWrap: "break-word",
-              lineHeight: 1.3
+              lineHeight: 1.3,
             }}
           >
             <span style={{ color: "black" }}>
@@ -109,13 +109,31 @@ const LatarBelakang = () => {
           </Text>
         </Grid.Col>
         <Grid.Col span={{ base: 12, xs: 12 }}>
-          <Spoiler
-            maxHeight={55}
-            showLabel="Baca selengkapnya"
-            hideLabel="Sembunyikan"
-          >
+          {mobile ? (
+            <Spoiler
+              maxHeight={55}
+              showLabel="Baca selengkapnya"
+              hideLabel="Sembunyikan"
+            >
+              <Text style={{ textAlign: "justify" }}>
+                FCTC menegaskan bahwa{" "}
+                <strong>
+                  “Ada konflik mendasar dan tak bisa diselaraskan antara
+                  kepentingan industri rokok dan kepentingan kebijakan di bidang
+                  kesehatan. Industri tembakau memproduksi dan mempromosikan
+                  penjualan produk yang telah secara ilmiah terbukti bersifat
+                  narkotik, menyebabkan penyakit dan kematian, serta
+                  berkontribusi pada perkembangan berbagai kejahatan sosial,
+                  termasuk meningkatnya tingkat kemiskinan. Oleh karena itu,
+                  Para Pihak harus, sejauh mungkin, melindungi formulasi dan
+                  pelaksanaan kebijakan perlindungan kesehatan masyarakat dalam
+                  perang melawan tembakau dari pengaruh industri tembakau.”
+                </strong>
+              </Text>
+            </Spoiler>
+          ) : (
             <Text style={{ textAlign: "justify" }}>
-              FCTC menegaskan bahwa {" "}
+              FCTC menegaskan bahwa{" "}
               <strong>
                 “Ada konflik mendasar dan tak bisa diselaraskan antara
                 kepentingan industri rokok dan kepentingan kebijakan di bidang
@@ -129,7 +147,7 @@ const LatarBelakang = () => {
                 tembakau dari pengaruh industri tembakau.”
               </strong>
             </Text>
-          </Spoiler>
+          )}
         </Grid.Col>
       </Grid>
     </Container>

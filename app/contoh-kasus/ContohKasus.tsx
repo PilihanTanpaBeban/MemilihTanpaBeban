@@ -27,11 +27,14 @@ const data = [
   },
 ];
 
-
 const slides = data.map((item) => (
   <Carousel.Slide key={item.id}>
-    <Grid columns={24} gutter={{ base: 5, xs: "md", md: "xl", xl: 50 }} align="center">
-      <Grid.Col span={{ base: 0, md: 1 }}/>
+    <Grid
+      columns={24}
+      gutter={{ base: 5, xs: "md", md: "xl", xl: 50 }}
+      align="center"
+    >
+      <Grid.Col span={{ base: 0, md: 1 }} />
       <Grid.Col span={{ base: 23, md: 11 }}>
         <Flex align={"center"} justify={"center"}>
           <Image
@@ -49,7 +52,7 @@ const slides = data.map((item) => (
       >
         <Text>{item.description}</Text>
       </Grid.Col>
-      <Grid.Col span={1}/>
+      <Grid.Col span={1} />
     </Grid>
   </Carousel.Slide>
 ));
@@ -57,39 +60,39 @@ const slides = data.map((item) => (
 const ContohKasus = () => {
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.sm})`);
   return (
-    <div style={{backgroundColor:"#F7FAFF"}}>
-    <Container
-      size={"xl"}
-      my={"md"}
-      py={rem(38)}
-      bga={"#F7FAFF"}
-    >
-      <Text fw={700} mb={rem(10)} className={classes.title} ta={mobile?"center":"justify"}>
-        Beberapa Contoh Kasus intervensi industri rokok yang mengakibatkan
-        lemahnya peraturan kesehatan masyarakat di Indonesia antara lain:
-      </Text>
+    <div style={{ backgroundColor: "#F7FAFF" }}>
+      <Container size={"md"} my={"md"} py={rem(38)} bga={"#F7FAFF"}>
+        <Text
+          fw={700}
+          mb={rem(10)}
+          className={classes.title}
+          ta={mobile ? "center" : "justify"}
+        >
+          Beberapa Contoh Kasus intervensi industri rokok yang mengakibatkan
+          lemahnya peraturan kesehatan masyarakat di Indonesia antara lain:
+        </Text>
 
-      <Carousel
-        style={{ borderRadius: "20px" }}
-        slideSize={{ base: "100%" }}
-        slideGap={{ base: rem(2), sm: "xl" }}
-        align="start"
-        slidesToScroll={mobile ? 1 : 2}
-        loop
-        bg={"white"}
-        py={rem(41)}
-      >
-        {slides}
-      </Carousel>
-      <Text mt={rem(25)} style={{ textAlign: "justify" }}>
-        Situs ini bertujuan untuk mengedukasi dan membuka wawasan para
-        pengunjung mengenai konflik kepentingan yang mungkin terjadi pada calon
-        anggota legislatif, calon eksekutif, para incumbent baik di tingkat
-        legislatif maupun eksekutif, dengan industri rokok. Agar, para
-        pengunjung dapat lebih mengenal para calon yang benar-benar memihak
-        kepentingan masyarakat, dan menggunakan hak pilih dengan lebih bijak.
-      </Text>
-    </Container>
+        <Carousel
+          style={{ borderRadius: "20px" }}
+          slideSize={{ base: "100%" }}
+          slideGap={{ base: rem(2), sm: "xl" }}
+          align="start"
+          slidesToScroll={mobile ? 1 : 2}
+          loop
+          bg={"white"}
+          py={rem(41)}
+          controlSize={50}
+        >
+          {slides}
+        </Carousel>
+        <Text mt={rem(25)} style={{ textAlign: "justify" }}>
+          Media informasi yang menyediakan informasi tentang calon legislatif
+          dan eksekutif yang terafiliasi dengan industri rokok dan pro
+          kesehatan. Informasi ini dapat membantu Anda membuat pilihan politik
+          yang sehat, yaitu pilihan yang didasari oleh informasi yang akurat dan
+          berkualitas.
+        </Text>
+      </Container>
     </div>
   );
 };

@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { Pie } from "react-chartjs-2";
 import "chart.js/auto";
+import { Chart } from "chart.js/auto";
+import ChartDataLabels from "chartjs-plugin-datalabels";
 import { primaryColor, secondaryColor } from "../../public/colors";
 import { AspectRatio, rem } from "@mantine/core";
 import { get, onValue, ref } from "firebase/database";
 import { database } from "../../public/firebase";
 
 const PieChart = () => {
-  const [yesCount, setYesCount] = useState(5);
-  const [noCount, setNoCount] = useState(12);
+  const [yesCount, setYesCount] = useState(1);
+  const [noCount, setNoCount] = useState(1);
 
   const votingPath = "voting";
 
@@ -37,29 +39,52 @@ const PieChart = () => {
     };
   }, []);
 
-  const options = {
+  Chart.register(ChartDataLabels);
+
+  const labels = ["Ya", "Tidak"]; // Add your labels here
+
+  const options: any = {
     plugins: {
+      datalabels: {
+        color: "white",
+        font: {
+          size: 24,
+          family: '"Montserrat", sans-serif',
+          weight:'bold'
+        },
+        textAlign: "center", // Align the labels to the center
+        formatter: (value: any, context: any) => {
+          const total = context.dataset.data.reduce(
+            (acc: any, data: any) => acc + data,
+            0
+          );
+          const percentage = ((value / total) * 100).toFixed(2) + "%";
+          const label = labels[context.dataIndex]; // Get the label for this data point
+
+          return `${label}\n${percentage}`;
+        },
+      },
       legend: {
-        display: false,
+        display: false, // Hide the legend
       },
     },
   };
 
+  const dataOption = {
+    labels: ["Ya", "Tidak"],
+    datasets: [
+      {
+        label: "Respon",
+        data: [yesCount, noCount],
+        backgroundColor: [primaryColor, secondaryColor],
+        hoverOffset: 4,
+      },
+    ],
+  };
+
   return (
-    <AspectRatio ratio={1} w={rem(300)}>
-        <Pie
-          data={{
-            datasets: [
-              {
-                label:"Respon:",
-                data:[yesCount,noCount],
-                backgroundColor: [primaryColor,secondaryColor],
-              },
-            ],
-          }}
-          options={options}
-        />
-        
+    <AspectRatio ratio={1} w={rem(400)}>
+      <Pie data={dataOption} options={options} />
     </AspectRatio>
   );
 };

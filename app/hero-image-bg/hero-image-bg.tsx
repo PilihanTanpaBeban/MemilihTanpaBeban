@@ -55,7 +55,7 @@ const HeroBgImg: React.FC<TextProps> = ({
               <>
                 <Text
                   style={{
-                    fontWeight: 600,
+                    fontWeight: 500,
                     fontSize: mobile?rem(16):rem(32),
                     textAlign: "center",
                   }}

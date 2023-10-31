@@ -1,9 +1,20 @@
-import { Blockquote, Group, Modal, Text, Title, rem } from "@mantine/core";
+import {
+  BackgroundImage,
+  Blockquote,
+  Button,
+  Group,
+  Modal,
+  Text,
+  Title,
+  rem,
+} from "@mantine/core";
 import React, { useEffect, useState } from "react";
 import { secondaryColor } from "../../public/colors";
 import { useMediaQuery } from "@mantine/hooks";
 import { theme } from "../../theme";
 import { renderTextWithLineBreaks } from "./LineBreakRender";
+import styles from "./Modal.module.css";
+import { IconX } from "@tabler/icons-react";
 
 interface ModalDetailProps {
   id: number;
@@ -74,6 +85,15 @@ const data = [
   {
     id: 7,
     reference: [
+      "https://drive.google.com/file/d/1gzVcBzfICj6swym4XiGLLJ888F40Txga/view",
+    ],
+    mitos: "Rokok elektronik lebih aman dari rokok konvensional.",
+    fakta:
+      "Rokok elektronik sama-sama mengandung nikotin yang bersifat adiktif, dan merupakan faktor risiko kesehatan dari berbagai penyakit katastropik.\nWorld Health Organization (WHO) mengistilahkan rokok elektronik  sebagai Electronic Nicotine Delivery System (ENDS) karena menghasilkan nikotin dalam bentuk uap yang kemudian dihirup oleh pengguna. Selain ENDS, adapula Heated Tobacco Products (HTP) atau tembakau yang dipanaskan. Kedua produk ini adalah produk baru industri rokok untuk menjual adiksi kepada penggunanya. Kedua produk ini terbukti dapat menyebabkan dampak buruk terhadap kesehatan karena berisiko menyebabkan adiksi, penyakit pernapasan, kanker, meningkatkan risiko asma, menjadi faktor risiko pneumotoraks, meningkatkan risiko terjadinya diffuse alveolar hemorrhage, merusak pertumbuhan janin, berdampak pada otak kaum muda, berhubungan dengan berbagai tipe pneumonitis, dan memiliki risiko terjadi ledakan pada pemakainya (Taylor et al., 2014; Kamada et al., 2016). Selain itu, perlu diketahui bahwa lebih dari 95% dari pengguna rokok elektronik di Indonesia merupakan dual users (juga menggunakan rokok konvensional). Ini artinya risiko kesehatan yang dialami oleh para pengguna menjadi lebih tinggi.\nSelain terhadap kesehatan, rokok elektronik juga merupakan ancaman baru bagi lingkungan. Rokok elektronik mengandung cukup racun untuk dikategorikan sebagai sampah bahan berbahaya beracun (B3).Berdasarkan uji laboratorium terhadap komponen rokok elektronik yang sudah dibuang, cemaran logam berat yang dihasilkan mencapai sepuluh kali lipat diatas nilai ambang batas yang ditentukan.",
+  },
+  {
+    id: 8,
+    reference: [
       "https://www.emro.who.int/tobacco/tobacco-free-public-places/myth-8-smoke-free-laws-harm-the-hospitality-and-tourism-sectors.html",
       "https://pubmed.ncbi.nlm.nih.gov/10349895/",
     ],
@@ -81,15 +101,6 @@ const data = [
       "Penegakan peraturan Kawasan Tanpa Rokok akan merugikan industri pariwisata, hotel, dan restoran.",
     fakta:
       "Tidak ditemukan penelitian objektif dan metodologi yang valid, yang menyatakan dampak negatif penerapan KTR pada industri pariwisata, perhotelan, restauran, dan bar.\nPeraturan KTR merupakan anjuran Organisasi Kesehatan Dunia (WHO). WHO menilai bahwa paparan asap rokok dari orang lain (perokok pasif) juga dapat menyebabkan penyakit kanker, paru, jantung, dan penyakit katastropik lainnya. Maka, KTR penting untuk melindungi orang lain dari paparan asap rokok. Lebih lanjut, KTR juga melindungi orang dari paparan iklan, promosi, dan penjualan rokok untuk mencegah perokok-perokok baru khususnya anak-anak.\nStudi literatur terhadap 115 penelitian di Australia, Kanada, Amerika Serikat, menyatakan bahwa peraturan KTR tidak bersifat negatif terhadap industri perhotelan baik dari segi pendapatan, keuntungan, pekerjaan, dalam jangka panjang. Di Indonesia, salah satu Kota yang dapat dijadikan contoh mengenai penerapan Kawasan Tanpa Rokok dan juga larangan iklan, promosi, dan sponsorship rokok adalah Kota Bogor. Pendapatan Kota Bogor justru meningkat seiring dengan penerapan peraturan tersebut di atas",
-  },
-  {
-    id: 8,
-    reference: [
-      "https://drive.google.com/file/d/1gzVcBzfICj6swym4XiGLLJ888F40Txga/view",
-    ],
-    mitos: "Rokok elektronik lebih aman dari rokok konvensional.",
-    fakta:
-      "Rokok elektronik sama-sama mengandung nikotin yang bersifat adiktif, dan merupakan faktor risiko kesehatan dari berbagai penyakit katastropik.\nWorld Health Organization (WHO) mengistilahkan rokok elektronik  sebagai Electronic Nicotine Delivery System (ENDS) karena menghasilkan nikotin dalam bentuk uap yang kemudian dihirup oleh pengguna. Selain ENDS, adapula Heated Tobacco Products (HTP) atau tembakau yang dipanaskan. Kedua produk ini adalah produk baru industri rokok untuk menjual adiksi kepada penggunanya. Kedua produk ini terbukti dapat menyebabkan dampak buruk terhadap kesehatan karena berisiko menyebabkan adiksi, penyakit pernapasan, kanker, meningkatkan risiko asma, menjadi faktor risiko pneumotoraks, meningkatkan risiko terjadinya diffuse alveolar hemorrhage, merusak pertumbuhan janin, berdampak pada otak kaum muda, berhubungan dengan berbagai tipe pneumonitis, dan memiliki risiko terjadi ledakan pada pemakainya (Taylor et al., 2014; Kamada et al., 2016). Selain itu, perlu diketahui bahwa lebih dari 95% dari pengguna rokok elektronik di Indonesia merupakan dual users (juga menggunakan rokok konvensional). Ini artinya risiko kesehatan yang dialami oleh para pengguna menjadi lebih tinggi.\nSelain terhadap kesehatan, rokok elektronik juga merupakan ancaman baru bagi lingkungan. Rokok elektronik mengandung cukup racun untuk dikategorikan sebagai sampah bahan berbahaya beracun (B3).Berdasarkan uji laboratorium terhadap komponen rokok elektronik yang sudah dibuang, cemaran logam berat yang dihasilkan mencapai sepuluh kali lipat diatas nilai ambang batas yang ditentukan.",
   },
 ];
 
@@ -107,10 +118,49 @@ const ModalDetail: React.FC<ModalDetailProps> = ({ id, isOpen, onClose }) => {
     setSelectedData(result ?? { id: 0, reference: [], mitos: "", fakta: "" });
   }, [id]);
 
+  const customModalStyles = {
+    body: {
+      padding: 0,
+    },
+  };
+
+  const backgroundImageUrl = `../../assets/images/Mitos_Fakta_Image/${id}.png`;
   return (
     <>
-      <Modal opened={isOpen} onClose={onClose} size={mobile ? "100%" : "xl"}>
-        <Group p={rem(16)}>
+      <Modal
+        opened={isOpen}
+        onClose={onClose}
+        closeOnClickOutside={true}
+        withCloseButton={false}
+        size={mobile ? "100%" : "70%"}
+        styles={customModalStyles}
+        overlayProps={{
+          backgroundOpacity: 0.8,
+          blur: 3,
+        }}
+        radius={"xl"}
+      >
+        <BackgroundImage
+          src={backgroundImageUrl}
+          h={rem(250)}
+          ta={"right"}
+          style={{
+            position: "relative",
+          }}
+        >
+          <IconX
+            style={{
+              width: rem(30),
+              height: rem(30),
+              color: "white",
+              marginTop:"1rem",
+              marginRight:"1rem"
+            }}
+            onClick={onClose}
+            stroke={1.5}
+          />
+        </BackgroundImage>
+        <div style={{padding:rem(50)}}>
           <Title c={secondaryColor} order={3} w={"100%"}>
             Mitos:
           </Title>
@@ -124,17 +174,19 @@ const ModalDetail: React.FC<ModalDetailProps> = ({ id, isOpen, onClose }) => {
             {renderTextWithLineBreaks(selectedData.fakta)}
           </Text>
           {selectedData.reference.length != 0 && (
-            <Blockquote color="violet" radius="xl" w={"100%"}>
+            <Blockquote color="violet" p={rem(20)}>
               <Text ta={"justify"}>Pelajari Selengkapnya:</Text>
               {selectedData.reference.map((listReference) => (
-                <a href={listReference} key={listReference}>
-                  {listReference}
+                <Text truncate="end">
+                  <a href={listReference} key={listReference}>
+                    {listReference}
+                  </a>
                   {selectedData.reference.length > 1 && <br />}
-                </a>
+                </Text>
               ))}
             </Blockquote>
           )}
-        </Group>
+        </div>
       </Modal>
     </>
   );

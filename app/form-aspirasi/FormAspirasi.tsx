@@ -87,7 +87,7 @@ const FormAspirasi= () => {
   };
 
   return (
-    <Container size="xl" mt={rem(40)} px={rem(50)} my="md">
+    <Container size="md" mt={rem(40)} px={rem(50)} my="md">
       <Grid gutter="xl">
         <Grid.Col span={{ base: 12, xs: 6 }}>
           <TitleText text="Yuk sampaikan aspirasimu" size="32px" />
@@ -152,7 +152,7 @@ const FormAspirasi= () => {
               <Textarea
                 radius="md"
                 w={mobile ? "100%" : "75%"}
-                label={<span style={{ fontWeight: "bold" }}>Aspiration</span>}
+                label={<span style={{ fontWeight: "bold" }}>Kolom Aspirasi</span>}
                 placeholder={"Masukkan aspirasi anda"}
                 required
                 autosize
@@ -184,7 +184,7 @@ const FormAspirasi= () => {
             radius={"md"}
             h={rem(462)}
             fit="contain"
-            src="/assets/images/frame.webp"
+            src="/assets/images/frame.png"
           />
         </Grid.Col>
       </Grid>

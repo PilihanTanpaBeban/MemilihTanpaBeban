@@ -76,7 +76,7 @@ export function Footer() {
           </Group>
         </Flex>
       </Container>
-      <Container size="xl" className={classes.afterFooter}>
+      <Container size="md" className={classes.afterFooter}>
         <Text size="sm">Copyright @2023 Pilihan Tanpa Beban</Text>
       </Container>
     </footer>

@@ -16,6 +16,7 @@
   padding-left: var(--mantine-spacing-md);
   padding-right: var(--mantine-spacing-md);
   text-align: center;
+  line-height: .6;
 
   @media (max-width: 600px) {
     font-size: rem(28px);

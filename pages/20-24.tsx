@@ -43,7 +43,7 @@ function Page2024() {
         imgFileName={"meeting.png"}
       ></HeroBgImg>
 
-      <Container size={"xl"} py={rem(65)}>
+      <Container size={"md"} py={rem(65)}>
         <Grid align={"center"}>
           <Grid.Col p={20} span={{ base: 12, sm: 5 }}>
             <Title c={primaryColor} fs={rem(48)}>
@@ -52,7 +52,14 @@ function Page2024() {
 
             {pressed ? (
               <Group c={secondaryColor} justify="start" py={rem(40)}>
-                <Text style={{display:"Flex",alignItems:"center", fontSize: rem(18) }} ta={mobile?"center":"left"}>
+                <Text
+                  style={{
+                    display: "Flex",
+                    alignItems: "center",
+                    fontSize: rem(18),
+                  }}
+                  ta={mobile ? "center" : "left"}
+                >
                   <IconChecks size={34} />
                   Terima kasih atas respon anda
                 </Text>
@@ -117,7 +124,7 @@ function Page2024() {
                     }}
                   ></div>
                   <Text ml={rem(10)} w={"70%"}>
-                    Jumlah responden yang Ingin memiliki yang pro terhadap
+                    Jumlah responden yang tidak ingin memiliki yang pro terhadap
                     kesehatan
                   </Text>
                 </Box>
