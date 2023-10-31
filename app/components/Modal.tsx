@@ -177,7 +177,7 @@ const ModalDetail: React.FC<ModalDetailProps> = ({ id, isOpen, onClose }) => {
             <Blockquote color="violet" p={rem(20)}>
               <Text ta={"justify"}>Pelajari Selengkapnya:</Text>
               {selectedData.reference.map((listReference) => (
-                <Text truncate="end">
+                <Text truncate="end" key={listReference}>
                   <a href={listReference} key={listReference}>
                     {listReference}
                   </a>
