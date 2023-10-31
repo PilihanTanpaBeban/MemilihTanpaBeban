@@ -143,13 +143,15 @@ const ModalDetail: React.FC<ModalDetailProps> = ({ id, isOpen, onClose }) => {
       >
         <BackgroundImage
           src={backgroundImageUrl}
-          h={rem(250)}
+          h={rem(400)}
           ta={"right"}
           style={{
             position: "relative",
           }}
         >
-        <Overlay color="#000" backgroundOpacity={0.35} blur={4} />
+          {[2, 4, 5, 6].includes(id) ? (
+            <Overlay zIndex={0} color="#000" backgroundOpacity={0} blur={4} />
+          ) : null}
           <IconX
             style={{
               width: rem(30),

@@ -17,7 +17,7 @@ export const HeroImageBackground = () => {
       <div className={classes.inner}>
         <Title className={classes.title}>Pilihan Tanpa Beban</Title>
 
-        <Container mt={36} size={640}>
+        <Container mt={20} size={640}>
           <Text className={classes.description}>
             Situs ini bertujuan untuk mengedukasi dan membuka wawasan para
             pengunjung mengenai konflik kepentingan yang mungkin terjadi pada

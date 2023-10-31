@@ -1,4 +1,5 @@
 import {
+  Center,
   Container,
   Grid,
   Group,
@@ -21,8 +22,7 @@ import { theme } from "../../theme";
 import { primaryColor, secondaryColor } from "../../public/colors";
 import { IconChecks, IconFilePencil } from "@tabler/icons-react";
 
-
-const FormAspirasi= () => {
+const FormAspirasi = () => {
   const [values, setValues] = useState<{ [key: string]: string }>({});
   const [isLoading, setIsLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -87,11 +87,28 @@ const FormAspirasi= () => {
   };
 
   return (
-    <Container size="md" mt={rem(40)} px={rem(50)} my="md">
+    <Container size="md" mt={rem(40)} my="md">
       <Grid gutter="xl">
-        <Grid.Col span={{ base: 12, xs: 6 }}>
-          <TitleText text="Yuk sampaikan aspirasimu" size="32px" />
-          <Text style={{ textAlign: "justify" }}>
+        <Grid.Col span={{ base: 12, xs: 7 }}>
+          <Title order={2} c={secondaryColor} ta={mobile?"center":"left"}>Yuk Sampaikan Aspirasimu</Title>
+          {mobile ? (
+            <Grid.Col
+              span={{ base: 12}}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Image
+                radius={"md"}
+                h={rem(300)}
+                fit="contain"
+                src="/assets/images/frame.png"
+              />
+            </Grid.Col>
+          ) : null}
+          <Text style={{ textAlign: mobile?"center":"justify", marginTop: rem(16) }}>
             Sampaikan keresahan dan prioritas isu yang harus didahulukan oleh
             para Calon Legislatif dan Calon Eksekutif terkait permasalahan rokok
             di Indonesia.
@@ -152,7 +169,9 @@ const FormAspirasi= () => {
               <Textarea
                 radius="md"
                 w={mobile ? "100%" : "75%"}
-                label={<span style={{ fontWeight: "bold" }}>Kolom Aspirasi</span>}
+                label={
+                  <span style={{ fontWeight: "bold" }}>Kolom Aspirasi</span>
+                }
                 placeholder={"Masukkan aspirasi anda"}
                 required
                 autosize
@@ -168,25 +187,28 @@ const FormAspirasi= () => {
                 size={"md"}
                 type={"submit"}
                 isLoading={isLoading}
+                w={mobile ? "100%" : undefined}
               />
             </form>
           )}
         </Grid.Col>
-        <Grid.Col
-          span={{ base: 12, xs: 6 }}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <Image
-            radius={"md"}
-            h={rem(462)}
-            fit="contain"
-            src="/assets/images/frame.png"
-          />
-        </Grid.Col>
+        {mobile ? null : (
+          <Grid.Col
+            span={{ base: 12, xs: 5 }}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Image
+              radius={"md"}
+              h={rem(462)}
+              fit="contain"
+              src="/assets/images/frame.png"
+            />
+          </Grid.Col>
+        )}
       </Grid>
     </Container>
   );

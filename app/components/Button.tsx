@@ -8,7 +8,7 @@ interface ButtonProps {
   radius: string;
   size?: string;
   onClick?: () => void;
-  w?: number;
+  w?: number|undefined|string;
   type?: "button" | "submit" | "reset" | undefined;
   isLoading?:boolean
 }

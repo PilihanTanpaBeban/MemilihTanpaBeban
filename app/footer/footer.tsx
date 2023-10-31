@@ -16,47 +16,49 @@ import {
 import classes from "./footer.module.css";
 import { primaryColor } from "../../public/colors";
 
+const customText =
+  "Pilihan yang Tanpa Beban 2024 https://pilihantanpabeban.id/ @iyctc.id";
 
-const customText = "Pilihan yang Tanpa Beban 2024 https://pilihantanpabeban.id/ @iyctc.id"
-
-const handleShareClick = (platform:string)=> {
+const handleShareClick = (platform: string) => {
   // Create the URL for sharing on the chosen social media platform
   let shareUrl;
 
   switch (platform) {
-    case 'x':
-      shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(customText)}`;
+    case "x":
+      shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+        customText
+      )}`;
       break;
-    case 'threads':
-      shareUrl = `instagram-threads://start?message=${customText}`;
+    case "threads":
+      shareUrl = `instagram-threads://start?message=${encodeURIComponent(customText)}`;
       break;
-    case 'whatsapp':
-      shareUrl = `whatsapp://send?text=${encodeURIComponent(customText)}`;
+    case "whatsapp":
+      shareUrl = `https://wa.me/?text=${encodeURIComponent(customText)}`;
       break;
     default:
-      console.log('Invalid social media platform');
+      console.error("Invalid social media platform");
       return;
   }
 
   // Open a new window or tab with the share URL
-  window.open(shareUrl, '_blank');
+  window.open(shareUrl, "_blank");
 };
 
 export function Footer() {
-
   return (
     <footer
       className={classes.footer}
-      style={{backgroundColor:primaryColor}}
+      style={{ backgroundColor: primaryColor }}
     >
       <Container size="xl" className={classes.inner}>
         <div className={classes.logo}>
           <Text className={classes.title}>Pilihan Tanpa Beban</Text>
           <Text size="md" className={classes.description}>
-            Tentang IYCTC
+            <a href="https://iyctc.id/">Tentang IYCTC</a>
           </Text>
           <Text size="md" className={classes.description}>
-            Disclaimer
+            <a href="/disclaimer">Disclaimer</a>
+            
           </Text>
         </div>
         <Flex
@@ -75,26 +77,40 @@ export function Footer() {
             justify="space-between"
             wrap="nowrap"
           >
-            <ActionIcon size="md" color="white" variant="subtle" onClick={(()=>{
-              handleShareClick("whatsapp")
-            })}>
+            <ActionIcon
+              size="md"
+              color="white"
+              variant="subtle"
+              onClick={() => {
+                handleShareClick("whatsapp");
+              }}
+            >
               <IconBrandWhatsapp
                 style={{ width: rem(28), height: rem(28) }}
                 stroke={1.5}
-                
               />
             </ActionIcon>
-            <ActionIcon size="md" color="white" variant="subtle" onClick={(()=>{
-              handleShareClick("x")
-            })}>
+            <ActionIcon
+              size="md"
+              color="white"
+              variant="subtle"
+              onClick={() => {
+                handleShareClick("x");
+              }}
+            >
               <IconBrandX
                 style={{ width: rem(28), height: rem(28) }}
                 stroke={1.5}
               />
             </ActionIcon>
-            <ActionIcon size="md" color="white" variant="subtle" onClick={(()=>{
-              handleShareClick("threads")
-            })}>
+            <ActionIcon
+              size="md"
+              color="white"
+              variant="subtle"
+              onClick={() => {
+                handleShareClick("threads");
+              }}
+            >
               <IconBrandThreads
                 style={{ width: rem(28), height: rem(28) }}
                 stroke={1.5}

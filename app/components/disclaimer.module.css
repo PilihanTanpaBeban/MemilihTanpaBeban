@@ -1,0 +1,10 @@
+.chevron {
+  &[data-rotate] {
+    transform: rotate(180deg);
+  }
+}
+
+.icon {
+  width: rem(30px);
+  height: rem(30px);
+}

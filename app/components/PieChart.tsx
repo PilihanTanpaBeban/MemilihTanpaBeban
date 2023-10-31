@@ -45,12 +45,15 @@ const PieChart = () => {
 
   const options: any = {
     plugins: {
+      tooltip: {
+        enabled: false // <-- this option disables tooltips
+      },
       datalabels: {
         color: "white",
         font: {
-          size: 24,
+          size: 18,
           family: '"Montserrat", sans-serif',
-          weight:'bold'
+          weight: "bold",
         },
         textAlign: "center", // Align the labels to the center
         formatter: (value: any, context: any) => {

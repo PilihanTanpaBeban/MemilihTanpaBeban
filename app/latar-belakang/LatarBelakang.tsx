@@ -80,7 +80,7 @@ const LatarBelakang = () => {
             kesehatan, Lingkaran Survei Indonesia dan KomnasPT 2023.
           </Text>
         </Grid.Col>
-        <Grid.Col span={{ base: 12, xs: 7 }}>
+        <Grid.Col display={"flex"} style={{alignItems:"center"}} span={{ base: 12, xs: 7 }}>
           <Image
             radius={"md"}
             width={"100%"}

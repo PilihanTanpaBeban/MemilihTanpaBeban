@@ -12,6 +12,8 @@ import {
 } from "@mantine/core";
 import { primaryColor } from "../public/colors";
 import { renderTextWithLineBreaks } from "../app/components/LineBreakRender";
+import {IconChevronDown} from "@tabler/icons-react";
+import classes from "../app/components/disclaimer.module.css"
 
 const charactersList = [
   {
@@ -55,15 +57,15 @@ const charactersList = [
 function DisclaimerPage() {
   const items = charactersList.map((item) => (
     <Accordion.Item key={item.label} value={item.id}>
-      <Accordion.Control py={rem(10)}>
+      <Accordion.Control px={rem(30)} py={rem(10)}>
         <Group>
-          <Image src={`../../assets/images/${item.icon}`}></Image>
-          <Text fw={700} style={{fontSize:rem(24)}} c={primaryColor}>
+          <Image w={50} src={`../../assets/images/${item.icon}`}></Image>
+          <Text fw={700} style={{ fontSize: rem(20) }} c={"black"}>
             {item.label}
           </Text>
         </Group>
       </Accordion.Control>
-      <Accordion.Panel p={rem(16)}>
+      <Accordion.Panel px={rem(16)}>
         {item.content.textBefore != "" && (
           <Text ta={"justify"} fs={rem(16)} lh={1.5}>
             {renderTextWithLineBreaks(item.content.textBefore)}
@@ -93,7 +95,13 @@ function DisclaimerPage() {
         imgFileName={"robby_rpic_1080_1920_px_2_1.webp"}
       ></HeroBgImg>
       <Container size={"lg"} py={rem(70)}>
-        <Accordion variant="separated" radius="lg" defaultValue="1">
+        <Accordion
+          variant="separated"
+          radius="lg"
+          defaultValue="1"
+          classNames={{ chevron: classes.chevron }}
+          chevron={<IconChevronDown className={classes.icon} />}
+        >
           {items}
         </Accordion>
       </Container>

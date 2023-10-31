@@ -8,7 +8,7 @@ export default function ContactUs() {
         data-tally-src="https://tally.so/embed/3qGqD9?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
         loading="lazy"
         width="100%"
-        height="527"
+        height="564"
         frameborder="0"
         marginheight="0"
         marginwidth="0"

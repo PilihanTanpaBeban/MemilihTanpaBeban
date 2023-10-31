@@ -68,8 +68,8 @@ const ContohKasus = () => {
           className={classes.title}
           ta={mobile ? "center" : "justify"}
         >
-          Beberapa Contoh Kasus intervensi industri rokok yang mengakibatkan
-          lemahnya peraturan kesehatan masyarakat di Indonesia antara lain:
+          Beberapa Contoh Kasus Intervensi Industri Rokok yang Mengakibatkan
+          Lemahnya Peraturan Kesehatan Masyarakat di Indonesia Antara Lain:
         </Text>
 
         <Carousel
@@ -77,7 +77,7 @@ const ContohKasus = () => {
           slideSize={{ base: "100%" }}
           slideGap={{ base: rem(2), sm: "xl" }}
           align="start"
-          slidesToScroll={mobile ? 1 : 2}
+          slidesToScroll={1}
           loop
           bg={"white"}
           py={rem(41)}
