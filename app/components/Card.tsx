@@ -57,13 +57,8 @@ const CardMitosFakta: React.FC<CardProps> = ({
             position: "relative",
           }}
         >
-          {[2, 4, 5, 6].includes(id) ? (
-            <Overlay
-              zIndex={0}
-              color="#000"
-              backgroundOpacity={0}
-              blur={4}
-            />
+          {[2, 4, 5, 6, 7].includes(id) ? (
+            <Overlay zIndex={0} color="#000" backgroundOpacity={0} blur={4} />
           ) : null}
           <div
             style={{

@@ -76,17 +76,26 @@ export function Header() {
             display: mobile ? "block" : "none",
           }}
         >
-          <Flex h={"100%"} direction={"column"} align={"center"} justify={"space-between"}>
-            <div>
-              {burgerItems}
-              <SecondaryButton
-                text="Ikuti Kuis"
-                radius="xl"
-                size="md"
-                onClick={open}
-              />
-            </div>
-            <ActionIcon variant="light" radius="md" mb={rem(16)} color={secondaryColor}>
+          <Flex
+            h={"100%"}
+            w={"100%"}
+            direction={"column"}
+            align={"center"}
+            justify={"flex-start"}
+          >
+            {burgerItems}
+            <SecondaryButton
+              text="Ikuti Kuis"
+              radius="xl"
+              size="md"
+              onClick={open}
+            />
+            <ActionIcon
+              variant="light"
+              radius="md"
+              mt={rem(16)}
+              color={secondaryColor}
+            >
               <IconX onClick={toggle} color="white" />
             </ActionIcon>
           </Flex>

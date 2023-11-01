@@ -4,8 +4,6 @@
   background-image: url(/assets/images/hero_image_1.png);
   background-size: cover;
   background-position: center;
-  padding-top: rem(209);
-  padding-bottom: rem(259);
 }
 
 .inner {
@@ -24,7 +22,6 @@
 
   @media (max-width: 600px) {
     font-size: rem(28px);
-    text-align: left;
   }
 }
 
@@ -38,7 +35,7 @@
   font-size: 16px;
 
   @media (max-width: 600px) {
-    font-size: var(--mantine-font-size-md);
+    font-size: var(--mantine-font-size-sm);
     text-align: justify;
   }
 }

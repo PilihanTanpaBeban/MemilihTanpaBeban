@@ -9,6 +9,7 @@ import {
   Flex,
   rem,
   BackgroundImage,
+  AspectRatio,
 } from "@mantine/core";
 import React from "react";
 import classes from "./hero-image-bg.module.css";
@@ -43,7 +44,11 @@ const HeroBgImg: React.FC<TextProps> = ({
       className={classes.wrapper}
       style={{ backgroundColor: primaryColor }}
     >
-      <BackgroundImage src={backgroundImageUrl} pt={pt} pb={pb}>
+      <BackgroundImage
+        src={backgroundImageUrl}
+        pt={mobile ? 90 : pt}
+        pb={mobile ? 90 : pb}
+      >
         <Overlay color={"#120A23"} zIndex={1} />
 
         <Center className={classes.inner} w={"100%"}>
@@ -56,7 +61,7 @@ const HeroBgImg: React.FC<TextProps> = ({
                 <Text
                   style={{
                     fontWeight: 500,
-                    fontSize: mobile?rem(16):rem(32),
+                    fontSize: mobile ? rem(16) : rem(32),
                     textAlign: "center",
                   }}
                 >

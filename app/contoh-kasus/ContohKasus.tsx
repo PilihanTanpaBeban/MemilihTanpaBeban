@@ -80,18 +80,11 @@ const ContohKasus = () => {
           slidesToScroll={1}
           loop
           bg={"white"}
-          py={rem(41)}
+          pt={rem(41)}
           controlSize={50}
         >
           {slides}
         </Carousel>
-        <Text mt={rem(25)} style={{ textAlign: "justify" }}>
-          Media informasi yang menyediakan informasi tentang calon legislatif
-          dan eksekutif yang terafiliasi dengan industri rokok dan pro
-          kesehatan. Informasi ini dapat membantu Anda membuat pilihan politik
-          yang sehat, yaitu pilihan yang didasari oleh informasi yang akurat dan
-          berkualitas.
-        </Text>
       </Container>
     </div>
   );

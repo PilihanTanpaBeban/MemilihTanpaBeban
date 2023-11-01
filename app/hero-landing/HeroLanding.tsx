@@ -1,7 +1,9 @@
-import { Title, Text, Container, Overlay } from "@mantine/core";
+import { Title, Text, Container, Overlay, Group } from "@mantine/core";
 import classes from "./HeroLanding.module.css";
 import { PrimaryButton, SecondaryButton } from "../components/Button";
 import { useEffect } from "react";
+import { useMediaQuery } from "@mantine/hooks";
+import { theme } from "../../theme";
 
 export const HeroImageBackground = () => {
   const scrollToBottom = () => {
@@ -10,9 +12,10 @@ export const HeroImageBackground = () => {
       behavior: "smooth",
     });
   };
+  const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.sm})`);
   return (
-    <div className={classes.wrapper}>
-      <Overlay color="#120A23" zIndex={1} />
+    <Group py={mobile ? 100 : 210} className={classes.wrapper}>
+      <Overlay color="#000" zIndex={1} />
 
       <div className={classes.inner}>
         <Title className={classes.title}>Pilihan Tanpa Beban</Title>
@@ -38,6 +41,6 @@ export const HeroImageBackground = () => {
           />
         </div>
       </div>
-    </div>
+    </Group>
   );
 };

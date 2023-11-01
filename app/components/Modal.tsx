@@ -149,7 +149,7 @@ const ModalDetail: React.FC<ModalDetailProps> = ({ id, isOpen, onClose }) => {
             position: "relative",
           }}
         >
-          {[2, 4, 5, 6].includes(id) ? (
+          {[2, 4, 5, 6, 7].includes(id) ? (
             <Overlay zIndex={0} color="#000" backgroundOpacity={0} blur={4} />
           ) : null}
           <IconX

@@ -31,7 +31,9 @@ const handleShareClick = (platform: string) => {
       )}`;
       break;
     case "threads":
-      shareUrl = `instagram-threads://start?message=${encodeURIComponent(customText)}`;
+      shareUrl = `instagram-threads://start?message=${encodeURIComponent(
+        customText
+      )}`;
       break;
     case "whatsapp":
       shareUrl = `https://wa.me/?text=${encodeURIComponent(customText)}`;
@@ -59,7 +61,6 @@ export function Footer() {
           </Text>
           <Text size="md" className={classes.description}>
             <Link href="/disclaimer">Disclaimer</Link>
-            
           </Text>
         </div>
         <Flex
@@ -100,19 +101,6 @@ export function Footer() {
               }}
             >
               <IconBrandX
-                style={{ width: rem(28), height: rem(28) }}
-                stroke={1.5}
-              />
-            </ActionIcon>
-            <ActionIcon
-              size="md"
-              color="white"
-              variant="subtle"
-              onClick={() => {
-                handleShareClick("threads");
-              }}
-            >
-              <IconBrandThreads
                 style={{ width: rem(28), height: rem(28) }}
                 stroke={1.5}
               />

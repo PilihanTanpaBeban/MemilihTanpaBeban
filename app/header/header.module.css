@@ -45,6 +45,7 @@
   font-weight: 500;
   margin-bottom: 15px;
 
+  width: 100%;
   &:hover {
     background-color: white;
     color: #4f3b78;

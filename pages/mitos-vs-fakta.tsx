@@ -50,7 +50,7 @@ const data = [
     id: 7,
     mitos: "Rokok elektronik lebih aman dari rokok konvensional.",
     fakta:
-      "World Health Organization (WHO) mengistilahkan rokok elektronik sebagai Electronic Nicotine Delivery System (ENDS) karena menghasilkan nikotin dalam bentuk uap yang kemudian dihirup oleh pengguna. Selain ENDS, adapula Heated Tobacco Products (HTP) atau tembakau yang dipanaskan. Kedua produk ini adalah produk baru industri rokok untuk menjual adiksi kepada penggunanya.",
+      "Rokok elektronik sama-sama mengandung nikotin yang bersifat adiktif, dan merupakan faktor risiko kesehatan dari berbagai penyakit katastropik",
   },
   {
     id: 8,

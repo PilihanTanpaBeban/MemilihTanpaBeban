@@ -46,7 +46,11 @@ function Page2024() {
       <Container size={"md"} py={rem(65)}>
         <Grid align={"center"}>
           <Grid.Col p={20} span={{ base: 12, sm: 5 }}>
-            <Title c={primaryColor} fs={rem(48)}>
+            <Title
+              c={primaryColor}
+              fs={rem(48)}
+              ta={mobile ? "center" : "left"}
+            >
               Apakah kalian ingin memiliki pemimpin yang pro terhadap kesehatan?
             </Title>
 
@@ -103,9 +107,9 @@ function Page2024() {
                       height: rem(20),
                     }}
                   ></div>
-                  <Text ml={rem(10)} w={"70%"}>
-                    Jumlah responden yang Ingin memiliki yang pro terhadap
-                    kesehatan
+                  <Text ml={rem(10)} w={"100%"} ta={"justify"}>
+                    Jumlah responden yang ingin memiliki pemimpin yang pro
+                    terhadap kesehatan
                   </Text>
                 </Box>
                 <Box
@@ -123,9 +127,9 @@ function Page2024() {
                       height: rem(20),
                     }}
                   ></div>
-                  <Text ml={rem(10)} w={"70%"}>
-                    Jumlah responden yang tidak ingin memiliki yang pro terhadap
-                    kesehatan
+                  <Text ml={rem(10)} w={"100%"} ta={"left"}>
+                    Jumlah responden yang tidak ingin memiliki pemimpin yang pro
+                    terhadap kesehatan
                   </Text>
                 </Box>
               </Grid.Col>
