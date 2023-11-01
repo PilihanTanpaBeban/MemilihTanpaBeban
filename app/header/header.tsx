@@ -44,9 +44,9 @@ export function Header() {
     </a>
   ));
 
-  const rightPosition = opened ? 0 : -300; // Replace with your colors
+  const rightPosition = opened ? 0 : -600; // Replace with your colors
 
-  const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.sm})`);
+  const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.md})`);
 
   return (
     <header className={classes.header}>
@@ -55,7 +55,7 @@ export function Header() {
         <Group gap={5} visibleFrom="md">
           {items}
           <PrimaryButton
-            text="Ikuti Kuis"
+            text="Kenali Calonmu"
             radius="xl"
             size="md"
             onClick={open}
@@ -68,7 +68,7 @@ export function Header() {
             backgroundColor: primaryColor,
             zIndex: 100,
             position: "fixed",
-            width: "50vw",
+            width: "60vw",
             height: "100vh",
             top: 0,
             right: rightPosition,
@@ -85,7 +85,7 @@ export function Header() {
           >
             {burgerItems}
             <SecondaryButton
-              text="Ikuti Kuis"
+              text="Kenali Calonmu"
               radius="xl"
               size="md"
               onClick={open}

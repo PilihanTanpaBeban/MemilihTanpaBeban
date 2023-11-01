@@ -108,7 +108,7 @@ function Page2024() {
                     }}
                   ></div>
                   <Text ml={rem(10)} w={"100%"} ta={"justify"}>
-                    Jumlah responden yang ingin memiliki pemimpin yang pro
+                    Jumlah pengunjung yang ingin memiliki pemimpin yang pro
                     terhadap kesehatan
                   </Text>
                 </Box>
@@ -128,8 +128,8 @@ function Page2024() {
                     }}
                   ></div>
                   <Text ml={rem(10)} w={"100%"} ta={"left"}>
-                    Jumlah responden yang tidak ingin memiliki pemimpin yang pro
-                    terhadap kesehatan
+                    Jumlah pengunjung yang tidak ingin memiliki pemimpin yang
+                    pro terhadap kesehatan
                   </Text>
                 </Box>
               </Grid.Col>

@@ -2,7 +2,8 @@ import { createTheme } from "@mantine/core";
 
 export const theme = createTheme({
   breakpoints: {
-    sm:"600px"
+    sm:"600px",
+    md:"1115px"
   },
   colors: {
     blue: [
