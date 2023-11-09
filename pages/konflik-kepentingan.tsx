@@ -1,6 +1,7 @@
-import React from 'react';
-import HeroBgImg from '../app/hero-image-bg/hero-image-bg';
-import { rem } from '@mantine/core';
+import React from "react";
+import HeroBgImg from "../app/hero-image-bg/hero-image-bg";
+import { rem } from "@mantine/core";
+import MindMap from "../app/components/MindMap/MindMap";
 
 function KonflikKepentinganPage() {
   return (
@@ -12,6 +13,9 @@ function KonflikKepentinganPage() {
         subtitle={"Nantikan Launching di Pertengahan November"}
         imgFileName={"prodigi_3_1.png"}
       ></HeroBgImg>
+      <div>
+        {/* <MindMap></MindMap> */}
+      </div>
     </>
   );
 }

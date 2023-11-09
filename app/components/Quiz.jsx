@@ -1,7 +1,7 @@
 // pages/contact.jsx
 import Script from "next/script";
 
-export default function ContactUs() {
+export default function Quiz() {
   return (
     <>
       <iframe

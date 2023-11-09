@@ -19,6 +19,7 @@ export default function App({ Component, pageProps }: any) {
           content="minimum-scale=1, initial-scale=1, width=device-width, user-scalable=no"
         />
         <link rel="shortcut icon" href="../assets/images/Favicon.png" />
+        
       </Head>
       <Layout>
         <Component {...pageProps} />

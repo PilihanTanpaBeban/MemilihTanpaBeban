@@ -1,0 +1,7 @@
+.custom-node {
+    display: inline-block; /* Display nodes in a line */
+    margin-right: 20px; /* Add spacing between nodes */
+    border: 1px solid #ccc; /* Add borders for each node */
+    padding: 5px; /* Adjust padding for node content */
+  }
+  

@@ -3,20 +3,23 @@ import {
   Group,
   Burger,
   Modal,
-  Text,
   ActionIcon,
   Flex,
   rem,
+  Button,
+  Center,
 } from "@mantine/core";
 import { useDisclosure, useMediaQuery } from "@mantine/hooks";
 import classes from "./header.module.css";
 import LogoPTB from "../components/logo";
-import { PrimaryButton, SecondaryButton } from "../components/Button";
 import Quiz from "../components/Quiz";
 import { useRouter } from "next/router";
 import { primaryColor, secondaryColor } from "../../public/colors";
 import { IconX } from "@tabler/icons-react";
 import { theme } from "../../theme";
+import { FormEvent, RefObject, useEffect, useRef, useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
+import { PrimaryButton } from "../components/Button";
 
 const links = [
   { link: "/", label: "Home" },
@@ -27,9 +30,58 @@ const links = [
   { link: "https://iyctc.id/", label: "Tentang IYCTC" },
 ];
 
+const CAPTCHA: {
+  [key: string]: string;
+} = {
+  captchaToken: "",
+};
+
 export function Header() {
   const [opened, { toggle }] = useDisclosure(false);
-  const [openModal, { open, close }] = useDisclosure(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [captcha, setCaptcha] = useState(CAPTCHA);
+  const recaptcha: RefObject<ReCAPTCHA> = useRef(null);
+  const [isVerified, setIsVerified] = useState(false);
+
+  const openQuiz = async () => {
+    fetch("/api/enquiry", {
+      method: "POST",
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(captcha),
+    })
+      .then((response) => {
+        console.log("response recieved", response);
+        console.log(JSON.stringify(captcha));
+        if (response.status === 200) {
+          console.log("response succeeded");
+          setIsVerified(true);
+          recaptcha?.current?.reset(); // reset recaptcha after submission
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+  const handleCaptchaChange = (value: string | null) => {
+    if (value) {
+      captcha.captchaToken = value;
+      openQuiz();
+    }
+  };
+
+  const handleModalOpen = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+    router.reload();
+  };
+
   const router = useRouter();
 
   const items = links.map((link) => (
@@ -54,12 +106,15 @@ export function Header() {
         <LogoPTB />
         <Group gap={5} visibleFrom="md">
           {items}
-          <PrimaryButton
-            text="Kenali Calonmu"
+          <Button
+            // text=""
             radius="xl"
             size="md"
-            onClick={open}
-          />
+            onClick={handleModalOpen}
+            color={primaryColor}
+          >
+            Kenali Calonmu
+          </Button>
         </Group>
         <Burger opened={opened} onClick={toggle} hiddenFrom="md" size="sm" />
         <div
@@ -84,12 +139,15 @@ export function Header() {
             justify={"flex-start"}
           >
             {burgerItems}
-            <SecondaryButton
-              text="Kenali Calonmu"
+            <Button
+              // text=""
               radius="xl"
               size="md"
-              onClick={open}
-            />
+              onClick={handleModalOpen}
+              color={secondaryColor}
+            >
+              Kenali Calonmu
+            </Button>
             <ActionIcon
               variant="light"
               radius="md"
@@ -102,14 +160,24 @@ export function Header() {
         </div>
         <Modal
           size="lg"
-          opened={openModal}
-          onClose={() => {
-            close;
-            router.reload();
-          }}
+          opened={isModalOpen}
+          onClose={handleModalClose}
           centered
         >
-          <Quiz />
+          {isVerified ? (
+            // Display the content after captcha is verified
+            <Quiz />
+          ) : (
+            // Display reCAPTCHA widget
+            <Center>
+              <ReCAPTCHA
+                size="normal"
+                sitekey="6Ld9AQcpAAAAADM_zs1tjDsr3-3P0WERBFHoZupy"
+                onChange={handleCaptchaChange}
+                ref={recaptcha}
+              />
+            </Center>
+          )}
         </Modal>
       </Container>
     </header>

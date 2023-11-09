@@ -12,8 +12,9 @@ import {
 } from "@mantine/core";
 import { primaryColor } from "../public/colors";
 import { renderTextWithLineBreaks } from "../app/components/LineBreakRender";
-import {IconChevronDown} from "@tabler/icons-react";
-import classes from "../app/components/disclaimer.module.css"
+import { IconChevronDown } from "@tabler/icons-react";
+import classes from "../app/components/disclaimer.module.css";
+import TitleText from "../app/components/TitleText";
 
 const charactersList = [
   {
@@ -50,6 +51,21 @@ const charactersList = [
       ],
       textAfter:
         "Sumber data yang digunakan, diharapkan dapat mengakomodasi berbagai sudut pandang dan membantu pengunjung situs untuk memahami isu dengan informasi yang akurat.\nSebagai bentuk pertanggungjawaban, tim penulis mencantumkan semua sumber yang digunakan dalam penulisan yang dapat dilihat pada pautan kata.",
+    },
+  },
+
+  {
+    id: "3",
+    icon: "mail.png",
+    label: "1.3. Metode Pengumpulan Data",
+    content: {
+      textBefore: "",
+      list: [
+        "Periode pengumpulan data dilaksanakan selama bulan Agustus 2023 - November 2023",
+        "Kami mengirimkan surat konfirmasi untuk validasi data dan pernyataan yang didapatkan dari media kepada nama-nama yang tercantum dalam situs ini.",
+      ],
+      textAfter:
+        "IYCTC bukanlah satu-satunya organisasi yang mengawal Pemilu 2024. Jika kamu tertarik untuk mendalami isu pemilu lebih jauh dari berbagai macam sudut pandang, berikut adalah rekomendasi tautan yang bisa kamu buka:\nRekam jejak (tanya dan minta logo)\nBijak Memilih (tanya dan minta logo)\nRumah Pemilu (Perludem)",
     },
   },
 ];
@@ -94,7 +110,23 @@ function DisclaimerPage() {
         text={"Disclaimer"}
         imgFileName={"robby_rpic_1080_1920_px_2_1.webp"}
       ></HeroBgImg>
-      <Container size={"lg"} py={rem(70)}>
+      <Container size={"lg"} pt={rem(35)} pb={rem(70)}>
+        <Text mb={rem(24)}>
+          Isu pengendalian konsumsi rokok memang sudah lama pembahasannya.
+          Sayangnya, belum belum banyak tokoh politik yang cukup berani untuk
+          bersuara dan membela kepentingan kesehatan masyarakat. Pemilu 2024
+          adalah momentum penting bagi orang muda Indonesia untuk mencari lebih
+          banyak tokoh politik yang berani berbicara soal masalah kesehatan dan
+          konsumsi rokok.
+        </Text>
+        <TitleText text={"Landasan hukum"} size={"18px"}></TitleText>
+        <Text my={rem(24)}>
+          Situs ini adalah bentuk kebebasan berekspresi warga negara yang
+          tercantum pada Pasal 28E ayat (3) Undang-Undang Dasar Negara Republik
+          Indonesia Tahun 1945 (selanjutnya disebut UUD NRI 1945) yang
+          mengamanatkan, “Setiap orang berhak atas kebebasan berserikat,
+          berkumpul, dan mengeluarkan pendapat”.
+        </Text>
         <Accordion
           variant="separated"
           radius="lg"
