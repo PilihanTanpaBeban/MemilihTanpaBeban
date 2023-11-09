@@ -9,8 +9,6 @@ export default async function handler(
   // ... (existing transporter setup and mailData)
   // Validate the reCAPTCHA token on the server-side
   try {
-    console.log('API client')
-    console.log(req.body);
     const response = await axios.post(
       `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.REACT_APP_SECRET_KEY}&response=${req.body.captchaToken}`
     );
@@ -21,7 +19,6 @@ export default async function handler(
       res.status(400).send("reCAPTCHA verification failed.");
     }
   } catch (error) {
-    console.error(error);
     res.status(500).send("Internal server error");
   }
 }

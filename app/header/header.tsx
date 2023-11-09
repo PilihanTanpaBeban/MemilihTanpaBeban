@@ -53,10 +53,7 @@ export function Header() {
       body: JSON.stringify(captcha),
     })
       .then((response) => {
-        console.log("response recieved", response);
-        console.log(JSON.stringify(captcha));
         if (response.status === 200) {
-          console.log("response succeeded");
           setIsVerified(true);
           recaptcha?.current?.reset(); // reset recaptcha after submission
         }
