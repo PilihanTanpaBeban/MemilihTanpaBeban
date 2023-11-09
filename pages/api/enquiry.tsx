@@ -10,7 +10,7 @@ export default async function handler(
   // Validate the reCAPTCHA token on the server-side
   try {
     const response = await axios.post(
-      `https://www.google.com/recaptcha/api/siteverify?secret=6Ld9AQcpAAAAABq1HJv-A8ugkEAqzjDwgXSxYoN3&response=${req.body.captchaToken}`
+      `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.REACT_APP_SECRET_KEY}&response=${req.body.captchaToken}`
     );
     if (response.data.success) {
       res.status(200).end();
