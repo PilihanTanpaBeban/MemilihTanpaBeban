@@ -39,36 +39,36 @@ const CAPTCHA: {
 export function Header() {
   const [opened, { toggle }] = useDisclosure(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  // const [captcha, setCaptcha] = useState(CAPTCHA);
-  // const recaptcha: RefObject<ReCAPTCHA> = useRef(null);
-  // const [isVerified, setIsVerified] = useState(false);
+  const [captcha, setCaptcha] = useState(CAPTCHA);
+  const recaptcha: RefObject<ReCAPTCHA> = useRef(null);
+  const [isVerified, setIsVerified] = useState(false);
 
-  // const openQuiz = async () => {
-  //   fetch("/api/enquiry", {
-  //     method: "POST",
-  //     headers: {
-  //       Accept: "application/json, text/plain, */*",
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(captcha),
-  //   })
-  //     .then((response) => {
-  //       if (response.status === 200) {
-  //         setIsVerified(true);
-  //         recaptcha?.current?.reset(); // reset recaptcha after submission
-  //       }
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
-  //     });
-  // };
+  const openQuiz = async () => {
+    fetch("/api/enquiry", {
+      method: "POST",
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(captcha),
+    })
+      .then((response) => {
+        if (response.status === 200) {
+          setIsVerified(true);
+          recaptcha?.current?.reset(); // reset recaptcha after submission
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
 
-  // const handleCaptchaChange = (value: string | null) => {
-  //   if (value) {
-  //     captcha.captchaToken = value;
-  //     openQuiz();
-  //   }
-  // };
+  const handleCaptchaChange = (value: string | null) => {
+    if (value) {
+      captcha.captchaToken = value;
+      openQuiz();
+    }
+  };
 
   const handleModalOpen = () => {
     setIsModalOpen(true);
@@ -161,8 +161,8 @@ export function Header() {
           onClose={handleModalClose}
           centered
         >
-        <Quiz />
-          {/* {isVerified ? (
+        {/* <Quiz /> */}
+          {isVerified ? (
             // Display the content after captcha is verified
 
             <Quiz />
@@ -176,7 +176,7 @@ export function Header() {
                 ref={recaptcha}
               />
             </Center>
-          )} */}
+          )}
         </Modal>
       </Container>
     </header>
