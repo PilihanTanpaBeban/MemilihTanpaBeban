@@ -6,7 +6,6 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> {
-  // ... (existing transporter setup and mailData)
   // Validate the reCAPTCHA token on the server-side
   try {
     const response = await axios.post(
