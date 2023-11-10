@@ -22,13 +22,18 @@ export const HeroImageBackground = () => {
 
         <Container mt={20} size={640}>
           <Text className={classes.description}>
-            Situs ini bertujuan untuk mengedukasi dan membuka wawasan para
+            {/* Situs ini bertujuan untuk mengedukasi dan membuka wawasan para
             pengunjung mengenai konflik kepentingan yang mungkin terjadi pada
             calon anggota legislatif, calon eksekutif, para incumbent baik di
             tingkat legislatif maupun eksekutif, dengan industri rokok. Agar,
             para pengunjung dapat lebih mengenal para calon yang benar-benar
             memihak kepentingan masyarakat, dan menggunakan hak pilih dengan
-            lebih bijak.
+            lebih bijak. */}
+            Pernah gak kamu kepikiran kalau satu batang rokok yang diperjual-belikan 
+            punya banyak potensi konflik kepentingan dalam politik? <br /><br />
+
+            Website ini akan ngebantu kamu untuk melihat fenomena politik dan 
+            rokok dalam satu platform informasi menjelang Pemilu 2024.
           </Text>
         </Container>
 
