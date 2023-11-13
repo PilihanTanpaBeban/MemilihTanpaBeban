@@ -92,7 +92,7 @@ export function Header() {
     </a>
   ));
 
-  const rightPosition = opened ? 0 : -800; // Replace with your colors
+  const rightPosition = opened ? 0 : -700; // Replace with your colors
 
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.md})`);
 
@@ -100,7 +100,7 @@ export function Header() {
     <header className={classes.header}>
       <Container size="xl" className={classes.inner}>
         <LogoPTB />
-        <Group gap={5} visibleFrom="xl">
+        <Group gap={5} visibleFrom="md">
           {items}
           <Button
             // text=""
@@ -112,14 +112,14 @@ export function Header() {
             Kenali Calonmu
           </Button>
         </Group>
-        <Burger opened={opened} onClick={toggle} hiddenFrom="xl" size="sm" />
+        <Burger opened={opened} onClick={toggle} hiddenFrom="md" size="sm" />
         <div
           style={{
             textAlign: "center",
             backgroundColor: primaryColor,
             zIndex: 100,
             position: "fixed",
-            width: "60vw",
+            width: "50vw",
             height: "100vh",
             top: 0,
             right: rightPosition,
