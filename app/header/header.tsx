@@ -24,7 +24,7 @@ const links = [
   { link: "/", label: "Home" },
   { link: "/disclaimer", label: "Disclaimer" },
   { link: "/mitos-vs-fakta", label: "Mitos vs Fakta" },
-  { link: "/konflik-kepentingan", label: "Konflik Kepentingan" },
+  { link: "/konflik-kepentingan", label: "Potensi Konflik Kepentingan" },
   { link: "/20-24", label: "20.24" },
   { link: "https://iyctc.id/", label: "Tentang IYCTC" },
 ];
@@ -38,36 +38,36 @@ const CAPTCHA: {
 export function Header() {
   const [opened, { toggle }] = useDisclosure(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  // const [captcha, setCaptcha] = useState(CAPTCHA);
-  // const recaptcha: RefObject<ReCAPTCHA> = useRef(null);
-  // const [isVerified, setIsVerified] = useState(false);
+  const [captcha, setCaptcha] = useState(CAPTCHA);
+  const recaptcha: RefObject<ReCAPTCHA> = useRef(null);
+  const [isVerified, setIsVerified] = useState(false);
 
-  // const openQuiz = async () => {
-  //   fetch("/api/enquiry", {
-  //     method: "POST",
-  //     headers: {
-  //       Accept: "application/json, text/plain, */*",
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(captcha),
-  //   })
-  //     .then((response) => {
-  //       if (response.status === 200) {
-  //         setIsVerified(true);
-  //         recaptcha?.current?.reset(); // reset recaptcha after submission
-  //       }
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
-  //     });
-  // };
+  const openQuiz = async () => {
+    fetch("/api/enquiry", {
+      method: "POST",
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(captcha),
+    })
+      .then((response) => {
+        if (response.status === 200) {
+          setIsVerified(true);
+          recaptcha?.current?.reset(); // reset recaptcha after submission
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
 
-  // const handleCaptchaChange = (value: string | null) => {
-  //   if (value) {
-  //     captcha.captchaToken = value;
-  //     openQuiz();
-  //   }
-  // };
+  const handleCaptchaChange = (value: string | null) => {
+    if (value) {
+      captcha.captchaToken = value;
+      openQuiz();
+    }
+  };
 
   const handleModalOpen = () => {
     setIsModalOpen(true);
@@ -92,7 +92,7 @@ export function Header() {
     </a>
   ));
 
-  const rightPosition = opened ? 0 : -600; // Replace with your colors
+  const rightPosition = opened ? 0 : -800; // Replace with your colors
 
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.md})`);
 
@@ -100,7 +100,7 @@ export function Header() {
     <header className={classes.header}>
       <Container size="xl" className={classes.inner}>
         <LogoPTB />
-        <Group gap={5} visibleFrom="md">
+        <Group gap={5} visibleFrom="xl">
           {items}
           <Button
             // text=""
@@ -112,7 +112,7 @@ export function Header() {
             Kenali Calonmu
           </Button>
         </Group>
-        <Burger opened={opened} onClick={toggle} hiddenFrom="md" size="sm" />
+        <Burger opened={opened} onClick={toggle} hiddenFrom="xl" size="sm" />
         <div
           style={{
             textAlign: "center",

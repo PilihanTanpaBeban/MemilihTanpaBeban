@@ -14,7 +14,7 @@ function KonflikKepentinganPage() {
         imgFileName={"prodigi_3_1.png"}
       ></HeroBgImg>
       <div>
-        {/* <MindMap></MindMap> */}
+        {/* <MindMap/> */}
       </div>
     </>
   );

@@ -1,81 +1,115 @@
-import React, { useEffect } from "react";
+// Import the necessary modules
+import React, { useEffect, useCallback } from "react";
+import ReactFlow, {
+  useNodesState,
+  useEdgesState,
+  addEdge,
+  Controls,
+  MiniMap,
+} from "reactflow";
+import "reactflow/dist/style.css";
 
-// Define your mind map data
-const mindData = {
-  meta: {
-    name: "jsMind remote",
-    author: "hizzgdev@163.com",
-    version: "0.2",
-  },
-  format: "node_tree",
-  data: {
-    id: "root",
-    topic: "jsMind",
-    children: [
-      {
-        id: "easy",
-        topic: "Easy",
-        children: [
-          { id: "easy1", topic: "Easy to show" },
-          { id: "easy2", topic: "Easy to edit" },
-          { id: "easy3", topic: "Easy to store" },
-          { id: "easy4", topic: "Easy to embed" },
-        ],
-      },
-      {
-        id: "open",
-        topic: "Open Source",
-        children: [
-          { id: "open1", topic: "on GitHub" },
-          { id: "open2", topic: "BSD License" },
-        ],
-      },
-      {
-        id: "powerful",
-        topic: "Powerful",
-        children: [
-          { id: "powerful1", topic: "Base on Javascript" },
-          { id: "powerful2", topic: "Base on HTML5" },
-          { id: "powerful3", topic: "Depends on you" },
-        ],
-      },
-      {
-        id: "other",
-        topic: "test node",
-        children: [
-          { id: "other1", topic: "I'm from local variable" },
-          { id: "other2", topic: "I can do everything" },
-        ],
-      },
-    ],
-  },
+import ImageNode from "./imageNode";
+import RootNode from "./RootNode";
+import { Center, rem } from "@mantine/core";
+import { primaryColor } from "../../../public/colors";
+import DetailNode from "./DetailNode";
+import {listPejabat} from "./DetailPejabat";
+
+const nodeTypes = {
+  imageNode: ImageNode,
+  rootNode: RootNode,
+  default: DetailNode,
 };
 
+const urlImage = "../../../public/images/photos"
+
+const defaultViewport = { x: 0, y: 0, zoom: 1.5 };
+
 const MindMap = () => {
+  const [nodes, setNodes, onNodesChange] = useNodesState([]);
+  const [edges, setEdges, onEdgesChange] = useEdgesState([]);
+
   useEffect(() => {
-    // Load the JS-Mind script
-    const script = document.createElement("script");
-    script.src = "https://unpkg.com/jsmind@0.7.5/es6/jsmind.js"; // Link to the JS-Mind JavaScript file via CDN
-    script.async = true;
-    document.body.appendChild(script);
+    setNodes([
+      {
+        id: "1",
+        type: "rootNode",
+        data: {
+          size: "big",
+          title: "Legislatif",
+        },
+        position: { x: 0, y: 0 },
+      },
+      {
+        id: "2",
+        type: "rootNode",
+        data: {
+          size: "small",
+          title: "Komisi IX",
+          label: "(Kesehatan, Ketenagakerjaan, Kependudukan)",
+        },
+        position: { x: 285, y: 480 },
+      },
+      {
+        id: "3",
+        type: "imageNode",
+        data: {
+          image: {
+            url: `${urlImage}/prodigi_3_1.png`,
+            height: 50,
+            width: 40,
+          },
+          label: listPejabat[0].legislatif[0].komisi,
+        },
+        position: { x: 400, y: 675 },
+      },
+    ]);
 
-    script.onload = () => {
-      const options = {
-        container: "jsmind_container",
-        editable: true,
-        theme: "orange",
-      };
-      const jm = new jsMind(options);
+    setEdges([
+      {
+        id: "e1a-1",
+        source: "1",
+        target: "2",
+        type: "straight",
+        style: { stroke: primaryColor },
+      },
+      {
+        id: "e2a-3",
+        source: "2",
+        target: "3",
+        type: "straight",
+        style: { stroke: primaryColor },
+      },
+    ]);
+  }, [setEdges, setNodes]);
 
-      // Use the show method to display the mind map
-      jm.show(mindData);
-    };
-  }, []);
+  const onConnect = useCallback(
+    (params: any) =>
+      setEdges((eds) =>
+        addEdge({ ...params, animated: true, style: { stroke: "#fff" } }, eds)
+      ),
+    [setEdges]
+  );
 
   return (
-    <div>
-      <div id="jsmind_container"></div>
-    </div>
+    <Center w={"100vw"} h={"100vh"}>
+      <ReactFlow
+        nodes={nodes}
+        edges={edges}
+        onNodesChange={onNodesChange}
+        onEdgesChange={onEdgesChange}
+        onConnect={onConnect}
+        nodeTypes={nodeTypes}
+        snapToGrid={true}
+        defaultViewport={defaultViewport}
+        fitView
+        attributionPosition="bottom-left"
+      >
+        <MiniMap style={{ height: rem(120) }} zoomable pannable />
+        <Controls />
+      </ReactFlow>
+    </Center>
   );
 };
 

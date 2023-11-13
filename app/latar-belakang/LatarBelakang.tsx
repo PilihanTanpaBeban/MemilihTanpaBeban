@@ -128,14 +128,14 @@ const LatarBelakang = () => {
         <TitleText text={"Latar Belakang"} size={"32px"}></TitleText>
       </Center>
       <Grid gutter="lg">
-        <Grid.Col span={{ base: 12, xs: 6 }}>
+        <Grid.Col span={{ base: 12, xs: 6 }} >
           <Text
             style={{
               fontSize: rem(50),
               color: primaryColor,
               fontWeight: "800",
-              textAlign: "left"
-            }}
+              textAlign: mobile?"center":"left"
+            }} 
           >
             139,5 Triliun
           </Text>
@@ -145,7 +145,7 @@ const LatarBelakang = () => {
               fontWeight: "800",
               lineHeight: "1",
               wordWrap: "break-word",
-              textAlign: "left"
+              textAlign: mobile?"center":"left"
             }}
           >
             Cukai rokok yang diterima negara
@@ -165,7 +165,7 @@ const LatarBelakang = () => {
               fontSize: rem(50),
               color: primaryColor,
               fontWeight: "800",
-              textAlign: "right"
+              textAlign: mobile?"center":"right"
             }}
           >
             596,19 Triliun
@@ -176,7 +176,7 @@ const LatarBelakang = () => {
               fontWeight: "800",
               lineHeight: "1",
               wordWrap: "break-word",
-              textAlign: "right"
+              textAlign: mobile?"center":"right"
             }}
           >
             Beban yang ditanggung negara akibat rokok
@@ -210,8 +210,9 @@ const LatarBelakang = () => {
         <Grid.Col style={{alignItems:"center"}} span={{ base: 12, xs: 12 }}>
           <Text
             fw={800}
+            c={primaryColor}
             style={{
-              textAlign: mobile? "center" : "justify",
+              textAlign: "center",
               fontSize: rem(35)
             }}
           >
@@ -243,6 +244,7 @@ const LatarBelakang = () => {
               textAlign:"center",
               fontSize: rem(25)
             }}
+            mb={rem(24)}
           >
             Dampak dari rokok...
           </Text>

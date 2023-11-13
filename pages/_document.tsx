@@ -6,6 +6,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <ColorSchemeScript />
+        <link type="text/css" rel="stylesheet" href="https://unpkg.com/jsmind@0.7.5/style/jsmind.css" />
       </Head>
       <body>
         <Main />

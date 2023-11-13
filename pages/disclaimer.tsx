@@ -65,7 +65,12 @@ const charactersList = [
         "Kami mengirimkan surat konfirmasi untuk validasi data dan pernyataan yang didapatkan dari media kepada nama-nama yang tercantum dalam situs ini.",
       ],
       textAfter:
-        "IYCTC bukanlah satu-satunya organisasi yang mengawal Pemilu 2024. Jika kamu tertarik untuk mendalami isu pemilu lebih jauh dari berbagai macam sudut pandang, berikut adalah rekomendasi tautan yang bisa kamu buka:\nRekam jejak (tanya dan minta logo)\nBijak Memilih (tanya dan minta logo)\nRumah Pemilu (Perludem)",
+        "IYCTC bukanlah satu-satunya organisasi yang mengawal Pemilu 2024. Jika kamu tertarik untuk mendalami isu pemilu lebih jauh dari berbagai macam sudut pandang, berikut adalah rekomendasi tautan yang bisa kamu buka:",
+      link: [
+        { name: "Rekam jejak", link: "https://www.rekamjejak.net/" },
+        { name: "Bijak Memilih", link: "https://www.bijakmemilih.id/" },
+        { name: "Rumah Pemilu", link: "https://rumahpemilu.org/" },
+      ],
     },
   },
 ];
@@ -98,6 +103,17 @@ function DisclaimerPage() {
           <Text ta={"justify"} fs={rem(16)}>
             {renderTextWithLineBreaks(item.content.textAfter)}
           </Text>
+        )}
+        {item.content.link != null && (
+          <List mb={rem(16)}>
+            {item.content.link.map((linkItem) => (
+              <List.Item mb={rem(16)} key={linkItem.name}>
+                <a style={{textDecoration:"none"}} href={linkItem.link} target={"_blank"}>
+                  {linkItem.name}
+                </a>
+              </List.Item>
+            ))}
+          </List>
         )}
       </Accordion.Panel>
     </Accordion.Item>
