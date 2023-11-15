@@ -39,7 +39,7 @@ function Page2024() {
         pt={rem(250)}
         pb={rem(300)}
         text={"Coming Soon!"}
-        subtitle={"Nantikan Launching di Pertengahan November"}
+        subtitle={"Nantikan Launching di Akhir 2023"}
         imgFileName={"meeting.png"}
       ></HeroBgImg>
 

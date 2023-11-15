@@ -81,7 +81,7 @@ function MitosVsFaktaPage() {
       <HeroBgImg
         pt={rem(250)}
         pb={rem(250)}
-        text={"Mitos dan Fakta\nSeputar Rokok"}
+        text={"Cek Fakta\nSeputar Rokok"}
         imgFileName={"prodigi_1.png"}
       ></HeroBgImg>
       <Group py={rem(83)} style={{ backgroundColor: bgGrayColor }}>

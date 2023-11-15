@@ -222,7 +222,7 @@ const LatarBelakang = () => {
             mt={20}
             width={"100%"}
             fit="none"
-            src="/assets/images/rokok.png"
+            src="/assets/images/Rokok.png"
           />
           <Text
             fw={400}

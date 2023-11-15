@@ -29,7 +29,6 @@ const FormAspirasi = () => {
 
   const form = useForm({
     initialValues: {
-      name: "",
       email: "",
       age: null,
       city: "",
@@ -54,7 +53,6 @@ const FormAspirasi = () => {
     // Submit the form data using fetch or another method
     const formData = new FormData();
 
-    formData.append("Nama", form.values.name);
     formData.append("Email", form.values.email);
     formData.append("Umur", String(form.values.age));
     formData.append("Kota/Kabupaten Domisili", form.values.city);
@@ -121,20 +119,11 @@ const FormAspirasi = () => {
             </Group>
           ) : (
             <form onSubmit={form.onSubmit(handleSubmit)}>
-              <TextInput
-                withAsterisk
-                radius="md"
-                mt={rem(8)}
-                w={mobile ? "100%" : "75%"}
-                label={<span style={{ fontWeight: "bold" }}>Nama</span>}
-                required
-                {...form.getInputProps("name")}
-              />
 
               <TextInput
                 withAsterisk
                 radius="md"
-                mt={rem(8)}
+                mt={rem(14)}
                 w={mobile ? "100%" : "75%"}
                 label={<span style={{ fontWeight: "bold" }}>Email</span>}
                 required
