@@ -36,8 +36,8 @@ const HeroVector: React.FC<TextProps> = ({ text, imgFileName, pt, pb }) => {
     <Group
       className={classes.wrapper}
       style={{ backgroundColor: lightPurple }}
-      pt={60}
-      pb={60}
+      pt={mobile?60:0}
+      pb={mobile?60:0}
     >
       <Container size={"xl"}>
         <Flex

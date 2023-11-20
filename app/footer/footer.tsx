@@ -57,7 +57,7 @@ export function Footer() {
         <div className={classes.logo}>
           <Text className={classes.title}>Pilihan Tanpa Beban</Text>
           <Text size="md" className={classes.description}>
-            <Link href="https://www.instagram.com/iyctc.id/">Tentang IYCTC</Link>
+            <Link href="https://www.instagram.com/iyctc.id/" target="_blank">Tentang IYCTC</Link>
           </Text>
           <Text size="md" className={classes.description}>
             <Link href="/disclaimer">Disclaimer</Link>

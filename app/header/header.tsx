@@ -81,7 +81,7 @@ export function Header() {
   const router = useRouter();
 
   const items = links.map((link) => (
-    <a key={link.label} href={link.link} className={classes.link}>
+    <a key={link.label} href={link.link} target={link.label=="Tentang IYCTC"?"_blank":""} className={classes.link}>
       <strong>{link.label}</strong>
     </a>
   ));
