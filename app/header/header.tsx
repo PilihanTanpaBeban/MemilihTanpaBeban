@@ -26,7 +26,7 @@ const links = [
   { link: "/mitos-vs-fakta", label: "Cek Fakta" },
   { link: "/konflik-kepentingan", label: "Potensi Konflik Kepentingan" },
   { link: "/20-24", label: "20.24" },
-  { link: "https://iyctc.id/", label: "Tentang IYCTC" },
+  { link: "https://www.instagram.com/iyctc.id/", label: "Tentang IYCTC" },
 ];
 
 const CAPTCHA: {

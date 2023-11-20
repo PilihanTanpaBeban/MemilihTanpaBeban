@@ -15,6 +15,7 @@ import { renderTextWithLineBreaks } from "../app/components/LineBreakRender";
 import { IconChevronDown } from "@tabler/icons-react";
 import classes from "../app/components/disclaimer.module.css";
 import TitleText from "../app/components/TitleText";
+import HeroVector from "../app/hero-vector/HeroVector";
 
 const charactersList = [
   {
@@ -108,7 +109,11 @@ function DisclaimerPage() {
           <List mb={rem(16)}>
             {item.content.link.map((linkItem) => (
               <List.Item mb={rem(16)} key={linkItem.name}>
-                <a style={{textDecoration:"none"}} href={linkItem.link} target={"_blank"}>
+                <a
+                  style={{ textDecoration: "none" }}
+                  href={linkItem.link}
+                  target={"_blank"}
+                >
                   {linkItem.name}
                 </a>
               </List.Item>
@@ -120,12 +125,12 @@ function DisclaimerPage() {
   ));
   return (
     <>
-      <HeroBgImg
-        pt={rem(153)}
-        pb={rem(145)}
+      <HeroVector
+        pt={rem(70)}
+        pb={rem(0)}
         text={"Disclaimer"}
-        imgFileName={"robby_rpic_1080_1920_px_2_1.webp"}
-      ></HeroBgImg>
+        imgFileName={"disclaimer_hero.png"}
+      ></HeroVector>
       <Container size={"lg"} pt={rem(35)} pb={rem(70)}>
         <Text mb={rem(24)}>
           Isu pengendalian konsumsi rokok memang sudah lama pembahasannya.

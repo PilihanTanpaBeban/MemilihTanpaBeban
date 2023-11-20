@@ -1,0 +1,24 @@
+.wrapper {
+  height: auto;
+  position: relative;
+}
+
+
+.inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.title {
+  font-weight: 800;
+  font-size: rem(64px);
+  letter-spacing: rem(-1px);
+  text-align: left;
+  line-height: .6;
+
+  @media (max-width: 600px) {
+    font-size: rem(28px);
+    text-align: center;
+  }
+}

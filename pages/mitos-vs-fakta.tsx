@@ -3,6 +3,7 @@ import HeroBgImg from "../app/hero-image-bg/hero-image-bg";
 import { Text, Container, Grid, Group, Paper, rem } from "@mantine/core";
 import { bgGrayColor } from "../public/colors";
 import CardMitosFakta from "../app/components/Card";
+import HeroVector from "../app/hero-vector/HeroVector";
 
 const data = [
   {
@@ -78,12 +79,13 @@ const slides = data.map((data) => (
 function MitosVsFaktaPage() {
   return (
     <>
-      <HeroBgImg
-        pt={rem(250)}
-        pb={rem(250)}
-        text={"Cek Fakta\nSeputar Rokok"}
-        imgFileName={"prodigi_1.png"}
-      ></HeroBgImg>
+      {" "}
+      <HeroVector
+        pt={rem(70)}
+        pb={rem(70)}
+        text={"Cek Fakta"}
+        imgFileName={"fakta_hero.png"}
+      ></HeroVector>
       <Group py={rem(83)} style={{ backgroundColor: bgGrayColor }}>
         <Container size={"lg"}>
           <Grid gutter={{ base: 5, xs: "md", md: "lg", xl: 30 }}>{slides}</Grid>
