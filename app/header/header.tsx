@@ -23,7 +23,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 const links = [
   { link: "/", label: "Home" },
   { link: "/disclaimer", label: "Disclaimer" },
-  { link: "/mitos-vs-fakta", label: "Cek Fakta" },
+  { link: "/cek-fakta", label: "Cek Fakta" },
   { link: "/konflik-kepentingan", label: "Potensi Konflik Kepentingan" },
   { link: "/20-24", label: "20.24" },
   { link: "https://www.instagram.com/iyctc.id/", label: "Tentang IYCTC" },

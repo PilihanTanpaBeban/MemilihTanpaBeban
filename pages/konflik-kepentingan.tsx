@@ -13,9 +13,9 @@ function KonflikKepentinganPage() {
         subtitle={"Nantikan Launching di Akhir 2023"}
         imgFileName={"prodigi_3_1.png"}
       ></HeroBgImg>
-      <div>
-        {/* <MindMap/> */}
-      </div>
+      {/* <div>
+        <MindMap/>
+      </div> */}
     </>
   );
 }

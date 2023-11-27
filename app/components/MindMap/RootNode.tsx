@@ -1,7 +1,7 @@
 import { Center,Group,Text, rem } from "@mantine/core";
 import React from "react";
 import { Handle, Position } from "reactflow";
-import { secondaryColor } from "../../../public/colors";
+import { lightPurple, primaryColor, secondaryColor } from "../../../public/colors";
 
 interface RootNodeProps {
   data: any;
@@ -12,46 +12,46 @@ const RootNode: React.FC<RootNodeProps> = ({ data, isConnectable }) => {
   return (
     <>
       <Handle
-        type="target"
+        type="source"
         position={Position.Top}
-        onConnect={(params) => console.log("handle onConnect", params)}
         isConnectable={isConnectable}
+        id="a"
       />
       <Handle
-        type="target"
-        position={Position.Left}
-        onConnect={(params) => console.log("handle onConnect", params)}
+        type="source"
+        position={Position.Right}
         isConnectable={isConnectable}
+        id="b"
+      />
+      <Handle
+        type="source"
+        position={Position.Bottom}
+        isConnectable={isConnectable}
+        id="c"
+      />
+      <Handle
+        type="source"
+        position={Position.Left}
+        isConnectable={isConnectable}
+        id="d"
       />
       <Group
         style={{
-          height: data.label?"50px":"100px",
-          width: data.label?"50px":"100px",
-          borderRadius: "100px",
+          padding: "50px",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
           textAlign:"center",
-          gap:0
+          borderRadius:"25px",
+          gap:0,
+          boxShadow:"23px 15px 39px 0px #F7FAFF"
         }}
-        bg={secondaryColor}
-        c={'#fff'}
+        bg={lightPurple}
+        c={primaryColor}
       >
-        <Text style={{fontSize:data.label?rem(5):rem(8)}} fw={"bold"}>{data.title}</Text>
-        <Text style={{fontSize:rem(4)}}>{data.label}</Text>
+        <Text style={{fontSize:data.label?rem(10):rem(14)}} fw={"bold"}>{data.title}</Text>
+        <Text style={{fontSize:rem(10)}}>{data.label}</Text>
       </Group>
-      <Handle
-        type="source"
-        position={Position.Right}
-        id="a"
-        isConnectable={isConnectable}
-      />
-      <Handle
-        type="target"
-        position={Position.Bottom}
-        onConnect={(params) => console.log("handle onConnect", params)}
-        isConnectable={isConnectable}
-      />
     </>
   );
 };

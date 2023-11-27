@@ -49,7 +49,7 @@ const data = [
     ],
     mitos: "Rokok bukan candu.",
     fakta:
-      'Industri rokok justru mengatur kadar nikotin dalam rokok agar perokok tetap ketagihan, dan Nikotin sama candunya dengan heroin, kokain, dan amfetamin. Penjualan produk "mild" yang diklaim lebih aman juga tidak didukung dengan penelitian ilmiah yang membuktikan kalau produk ini lebih aman.\nPenjualan  produk “mild” yang diklaim lebih aman juga tidak didukung dengan penelitian ilmiah yang membuktikan kalau produk ini lebih aman. Faktanya di lapangan, mereka yang merokok "mild" mengonsumsi lebih banyak batang per harinya dan menghisap lebih dalam asapnya.\nSetiap tahun, sekitar 225.700 orang di Indonesia meninggal akibat merokok atau penyakit lain yang berkaitan dengan konsumsi rokok (WHO, 2020).',
+      'Industri rokok justru mengatur kadar nikotin dalam rokok agar perokok tetap ketagihan, dan Nikotin sama candunya dengan heroin, kokain, dan amfetamin. Penjualan  produk “mild” yang diklaim lebih aman juga tidak didukung dengan penelitian ilmiah yang membuktikan kalau produk ini lebih aman. Faktanya di lapangan, mereka yang merokok "mild" mengonsumsi lebih banyak batang per harinya dan menghisap lebih dalam asapnya.\nSetiap tahun, sekitar 225.700 orang di Indonesia meninggal akibat merokok atau penyakit lain yang berkaitan dengan konsumsi rokok (WHO, 2020).\nBadan Narkotika Nasional, melalui informasi pada situsnya menyebutkan, sebenarnya nikotin pada rokok merupakan salah satu zat psikotropika stimulan. Oleh karenanya rokok sebenarnya sudah masuk kategori narkotika jenis rendah.',
   },
   {
     id: 3,

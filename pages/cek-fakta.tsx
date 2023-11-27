@@ -17,7 +17,7 @@ const data = [
     id: 2,
     mitos: "Rokok bukan candu.",
     fakta:
-      "Industri rokok justru mengatur kadar nikotin dalam rokok agar perokok tetap ketagihan, dan Nikotin sama candunya dengan heroin, kokain, dan amfetamin. Penjualan produk “mild” yang diklaim lebih aman juga tidak didukung dengan penelitian ilmiah yang membuktikan kalau produk ini lebih aman.",
+      "Industri rokok justru mengatur kadar nikotin dalam rokok agar perokok tetap ketagihan, dan Nikotin sama candunya dengan heroin, kokain, dan amfetamin.",
   },
   {
     id: 3,

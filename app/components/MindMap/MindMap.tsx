@@ -6,6 +6,7 @@ import ReactFlow, {
   addEdge,
   Controls,
   MiniMap,
+  MarkerType,
 } from "reactflow";
 import "reactflow/dist/style.css";
 
@@ -14,7 +15,8 @@ import RootNode from "./RootNode";
 import { Center, rem } from "@mantine/core";
 import { primaryColor } from "../../../public/colors";
 import DetailNode from "./DetailNode";
-import {listPejabat} from "./DetailPejabat";
+import listNodes from "./ListPejabat";
+import listEdges from "./ListEdges";
 
 const nodeTypes = {
   imageNode: ImageNode,
@@ -22,75 +24,128 @@ const nodeTypes = {
   default: DetailNode,
 };
 
-const urlImage = "../../../public/images/photos"
+const defaultViewport = { x: 0, y: 0, zoom: 0.2 };
 
-const defaultViewport = { x: 0, y: 0, zoom: 1.5 };
+const defaultNodes = [
+  {
+    id: listNodes.legislatif.id,
+    type: "rootNode",
+    data: {
+      title: listNodes.legislatif.nama,
+    },
+    position: listNodes.legislatif.position,
+  },
+  {
+    id: listNodes.front_group_ti.id,
+    type: "rootNode",
+    data: {
+      title: listNodes.front_group_ti.nama,
+    },
+    position: listNodes.front_group_ti.position,
+  },
+  {
+    id: listNodes.eksekutif.id,
+    type: "rootNode",
+    data: {
+      title: listNodes.eksekutif.nama,
+    },
+    position: listNodes.eksekutif.position,
+  },
+  {
+    id: listNodes.tobacco_industri.id,
+    type: "rootNode",
+    data: {
+      title: listNodes.tobacco_industri.nama,
+    },
+    position: listNodes.tobacco_industri.position,
+  },
+];
 
 const MindMap = () => {
   const [nodes, setNodes, onNodesChange] = useNodesState([]);
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
 
   useEffect(() => {
-    setNodes([
-      {
-        id: "1",
-        type: "rootNode",
-        data: {
-          size: "big",
-          title: "Legislatif",
-        },
-        position: { x: 0, y: 0 },
-      },
-      {
-        id: "2",
-        type: "rootNode",
-        data: {
-          size: "small",
-          title: "Komisi IX",
-          label: "(Kesehatan, Ketenagakerjaan, Kependudukan)",
-        },
-        position: { x: 285, y: 480 },
-      },
-      {
-        id: "3",
-        type: "imageNode",
-        data: {
-          image: {
-            url: `${urlImage}/prodigi_3_1.png`,
-            height: 50,
-            width: 40,
+    for (const item of defaultNodes) {
+      setNodes((oldVal) => [...oldVal, item]);
+      console.log("nodes: ",nodes)
+    }
+
+    // Legislatif
+    listNodes.legislatif.details.map((data) => {
+      setNodes((oldVal) => [
+        ...oldVal,
+        {
+          id: data.id,
+          type: "rootNode",
+          data: {
+            size: "big",
+            title: data.nama,
+            description: data.description,
           },
-          label: listPejabat[0].legislatif[0].komisi,
+          position: data.position,
         },
-        position: { x: 400, y: 675 },
-      },
-    ]);
+      ]);
 
-    setEdges([
-      {
-        id: "e1a-1",
-        source: "1",
-        target: "2",
-        type: "straight",
-        style: { stroke: primaryColor },
-      },
-      {
-        id: "e2a-3",
-        source: "2",
-        target: "3",
-        type: "straight",
-        style: { stroke: primaryColor },
-      },
-    ]);
+      if (data.anggota.length !== 0) {
+        data.anggota.map((data) => {
+          setNodes((oldVal) => [
+            ...oldVal,
+            {
+              id: data.id,
+              type: "imageNode",
+              data: {
+                name: data.nama,
+                label: data.jabatan,
+                image: data.image,
+                height: 80,
+                width: 60,
+              },
+              position: data.position,
+            },
+          ]);
+        });
+      }
+    });
+
+    // eksekutif
+    listNodes.eksekutif.details.map((data) => {
+      setNodes((oldVal) => [
+        ...oldVal,
+        {
+          id: data.id,
+          type: "imageNode",
+          data: {
+            name: data.nama,
+            label: data.jabatan,
+            image: data.image,
+            height: 80,
+            width: 60,
+          },
+          position: data.position,
+        },
+      ]);
+    })
+
+    listEdges.map((data) => {
+      setEdges((oldVal) => [
+        ...oldVal,
+        {
+          id: data.id,
+          source: data.source,
+          target: data.target,
+          type: data.type,
+          style: { stroke: primaryColor },
+          sourceHandle:data.sourceHandle,
+          targetHandle:data.targetHandle,
+          markerEnd: {
+            type: MarkerType.ArrowClosed,
+            color: primaryColor
+          },
+        },
+      ]);
+    });
   }, [setEdges, setNodes]);
-
-  const onConnect = useCallback(
-    (params: any) =>
-      setEdges((eds) =>
-        addEdge({ ...params, animated: true, style: { stroke: "#fff" } }, eds)
-      ),
-    [setEdges]
-  );
 
   return (
     <Center w={"100vw"} h={"100vh"}>
@@ -99,14 +154,13 @@ const MindMap = () => {
         edges={edges}
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
-        onConnect={onConnect}
         nodeTypes={nodeTypes}
         snapToGrid={true}
         defaultViewport={defaultViewport}
         fitView
         attributionPosition="bottom-left"
       >
-        <MiniMap style={{ height: rem(120) }} zoomable pannable />
+        <MiniMap zoomable pannable />
         <Controls />
       </ReactFlow>
     </Center>
