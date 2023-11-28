@@ -83,7 +83,7 @@ const CardMitosFakta: React.FC<CardProps> = ({
       </Card.Section>
 
       <Title mt={rem(27)} c={secondaryColor} style={{ fontSize: rem(24) }}>
-        Mitos :
+        Pernyataan :
       </Title>
       <Text mt={rem(7)} style={{ textAlign: "justify", fontSize: rem(16) }}>
         {textMitos}

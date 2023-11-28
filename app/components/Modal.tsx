@@ -166,7 +166,7 @@ const ModalDetail: React.FC<ModalDetailProps> = ({ id, isOpen, onClose }) => {
         </BackgroundImage>
         <div style={{ padding: rem(50) }}>
           <Title c={secondaryColor} order={3} w={"100%"}>
-            Mitos:
+            Pernyataan:
           </Title>
           <Text ta={"justify"} fs={rem(16)} mt={rem(3)} mb={rem(16)}>
             {selectedData.mitos}
