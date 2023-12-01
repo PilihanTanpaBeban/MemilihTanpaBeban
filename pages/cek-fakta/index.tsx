@@ -1,9 +1,9 @@
 import React from "react";
-import HeroBgImg from "../app/hero-image-bg/hero-image-bg";
+import HeroBgImg from "../../app/hero-image-bg/hero-image-bg";
 import { Text, Container, Grid, Group, Paper, rem } from "@mantine/core";
-import { bgGrayColor } from "../public/colors";
-import CardMitosFakta from "../app/components/Card";
-import HeroVector from "../app/hero-vector/HeroVector";
+import { bgGrayColor } from "../../public/colors";
+import CardMitosFakta from "../../app/components/Card";
+import HeroVector from "../../app/hero-vector/HeroVector";
 
 const data = [
   {

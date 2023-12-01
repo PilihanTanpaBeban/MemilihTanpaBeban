@@ -123,10 +123,7 @@ const LatarBelakang = () => {
   ))
 
   return (
-    <Container size="md" my="md">
-      <Center my={mobile ? rem(30) : rem(60)}>
-        <TitleText text={"Latar Belakang"} size={"32px"}></TitleText>
-      </Center>
+    <Container size="md" mt="xl" mb="md">
       <Grid gutter="lg">
         <Grid.Col span={{ base: 12, xs: 6 }} >
           <Text

@@ -29,7 +29,6 @@ const CardMitosFakta: React.FC<CardProps> = ({
   style,
 }) => {
   const { hovered, ref } = useHover();
-  //   const { open } = useDisclosure();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const backgroundImageUrl = `../../assets/images/Mitos_Fakta_Image/${id}.png`;
 
