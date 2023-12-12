@@ -47,22 +47,26 @@ const BoxPejabat: React.FC<boxPejabatProps> = ({ data }) => {
           {item.text != "" && <Text>{item.text}</Text>}
           {item.list && item.list.length != 0 && (
             <List>
-              {item.list.map((content: any) => (
-                <List.Item>{content}</List.Item>
+              {item.list.map((content: any, index: number) => (
+                <React.Fragment key={index}>
+                  <List.Item>{content}</List.Item>
+                </React.Fragment>
               ))}
             </List>
           )}
           {item.quote.length > 0 &&
-            item.quote.map((quote: any) => (
-              <Blockquote
-                color={primaryColor}
-                cite={`– ${data.nama}`}
-                icon={icon}
-                mt="sm"
-                ml="sm"
-              >
-                {quote}
-              </Blockquote>
+            item.quote.map((quote: any, index: number) => (
+              <React.Fragment key={index}>
+                <Blockquote
+                  color={primaryColor}
+                  cite={`– ${data.nama}`}
+                  icon={icon}
+                  mt="sm"
+                  ml="sm"
+                >
+                  {quote}
+                </Blockquote>
+              </React.Fragment>
             ))}
         </Group>
       </Flex>

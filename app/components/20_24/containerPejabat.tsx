@@ -12,7 +12,11 @@ const ContainerPejabat: React.FC<containerPejabatProps> = ({
   data,
   isVertical,
 }) => {
-  const dataPejabat = data.map((item: any) => <BoxPejabat data={item} />);
+  const dataPejabat = data.map((item: any) => (
+    <React.Fragment key={item.id}>
+      <BoxPejabat data={item} />
+    </React.Fragment>
+  ));
   const [opened, { toggle }] = useDisclosure(true);
 
   return (

@@ -18,9 +18,7 @@ import {
   ScrollArea,
   BackgroundImage,
 } from "@mantine/core";
-import {
-  renderTextWithLineBreaksNoSpaces,
-} from "../LineBreakRender";
+import { renderTextWithLineBreaksNoSpaces } from "../LineBreakRender";
 import { IconInfoCircle } from "@tabler/icons-react";
 import {
   bgGrayColor,
@@ -69,21 +67,26 @@ const ImageNode: React.FC<imageNodeProps> = ({ data, isConnectable }) => {
           {item.text != "" && <Text>{item.text}</Text>}
           {item.list && item.list.length != 0 && (
             <List>
-              {item.list.map((content: any) => (
-                <List.Item>{content}</List.Item>
+              {item.list.map((content: any, index: number) => (
+                <React.Fragment key={index}>
+                  <List.Item>{content}</List.Item>
+                </React.Fragment>
               ))}
             </List>
           )}
           {item.quote.length > 0 &&
-            item.quote.map((quote: any) => (
-              <Blockquote
-                color={primaryColor}
-                cite={`– ${data.name}`}
-                icon={icon}
-                mt="sm" ml="sm"
-              >
-                {quote}
-              </Blockquote>
+            item.quote.map((quote: any, index: number) => (
+              <React.Fragment key={index}>
+                <Blockquote
+                  color={primaryColor}
+                  cite={`– ${data.name}`}
+                  icon={icon}
+                  mt="sm"
+                  ml="sm"
+                >
+                  {quote}
+                </Blockquote>
+              </React.Fragment>
             ))}
         </Group>
       </Flex>
@@ -92,20 +95,22 @@ const ImageNode: React.FC<imageNodeProps> = ({ data, isConnectable }) => {
   ));
 
   const faktaList = data.fakta.map((item: number, index: number) => (
-    <span>
-      <strong color={primaryColor}>
-        <Link
-          style={{ textDecoration: "none" }}
-          href={`/cek-fakta?fakta=${item}`}
-        >
-          {item}
-        </Link>
-        {index >= 0 &&
-          index < data.fakta.length - 1 &&
-          data.fakta.length > 2 && <span>, </span>}
-      </strong>
-      {index >= 0 && index == data.fakta.length - 2 && <span> dan </span>}
-    </span>
+    <React.Fragment key={index}>
+      <span>
+        <strong color={primaryColor}>
+          <Link
+            style={{ textDecoration: "none" }}
+            href={`/cek-fakta?fakta=${item}`}
+          >
+            {item}
+          </Link>
+          {index >= 0 &&
+            index < data.fakta.length - 1 &&
+            data.fakta.length > 2 && <span>, </span>}
+        </strong>
+        {index >= 0 && index == data.fakta.length - 2 && <span> dan </span>}
+      </span>
+    </React.Fragment>
   ));
 
   return (
@@ -141,10 +146,14 @@ const ImageNode: React.FC<imageNodeProps> = ({ data, isConnectable }) => {
         maw={data.width}
         style={{
           borderRadius: rem(5),
-          cursor:"pointer",
+          cursor: "pointer",
           boxShadow: "0px 1px 10px 5px rgba(0, 0, 0, 0.05)",
         }}
-        onClick={ (data.id == 66 || data.id == 67 ||data.id == 68 ||data.id == 69) ? undefined : showModal }
+        onClick={
+          data.id == 66 || data.id == 67 || data.id == 68 || data.id == 69
+            ? undefined
+            : showModal
+        }
       >
         <BackgroundImage
           mb="sm"
@@ -165,7 +174,11 @@ const ImageNode: React.FC<imageNodeProps> = ({ data, isConnectable }) => {
           w="100%"
           c={data.bg == bgOrange ? "white" : "black"}
         >
-          <Text tt="capitalize" fw="bold" style={{ fontSize: data.id == "79" ? rem(6) : rem(8) }}>
+          <Text
+            tt="capitalize"
+            fw="bold"
+            style={{ fontSize: data.id == "79" ? rem(6) : rem(8) }}
+          >
             {data.name}
           </Text>
           {data.label && (
