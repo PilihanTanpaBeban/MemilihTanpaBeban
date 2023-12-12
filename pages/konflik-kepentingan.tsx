@@ -7,7 +7,14 @@ import HeroVector from "../app/hero-vector/HeroVector";
 function KonflikKepentinganPage() {
   return (
     <>
-      <HeroVector
+      <HeroBgImg
+        pt={rem(300)}
+        pb={rem(350)}
+        text={"Coming Soon!"}
+        subtitle={"Nantikan Launching di Akhir 2023"}
+        imgFileName={"prodigi_3_1.png"}
+      ></HeroBgImg>
+      {/* <HeroVector
         pt={rem(50)}
         pb={rem(0)}
         text={"Potensi\nKonflik Kepentingan"}
@@ -16,7 +23,7 @@ function KonflikKepentinganPage() {
       ></HeroVector>
       <div>
         <MindMap/>
-      </div>
+      </div> */}
     </>
   );
 }

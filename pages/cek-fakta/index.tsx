@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import HeroBgImg from "../../app/hero-image-bg/hero-image-bg";
-import { Text, Container, Grid, Group, Paper, rem } from "@mantine/core";
-import { bgGrayColor } from "../../public/colors";
+import { Text, Container, Grid, Group, Paper, rem, List } from "@mantine/core";
+import { bgGrayColor, primaryColor } from "../../public/colors";
 import CardMitosFakta from "../../app/components/Card";
 import HeroVector from "../../app/hero-vector/HeroVector";
 import { useRouter } from "next/router";
@@ -137,9 +137,10 @@ function MitosVsFaktaPage() {
               melemahkan kebijakan kesehatan masyarakat, berikut beberapa bahan
               bacaan yang dapat dijadikan acuan:
             </Text>
-            <a href="https://exposetobacco.org/wp-content/uploads/2019/09/Crooked-9-STOP.pdf">
-              https://exposetobacco.org/wp-content/uploads/2019/09/Crooked-9-STOP.pdf
-            </a>
+            <List mt="md">
+            <List.Item>Publikasi <strong><a style={{color:primaryColor}} href="https://exposetobacco.org/wp-content/uploads/2019/09/Crooked-9-STOP.pdf" target="_blank">Crooked 9</a></strong> karya STOP</List.Item>
+            <List.Item>Film <strong><a style={{color:primaryColor}} href="https://youtu.be/hE_6yd_F-jg?si=xG6uJGfZEPQGXM_d" target="_blank">Di Balik Satu Batang</a></strong> karya CISDI</List.Item>
+            </List>
           </Paper>
         </Container>
       </Group>
