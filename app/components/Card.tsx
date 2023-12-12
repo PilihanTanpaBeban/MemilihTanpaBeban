@@ -37,6 +37,7 @@ const CardMitosFakta: React.FC<CardProps> = ({
       shadow="xl"
       padding="xl"
       radius="xl"
+      id={`fakta-${id}`}
       style={{
         ...style,
         transform: hovered ? "scale(1.03)" : "scale(1)",

@@ -15,7 +15,7 @@
   font-size: rem(64px);
   letter-spacing: rem(-1px);
   text-align: left;
-  line-height: .9;
+  line-height: .6;
 
   @media (max-width: 600px) {
     font-size: rem(28px);

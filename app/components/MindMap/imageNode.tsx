@@ -16,14 +16,15 @@ import {
   Badge,
   Blockquote,
   ScrollArea,
+  BackgroundImage,
 } from "@mantine/core";
 import {
-  renderTextWithLineBreaks,
   renderTextWithLineBreaksNoSpaces,
 } from "../LineBreakRender";
 import { IconInfoCircle } from "@tabler/icons-react";
 import {
   bgGrayColor,
+  bgOrange,
   lightPurple,
   primaryColor,
   secondaryColor,
@@ -31,6 +32,7 @@ import {
 import { useMediaQuery } from "@mantine/hooks";
 import { theme } from "../../../theme";
 import { PrimaryButton, SecondaryButton } from "../Button";
+import Link from "next/link";
 
 interface imageNodeProps {
   data: any;
@@ -39,33 +41,7 @@ interface imageNodeProps {
 
 const ImageNode: React.FC<imageNodeProps> = ({ data, isConnectable }) => {
   const [openModal, setModalOpen] = useState(false);
-  const router = useRouter();
   const icon = <IconInfoCircle />;
-  const [sourceHandleToogle, setSourceHandleToogle] = useState({
-    up: false,
-    right: false,
-    bottom: false,
-    left: false,
-  });
-
-  const moveToFakta = () => {
-    router.push('/cek-fakta');
-  }
-
-  useEffect(() => {
-    const handler = data.handle;
-    if (handler)
-      handler.target.forEach((direction: string) => {
-        switch (direction) {
-          case "up":
-            setSourceHandleToogle;
-            break;
-
-          default:
-            break;
-        }
-      });
-  });
 
   const closeModal = () => {
     // Close the modal
@@ -81,20 +57,30 @@ const ImageNode: React.FC<imageNodeProps> = ({ data, isConnectable }) => {
   const ListItem = data.details.map((item: any) => (
     <React.Fragment key={item.id}>
       <Flex direction="row" ta="justify" pr={mobile ? "" : rem(12)}>
-        <a href={item.link.href}>
-          <Badge size="lg" mr={rem(12)} color={secondaryColor}>
-            {item.link.year}
-          </Badge>
-        </a>{" "}
+        {item.link && (
+          <a href={item.link.href} target="_blank">
+            <Badge size="lg" mr={rem(12)} color={secondaryColor}>
+              {item.link.year}
+            </Badge>
+          </a>
+        )}
+
         <Group>
-          <Text>{item.text}</Text>
+          {item.text != "" && <Text>{item.text}</Text>}
+          {item.list && item.list.length != 0 && (
+            <List>
+              {item.list.map((content: any) => (
+                <List.Item>{content}</List.Item>
+              ))}
+            </List>
+          )}
           {item.quote.length > 0 &&
             item.quote.map((quote: any) => (
               <Blockquote
                 color={primaryColor}
                 cite={`– ${data.name}`}
                 icon={icon}
-                mt="sm"
+                mt="sm" ml="sm"
               >
                 {quote}
               </Blockquote>
@@ -106,15 +92,20 @@ const ImageNode: React.FC<imageNodeProps> = ({ data, isConnectable }) => {
   ));
 
   const faktaList = data.fakta.map((item: number, index: number) => (
-    <strong>
-      <span>
-        {item}
+    <span>
+      <strong color={primaryColor}>
+        <Link
+          style={{ textDecoration: "none" }}
+          href={`/cek-fakta?fakta=${item}`}
+        >
+          {item}
+        </Link>
         {index >= 0 &&
           index < data.fakta.length - 1 &&
-          data.fakta.length > 2 && <span>, </span>}{" "}
-        {index >= 0 && index == data.fakta.length - 2 && <span>dan </span>}
-      </span>
-    </strong>
+          data.fakta.length > 2 && <span>, </span>}
+      </strong>
+      {index >= 0 && index == data.fakta.length - 2 && <span> dan </span>}
+    </span>
   ));
 
   return (
@@ -144,28 +135,47 @@ const ImageNode: React.FC<imageNodeProps> = ({ data, isConnectable }) => {
         id="d"
       />
       <Flex
-        bg={bgGrayColor}
-        p={rem(10)}
-        ta={"center"}
-        align={"center"}
-        content={"center"}
-        direction={"column"}
-        gap={0}
-        w={rem(150)}
-        onClick={showModal}
+        direction="column"
+        align="center"
+        justify="center"
+        maw={data.width}
+        style={{
+          borderRadius: rem(5),
+          cursor:"pointer",
+          boxShadow: "0px 1px 10px 5px rgba(0, 0, 0, 0.05)",
+        }}
+        onClick={ (data.id == 66 || data.id == 67 ||data.id == 68 ||data.id == 69) ? undefined : showModal }
       >
-        <Image
-          mb={rem(10)}
-          maw={rem(60)}
+        <BackgroundImage
+          mb="sm"
           src={`../../assets/images/photos/${data.image}`}
+          w={data.width}
+          h={data.height}
+          bgsz="contain"
+          bgr="no-repeat"
         />
-        <Text fw={"bold"} style={{ fontSize: rem(12) }}>
-          {data.name}
-        </Text>
-        <Text mt={0} style={{ fontSize: rem(8) }}>
-          {renderTextWithLineBreaksNoSpaces(data.label)}
-        </Text>
+        <Flex
+          direction="column"
+          ta="center"
+          align="center"
+          justify={data.bg == bgOrange ? "center" : "flex-start"}
+          h={rem(48)}
+          px={rem(6)}
+          bg={data.bg}
+          w="100%"
+          c={data.bg == bgOrange ? "white" : "black"}
+        >
+          <Text tt="capitalize" fw="bold" style={{ fontSize: data.id == "79" ? rem(6) : rem(8) }}>
+            {data.name}
+          </Text>
+          {data.label && (
+            <Text style={{ fontSize: rem(5) }}>
+              {renderTextWithLineBreaksNoSpaces(data.label)}
+            </Text>
+          )}
+        </Flex>
       </Flex>
+
       <Handle
         type="target"
         position={Position.Top}
@@ -212,7 +222,9 @@ const ImageNode: React.FC<imageNodeProps> = ({ data, isConnectable }) => {
                 src={`../../assets/images/photos/${data.image}`}
               />
 
-              <Title c={primaryColor}>{data.name}</Title>
+              <Title tt="capitalize" c={primaryColor}>
+                {data.name}
+              </Title>
               <Text w="100%">{data.label}</Text>
             </Group>
             <div>
@@ -228,7 +240,7 @@ const ImageNode: React.FC<imageNodeProps> = ({ data, isConnectable }) => {
                 {data.fakta.length > 0 && (
                   <Blockquote color={lightPurple}>
                     {data.fakta.length > 0 && (
-                      <Text c={primaryColor}>
+                      <Text>
                         Cek Fakta {faktaList} untuk mengetahui informasi
                         sebenarnya
                       </Text>
@@ -236,13 +248,6 @@ const ImageNode: React.FC<imageNodeProps> = ({ data, isConnectable }) => {
                   </Blockquote>
                 )}
                 <Flex direction="column" gap="xs">
-                  {data.fakta.length > 0 && (
-                    <SecondaryButton
-                      text={"Cek Fakta"}
-                      radius={"md"}
-                      onClick={moveToFakta}
-                    />
-                  )}
                   <PrimaryButton
                     onClick={closeModal}
                     text={"Tutup"}

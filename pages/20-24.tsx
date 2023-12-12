@@ -7,7 +7,9 @@ import {
   Text,
   Title,
   rem,
-  Image
+  Image,
+  BackgroundImage,
+  Button,
 } from "@mantine/core";
 import React, { useEffect, useState } from "react";
 import HeroBgImg from "../app/hero-image-bg/hero-image-bg";
@@ -18,9 +20,23 @@ import { updateNoVote, updateYesVote } from "../public/firebase.service";
 import { IconChecks } from "@tabler/icons-react";
 import { useMediaQuery } from "@mantine/hooks";
 import { theme } from "../theme";
+import ContainerPejabat from "../app/components/20_24/containerPejabat";
+import listPejabat2024 from "../app/components/20_24/ListPejabat";
+import HeroVector from "../app/hero-vector/HeroVector";
+import { renderTextWithLineBreaks } from "../app/components/LineBreakRender";
 
 function Page2024() {
   const [pressed, setPressed] = useState(false);
+  const [isEkseVertical, setIsEkseVertical] = useState(false);
+  const [isLegisVertical, setIsLegisVertical] = useState(false);
+
+  const toggleEkseView = () => {
+    setIsEkseVertical((prevState) => !prevState);
+  };
+
+  const toggleLegisView = () => {
+    setIsLegisVertical((prevState) => !prevState);
+  };
 
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.sm})`);
 
@@ -36,29 +52,98 @@ function Page2024() {
 
   return (
     <>
-    <Group
-      style={{ backgroundColor: lightPurple }}
-      pt={mobile?60:0}
-      pb={mobile?60:0}
-    >
-      <Container size="xl" >
-        <Flex
-          gap="xl"
-          justify="flex-start"
-          align="center"
-          direction={mobile ? "column-reverse" : "row"}
-        >
-          <div>
-            <Title c={primaryColor}>
-              20.24
-            </Title>
-          </div>
-          <Image
-            src="../../assets/images/20_24.webp"
-          ></Image>
+      {mobile ? (
+        <div style={{ backgroundColor: lightPurple }}>
+          <Container size={"xl"} pt={rem(50)} pb={rem(20)}>
+            <Flex
+              gap="xl"
+              justify="flex-start"
+              align="center"
+              direction="column"
+            >
+              <div>
+                <Title
+                  style={{ fontSize: rem(48) }}
+                  ta="center"
+                  c={primaryColor}
+                >
+                  20.24
+                </Title>
+
+                <Text my="md" ta="justify">
+                  Anggota Legislatif dan Eksekutif yang aktif mendorong
+                  pengendalian konsumsi rokok yang lebih baik di Indonesia, demi
+                  melindungi kesehatan masyarakat dan kualitas orang muda yang
+                  lebih baik.
+                </Text>
+                <Text>Data terakhir diperbarui 29 November 2023.</Text>
+              </div>
+            </Flex>
+          </Container>
+
+          <Image src={"../../assets/images/20_24.png"} />
+        </div>
+      ) : (
+        <div style={{ backgroundColor: lightPurple }}>
+          <BackgroundImage
+            src={"../../assets/images/20_24.png"}
+            h={rem(450)}
+            bgsz="contain"
+            bgr="no-repeat"
+            bgp="100%"
+          >
+            <Container size="xl" h="100%">
+              <Flex gap="xl" justify="center" align="center" h="100%">
+                <div>
+                  <Title mb="lg" style={{ fontSize: rem(72) }} c={primaryColor}>
+                    20.24
+                  </Title>
+                  <Text my="lg" ta="justify">
+                    Anggota Legislatif dan Eksekutif yang aktif mendorong
+                    pengendalian konsumsi rokok yang lebih baik di Indonesia,
+                    demi melindungi kesehatan masyarakat dan kualitas orang muda
+                    yang lebih baik.
+                  </Text>
+                  <Text>Data terakhir diperbarui 29 November 2023.</Text>
+                </div>
+                <div style={{ width: "60%", height: "100%" }} />
+              </Flex>
+            </Container>
+          </BackgroundImage>
+        </div>
+      )}
+
+      <Container size="xl" py={rem(70)}>
+        <Flex direction="row" justify="space-between" align="center" mb="md">
+          <Title c={primaryColor} style={{ fontSize: rem(24) }}>
+            Eksekutif
+          </Title>
+          <Button onClick={toggleEkseView} bg={primaryColor}>
+            {isEkseVertical ? "Sembunyikan" : "Tampilkan semua"}
+          </Button>
         </Flex>
+
+        <ContainerPejabat
+          isVertical={isEkseVertical}
+          data={listPejabat2024.eksekutif}
+        />
       </Container>
-    </Group>
+
+      <Container size="xl" py={rem(70)}>
+        <Flex direction="row" justify="space-between" align="center" mb="md">
+          <Title c={primaryColor} style={{ fontSize: rem(24) }}>
+            Legislatif
+          </Title>
+          <Button onClick={toggleLegisView} bg={primaryColor}>
+            {isLegisVertical ? "Sembunyikan" : "Tampilkan semua"}
+          </Button>
+        </Flex>
+
+        <ContainerPejabat
+          isVertical={isLegisVertical}
+          data={listPejabat2024.legislatif}
+        />
+      </Container>
 
       <Container size={"md"} py={rem(65)}>
         <Grid align={"center"}>

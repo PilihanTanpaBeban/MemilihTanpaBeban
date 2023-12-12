@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import HeroBgImg from "../../app/hero-image-bg/hero-image-bg";
 import { Text, Container, Grid, Group, Paper, rem } from "@mantine/core";
 import { bgGrayColor } from "../../public/colors";
 import CardMitosFakta from "../../app/components/Card";
 import HeroVector from "../../app/hero-vector/HeroVector";
+import { useRouter } from "next/router";
 
 const data = [
   {
@@ -62,15 +63,13 @@ const data = [
   },
   {
     id: 9,
-    mitos:
-      "Merokok merupakan warisan budaya yang harus dilestarikan.",
+    mitos: "Merokok merupakan warisan budaya yang harus dilestarikan.",
     fakta:
       "Rokok merupakan kebiasaan bangsa asing yang dibawa ke Indonesia dalam rangka berdagang. Rokok lebih cocok dianggap sebagai kebiasaan yang buruk, bukan budaya.",
   },
   {
     id: 10,
-    mitos:
-      "Sampah puntung rokok dapat didaur ulang.",
+    mitos: "Sampah puntung rokok dapat didaur ulang.",
     fakta:
       "Puntung rokok mengandung cukup racun, sehingga dapat dikategorikan sebagai sampah bahan berbahaya beracun (B3) dan memerlukan perlakuan khusus, sehingga tidak dapat didaur ulang.",
   },
@@ -98,6 +97,28 @@ const slides = data.map((data) => (
 ));
 
 function MitosVsFaktaPage() {
+  const router = useRouter();
+  const receivedData = router.query.fakta;
+
+  useEffect(() => {
+    // Get the value of the "comp-id" query parameter
+  const receivedData = router.query.fakta;
+
+    // If compId exists, scroll to the corresponding component
+    if (receivedData) {
+      // Use the value of compId to construct the actual ID
+      const targetId = `fakta-${receivedData}`;
+
+      // Get a reference to the element with the target ID
+      const targetElement = document.getElementById(targetId);
+
+      // Scroll to the target element if it exists
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth", block:"center" });
+      }
+    }
+  }, [router.query]);
+
   return (
     <>
       {" "}

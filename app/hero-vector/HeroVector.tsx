@@ -10,6 +10,7 @@ import {
   rem,
   BackgroundImage,
   Container,
+  ChipGroup,
 } from "@mantine/core";
 import React from "react";
 import classes from "./hero-vector.module.css";
@@ -27,19 +28,19 @@ interface TextProps {
   backgroundColor?: String;
 }
 
-const HeroVector: React.FC<TextProps> = ({ text, imgFileName, pt, pb }) => {
+const HeroVector: React.FC<TextProps> = ({ text, imgFileName, subtitle, pt, pb }) => {
   const backgroundImageUrl = `../../assets/images/${imgFileName}`;
 
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.sm})`);
 
   return (
-    <Group
-      className={classes.wrapper}
-      style={{ backgroundColor: lightPurple }}
-      pt={mobile?60:0}
-      pb={mobile?60:0}
-    >
-      <Container size={"xl"}>
+    <div style={{ backgroundColor: lightPurple }}>
+      <Container
+        size={"xl"}
+        className={classes.wrapper}
+        pt={mobile ? 60 : 0}
+        pb={mobile ? 60 : 0}
+      >
         <Flex
           gap="xl"
           justify="flex-start"
@@ -48,8 +49,9 @@ const HeroVector: React.FC<TextProps> = ({ text, imgFileName, pt, pb }) => {
         >
           <div className={classes.inner}>
             <Title className={classes.title} c={primaryColor}>
-              {text}
+              {renderTextWithLineBreaks(text)}
             </Title>
+            <Text ta="justify" mt="md">{subtitle}</Text>
           </div>
           <div></div>
           <Image
@@ -59,7 +61,7 @@ const HeroVector: React.FC<TextProps> = ({ text, imgFileName, pt, pb }) => {
           ></Image>
         </Flex>
       </Container>
-    </Group>
+    </div>
   );
 };
 
