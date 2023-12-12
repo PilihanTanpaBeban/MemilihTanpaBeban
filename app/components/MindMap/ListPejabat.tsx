@@ -2,10 +2,12 @@ const legislatif = {
   id: "90",
   nama: "Legislatif",
   position: { x: -1600, y: 0 },
+  handle: { target: [], source: ["left", "bottom", "up", "right"] },
   details: [
     {
       id: "1",
       nama: "Komisi IV",
+      handle: { target: [], source: ["left", "bottom", "up", "right"] },
       position: { x: 0, y: 0 },
       description: "(Pertanian, Lingkungan Hidup dan Kehutanan, dan, Kelautan)",
       anggota: [
@@ -15,10 +17,11 @@ const legislatif = {
           position: { x: 0, y: 0 },
           jabatan: "Golkar, Dapil Jatim II",
           image: "legislatif_1_1.jpg",
+          handle: { target: ["right", "Top"], source: ["left", "bottom"] },
           details: [
-            "2010.  hukumonline.com. Tersangka pemalsuan dokumen akta gadai dan surat kuasa pencairan deposito dalam penerbitan letter of credit Bank Century dan divonis satu tahun penjara.",
+            ". hukumonline.com. Tersangka pemalsuan dokumen akta gadai dan surat kuasa pencairan deposito dalam penerbitan letter of credit Bank Century dan divonis satu tahun penjara.",
             "2017, Merupakan anggota panitia khusus RUU pertembakauan : ",
-            "2018,  Pada masa reses pernah menggelar bakti sosial berupa pengobatan gratis bagi warga Nguling, Pasuruan, bersama salah satu perusahaan rokok terbesar di Indonesia, PT HM Sampoerna. ",
+            "2018, Pada masa reses pernah menggelar bakti sosial berupa pengobatan gratis bagi warga Nguling, Pasuruan, bersama salah satu perusahaan rokok terbesar di Indonesia, PT HM Sampoerna. ",
             "2018, Hadir saat pertemuan dengan Direksi PT. Gudang Garam Tbk. di Surabaya, Jawa Timur.",
             '2020. Menuduh strategi kebijakan fiskal yang bertujuan menurunkan prevalensi perokok yang dikeluarkan pemerintah pemerintah ingin menghancurkan industri hasil tembakau (IHT)."Kalau hanya berpikir kesehatan saja ya buyar. Apalagi kalau bicara perokok pemula. Yang mau disasar perokok pemula, tapi yang mau dihancurkan industrinya"',
             "2020,.Menyatakan bahwa industri hasil tembakau (IHT) merupakan salah satu industri strategis nasional yang mempunyai andil besar dalam perekonomian Indonesia dan pemerintah masih bergantung pada IHT sebagai industri penopang penerimaan negara",
@@ -32,6 +35,7 @@ const legislatif = {
           position: { x: 0, y: 0 },
           jabatan: "Golkar, Jateng VI",
           image: "legislatif_1_2.jpg",
+          handle: { target: ["right", "Top"], source: ["left", "bottom"] },
           details: [
             "2015. Saat menjabat Direktur Jenderal Industri Agro Kementerian Perindustrian (Kemenperin) dirinya mendorong agar kenaikan cukai rokok tidak lebih dari Rp 85 per batang karena berpendapat bahwa hal ini dapat berimbas pada perusahaan yang gulung tikar. ",
             "2017.Menghadiri Diskusi Pertanian dan Industri Tembakau di Kantor  Desa Pijot Utara, Lombok Timur, yang diselenggarakan oleh Gaprindo yang merupakan gabungan perusahaan rokok seperti PT HM Sampoerna Tbk. (Sampoerna) dan PT Bentoel International Investama Tbk (Bentoel Group) yang salah satunya adalah membahas terkait sinergi perusahaan rokok dengan pemerintah dengan dalih kepentingan pemberdayaan petan",
@@ -45,6 +49,7 @@ const legislatif = {
           position: { x: 0, y: 0 },
           jabatan: "PDIP, Dapil Lampung I",
           image: "legislatif_1_3.jpg",
+          handle: { target: ["right", "Top"], source: ["left", "bottom"] },
           details: [
             '2020. Memberi tanggapan dan perhatian pada harga tembakau yang anjlok (khususnya di Probolinggo), dan menyatakan dukungan untuk adanya penyesuaian regulasi terkait penurunan harga tembakau yang "disinyalir" disebabkan oleh kenaikan cukai rokok. "Jika memang regulasi  harus diatur, ya kita usahakan regulasinya, karena kasihan di beberapa wilayah selalu \'complain\' masalah itu," kata Sudin.',
           ],
@@ -55,6 +60,7 @@ const legislatif = {
           position: { x: 0, y: 0 },
           jabatan: "Golkar. Dapil Jawa Tengah III",
           image: "legislatif_1_4.jpg",
+          handle: { target: ["right", "Top"], source: ["left", "bottom"] },
           details: [
             "2015. Saat menjabat sebagai Wakil Ketua Baleg, Firman mengaku menjadi pengusul pertama pasal kretek di RUU Kebudayaan karena menilai kretek adalah warisan budaya. ",
             "2023. Mendukung sikap Asosiasi Petani Tembakau Indonesia (APTI) yang tegas menolak selipan pasal-pasal tentang pertembakauan dalam Rancangan Undang-Undang (RUU) Kesehatan.",
@@ -69,6 +75,7 @@ const legislatif = {
           position: { x: 0, y: 0 },
           jabatan: "PKB, Jawa Timur VII\nBaleg",
           image: "legislatif_1_5.jpg",
+          handle: { target: ["right", "Top"], source: ["left", "bottom"] },
           details: [
             "2016. Menekan adanya kalimat perlindungan dan pembudidayaan petani tembakau dalam RUU pertembakauan.",
             "2017. Ibnu merupakan anggota panitia khusus RUU pertembakauan.",
@@ -81,6 +88,7 @@ const legislatif = {
           position: { x: 0, y: 0 },
           jabatan: "PDIP, Jateng VI",
           image: "legislatif_1_6.jpg",
+          handle: { target: ["right", "Top"], source: ["left", "bottom"] },
           details: [
             "2023. Menyatakan tidak setuju dan meminta pemerintah membatalkan RUU Kesehatan pasal 154 ayat 3 dengan dalih pasal tersebut merugikan petani tembakau dan berpendapat bahwa membandingkan zat nikotin dalam rokok tidak sebanding dengan yang ada di narkotika. ",
             "2023. Berpendapat bahwa tembakau memberikan kontribusi yang besar bagi perekonomian nasional.",
@@ -93,6 +101,7 @@ const legislatif = {
           position: { x: 0, y: 0 },
           jabatan: "PKB, Kalbar I",
           image: "legislatif_1_7.jpg",
+          handle: { target: ["right", "Top"], source: ["left", "bottom"] },
           details: [
             "2016. Memperjuangkan agar UU Tembakau bisa digolkan dengan dalih membantu menyelamatkan petani tembakau di Indonesia.",
             '2021. Terkait rencana revisi Peraturan Pemerintah (PP) Nomor 109 Tahun 2012 tentang Pengamanan Bahan yang Mengandung Zat Adiktif Berupa Produk Tembakau Bagi Kesehatan, Daniel menolak dan menginginkan ada kajian komprehensif yang mengutamakan kepentingan petani sebagai dasar pembuatan kebijakan pemerintah. Namun di sisi lain, Daniel juga mengatakan, “Pemerintah harus berhati-hati untuk mengambil kebijakan yang sifatnya strategis, apalagi kalau urusannya terkait dengan nasib petani, buruh dan pihak-pihak yang berhubungan dengan industri tembakau"',
@@ -104,6 +113,7 @@ const legislatif = {
           position: { x: 0, y: 0 },
           jabatan: "Gerindra, Jateng VII",
           image: "legislatif_1_8.jpg",
+          handle: { target: ["right", "Top"], source: ["left", "bottom"] },
           details: [
             "2018. Darori merupakan anggota panitia khusus RUU Pertembakauan dan pernah melakukan pertemuan dengan Direksi PT. Gudang Garam Indonesia dan Direksi PT. Hanjaya Mandala Sampoerna Tbk.",
             "2019. Mendukung RUU Pertembakauan harus masuk ke daftar prolegnas tahunan/5 tahunan, dan mencegah terjadinya pembatalan, karenai menilai RUU Pertembakauan nantinya akan mengatur sektor pengobatan, subsidi bagi petani tembakau dalam mengembangkan produknya, melindungi monopoli pabrik rokok lokal oleh perusahaan besar.",
@@ -115,6 +125,7 @@ const legislatif = {
           position: { x: 0, y: 0 },
           jabatan: "PDIP, Jateng VIII",
           image: "legislatif_1_9.jpg",
+          handle: { target: ["right", "Top"], source: ["left", "bottom"] },
           details: [
             "2013. Saat menjabat bupati Klaten, menemui petani yang melakukan aksi tolak PP Nomor 109 Tahun 2012 Pengamanan Bahan yang Mengandung Zat Adiktif Berupa Produk Tembakau Bagi Kesehatan dan menyatakan ikut mendukung penolakan PP tersebut dengan menandatangani surat dukungan penolakan PP yang akan dikirim ke pemerintah pusat. Sunarna beranggapan bahwa pemberlakuan PP tersebut sama saja dengan menghentikan sumber pendapatan petani tembakau dan perlu ada judicial review untuk PP tersebut.",
           ],
@@ -125,6 +136,7 @@ const legislatif = {
           position: { x: 0, y: 0 },
           jabatan: "Demokrat, Kalteng",
           image: "legislatif_1_10.jpg",
+          handle: { target: ["right", "Top"], source: ["left", "bottom"] },
           details: [
             "2021. Menyatakan revisi PP 109 tahun 2012 tidak urgent dan menilai bahwa revisi PP 109 tidak berpihak pada petani dan akan berdampak pada penghasilan masyarakat sehingga menjadi masalah baru bagi pemerintah.",
             "2019. tercatat LHKPN sebesar Rp 951.624.000, namun sumbangan dana kampanye ke partai tahun yang sama sebesar Rp 1.753.700.000, lebih besar pasak daripada tiang. Darimana sumber sumbangan dana kampanye Bambang?",
@@ -137,6 +149,7 @@ const legislatif = {
       nama: "Komisi VI",
       position: { x: 100, y: 200 },
       description: "(Industri, Investasi, Persaingan Usaha)",
+      handle: { target: [], source: ["left", "bottom", "up", "right"] },
       anggota: [
         {
           id: "13",
@@ -144,6 +157,7 @@ const legislatif = {
           position: { x: 0, y: 0 },
           jabatan: "Golkar, Dapil Jateng II",
           image: "legislatif_2_1.jpg",
+          handle: { target: ["right", "Top"], source: ["left", "bottom"] },
           details: [],
         },
         {
@@ -152,6 +166,7 @@ const legislatif = {
           position: { x: 0, y: 0 },
           jabatan: "PDIP, Dapil Jateng VIII",
           image: "legislatif_2_2.jpg",
+          handle: { target: ["right", "Top"], source: ["left", "bottom"] },
           details: [],
         },
         {
@@ -160,6 +175,7 @@ const legislatif = {
           position: { x: 0, y: 0 },
           jabatan: "Fraksi Golkar. Dapil Jawa Timur VI",
           image: "legislatif_2_3.jpg",
+          handle: { target: ["right", "Top"], source: ["left", "bottom"] },
           details: [],
         },
         {
@@ -168,6 +184,7 @@ const legislatif = {
           position: { x: 0, y: 0 },
           jabatan: "Gerindra. Dapil Sulawesi Tengah\nKetua BALEG 2016-Sekarang",
           image: "legislatif_2_4.jpg",
+          handle: { target: ["right", "Top"], source: ["left", "bottom"] },
           details: [],
         },
         {
@@ -177,6 +194,7 @@ const legislatif = {
           jabatan:
             "PKB. Dapil Jawa Tengah IV\nAnggota Baleg, Pansus dan Komisi VI",
           image: "legislatif_2_5.jpg",
+          handle: { target: ["right", "Top"], source: ["left", "bottom"] },
           details: [],
         },
         {
@@ -185,6 +203,7 @@ const legislatif = {
           position: { x: 0, y: 0 },
           jabatan: "Fraksi PDIP. Dapil Jawa Tengah V",
           image: "legislatif_2_6.jpg",
+          handle: { target: ["right", "Top"], source: ["left", "bottom"] },
           details: [],
         },
         {
@@ -193,6 +212,7 @@ const legislatif = {
           position: { x: 0, y: 0 },
           jabatan: "PDIP. Dapil Bali",
           image: "legislatif_2_7.jpg",
+          handle: { target: ["right", "Top"], source: ["left", "bottom"] },
           details: [],
         },
         {
@@ -202,6 +222,7 @@ const legislatif = {
           jabatan:
             "PDIP. Dapil Jawa Barat VII\nKetua Umum Konfederasi Rakyat Pekerja Indonesia (KPRI)",
           image: "legislatif_2_8.jpg",
+          handle: { target: ["right", "Top"], source: ["left", "bottom"] },
           details: [],
         },
         {
@@ -218,6 +239,7 @@ const legislatif = {
       nama: "Komisi VII",
       position: { x: 300, y: 400 },
       description: "(Energi, Riset dan Teknologi, dan Lingkungan Hidup)",
+      handle: { target: [], source: ["left", "bottom", "up", "right"] },
       anggota: [
         {
           id: "23",
@@ -225,6 +247,7 @@ const legislatif = {
           position: { x: 0, y: 0 },
           jabatan: "PKB, Jawa Tengah III",
           image: "legislatif_3_1.jpg",
+          handle: { target: ["right", "Top"], source: ["left", "bottom"] },
           details: [],
         },
         {
@@ -233,6 +256,7 @@ const legislatif = {
           position: { x: 0, y: 0 },
           jabatan: "Demokrat, Dapil Jatim VII",
           image: "legislatif_3_2.jpg",
+          handle: { target: ["right", "Top"], source: ["left", "bottom"] },
           details: [],
         },
         {
@@ -241,6 +265,7 @@ const legislatif = {
           position: { x: 0, y: 0 },
           jabatan: "Gerindra, Dapil Jatim IV",
           image: "legislatif_3_3.jpg",
+          handle: { target: ["right", "Top"], source: ["left", "bottom"] },
           details: [],
         },
         {
@@ -249,6 +274,7 @@ const legislatif = {
           position: { x: 0, y: 0 },
           jabatan: "PKB, Dapil Jateng V",
           image: "legislatif_3_4.jpg",
+          handle: { target: ["right", "Top"], source: ["left", "bottom"] },
           details: [
             "2014. Meminta pemerintah terutama Soesilo Bambang Yudhoyono yang saat itu menjabat sebagai Presiden RI untuk tidak gegabah dan memberikan persetujuan ratifikasi FCTC yang dinilai akan mengancam petani tembakau dan buruh tani.",
             "2019. Mendukung konsumsi produk tembakau asal tidak berlebihan serta pengembangan industri tembakau di Indonesia. Tidak setuju kenaikan cukai rokok kretek dan menilai kebijakan ini merupakan kebijakan salah kaprah, tergesa-gesa, dan tidak memikirkan dampaknya",
@@ -264,6 +290,7 @@ const legislatif = {
           position: { x: 0, y: 0 },
           jabatan: "Golkar, Dapil Jatim V",
           image: "legislatif_3_5.jpg",
+          handle: { target: ["right", "Top"], source: ["left", "bottom"] },
           details: [
             "2015. Saat menjabat Wakil Ketua Komisi X DPR RI, mendorong memasukkan rokok kretek ke dalam RUU Kebudayaan sbg warisan budaya karena sifatnya unik serta meramu produksi tembakau dengan cengkeh hanya di Indonesia",
             "2018. Mendorong PT. HM Sampoerna Tbk meningkatkan capaian propernya dengan memperbanyak Tanggung Jawab Sosial Perusahaan atau Corporate Social Responsibility (CSR). Mendorong industri rokok untuk menuju industri yang ramah lingkungan",
@@ -276,6 +303,7 @@ const legislatif = {
           position: { x: 0, y: 0 },
           jabatan: "PDIP, Dapil Jabar IV",
           image: "legislatif_3_6.jpg",
+          handle: { target: ["right", "Top"], source: ["left", "bottom"] },
           details: [
             "2012. Terlibat kasus hilangnya ayat tembakau dalam RUU Kesehatan. Dalam ayat 2 pasal 113 RUU, tembakau disebut sebagai zat adiktif. Ayat tersebut tiba-tiba dihilangkan, padahal pada saat pembahasan, yaitu 11 September 2009, ada dalam naskah. Saat itu Ribka merupakan ketua komisi IX dan diberi sanksi oleh Badan Kehormatan DPR berupa larangan memimpin rapat panitia kerja dan panitia khusus. ",
             "2013. Menerima aspirasi Asosiasi Petani Tembakau Indonesia untuk dibawa dalam rapat dengan Kementerian Kesehatan RI ataupun Kementerian Tenaga Kerja RI, saat menjabat sebagai Komisi IX DPR RI.",
@@ -287,6 +315,7 @@ const legislatif = {
           position: { x: 0, y: 0 },
           jabatan: "PKB, Dapil Jatim I",
           image: "legislatif_3_7.jpg",
+          handle: { target: ["right", "Top"], source: ["left", "bottom"] },
           details: [
             "2018. Memimpin kunjungan ke PT. HM Sampoerna Tbk di Sukorejo, Pasuruan, Jawa Timur. Menyatakan dukungan pada PT Sampoerna meningkatkan Penilaian Peringkat Kinerja Perusahaan (Proper) Hijau ke Emas agar dapat menjadi pionir bagi industri rokok ramah lingkungan. Menyatakan limbah B3 dari industri rokok tidak terlalu banyak, jadi mudah untuk menuju industri yang ramah lingkungan.",
           ],
@@ -298,6 +327,7 @@ const legislatif = {
       nama: "Komisi IX",
       position: { x: 500, y: 600 },
       description: "(Kesehatan, Ketenagakerjaan, Kependudukan)",
+      handle: { target: [], source: ["left", "bottom", "up", "right"] },
       anggota: [
         {
           id: "31",
@@ -305,6 +335,7 @@ const legislatif = {
           position: { x: 0, y: 0 },
           jabatan: "PKB, Jawa Tengah IX",
           image: "legislatif_4_1.jpg",
+          handle: { target: ["right", "Top"], source: ["left", "bottom"] },
           details: [
             "2021. Menolak kenaikan tarif cukai hasil tembakau (CHT) karena akan berpengaruh terhadap kesejahteraan serta kelangsungan hidup petani dan tenaga kerja industri hasil tembakau (IHT)",
             "2022. Menyatakan tidak setuju dengan pemerintah yang menaikkan tarif cukai SKT pada 2023 dan menilai kontribusi segmen ini besar pada pemulihan ekonomi negara melalui pabrikan Sigaret Kretek Tangan (SKT) dan penyerapan tenaga kerja",
@@ -319,6 +350,7 @@ const legislatif = {
           position: { x: 0, y: 0 },
           jabatan: "Demokrat, Jawa Timur I",
           image: "legislatif_4_2.jpg",
+          handle: { target: ["right", "Top"], source: ["left", "bottom"] },
           details: [
             "2023. Menyatakan pasal 154 hingga 158 yang menyetarakan tembakau dengan narkoba seharusnya dihapus dari RUU Kesehatan. Berpendapat bahwa Pasal itu akan bertentangan dengan pasal lain pada UU lain yang melegalkan tembakau. Mengemukakan bahwa pasal tersebut bisa membunuh usaha tembakau dan menghilangkan mata pencaharian para petani tembakau dan khawatir dengan tutupnya pabrik rokok dan bertambahnya pengangguran.",
           ],
@@ -329,6 +361,7 @@ const legislatif = {
           position: { x: 0, y: 0 },
           jabatan: "Golkar, Jawa Tengah VIII",
           image: "legislatif_4_3.jpg",
+          handle: { target: ["right", "Top"], source: ["left", "bottom"] },
           details: [
             "2023.  Tidak setuju penyatuan zat narkotika dengan produk tembakau dalam satu kategori. Mengusulkan adanya aturan terpisah untuk zat narkotika dan tembakau, termasuk rokok elektrik sebagai salah satu produk turunannya. Menilai bahwa industri tembakau telah menjadi bagian integral dari sejarah dan kebudayaan Indonesia selama lebih dari seratus tahun. Beranggapan bahwa negara telah menerima banyak dari industri rokok serta menjadi salah satu penyedia lapangan pekerjaan terbesar di Indonesia.",
             "2023, menyatakan bahwa IHT itu industri yang legal, jangan terus dipersulit. Kontribusinya sangat nyata bagi negara.  Dia menyebutkan bahwa IHT menyerap lapangan kerja 5-6 juta orang. Cukai rokok sebesar Rp 232 triliun bagi keuangan negara. Dia mengungkapkan bahwa tidak ada industri lain yang kontribusinya sebesar IHT.",
@@ -340,6 +373,7 @@ const legislatif = {
           position: { x: 0, y: 0 },
           jabatan: "PDIP, Jawa Tengah IX",
           image: "legislatif_4_4.jpg",
+          handle: { target: ["right", "Top"], source: ["left", "bottom"] },
           details: [
             "2021. Menerima audiensi dari Aliansi Masyarakat Tembakau Indonesia (AMTI) yang terdiri dari Asosiasi Petani Tembakau Indonesia (APTI), Asosiasi Petani Cengkeh Indonesia (APCI) dan Mitra Produksi Sigaret Indonesia (MPSI) dan menyatakan menerima aduan AMTI mengenai revisi PP 109/2012. Menyatakan dukungan untuk tidak merevisi PP 109 Tahun 2012 karena kekhawatiran akan banyak para pelaku usaha dalam industri hasil tembakau yang gulung tikar dan berdampak pada pengangguran",
             "2023. Cenderung tidak setuju dengan rencana pelarangan iklan produk tembakau atau iklan rokok di ruang publik maupun internet di dalam draft Peraturan Pemerintah (PP) yang sedang disusun Kementerian Kesehatan (Kemenkes). Menekankan agar pengaturan pengendalian tembakau Jangan sampai ini menjadi pengekang industri kreatif.",
@@ -353,6 +387,7 @@ const legislatif = {
       position: { x: 700, y: 800 },
       description:
         "(Keuangan, Perencanaan Pembangunan Nasional, serta Perbankan)",
+      handle: { target: [], source: ["left", "bottom", "up", "right"] },
       anggota: [
         {
           id: "36",
@@ -360,6 +395,7 @@ const legislatif = {
           position: { x: 0, y: 0 },
           jabatan: "PDIP, Dapil Jatim V",
           image: "legislatif_5_1.jpg",
+          handle: { target: ["right", "Top"], source: ["left", "bottom"] },
           details: [
             "Pernah menjabat sebagai Komite Pemantau Risiko PT Bank Central Asia Tbk. (Salah satu perusahaan yang satu group dengan Djarum) 2008-2014.",
             "2022. Pernyataan: “Kenaikan tarif CHT itu telah membuat para pekerja di dalamnya merasa terancam, karena memang daya beli masyarakat tengah sulit dan belum adanya roadmap yang memberi peluang kerja baru bagi mereka … “ Pernyataan disampaikan saat rapat kerja DPR dengan Menteri Keuangan RI.",
@@ -371,6 +407,7 @@ const legislatif = {
           position: { x: 0, y: 0 },
           jabatan: "PDIP, Dapil Jateng X",
           image: "legislatif_5_2.jpg",
+          handle: { target: ["right", "Top"], source: ["left", "bottom"] },
           details: [
             "2018. Wakil Ketua Panitia Khusus (Pansus) RUU Pertembakauan",
             "2019. Mendorong pembahasan RUU Pertembakauan karena menilai sektor pertembakauan telah memberikan manfaat dari segi ekonomi yang cukup besar dalam penerimaan negara",
@@ -383,6 +420,7 @@ const legislatif = {
           position: { x: 0, y: 0 },
           jabatan: "PKB, Dapil Sumsel II",
           image: "legislatif_5_3.jpg",
+          handle: { target: ["right", "Top"], source: ["left", "bottom"] },
           details: [
             '2021. Tidak sepakat dengan kenaikan cukai rokok atau cukai hasil tembakau pada 1 Februari 2021 karena dinilai mengancam kesejahteraan petani tembakau. Pernyataan: "Cukai tembakau setiap tahun mengalami kenaikan, sementara para petani tembakau terus mengalami tekanan akan kenaikan tersebut"',
             '2021. “Mengenai perhatian terhadap petani tembakau ini, kita di sini memperhatikan (kalau) aspek kesehatan ini sudah kita bawa di bagi persentasenya hasil cukai untuk kesehatan sekian persen, namun untuk petani sendiri yang notabene hasil cukai ini juga berdampak pada penerimaan negara, tak ada satu tetespun yang dialokasikan ke sana,"',
@@ -396,6 +434,7 @@ const legislatif = {
           position: { x: 0, y: 0 },
           jabatan: "PPP, Dapil Sulsel I",
           image: "legislatif_5_4.jpg",
+          handle: { target: ["right", "Top"], source: ["left", "bottom"] },
           details: [
             '2022. Pernyataan: “Kenaikan cukai rokok memang dibutuhkan untuk memperkuat penerimaan dalam APBN, tapi kenaikan tersebut perlu dibatasi.\n“Karena itu, untuk tahun 2023 disarankan batas maksimum kenaikan cukai rokok adalah di kisaran tujuh persen"',
             "Menilai bahwa kenaikan cukai terlampau tinggi akan berdampak signifikan. Kesempatan kerja di sektor industri hasil tembakau akan terkena imbas, mulai dari petani, sektor industri pengolahan tembakau, hingga para pedagang kaki lima.",
@@ -408,6 +447,7 @@ const legislatif = {
           jabatan:
             "Wakil Ketua Fraksi Partai NasDem DPR RI.\nDapil Jawa Timur XI\nWakil Ketua Badan Legislasi DPR RI\nKetua DPP Partai Nasdem",
           image: "legislatif_5_5.jpg",
+          handle: { target: ["right", "Top"], source: ["left", "bottom"] },
           details: [
             '2021. Menunjukkan sikap kontra kenaikan cukai hasil tembakau. Pernyataan: “Selain menurunkan produktivitas IHT, kenaikan CHT akan menyuburkan pasar rokok ilegal,..."',
             "2021. Mendorong adanya insentif bagi industri Hasil Pengolahan Tembakau dan Lainnya (HPTL) karena berkontribusi bagi peningkatan penerimaan cukai negara. ",
@@ -421,6 +461,7 @@ const legislatif = {
           position: { x: 0, y: 0 },
           jabatan: "Nasdem, Dapil Gorontalo 1",
           image: "legislatif_5_6.jpg",
+          handle: { target: ["right", "Top"], source: ["left", "bottom"] },
           details: [],
         },
         {
@@ -429,6 +470,7 @@ const legislatif = {
           position: { x: 0, y: 0 },
           jabatan: "PDIP, Dapil Jateng IV",
           image: "legislatif_5_7.jpg",
+          handle: { target: ["right", "Top"], source: ["left", "bottom"] },
           details: [
             '2022. Bersama Komisi XI DPR RI, ikut mengkritisi kebijakan pemerintah yang menetapkan tarif cukai hasil tembakau (CHT) tahun anggaran 2023 dan 2024 tanpa terlebih dahulu melalui persetujuan para anggota dewan.\nPernyataan: “Keputusan itu bertentangan dengan prinsip hubungan kesetaraan hak penganggaran atau budgeting. Karena itu, seharusnya penetapan CHT itu harus dikonsultasikan sebelum adanya kesepakatan UU APBN 2023 yang telah ditetapkan pada November 2022."',
             '2022. Meminta pemerintah untuk segera menyusun peta jalan (roadmap) transformasi industri hasil tembakau (IHT).\nPernyataan: “Ada kontradiksi antara penerapan kebijakan kenaikan tarif cukai tembakau dengan target penurunan prevalensi perokok di Indonesia yang selalu digadang-gadang oleh pemerintah."',
@@ -440,6 +482,7 @@ const legislatif = {
           position: { x: 0, y: 0 },
           jabatan: "PDIP, Dapil Jateng II",
           image: "legislatif_5_8.jpg",
+          handle: { target: ["right", "Top"], source: ["left", "bottom"] },
           details: [
             "2020. Mengunjungi beberapa pabrik rokok untuk mendengarkan permasalahan yang dihadapi para pengusaha rokok serta pekerja di Kudus.",
             '2020. Menghadiri peremsian KIHT (Kawasan Industri Hasil Tembakau) di Kudus. “Maksud dan tujuan pembentukan KIHT ini adalah memberikan kemudahan, membangun kekuatan perekonomian bagi masyarakat kecil yang berusaha di bidang rokok." ',
@@ -451,6 +494,7 @@ const legislatif = {
           position: { x: 0, y: 0 },
           jabatan: "PDIP, Dapil Jatim XI",
           image: "legislatif_5_9.jpg",
+          handle: { target: ["right", "Top"], source: ["left", "bottom"] },
           details: [
             '2020. Mendorong segera terbentuknya kawasan industri hasil tembakau (KIHT) di Pulau Madura, sebagai bentuk proteksi bagi industri kecil menengah.\nPernyataan: “Sudah waktunya di Madura ada KIHT. Ini akan membantu pabrikan rokok kecil agar bisa bertahan sekaligus terus mengembangkan usahanya,"',
             '2023, “Tembakau campalok ini berhikayat mistis, termasuk harganya luar biasa mahal, dan ternyata tembakau ini bisa digunakan untuk vaksin invfluenza sekaligus obat obat herbal. Bagi orang madura adalah dirinya, bagi orang madura tembakau adalah kecintaan, bagi orang madura tembakau adalah gantungan emas yang tidak mungkin ia tinggalkan,"',
@@ -465,22 +509,35 @@ const eksekutif = {
   id: "91",
   nama: "Eksekutif",
   position: { x: 3062, y: 1816 },
+  handle: { target: [], source: ["left", "bottom", "up", "right"] },
   details: [
     {
       id: "47",
       nama: "Atong Soekirman",
       position: { x: 2632, y: 1959 },
       jabatan: "Asisten Deputi Pengembangan Industri",
-      image: "eksekutif_1_1.jpg",
-      details: [],
+      image: "eksekutif_1_1.png",
+      handle: { target: ["right", "Top"], source: ["left", "bottom"] },
+      fakta: [4, 5],
+      details: [
+        { link: { year: "2018", href: "https://drive.google.com/drive/folders/1rnm3DgQAFm2bR4q8UqvBmnn67zm5JGKP?usp=drive_link" }, text: "Menyatakan dibatalkannya kenaikan cukai antara lain karena pemerintah ingin menjaga agar tidak terjadi pemutusan hubungan kerja di industri rokok.", quote: ["Harga juga sensitif. Jumlah industri mesti dijaga supaya engga ada lay off"] },
+        { link: { year: "2021", href: "https://drive.google.com/drive/folders/1fmItl_Xvd-UyN4_Bausetk00s5EaEP3m?usp=drive_link" }, text: "Menilai regulasi yang mengatur IHT saat ini telah sukses, dan tidak ada urgensi untuk melakukan revisi PP 109 Tahun 2012. Juga, menyatakan angka kenaikan cukai yang ideal adalah 3-8 persen, sebab jika lebih dari itu, peredaran rokok ilegal pasti akan meningkat", quote: [] },
+      ],
     },
     {
       id: "48",
       nama: "Airlangga Hartanto",
       position: { x: 2539, y: 1789 },
       jabatan: "Menko Perekonomian, Golkar",
-      image: "eksekutif_1_2.jpg",
-      details: [],
+      image: "eksekutif_1_2.png",
+      handle: { target: ["right", "Top"], source: ["left", "bottom"] },
+      fakta: [3, 9],
+      details: [
+        { link: { year: "2019", href: "https://drive.google.com/drive/folders/1dOhnRmmyN858eIzQQi2eiZW7Tn--JPNI?usp=drive_link" }, text: "Saat menjabat sebagai Menteri Perindustrian (2016-2019), menilai industri rokok di dalam negeri telah  meningkatkan nilai tambah dari bahan baku lokal serta merupakan sektor padat karya  dan berorientasi ekspor sehingga mampu menopang pertumbuhan ekonomi.", quote: ["IHT merupakan bagian sejarah bangsa dan budaya Indonesia, khususnya rokok kretek. Pasalnya, merupakan produk berbasis tembakau dan cengkeh  yang menjadi warisan inovasi nenek moyang dan sudah mengakar secara turun temurun"] },
+        { link: { year: "2019", href: "https://drive.google.com/drive/folders/1NTVaR5Pz3vmNhTxFv-G1qgGqCQfSizkY?usp=drive_link" }, text: "Saat menjabat Menperin, melakukan “silaturahmi” dengan para pekerja linting di pusat fasilitas produksi PT HM Sampoerna Tbk. Pada kunjungan tersebut, menekankan pentingnya industri hasil tembakau yang dinilai telah menopang perekonomian Indonesia.", quote: [] },
+        { link: { year: "2021", href: "https://drive.google.com/drive/folders/1cIbjDfSn2-CynYOyOlMmHFBnBY-r5DCz?usp=drive_link" }, text: "Mendukung industri tembakau dengan menghadiri acara 'Peresmian Investasi Pabrik IQOS-HEETS atau produk tembakau inovatif bebas asap PT HM Sampoerna' di Karawang, Jawa Barat bersama dengan Menteri Investasi Bapak Bahlil Lahadalia dan Ketua Umum KADIN Bapak Arsjad Rasjid ", quote: [] },
+      ],
+
     },
     {
       id: "49",
@@ -488,7 +545,12 @@ const eksekutif = {
       position: { x: 2632, y: 1623 },
       jabatan: "Asisten Deputi Pengembangan Agribisnis Perkebunan",
       image: "eksekutif_1_3.jpg",
-      details: [],
+      handle: { target: ["right", "Top"], source: ["left", "bottom"] },
+      fakta: [4],
+      details: [
+        { link: { year: "2022", href: "https://drive.google.com/drive/folders/1Jp7SmMGnGI4-NVgV46Idgx0P7_hSwB6y?usp=drive_link" }, text: "Menilai revisi Peraturan Pemerintah Nomor 109 Tahun 2012 tentang Pengamanan Bahan yang Mengandung Zat Adiktif Berupa Produk Tembakau Bagi Kesehatan dampaknya akan menekan ekosistem industri, sehingga tidak bisa serta-merta diterapkan", quote: ["Tembakau ini perlu mendapatkan perhatian karena mencakup kesejahteraan masyarakat banyak, khususnya petani tembakau. Pemerintah juga telah mendeklarasikan tembakau sebagai salah satu komoditas strategis nasional dalam Undang-Undang Nomor 39 Tahun 2014"] },
+      ],
+
     },
     {
       id: "50",
@@ -496,7 +558,14 @@ const eksekutif = {
       position: { x: 2790, y: 1471 },
       jabatan: "Sekretaris",
       image: "eksekutif_1_4.jpg",
-      details: [],
+      handle: { target: ["right", "Top"], source: ["left", "bottom"] },
+      fakta: [],
+      details: [
+        { link: { year: "2020", href: "https://drive.google.com/drive/folders/1RTxEc5pJ4oFHO1A0DZPrPyPHLJepE0Et?usp=drive_link" }, text: "Menyatakan bahwa hal pertama yang harus dilakukan adalah mengoptimalkan kinerja IHT dengan tetap meminimalkan eksternalitas negatif yang ditimbulkan. Dalam artian, mendorong pengembangan IHT sebagai industri yang mampu memproduksi barang dengan karakteristik produk berorientasi ekspor, substitusi impor, dan juga merestriksi produk ilegal, juga meningkatkan tata kelola IHT dengan penerapan standar industri dan peningkatan kualitas SDM. juga menyatakan agar  menjaga keberlangsungan sektor pertanian dan petani (tembakau dan cengkeh) untuk memasok bahan baku di IHT. Kita juga perlu melestarikan IHT sebagai heritage industry, yang menyerap banyak tenaga kerja.\nMenyatakan bahwa IHT perlu diberikan perlindungan agar dapat tetap eksis. Selain itu, daya saing IHT juga harus ditingkatkan di tengah persaingan industri global.", quote: ["Kita harus segera menyiapkan regulasi prioritas yang mendukung IHT, yakni Perlindungan Kretek Sebagai Heritage Nasional, Standardisasi dan Kualitas Bahan Baku dan Produk IHT, dan Pengaturan Bahan Baku dan Keberlangsungan IHT"] },
+        { link: { year: "2023", href: "https://drive.google.com/drive/folders/1ky45FA0AtZq7zmyd1skukyKFpl9e0FIy?usp=drive_link" }, text: "Pernyataan: “Dengan adanya revisi PP 109/2012, pengawasan terhadap industri hasil tembakau akan semakin diperketat sehingga ruang gerak IHT pun menjadi terbatas. Situasi ini dikhawatirkan akan membuat IHT mengalami kontraksi yang cukup dalam dan diiringi penurunan kinerja. Padahal, industri hasil tembakau saat ini masih dalam proses pemulihan ekonomi akibat pandemi COVID-19", quote: [] },
+        { link: { year: "2023", href: "https://drive.google.com/drive/folders/1edClttDJRDkW5_mFJ1iTb235ZtCZaQ6o?usp=drive_link" }, text: "Turut hadir dalam peresmian dan pelepasan ekspor perdana produk tembakau inovatif bebas asap oleh PT HM Sampoerna Tbk ke Malaysia dan Filipina. Pada kesempatan itu, menyampaikan bahwa ekspor perdana produk tembakau inovatif ini merupakan bukti nyata bagian dari strategi salah satu sektor industri manufaktur.", quote: ["Produk tembakau tanpa asap yang dilepas oleh Sampoerna ke Malaysia dan 43 negara ini penting. Kami ingin industri-industri seperti ini. Investasi dilakukan di Indonesia dan berorientasi ekspor"] },
+      ],
+
     },
     {
       id: "51",
@@ -504,23 +573,40 @@ const eksekutif = {
       position: { x: 2981, y: 1451 },
       jabatan: "Direktur Utama BPDPKS",
       image: "eksekutif_child_2_1.jpg",
-      details: [],
+      handle: { target: ["right", "Top"], source: ["left", "bottom"] },
+      fakta: [],
+      details: [
+        { link: { year: "2020", href: "https://drive.google.com/drive/folders/1H_ktAoGcxmw88jIgVc0-bOXX_w8nYk3y?usp=drive_link" }, text: "Hingga saat ini, menjabat sebagai Direktur utama Badan Pengelola Dana Perkebunan Kelapa Sawit (BPDPKS), yaitu lembaga yang merupakan unit organisasi non eselon di bidang pengelolaan Dana Perkebunan Kelapa Sawit yang berada di bawah dan bertanggung jawab kepada Menteri Keuangan melalui Direktorat Jenderal Perbendaharaan. Eddy dilantik oleh Menteri Keuangan Sri Mulyani Indrawati pada 2 Maret 2020", quote: [] },
+        { link: { year: "2022", href: "https://drive.google.com/drive/folders/1zJusaDPnHvl6LWDODcObMqzG3hsoxiej?usp=drive_link" }, text: "Di samping direktur utama BPDPKS, beliau menjabat juga sebagai Komisaris Independen di PT Bentoel Internasional Investama Tbk sejak Februari 2015 hingga saat ini (Dewan Komisaris bertugas mengawasi manajemen Perusahaan dan memberikan arahan kepada Direksi terkait pengembangan bisnis sejalan dengan visi dan misi Perusahaan untuk tahun buku berjalan).", quote: [] },
+      ],
     },
+    // TODO: CHECK DETAILS
     {
       id: "52",
       nama: "Hendratmojo Bagus Hudoro",
       position: { x: 3196, y: 2188 },
       jabatan: "Direktur Tanaman Semusim dan Rempah",
       image: "eksekutif_child_2_2.jpg",
-      details: [],
+      handle: { target: ["right", "Top"], source: ["left", "bottom"] },
+      fakta: [],
+      details: [
+        { link: { year: "2020", href: "https://drive.google.com/drive/folders/1H_ktAoGcxmw88jIgVc0-bOXX_w8nYk3y?usp=drive_link" }, text: "Hingga saat ini, menjabat sebagai Direktur utama Badan Pengelola Dana Perkebunan Kelapa Sawit (BPDPKS), yaitu lembaga yang merupakan unit organisasi non eselon di bidang pengelolaan Dana Perkebunan Kelapa Sawit yang berada di bawah dan bertanggung jawab kepada Menteri Keuangan melalui Direktorat Jenderal Perbendaharaan. Eddy dilantik oleh Menteri Keuangan Sri Mulyani Indrawati pada 2 Maret 2020", quote: [] },
+        { link: { year: "2022", href: "https://drive.google.com/drive/folders/1zJusaDPnHvl6LWDODcObMqzG3hsoxiej?usp=drive_link" }, text: "Di samping direktur utama BPDPKS, beliau menjabat juga sebagai Komisaris Independen di PT Bentoel Internasional Investama Tbk sejak Februari 2015 hingga saat ini (Dewan Komisaris bertugas mengawasi manajemen Perusahaan dan memberikan arahan kepada Direksi terkait pengembangan bisnis sejalan dengan visi dan misi Perusahaan untuk tahun buku berjalan).", quote: [] },
+      ],
     },
     {
       id: "55",
       nama: "Edy Sutopo",
       position: { x: 3668, y: 1805 },
       jabatan: "Direktur Industri Minuman, Hasil Tembakau dan Bahan Penyegar",
-      image: "eksekutif_3_1.jpg",
-      details: [],
+      image: "eksekutif_3_1.png",
+      handle: { target: ["right", "Top"], source: ["left", "bottom"] },
+      fakta: [],
+      details: [
+        { link: { year: "2020", href: "https://drive.google.com/drive/folders/1H_ktAoGcxmw88jIgVc0-bOXX_w8nYk3y?usp=drive_link" }, text: "Hingga saat ini, menjabat sebagai Direktur utama Badan Pengelola Dana Perkebunan Kelapa Sawit (BPDPKS), yaitu lembaga yang merupakan unit organisasi non eselon di bidang pengelolaan Dana Perkebunan Kelapa Sawit yang berada di bawah dan bertanggung jawab kepada Menteri Keuangan melalui Direktorat Jenderal Perbendaharaan. Eddy dilantik oleh Menteri Keuangan Sri Mulyani Indrawati pada 2 Maret 2020", quote: [] },
+        { link: { year: "2022", href: "https://drive.google.com/drive/folders/1zJusaDPnHvl6LWDODcObMqzG3hsoxiej?usp=drive_link" }, text: "Di samping direktur utama BPDPKS, beliau menjabat juga sebagai Komisaris Independen di PT Bentoel Internasional Investama Tbk sejak Februari 2015 hingga saat ini (Dewan Komisaris bertugas mengawasi manajemen Perusahaan dan memberikan arahan kepada Direksi terkait pengembangan bisnis sejalan dengan visi dan misi Perusahaan untuk tahun buku berjalan).", quote: [] },
+      ],
+
     },
     {
       id: "56",
@@ -528,7 +614,13 @@ const eksekutif = {
       position: { x: 3550, y: 1985 },
       jabatan: "Direktur Jenderal Industri Agro",
       image: "eksekutif_3_2.jpg",
-      details: [],
+      handle: { target: ["right", "Top"], source: ["left", "bottom"] },
+      fakta: [],
+      details: [
+        { link: { year: "2020", href: "https://drive.google.com/drive/folders/1H_ktAoGcxmw88jIgVc0-bOXX_w8nYk3y?usp=drive_link" }, text: "Hingga saat ini, menjabat sebagai Direktur utama Badan Pengelola Dana Perkebunan Kelapa Sawit (BPDPKS), yaitu lembaga yang merupakan unit organisasi non eselon di bidang pengelolaan Dana Perkebunan Kelapa Sawit yang berada di bawah dan bertanggung jawab kepada Menteri Keuangan melalui Direktorat Jenderal Perbendaharaan. Eddy dilantik oleh Menteri Keuangan Sri Mulyani Indrawati pada 2 Maret 2020", quote: [] },
+        { link: { year: "2022", href: "https://drive.google.com/drive/folders/1zJusaDPnHvl6LWDODcObMqzG3hsoxiej?usp=drive_link" }, text: "Di samping direktur utama BPDPKS, beliau menjabat juga sebagai Komisaris Independen di PT Bentoel Internasional Investama Tbk sejak Februari 2015 hingga saat ini (Dewan Komisaris bertugas mengawasi manajemen Perusahaan dan memberikan arahan kepada Direksi terkait pengembangan bisnis sejalan dengan visi dan misi Perusahaan untuk tahun buku berjalan).", quote: [] },
+      ],
+
     },
     {
       id: "57",
@@ -536,7 +628,13 @@ const eksekutif = {
       position: { x: 3411, y: 2139 },
       jabatan: "Menteri Perindustrian",
       image: "eksekutif_3_3.jpg",
-      details: [],
+      handle: { target: ["right", "Top"], source: ["left", "bottom"] },
+      fakta: [],
+      details: [
+        { link: { year: "2020", href: "https://drive.google.com/drive/folders/1H_ktAoGcxmw88jIgVc0-bOXX_w8nYk3y?usp=drive_link" }, text: "Hingga saat ini, menjabat sebagai Direktur utama Badan Pengelola Dana Perkebunan Kelapa Sawit (BPDPKS), yaitu lembaga yang merupakan unit organisasi non eselon di bidang pengelolaan Dana Perkebunan Kelapa Sawit yang berada di bawah dan bertanggung jawab kepada Menteri Keuangan melalui Direktorat Jenderal Perbendaharaan. Eddy dilantik oleh Menteri Keuangan Sri Mulyani Indrawati pada 2 Maret 2020", quote: [] },
+        { link: { year: "2022", href: "https://drive.google.com/drive/folders/1zJusaDPnHvl6LWDODcObMqzG3hsoxiej?usp=drive_link" }, text: "Di samping direktur utama BPDPKS, beliau menjabat juga sebagai Komisaris Independen di PT Bentoel Internasional Investama Tbk sejak Februari 2015 hingga saat ini (Dewan Komisaris bertugas mengawasi manajemen Perusahaan dan memberikan arahan kepada Direksi terkait pengembangan bisnis sejalan dengan visi dan misi Perusahaan untuk tahun buku berjalan).", quote: [] },
+      ],
+
     },
     {
       id: "59",
@@ -544,7 +642,13 @@ const eksekutif = {
       position: { x: 2981, y: 2188 },
       jabatan: "Ketua Tim Kerja Tanaman Semusim dan yang Lainnya",
       image: "eksekutif_5_1.jpg",
-      details: [],
+      handle: { target: ["right", "Top"], source: ["left", "bottom"] },
+      fakta: [],
+      details: [
+        { link: { year: "2020", href: "https://drive.google.com/drive/folders/1H_ktAoGcxmw88jIgVc0-bOXX_w8nYk3y?usp=drive_link" }, text: "Hingga saat ini, menjabat sebagai Direktur utama Badan Pengelola Dana Perkebunan Kelapa Sawit (BPDPKS), yaitu lembaga yang merupakan unit organisasi non eselon di bidang pengelolaan Dana Perkebunan Kelapa Sawit yang berada di bawah dan bertanggung jawab kepada Menteri Keuangan melalui Direktorat Jenderal Perbendaharaan. Eddy dilantik oleh Menteri Keuangan Sri Mulyani Indrawati pada 2 Maret 2020", quote: [] },
+        { link: { year: "2022", href: "https://drive.google.com/drive/folders/1zJusaDPnHvl6LWDODcObMqzG3hsoxiej?usp=drive_link" }, text: "Di samping direktur utama BPDPKS, beliau menjabat juga sebagai Komisaris Independen di PT Bentoel Internasional Investama Tbk sejak Februari 2015 hingga saat ini (Dewan Komisaris bertugas mengawasi manajemen Perusahaan dan memberikan arahan kepada Direksi terkait pengembangan bisnis sejalan dengan visi dan misi Perusahaan untuk tahun buku berjalan).", quote: [] },
+      ],
+
     },
     {
       id: "60",
@@ -552,15 +656,27 @@ const eksekutif = {
       position: { x: 2790, y: 2139 },
       jabatan: "Sekertaris Jenderal Perkebunan Kementan",
       image: "eksekutif_5_2.jpg",
-      details: [],
+      handle: { target: ["right", "Top"], source: ["left", "bottom"] },
+      fakta: [],
+      details: [
+        { link: { year: "2020", href: "https://drive.google.com/drive/folders/1H_ktAoGcxmw88jIgVc0-bOXX_w8nYk3y?usp=drive_link" }, text: "Hingga saat ini, menjabat sebagai Direktur utama Badan Pengelola Dana Perkebunan Kelapa Sawit (BPDPKS), yaitu lembaga yang merupakan unit organisasi non eselon di bidang pengelolaan Dana Perkebunan Kelapa Sawit yang berada di bawah dan bertanggung jawab kepada Menteri Keuangan melalui Direktorat Jenderal Perbendaharaan. Eddy dilantik oleh Menteri Keuangan Sri Mulyani Indrawati pada 2 Maret 2020", quote: [] },
+        { link: { year: "2022", href: "https://drive.google.com/drive/folders/1zJusaDPnHvl6LWDODcObMqzG3hsoxiej?usp=drive_link" }, text: "Di samping direktur utama BPDPKS, beliau menjabat juga sebagai Komisaris Independen di PT Bentoel Internasional Investama Tbk sejak Februari 2015 hingga saat ini (Dewan Komisaris bertugas mengawasi manajemen Perusahaan dan memberikan arahan kepada Direksi terkait pengembangan bisnis sejalan dengan visi dan misi Perusahaan untuk tahun buku berjalan).", quote: [] },
+      ],
+
     },
     {
       id: "61",
       nama: "Budi Arie Setiadi",
       position: { x: 3196, y: 1450 },
       jabatan: "Menteri Komunikasi dan Informatika",
-      image: "eksekutif_5_3.jpg",
-      details: [],
+      image: "eksekutif_5_3.png",
+      handle: { target: ["right", "Top"], source: ["left", "bottom"] },
+      fakta: [],
+      details: [
+        { link: { year: "2020", href: "https://drive.google.com/drive/folders/1H_ktAoGcxmw88jIgVc0-bOXX_w8nYk3y?usp=drive_link" }, text: "Hingga saat ini, menjabat sebagai Direktur utama Badan Pengelola Dana Perkebunan Kelapa Sawit (BPDPKS), yaitu lembaga yang merupakan unit organisasi non eselon di bidang pengelolaan Dana Perkebunan Kelapa Sawit yang berada di bawah dan bertanggung jawab kepada Menteri Keuangan melalui Direktorat Jenderal Perbendaharaan. Eddy dilantik oleh Menteri Keuangan Sri Mulyani Indrawati pada 2 Maret 2020", quote: [] },
+        { link: { year: "2022", href: "https://drive.google.com/drive/folders/1zJusaDPnHvl6LWDODcObMqzG3hsoxiej?usp=drive_link" }, text: "Di samping direktur utama BPDPKS, beliau menjabat juga sebagai Komisaris Independen di PT Bentoel Internasional Investama Tbk sejak Februari 2015 hingga saat ini (Dewan Komisaris bertugas mengawasi manajemen Perusahaan dan memberikan arahan kepada Direksi terkait pengembangan bisnis sejalan dengan visi dan misi Perusahaan untuk tahun buku berjalan).", quote: [] },
+      ],
+
     },
     {
       id: "62",
@@ -568,7 +684,13 @@ const eksekutif = {
       position: { x: 3413, y: 1471 },
       jabatan: "Sekretaris Direktorat Jenderal Aplikasi Informatika",
       image: "eksekutif_5_4.jpg",
-      details: [],
+      handle: { target: ["right", "Top"], source: ["left", "bottom"] },
+      fakta: [],
+      details: [
+        { link: { year: "2020", href: "https://drive.google.com/drive/folders/1H_ktAoGcxmw88jIgVc0-bOXX_w8nYk3y?usp=drive_link" }, text: "Hingga saat ini, menjabat sebagai Direktur utama Badan Pengelola Dana Perkebunan Kelapa Sawit (BPDPKS), yaitu lembaga yang merupakan unit organisasi non eselon di bidang pengelolaan Dana Perkebunan Kelapa Sawit yang berada di bawah dan bertanggung jawab kepada Menteri Keuangan melalui Direktorat Jenderal Perbendaharaan. Eddy dilantik oleh Menteri Keuangan Sri Mulyani Indrawati pada 2 Maret 2020", quote: [] },
+        { link: { year: "2022", href: "https://drive.google.com/drive/folders/1zJusaDPnHvl6LWDODcObMqzG3hsoxiej?usp=drive_link" }, text: "Di samping direktur utama BPDPKS, beliau menjabat juga sebagai Komisaris Independen di PT Bentoel Internasional Investama Tbk sejak Februari 2015 hingga saat ini (Dewan Komisaris bertugas mengawasi manajemen Perusahaan dan memberikan arahan kepada Direksi terkait pengembangan bisnis sejalan dengan visi dan misi Perusahaan untuk tahun buku berjalan).", quote: [] },
+      ],
+
     },
     {
       id: "63",
@@ -577,24 +699,13 @@ const eksekutif = {
       jabatan:
         "Direktur Jenderal Pembinaan Hubungan Industrial dan Jaminan Sosial Tenaga Kerja",
       image: "eksekutif_5_5.jpg",
-      details: [],
-    },
-    {
-      id: "64",
-      nama: "Eni Maulani Saragih",
-      position: { x: 1600, y: 0 },
-      jabatan: "Mantan anggota DPR Komisi VII",
-      image: "eksekutif_5_6.jpg",
-      details: [],
-    },
-    {
-      id: "65",
-      nama: "Muhammad Al Khadziq",
-      position: { x: 1600, y: 0 },
-      jabatan: "Bupati Temanggung",
-      image: "eksekutif_5_7.jpg",
-      details: [],
-    },
+      handle: { target: ["right", "Top"], source: ["left", "bottom"] },
+      fakta: [],
+      details: [
+        { link: { year: "2020", href: "https://drive.google.com/drive/folders/1H_ktAoGcxmw88jIgVc0-bOXX_w8nYk3y?usp=drive_link" }, text: "Hingga saat ini, menjabat sebagai Direktur utama Badan Pengelola Dana Perkebunan Kelapa Sawit (BPDPKS), yaitu lembaga yang merupakan unit organisasi non eselon di bidang pengelolaan Dana Perkebunan Kelapa Sawit yang berada di bawah dan bertanggung jawab kepada Menteri Keuangan melalui Direktorat Jenderal Perbendaharaan. Eddy dilantik oleh Menteri Keuangan Sri Mulyani Indrawati pada 2 Maret 2020", quote: [] },
+        { link: { year: "2022", href: "https://drive.google.com/drive/folders/1zJusaDPnHvl6LWDODcObMqzG3hsoxiej?usp=drive_link" }, text: "Di samping direktur utama BPDPKS, beliau menjabat juga sebagai Komisaris Independen di PT Bentoel Internasional Investama Tbk sejak Februari 2015 hingga saat ini (Dewan Komisaris bertugas mengawasi manajemen Perusahaan dan memberikan arahan kepada Direksi terkait pengembangan bisnis sejalan dengan visi dan misi Perusahaan untuk tahun buku berjalan).", quote: [] },
+      ],
+    }
   ],
 };
 
@@ -602,30 +713,36 @@ const tobacco_industri = {
   id: "92",
   nama: "Tobacco Industry (& afiliasi)",
   position: { x: 0, y: -1600 },
+
+  handle: { target: [], source: ["left", "bottom", "up", "right"] },
   details: [
     {
       id: "66",
       nama: "PT HM Sampoerna Tbk",
       image: "sampoerna.jpg",
       position: { x: 0, y: 0 },
+      handle: { target: ["right", "Top"], source: ["left", "bottom"] },
     },
     {
       id: "67",
       nama: "PT Gudang Garam",
       image: "gudang-garam.jpg",
       position: { x: 0, y: 0 },
+      handle: { target: ["right", "Top"], source: ["left", "bottom"] },
     },
     {
       id: "68",
       nama: "PT Bentoel Internasional Investama Tbk",
       image: "bentoel.jpg",
       position: { x: 0, y: 0 },
+      handle: { target: ["right", "Top"], source: ["left", "bottom"] },
     },
     {
       id: "69",
       nama: "PT Djarum",
       image: "djarum.jpg",
       position: { x: 0, y: 0 },
+      handle: { target: ["right", "Top"], source: ["left", "bottom"] },
     },
   ],
 };
@@ -634,126 +751,148 @@ const front_group_ti = {
   id: "93",
   nama: "Front Groups TI",
   position: { x: 0, y: 1600 },
+
+  handle: { target: [], source: ["left", "bottom", "up", "right"] },
   details: [
     {
       id: "70",
       nama: "Aliansi Masyarakat Tembakau Indonesia",
       image: "AMTI.jpg",
       position: { x: 0, y: 0 },
+      handle: { target: ["right", "Top"], source: ["left", "bottom"] },
     },
     {
       id: "71",
       nama: "Komite Ekonomi Rakyat Indonesia Semesta (KERIS)",
       image: "KERIS.jpg",
       position: { x: 0, y: 0 },
+      handle: { target: ["right", "Top"], source: ["left", "bottom"] },
     },
     {
       id: "72",
       nama: "Forum Masyarakat Industri Rokok Seluruh Indonesia (FORMASI)",
       image: "FORMASI.jpg",
       position: { x: 0, y: 0 },
+      handle: { target: ["right", "Top"], source: ["left", "bottom"] },
     },
     {
       id: "73",
       nama: "Asosiasi Petani Tembakau Indonesia (APTI)",
       image: "APTI.jpg",
       position: { x: 0, y: 0 },
+      handle: { target: ["right", "Top"], source: ["left", "bottom"] },
     },
     {
       id: "74",
       nama: "Gabungan Perserikatan Pabrik Rokok Indonesia (GAPPRI)",
       image: "GAPPRI.jpg",
       position: { x: 0, y: 0 },
+      handle: { target: ["right", "Top"], source: ["left", "bottom"] },
     },
     {
       id: "75",
       nama: "Gabungan Produsen Rokok Putih Indonesia (GAPRINDO)",
       image: "GAPRINDO.jpg",
       position: { x: 0, y: 0 },
+      handle: { target: ["right", "Top"], source: ["left", "bottom"] },
     },
     {
       id: "76",
       nama: "Lembaga Kajian dan Pengembangan Sumber Daya Manusia (LAKPESDAM)",
       image: "LAKPESDAM.jpg",
       position: { x: 0, y: 0 },
+      handle: { target: ["right", "Top"], source: ["left", "bottom"] },
     },
     {
       id: "77",
       nama: "Institute For Development of Economics and Finance",
       image: "IDEF.jpg",
       position: { x: 0, y: 0 },
+      handle: { target: ["right", "Top"], source: ["left", "bottom"] },
     },
     {
       id: "78",
       nama: "Koalisi Indonesia Bebas TAR (KABAR)",
       image: "KABAR.jpg",
       position: { x: 0, y: 0 },
+      handle: { target: ["right", "Top"], source: ["left", "bottom"] },
     },
     {
       id: "79",
       nama: "Federasi Serikat Pekerja Rokok Tembakau Makanan dan Minuman Serikat Pekerja Seluruh Indonesia (FSP RTMM SPSI)",
       image: "FSP_RTMM_SPSI.jpg",
       position: { x: 0, y: 0 },
+      handle: { target: ["right", "Top"], source: ["left", "bottom"] },
     },
     {
       id: "89",
       nama: "Mitra Produksi Sigaret Indonesia (MPSI)",
       image: "MPSI.jpg",
       position: { x: 0, y: 0 },
+      handle: { target: ["right", "Top"], source: ["left", "bottom"] },
     },
     {
       id: "81",
       nama: "Asosiasi Petani Cengkeh Indonesia (APCI)",
       image: "APCI.jpg",
       position: { x: 0, y: 0 },
+      handle: { target: ["right", "Top"], source: ["left", "bottom"] },
     },
     {
       id: "82",
       nama: "Lembaga Konsumen Rokok Indonesia (LKRI)",
       image: "LKRI.jpg",
       position: { x: 0, y: 0 },
+      handle: { target: ["right", "Top"], source: ["left", "bottom"] },
     },
     {
       id: "83",
       nama: "Asosiasi Koperasi Ritel Indonesia (AKRINDO)",
       image: "AKRINDO.jpg",
       position: { x: 0, y: 0 },
+      handle: { target: ["right", "Top"], source: ["left", "bottom"] },
     },
     {
       id: "84",
       nama: "Komite Nasional Pelestarian Kretek(KNPT)",
       image: "KNPT.jpg",
       position: { x: 0, y: 0 },
+      handle: { target: ["right", "Top"], source: ["left", "bottom"] },
     },
     {
       id: "85",
       nama: "Gabungan Perusahaan Rokok Surabaya(Gaperosu)",
       image: "Gaperosu.jpg",
       position: { x: 0, y: 0 },
+      handle: { target: ["right", "Top"], source: ["left", "bottom"] },
     },
     {
       id: "86",
       nama: "Himpunan Kerukunan Tani Indonesia (HKTI)",
       image: "HKTI.jpg",
       position: { x: 0, y: 0 },
+      handle: { target: ["right", "Top"], source: ["left", "bottom"] },
     },
     {
       id: "87",
       nama: "Komunitas Perokok Bijak (Kojak)",
       image: "Kojak.jpg",
       position: { x: 0, y: 0 },
+      handle: { target: ["right", "Top"], source: ["left", "bottom"] },
     },
     {
       id: "88",
       nama: "Asosiasi Pengusaha Indonesia",
       image: "API.jpg",
       position: { x: 0, y: 0 },
+      handle: { target: ["right", "Top"], source: ["left", "bottom"] },
     },
     {
       id: "89",
       nama: "Gabungan Perusahaan Rokok Malang(Gaperoma)",
       image: "Gaperoma.jpg",
       position: { x: 0, y: 0 },
+      handle: { target: ["right", "Top"], source: ["left", "bottom"] },
     },
   ],
 };

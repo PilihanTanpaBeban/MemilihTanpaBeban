@@ -68,45 +68,47 @@ const MindMap = () => {
   useEffect(() => {
     for (const item of defaultNodes) {
       setNodes((oldVal) => [...oldVal, item]);
-      console.log("nodes: ",nodes)
+      console.log("nodes: ", nodes);
     }
 
     // Legislatif
-    listNodes.legislatif.details.map((data) => {
-      setNodes((oldVal) => [
-        ...oldVal,
-        {
-          id: data.id,
-          type: "rootNode",
-          data: {
-            size: "big",
-            title: data.nama,
-            description: data.description,
-          },
-          position: data.position,
-        },
-      ]);
+    // listNodes.legislatif.details.map((data) => {
+    //   setNodes((oldVal) => [
+    //     ...oldVal,
+    //     {
+    //       id: data.id,
+    //       type: "rootNode",
+    //       data: {
+    //         size: "big",
+    //         title: data.nama,
+    //         handle: data.handle,
+    //         description: data.description,
+    //       },
+    //       position: data.position,
+    //     },
+    //   ]);
 
-      if (data.anggota.length !== 0) {
-        data.anggota.map((data) => {
-          setNodes((oldVal) => [
-            ...oldVal,
-            {
-              id: data.id,
-              type: "imageNode",
-              data: {
-                name: data.nama,
-                label: data.jabatan,
-                image: data.image,
-                height: 80,
-                width: 60,
-              },
-              position: data.position,
-            },
-          ]);
-        });
-      }
-    });
+    //   if (data.anggota.length !== 0) {
+    //     data.anggota.map((data) => {
+    //       setNodes((oldVal) => [
+    //         ...oldVal,
+    //         {
+    //           id: data.id,
+    //           type: "imageNode",
+    //           data: {
+    //             name: data.nama,
+    //             label: data.jabatan,
+    //             image: data.image,
+    //             handle: data.handle,
+    //             height: 80,
+    //             width: 60,
+    //           },
+    //           position: data.position,
+    //         },
+    //       ]);
+    //     });
+    //   }
+    // });
 
     // eksekutif
     listNodes.eksekutif.details.map((data) => {
@@ -121,11 +123,14 @@ const MindMap = () => {
             image: data.image,
             height: 80,
             width: 60,
+            handle: data.handle,
+            fakta: data.fakta,
+            details: data.details,
           },
           position: data.position,
         },
       ]);
-    })
+    });
 
     listEdges.map((data) => {
       setEdges((oldVal) => [
@@ -135,12 +140,15 @@ const MindMap = () => {
           source: data.source,
           target: data.target,
           type: data.type,
-          style: { stroke: primaryColor },
-          sourceHandle:data.sourceHandle,
-          targetHandle:data.targetHandle,
+          label: data.label,
+          style: {
+            stroke: primaryColor,
+          },
+          sourceHandle: data.sourceHandle,
+          targetHandle: data.targetHandle,
           markerEnd: {
             type: MarkerType.ArrowClosed,
-            color: primaryColor
+            color: primaryColor,
           },
         },
       ]);
@@ -148,17 +156,16 @@ const MindMap = () => {
   }, [setEdges, setNodes]);
 
   return (
-    <Center w={"100vw"} h={"100vh"}>
+    <Center w={"100vw"} h={"80vh"}>
       <ReactFlow
         nodes={nodes}
         edges={edges}
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
         nodeTypes={nodeTypes}
-        snapToGrid={true}
-        defaultViewport={defaultViewport}
         fitView
         attributionPosition="bottom-left"
+        minZoom={0.1}
       >
         <MiniMap zoomable pannable />
         <Controls />

@@ -7,10 +7,11 @@ import {
   Text,
   Title,
   rem,
+  Image
 } from "@mantine/core";
 import React, { useEffect, useState } from "react";
 import HeroBgImg from "../app/hero-image-bg/hero-image-bg";
-import { primaryColor, secondaryColor } from "../public/colors";
+import { lightPurple, primaryColor, secondaryColor } from "../public/colors";
 import { PrimaryButton, SecondaryButton } from "../app/components/Button";
 import PieChart from "../app/components/PieChart";
 import { updateNoVote, updateYesVote } from "../public/firebase.service";
@@ -35,13 +36,29 @@ function Page2024() {
 
   return (
     <>
-      <HeroBgImg
-        pt={rem(250)}
-        pb={rem(300)}
-        text={"Coming Soon!"}
-        subtitle={"Nantikan Launching di Akhir 2023"}
-        imgFileName={"meeting.png"}
-      ></HeroBgImg>
+    <Group
+      style={{ backgroundColor: lightPurple }}
+      pt={mobile?60:0}
+      pb={mobile?60:0}
+    >
+      <Container size="xl" >
+        <Flex
+          gap="xl"
+          justify="flex-start"
+          align="center"
+          direction={mobile ? "column-reverse" : "row"}
+        >
+          <div>
+            <Title c={primaryColor}>
+              20.24
+            </Title>
+          </div>
+          <Image
+            src="../../assets/images/20_24.webp"
+          ></Image>
+        </Flex>
+      </Container>
+    </Group>
 
       <Container size={"md"} py={rem(65)}>
         <Grid align={"center"}>

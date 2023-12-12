@@ -129,7 +129,7 @@ function DisclaimerPage() {
         pt={rem(70)}
         pb={rem(0)}
         text={"Disclaimer"}
-        imgFileName={"disclaimer_hero.png"}
+        imgFileName={"disclaimer_hero.webp"}
       ></HeroVector>
       <Container size={"lg"} pt={rem(35)} pb={rem(70)}>
         <Text mb={rem(24)}>

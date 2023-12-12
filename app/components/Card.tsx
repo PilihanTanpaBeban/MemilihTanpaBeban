@@ -56,7 +56,7 @@ const CardMitosFakta: React.FC<CardProps> = ({
             position: "relative",
           }}
         >
-          {[2, 4, 5, 6, 7].includes(id) ? (
+          {[2, 4, 5, 6, 7, 9, 10, 11].includes(id) ? (
             <Overlay zIndex={0} color="#000" backgroundOpacity={0} blur={4} />
           ) : null}
           <div
@@ -68,7 +68,14 @@ const CardMitosFakta: React.FC<CardProps> = ({
                 "linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, 0))", // Gradient from black to transparent // Adjust the alpha value to control the darkness
             }}
           ></div>
-          <div style={{ padding: 16, position: "absolute", width: "100%" }}>
+          <Flex
+            h="100%"
+            direction="column"
+            align="flex-end"
+            justify="space-between"
+            style={{ padding: 16, position: "absolute", width: "100%" }}
+          >
+            <Title c="white" mr="xs">{id}</Title>
             <IconArrowNarrowRight
               style={{
                 width: rem(40),
@@ -77,7 +84,7 @@ const CardMitosFakta: React.FC<CardProps> = ({
               }}
               stroke={1.5}
             />
-          </div>
+          </Flex>
         </BackgroundImage>
       </Card.Section>
 

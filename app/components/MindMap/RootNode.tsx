@@ -1,5 +1,5 @@
-import { Center,Group,Text, rem } from "@mantine/core";
-import React from "react";
+import { Center, Group, PaginationItems, Text, rem } from "@mantine/core";
+import React, { useEffect, useState } from "react";
 import { Handle, Position } from "reactflow";
 import { lightPurple, primaryColor, secondaryColor } from "../../../public/colors";
 
@@ -8,7 +8,25 @@ interface RootNodeProps {
   isConnectable: any;
 }
 
+const defaultHandler = {
+  target: {
+    up: false,
+    bottom: false,
+    left: false,
+    right: false,
+  },
+  source: {
+    up: false,
+    bottom: false,
+    left: false,
+    right: false,
+  }
+}
+
 const RootNode: React.FC<RootNodeProps> = ({ data, isConnectable }) => {
+
+  const [handlers, setHandlers] = useState(defaultHandler);
+
   return (
     <>
       <Handle
@@ -41,16 +59,16 @@ const RootNode: React.FC<RootNodeProps> = ({ data, isConnectable }) => {
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          textAlign:"center",
-          borderRadius:"25px",
-          gap:0,
-          boxShadow:"23px 15px 39px 0px #F7FAFF"
+          textAlign: "center",
+          borderRadius: "25px",
+          gap: 0,
+          boxShadow: "23px 15px 39px 0px #F7FAFF"
         }}
         bg={lightPurple}
         c={primaryColor}
       >
-        <Text style={{fontSize:data.label?rem(10):rem(14)}} fw={"bold"}>{data.title}</Text>
-        <Text style={{fontSize:rem(10)}}>{data.label}</Text>
+        <Text style={{ fontSize: data.label ? rem(10) : rem(14) }} fw={"bold"}>{data.title}</Text>
+        <Text style={{ fontSize: rem(10) }}>{data.label}</Text>
       </Group>
     </>
   );

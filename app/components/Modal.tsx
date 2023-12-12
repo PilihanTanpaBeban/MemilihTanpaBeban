@@ -103,6 +103,30 @@ const data = [
     fakta:
       "Tidak ditemukan penelitian objektif dan metodologi yang valid, yang menyatakan dampak negatif penerapan KTR pada industri pariwisata, perhotelan, restauran, dan bar.\nPeraturan KTR merupakan anjuran Organisasi Kesehatan Dunia (WHO). WHO menilai bahwa paparan asap rokok dari orang lain (perokok pasif) juga dapat menyebabkan penyakit kanker, paru, jantung, dan penyakit katastropik lainnya. Maka, KTR penting untuk melindungi orang lain dari paparan asap rokok. Lebih lanjut, KTR juga melindungi orang dari paparan iklan, promosi, dan penjualan rokok untuk mencegah perokok-perokok baru khususnya anak-anak.\nStudi literatur terhadap 115 penelitian di Australia, Kanada, Amerika Serikat, menyatakan bahwa peraturan KTR tidak bersifat negatif terhadap industri perhotelan baik dari segi pendapatan, keuntungan, pekerjaan, dalam jangka panjang. Di Indonesia, salah satu Kota yang dapat dijadikan contoh mengenai penerapan Kawasan Tanpa Rokok dan juga larangan iklan, promosi, dan sponsorship rokok adalah Kota Bogor. Pendapatan Kota Bogor justru meningkat seiring dengan penerapan peraturan tersebut di atas",
   },
+  {
+    id: 9,
+    reference: [],
+    mitos: "Merokok merupakan warisan budaya yang harus dilestarikan.",
+    fakta:
+      "Rokok merupakan kebiasaan bangsa asing yang dibawa ke Indonesia dalam rangka berdagang. Rokok lebih cocok dianggap sebagai kebiasaan yang buruk, bukan budaya. Sosiolog Universitas Indonesia, Imam Prasojo, mengatakan bahwa ciri-ciri budaya adalah perilaku yang menunjukan manusia beradab. Sedangkan merokok adalah perilaku tidak beradab. Lebih cocok jika rokok dianggap sebagai kebiasaan.\nMenurut sejarawan Belanda, rokok yang berasal dari tanaman tembakau, bukanlah tanaman asli Indonesia. Setelah menjadi tren di Eropa, tembakau dibawa masuk ke Indonesia oleh kolonialisme barat, setidaknya pada abad ke-16 atau ke-17.",
+  },
+  {
+    id: 10,
+    reference: [
+      "https://drive.google.com/file/d/19UsCGAARByp3EcEjDoDy96dGXXBXtYTt/view?usp=drive_link"
+    ],
+    mitos: "Sampah puntung rokok dapat didaur ulang.",
+    fakta:
+      "Puntung rokok mengandung cukup racun, sehingga dapat dikategorikan sebagai sampah bahan berbahaya beracun (B3) dan memerlukan perlakuan khusus, sehingga tidak dapat didaur ulang.Setiap tahun, diperkirakan ada 5.5 triliun puntung rokok yang menjadi sampah, yang mayoritas dibuang sembarangan dan mencemari lingkungan. Ini artinya ada sekitar 1.2 juta ton sampah puntung rokok. Walaupun terlihat kecil, tapi karena begitu masifnya konsumsi rokok, alhasil begitu banyak sampah puntung yang dihasilkan. Sama seperti rokok yang mengadung berbagai racun, maka puntung rokok juga mengandung racun diantaranya, nikotin, karsinogen,  arsenik, benzena, hidrogen sianida, piridin, logam berat, dan Polycyclic Aromatic Hydrocarbons. Zat beracun ini terperangkap pada filter yang ada di puntung rokok. Untuk diketahui, filter rokok terbuat dari cellulose acetate yang merupakan sejenis olahan plastik yang tidak dapat terdegradasi secara alami dan akan mencemari lingkungan untuk waktu yang sangat lama.",
+  },
+  {
+    id: 11,
+    reference: ["https://drive.google.com/file/d/1bwF9YvLUzWzg0m9VZWiG_W1a9i3dO9gR/view?usp=sharing"],
+    mitos:
+      "Pelarangan penjualan rokok batangan akan berdampak negatif bagi industri rokok.",
+    fakta:
+      "Penjualan rokok batangan memudahkan akses anak untuk membeli rokok sehingga menghambat upaya pengendalian konsumsi rokok dan tercapainya target penurunan prevalensi perokok anak pada RPJMN",
+  },
 ];
 
 const ModalDetail: React.FC<ModalDetailProps> = ({ id, isOpen, onClose }) => {
@@ -149,7 +173,7 @@ const ModalDetail: React.FC<ModalDetailProps> = ({ id, isOpen, onClose }) => {
             position: "relative",
           }}
         >
-          {[2, 4, 5, 6, 7].includes(id) ? (
+          {[2, 4, 5, 6, 7, 9, 11].includes(id) ? (
             <Overlay zIndex={0} color="#000" backgroundOpacity={0} blur={4} />
           ) : null}
           <IconX

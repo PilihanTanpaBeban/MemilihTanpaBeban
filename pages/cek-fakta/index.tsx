@@ -60,6 +60,27 @@ const data = [
     fakta:
       "Tidak ditemukan penelitian objektif dan metodologi yang valid, yang menyatakan dampak negatif penerapan KTR pada industri pariwisata, perhotelan, restauran, dan bar",
   },
+  {
+    id: 9,
+    mitos:
+      "Merokok merupakan warisan budaya yang harus dilestarikan.",
+    fakta:
+      "Rokok merupakan kebiasaan bangsa asing yang dibawa ke Indonesia dalam rangka berdagang. Rokok lebih cocok dianggap sebagai kebiasaan yang buruk, bukan budaya.",
+  },
+  {
+    id: 10,
+    mitos:
+      "Sampah puntung rokok dapat didaur ulang.",
+    fakta:
+      "Puntung rokok mengandung cukup racun, sehingga dapat dikategorikan sebagai sampah bahan berbahaya beracun (B3) dan memerlukan perlakuan khusus, sehingga tidak dapat didaur ulang.",
+  },
+  {
+    id: 11,
+    mitos:
+      "Pelarangan penjualan rokok batangan akan berdampak negatif bagi industri rokok.",
+    fakta:
+      "Penjualan rokok batangan memudahkan akses anak untuk membeli rokok sehingga menghambat upaya pengendalian konsumsi rokok dan tercapainya target penurunan prevalensi perokok anak pada RPJMN",
+  },
 ];
 
 const slides = data.map((data) => (
