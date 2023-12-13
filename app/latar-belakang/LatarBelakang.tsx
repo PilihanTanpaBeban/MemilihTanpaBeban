@@ -22,7 +22,7 @@ import Autoplay from 'embla-carousel-autoplay';
 
 const LatarBelakang = () => {
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.sm})`);
-  const autoplay = useRef(Autoplay({ delay: 2000 }));
+  const autoplay = useRef(Autoplay({ delay: 4000 }));
 
   const dataDampakRokok = [
     {
