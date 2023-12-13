@@ -52,14 +52,7 @@ function Page2024() {
 
   return (
     <>
-      <HeroBgImg
-        pt={rem(250)}
-        pb={rem(300)}
-        text={"Coming Soon!"}
-        subtitle={"Nantikan Launching di Akhir 2023"}
-        imgFileName={"meeting.png"}
-      ></HeroBgImg>
-      {/* {mobile ? (
+      {mobile ? (
         <div style={{ backgroundColor: lightPurple }}>
           <Container size={"xl"} pt={rem(50)} pb={rem(20)}>
             <Flex
@@ -118,9 +111,9 @@ function Page2024() {
             </Container>
           </BackgroundImage>
         </div>
-      )} 
+      )}
 
-       <Container size="xl" py={rem(70)}>
+      <Container size="xl" py={rem(70)}>
         <Flex direction="row" justify="space-between" align="center" mb="md">
           <Title c={primaryColor} style={{ fontSize: rem(24) }}>
             Eksekutif
@@ -150,7 +143,7 @@ function Page2024() {
           isVertical={isLegisVertical}
           data={listPejabat2024.legislatif}
         />
-      </Container> */}
+      </Container>
       <Container size={"md"} py={rem(65)}>
         <Grid align={"center"}>
           <Grid.Col p={20} span={{ base: 12, sm: 5 }}>

@@ -7,6 +7,7 @@ import ReactFlow, {
   Controls,
   MiniMap,
   MarkerType,
+  Background,
 } from "reactflow";
 import "reactflow/dist/style.css";
 
@@ -18,6 +19,8 @@ import { bgOrange, primaryColor } from "../../../public/colors";
 import DetailNode from "./DetailNode";
 import listNodes from "./ListPejabat";
 import listEdges from "./ListEdges";
+
+import { SmartStepEdge, SmartStraightEdge } from '@tisoap/react-flow-smart-edge'
 
 const nodeTypes = {
   imageNode: ImageNode,
@@ -67,6 +70,10 @@ const defaultNodes = [
   },
 ];
 
+const edgeTypes = {
+	smart: SmartStraightEdge
+}
+
 const MindMap = () => {
   const [nodes, setNodes, onNodesChange] = useNodesState([]);
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
@@ -101,7 +108,7 @@ const MindMap = () => {
                 name: data.nama,
                 label: data.jabatan,
                 image: data.image,
-                height: 84,
+                height: 132,
                 width: 109,
                 details: data.details,
                 fakta: data.fakta,
@@ -125,7 +132,7 @@ const MindMap = () => {
             name: data.nama,
             label: data.jabatan,
             image: data.image,
-            height: 84,
+            height: 132,
             width: 109,
             fakta: data.fakta,
             details: data.details,
@@ -187,8 +194,7 @@ const MindMap = () => {
           id: data.id,
           source: data.source,
           target: data.target,
-          type: 'step',
-          label: data.label,
+          type: data.type,
           style: {
             stroke: data.color,
           },
@@ -200,19 +206,22 @@ const MindMap = () => {
   }, [setEdges, setNodes]);
 
   return (
-    <Center w={"100vw"} h={"80vh"}>
+    <Center w={"100vw"} h={"100vh"}>
       <ReactFlow
         nodes={nodes}
         edges={edges}
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
         nodeTypes={nodeTypes}
+        edgeTypes={edgeTypes}
         fitView
         attributionPosition="bottom-left"
         minZoom={0.1}
       >
         <MiniMap zoomable pannable />
         <Controls />
+
+        <Background />
       </ReactFlow>
     </Center>
   );

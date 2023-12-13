@@ -143,7 +143,8 @@ const ImageNode: React.FC<imageNodeProps> = ({ data, isConnectable }) => {
         direction="column"
         align="center"
         justify="center"
-        maw={data.width}
+        w={data.width}
+        h={data.bg == bgOrange ? data.height+20 : data.height}
         style={{
           borderRadius: rem(5),
           cursor: "pointer",
@@ -156,33 +157,39 @@ const ImageNode: React.FC<imageNodeProps> = ({ data, isConnectable }) => {
         }
       >
         <BackgroundImage
-          mb="sm"
           src={`../../assets/images/photos/${data.image}`}
-          w={data.width}
-          h={data.height}
-          bgsz="contain"
+          
+        py={rem(5)}
+          w="100%"
+          h={data.bg == bgOrange ? rem(100) : rem(84)}
+          bgsz={data.bg == bgOrange ? "contain" :"cover"}
           bgr="no-repeat"
         />
         <Flex
           direction="column"
           ta="center"
           align="center"
-          justify={data.bg == bgOrange ? "center" : "flex-start"}
+          justify={"center"}
           h={rem(48)}
           px={rem(6)}
           bg={data.bg}
           w="100%"
           c={data.bg == bgOrange ? "white" : "black"}
+          style={{
+            borderBottomLeftRadius: rem(5),
+            borderBottomRightRadius: rem(5),
+          }}
         >
           <Text
             tt="capitalize"
             fw="bold"
-            style={{ fontSize: data.id == "79" ? rem(6) : rem(8) }}
+            style={{ fontSize: data.id == "79" ? rem(5) : data.bg == bgOrange? rem(6) : rem(8) }}
+            lh="1.2"
           >
             {data.name}
           </Text>
           {data.label && (
-            <Text style={{ fontSize: rem(5) }}>
+            <Text style={{ fontSize: rem(5), lineHeight: "1.2" }}>
               {renderTextWithLineBreaksNoSpaces(data.label)}
             </Text>
           )}

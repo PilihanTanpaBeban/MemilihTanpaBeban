@@ -36,9 +36,9 @@ const RootNode: React.FC<RootNodeProps> = ({ data, isConnectable }) => {
       />
       <Flex
         p="auto"
-        w={data.bg == bgOrange ? rem(264) : rem(140)}
-        h={rem(39)}
-        style={{ fontSize: rem(16), borderRadius: rem(20) }}
+        w={rem(284)}
+        h={rem(88)}
+        style={{ fontSize: data.bg == bgOrange ? rem(20) :rem(32), borderRadius: rem(20) }}
         align="center"
         justify="center"
         bg={data.bg}
