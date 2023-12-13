@@ -180,23 +180,23 @@ const MindMap = () => {
       ]);
     });
 
-    // listEdges.map((data) => {
-    //   setEdges((oldVal) => [
-    //     ...oldVal,
-    //     {
-    //       id: data.id,
-    //       source: data.source,
-    //       target: data.target,
-    //       type: 'smoothstep',
-    //       label: data.label,
-    //       style: {
-    //         stroke: data.color,
-    //       },
-    //       sourceHandle: data.sourceHandle,
-    //       targetHandle: data.targetHandle,
-    //     },
-    //   ]);
-    // });
+    listEdges.map((data) => {
+      setEdges((oldVal) => [
+        ...oldVal,
+        {
+          id: data.id,
+          source: data.source,
+          target: data.target,
+          type: 'step',
+          label: data.label,
+          style: {
+            stroke: data.color,
+          },
+          sourceHandle: data.sourceHandle,
+          targetHandle: data.targetHandle,
+        },
+      ]);
+    });
   }, [setEdges, setNodes]);
 
   return (

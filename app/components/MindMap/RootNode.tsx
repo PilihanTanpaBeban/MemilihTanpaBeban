@@ -17,25 +17,21 @@ const RootNode: React.FC<RootNodeProps> = ({ data, isConnectable }) => {
       <Handle
         type="source"
         position={Position.Top}
-        isConnectable={isConnectable}
         id="a"
       />
       <Handle
         type="source"
         position={Position.Right}
-        isConnectable={isConnectable}
         id="b"
       />
       <Handle
         type="source"
         position={Position.Bottom}
-        isConnectable={isConnectable}
         id="c"
       />
       <Handle
         type="source"
         position={Position.Left}
-        isConnectable={isConnectable}
         id="d"
       />
       <Flex

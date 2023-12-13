@@ -88,7 +88,7 @@ const legislatif = {
         {
           id: "3",
           nama: "Ir. Panggah Susanto, M.M.",
-          position: { x: 151, y: 1062 },
+          position: { x: 152.5, y: 1062 },
           jabatan: "Golkar, Jateng VI",
           image: "legislatif_1_2.jpg",
           fakta: [3, 4],

@@ -14,6 +14,16 @@ function KonflikKepentinganPage() {
         subtitle={"Nantikan Launching di Akhir 2023"}
         imgFileName={"prodigi_3_1.png"}
       ></HeroBgImg>
+      {/* <HeroVector
+        pt={rem(50)}
+        pb={rem(0)}
+        text={"Potensi\nKonflik Kepentingan"}
+        subtitle="Situs ini bertujuan untuk mengedukasi dan membuka wawasan para pengunjung mengenai konflik kepentingan yang mungkin terjadi pada calon anggota legislatif, calon eksekutif, para incumbent baik di tingkat legislatif maupun eksekutif, dengan industri rokok. Agar, para pengunjung dapat lebih mengenal para calon yang benar-benar memihak kepentingan masyarakat, dan menggunakan hak pilih dengan lebih bijak."
+        imgFileName={"Konflik_Kepentingan.webp"}
+      ></HeroVector>
+      <div>
+        <MindMap/>
+      </div> */}
     </>
   );
 }

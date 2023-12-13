@@ -59,7 +59,98 @@ function Page2024() {
         subtitle={"Nantikan Launching di Akhir 2023"}
         imgFileName={"meeting.png"}
       ></HeroBgImg>
-      
+      {/* {mobile ? (
+        <div style={{ backgroundColor: lightPurple }}>
+          <Container size={"xl"} pt={rem(50)} pb={rem(20)}>
+            <Flex
+              gap="xl"
+              justify="flex-start"
+              align="center"
+              direction="column"
+            >
+              <div>
+                <Title
+                  style={{ fontSize: rem(48) }}
+                  ta="center"
+                  c={primaryColor}
+                >
+                  20.24
+                </Title>
+
+                <Text my="md" ta="justify">
+                  Anggota Legislatif dan Eksekutif yang aktif mendorong
+                  pengendalian konsumsi rokok yang lebih baik di Indonesia, demi
+                  melindungi kesehatan masyarakat dan kualitas orang muda yang
+                  lebih baik.
+                </Text>
+                <Text>Data terakhir diperbarui 29 November 2023.</Text>
+              </div>
+            </Flex>
+          </Container>
+
+          <Image src={"../../assets/images/20_24.png"} />
+        </div>
+      ) : (
+        <div style={{ backgroundColor: lightPurple }}>
+          <BackgroundImage
+            src={"../../assets/images/20_24.png"}
+            h={rem(450)}
+            bgsz="contain"
+            bgr="no-repeat"
+            bgp="100%"
+          >
+            <Container size="xl" h="100%">
+              <Flex gap="xl" justify="center" align="center" h="100%">
+                <div>
+                  <Title mb="lg" style={{ fontSize: rem(72) }} c={primaryColor}>
+                    20.24
+                  </Title>
+                  <Text my="lg" ta="justify">
+                    Anggota Legislatif dan Eksekutif yang aktif mendorong
+                    pengendalian konsumsi rokok yang lebih baik di Indonesia,
+                    demi melindungi kesehatan masyarakat dan kualitas orang muda
+                    yang lebih baik.
+                  </Text>
+                  <Text>Data terakhir diperbarui 29 November 2023.</Text>
+                </div>
+                <div style={{ width: "60%", height: "100%" }} />
+              </Flex>
+            </Container>
+          </BackgroundImage>
+        </div>
+      )} 
+
+       <Container size="xl" py={rem(70)}>
+        <Flex direction="row" justify="space-between" align="center" mb="md">
+          <Title c={primaryColor} style={{ fontSize: rem(24) }}>
+            Eksekutif
+          </Title>
+          <Button onClick={toggleEkseView} bg={primaryColor}>
+            {isEkseVertical ? "Sembunyikan" : "Tampilkan semua"}
+          </Button>
+        </Flex>
+
+        <ContainerPejabat
+          isVertical={isEkseVertical}
+          data={listPejabat2024.eksekutif}
+        />
+      </Container>
+
+      <Container size="xl" py={rem(70)}>
+        <Flex direction="row" justify="space-between" align="center" mb="md">
+          <Title c={primaryColor} style={{ fontSize: rem(24) }}>
+            Legislatif
+          </Title>
+          <Button onClick={toggleLegisView} bg={primaryColor}>
+            {isLegisVertical ? "Sembunyikan" : "Tampilkan semua"}
+          </Button>
+        </Flex>
+
+        <ContainerPejabat
+          isVertical={isLegisVertical}
+          data={listPejabat2024.legislatif}
+        />
+      </Container> */}
       <Container size={"md"} py={rem(65)}>
         <Grid align={"center"}>
           <Grid.Col p={20} span={{ base: 12, sm: 5 }}>
