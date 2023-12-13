@@ -206,7 +206,7 @@ const MindMap = () => {
   }, [setEdges, setNodes]);
 
   return (
-    <Center w={"100vw"} h={"100vh"}>
+    <Center w={"90vw"} h={"100vh"}>
       <ReactFlow
         nodes={nodes}
         edges={edges}
