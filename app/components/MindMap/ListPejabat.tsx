@@ -1806,14 +1806,14 @@ const tobacco_industri = {
 const front_group_ti = {
   id: "96",
   nama: "Front Groups TI",
-  position: { x: 2670, y: 2026 },
+  position: { x: 2565, y: 1945 },
 
   details: [
     {
       id: "70",
       nama: "Aliansi Masyarakat Tembakau Indonesia",
       image: "AMTI.jpg",
-      position: { x: 2540, y: 1679 },
+      position: { x: 2440, y: 1629 },
       details: [
         {
           link: {
@@ -1869,7 +1869,7 @@ const front_group_ti = {
       id: "71",
       nama: "Komite Ekonomi Rakyat Indonesia Semesta (KERIS)",
       image: "KERIS.jpg",
-      position: { x: 2807, y: 2345 },
+      position: { x: 2720, y: 2250 },
       details: [
         {
           link: null,
@@ -1898,7 +1898,7 @@ const front_group_ti = {
       id: "72",
       nama: "Forum Masyarakat Industri Rokok Seluruh Indonesia (FORMASI)",
       image: "FORMASI.jpg",
-      position: { x: 2346, y: 1996 },
+      position: { x: 2275, y: 1936 },
       details: [
         {
           link: {
@@ -1922,7 +1922,7 @@ const front_group_ti = {
       id: "73",
       nama: "Asosiasi Petani Tembakau Indonesia (APTI)",
       image: "APTI.jpg",
-      position: { x: 2665, y: 1631 },
+      position: { x: 2580, y: 1580 },
       details: [
         {
           link: {
@@ -1962,7 +1962,7 @@ const front_group_ti = {
       id: "74",
       nama: "Gabungan Perserikatan Pabrik Rokok Indonesia (GAPPRI)",
       image: "GAPPRI.jpg",
-      position: { x: 2665, y: 2345 },
+      position: { x: 2580, y: 2250 },
       details: [
         {
           link: {
@@ -1996,7 +1996,7 @@ const front_group_ti = {
       id: "75",
       nama: "Gabungan Produsen Rokok Putih Indonesia (GAPRINDO)",
       image: "GAPRINDO.jpg",
-      position: { x: 2807, y: 1631 },
+      position: { x: 2710, y: 1581 },
       details: [
         {
           link: {
@@ -2038,7 +2038,7 @@ const front_group_ti = {
       id: "76",
       nama: "Lembaga Kajian dan Pengembangan Sumber Daya Manusia (LAKPESDAM)",
       image: "LAKPESDAM.jpg",
-      position: { x: 3045, y: 1680 },
+      position: { x: 2970, y: 1700 },
       details: [
         {
           link: {
@@ -2062,7 +2062,7 @@ const front_group_ti = {
       id: "78",
       nama: "Koalisi Indonesia Bebas TAR (KABAR)",
       image: "KABAR.jpg",
-      position: { x: 2346, y: 2154 },
+      position: { x: 2323, y: 2110 },
       details: [
         {
           link: null,
@@ -2099,7 +2099,7 @@ const front_group_ti = {
       id: "79",
       nama: "Federasi Serikat Pekerja Rokok Tembakau Makanan dan Minuman Serikat Pekerja Seluruh Indonesia (FSP RTMM SPSI)",
       image: "FSP_RTMM_SPSI.jpg",
-      position: { x: 2532, y: 2286 },
+      position: { x: 2455, y: 2190 },
       details: [
         {
           link: {
@@ -2115,7 +2115,7 @@ const front_group_ti = {
       id: "97",
       nama: "Mitra Produksi Sigaret Indonesia (MPSI)",
       image: "MPSI.jpg",
-      position: { x: 3169, y: 1894 },
+      position: { x: 3055, y: 1834 },
       details: [
         {
           link: {
@@ -2131,7 +2131,7 @@ const front_group_ti = {
       id: "81",
       nama: "Asosiasi Petani Cengkeh Indonesia (APCI)",
       image: "APCI.jpg",
-      position: { x: 3169, y: 2208 },
+      position: { x: 2970, y: 2130 },
       details: [
         {
           link: {
@@ -2147,7 +2147,7 @@ const front_group_ti = {
       id: "83",
       nama: "Asosiasi Koperasi Ritel Indonesia (AKRINDO)",
       image: "AKRINDO.jpg",
-      position: { x: 2930, y: 1631 },
+      position: { x: 2850, y: 1645 },
       details: [
         {
           link: {
@@ -2163,7 +2163,7 @@ const front_group_ti = {
       id: "86",
       nama: "Himpunan Kerukunan Tani Indonesia (HKTI)",
       image: "HKTI.png",
-      position: { x: 3169, y: 2052 },
+      position: { x: 3055, y: 2002 },
       details: [
         {
           link: {
@@ -2179,7 +2179,7 @@ const front_group_ti = {
       id: "89",
       nama: "Gabungan Perusahaan Rokok Malang (Gaperoma)",
       image: "Gaperoma.png",
-      position: { x: 2949, y: 2286 },
+      position: { x: 2850, y: 2190 },
       details: [
         {
           link: {
@@ -2195,7 +2195,7 @@ const front_group_ti = {
       id: "94",
       nama: "Institute for Development of Economics and Finance (INDEF)",
       image: "INDEF.png",
-      position: { x: 2346, y: 1838 },
+      position: { x: 2330, y: 1780 },
       details: [
         {
           link: {

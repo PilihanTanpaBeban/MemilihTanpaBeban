@@ -609,40 +609,40 @@ const eksekutif = [
       },
     ],
   },
-  {
-    id: 25,
-    nama: "Moga Simatupang",
-    jabatan:
-      "Direktur Jenderal Perlindungan Konsumen dan Tertib Niaga Kementerian Perdagangan",
-    image: "placeholder_male.jpeg",
-    details: [
-      {
-        link: {
-          year: "2023",
-          href: "",
-        },
-        text: "Mendukung pengendalian konsumsi rokok pada saat hadir di kegiatan audiensi, pada tanggal 31 Maret 2023, bertempat di Kementerian Perdagangan RI, yang diselenggarakan oleh Komnas Pengendalian Tembakau.",
-        quote: [],
-      },
-    ],
-  },
-  {
-    id: 26,
-    nama: "Khakim Kudiarto",
-    jabatan:
-      "Direktur Pengawasan Barang Beredar dan Jasa Kementerian Perdagangan",
-    image: "placeholder_male.jpeg",
-    details: [
-      {
-        link: {
-          year: "2023",
-          href: "",
-        },
-        text: "Mendukung pengendalian konsumsi rokok pada saat hadir di kegiatan audiensi, pada tanggal 31 Maret 2023, bertempat di Kementerian Perdagangan RI, yang diselenggarakan oleh Komnas Pengendalian Tembakau.",
-        quote: [],
-      },
-    ],
-  },
+  // {
+  //   id: 25,
+  //   nama: "Moga Simatupang",
+  //   jabatan:
+  //     "Direktur Jenderal Perlindungan Konsumen dan Tertib Niaga Kementerian Perdagangan",
+  //   image: "placeholder_male.jpeg",
+  //   details: [
+  //     {
+  //       link: {
+  //         year: "2023",
+  //         href: "",
+  //       },
+  //       text: "Mendukung pengendalian konsumsi rokok pada saat hadir di kegiatan audiensi, pada tanggal 31 Maret 2023, bertempat di Kementerian Perdagangan RI, yang diselenggarakan oleh Komnas Pengendalian Tembakau.",
+  //       quote: [],
+  //     },
+  //   ],
+  // },
+  // {
+  //   id: 26,
+  //   nama: "Khakim Kudiarto",
+  //   jabatan:
+  //     "Direktur Pengawasan Barang Beredar dan Jasa Kementerian Perdagangan",
+  //   image: "placeholder_male.jpeg",
+  //   details: [
+  //     {
+  //       link: {
+  //         year: "2023",
+  //         href: "",
+  //       },
+  //       text: "Mendukung pengendalian konsumsi rokok pada saat hadir di kegiatan audiensi, pada tanggal 31 Maret 2023, bertempat di Kementerian Perdagangan RI, yang diselenggarakan oleh Komnas Pengendalian Tembakau.",
+  //       quote: [],
+  //     },
+  //   ],
+  // },
   {
     id: 27,
     nama: "Kanya Eka Santi",
@@ -722,7 +722,7 @@ const legislatif = [
       {
         link: {
           year: "2023",
-          href: "https://www.dpr.go.id/berita/detail/id/45397/t/Banyak+Perokok+Anak%2C+Puan+Dorong+Optimalisasi+Kawasan+Bebas+Asap+Rokok+%26+Regulasinya",
+          href: "https://drive.google.com/drive/folders/1K9S7qihVFtXPXIBCvm0b2JmoKj5HpZFd?usp=drive_link",
         },
         text: "",
         quote: [
@@ -868,7 +868,7 @@ const legislatif = [
       {
         link: {
           year: "2021",
-          href: "https://sri-media.com/ir-sri-meliyana-ungkap-bahaya-rokok-melaui-gerakan-masyarakat-sehat-2/",
+          href: "https://drive.google.com/drive/folders/187MMLJ1zcmKMYcHMqxgFFXbT7j6ecDVm?usp=drive_link",
         },
         text: "Hadir dalam program Gerakan Masyarakat Sehat dengan salah satu pembahasannya adalah bahaya konsumsi rokok.",
         quote: [],
@@ -876,7 +876,7 @@ const legislatif = [
       {
         link: {
           year: "2022",
-          href: "https://www.wartabianglala.com/2022/07/23/sri-meliyana-ajak-masyarakat-kota-pagaralam-hindari-asap-rokok/",
+          href: "https://drive.google.com/drive/folders/1X19teogIX2cX1Fn_mXrPBk-jBX0I3Dfv?usp=drive_link",
         },
         text: "Mengungkapkan dampak kesehatan bagi anak-anak yang menjadi perokok pasif sangat besar. Paparan asap rokok yang terus menerus pada anak dapat memicu terhambatnya pertumbuhan dan perkembangan anak secara optimal.",
         quote: [
@@ -886,7 +886,7 @@ const legislatif = [
       {
         link: {
           year: "2023",
-          href: "https://lahatonline.com/274489-gawat-ir-hj-sri-meliyana-ajak-masyarakat-pseksu-hidup-sehat.html",
+          href: "https://drive.google.com/drive/folders/12YCcb8WFefc5L_LsIeToSUWyzQ_b9rUD?usp=drive_link",
         },
         text: "Pada kunjungan dalam rangka reses masa sidang V tahun 2022/2023 yang dipusatkan di Desa Tanjung Raye perempuan yang terpilih dari dapil Sumsel II, melakukan sosialisasi Gerakan Masyarakat Hidup Sehat (Germas) promotif preventif faktor risiko penyakit tidak menular (PTM) daerah terpilih.",
         quote: [
@@ -904,7 +904,7 @@ const legislatif = [
       {
         link: {
           year: "2016",
-          href: "https://politik.rmol.id/read/2016/08/20/257608/jangan-sampai-kenaikan-harga-rokok-untungkan-pengusaha",
+          href: "https://drive.google.com/drive/folders/1fSUibqtT4J2QdgqgBq2xIe8muvXMj27J?usp=drive_link",
         },
         text: "Mengakui, kenaikan harga rokok itu tidak akan bisa menekan jumlah perokok aktif secara signifikan. Namun, kenaikan tersebut berguna untuk menekan jumlah anak di bawah umur yang ikut-ikutan merokok. Dengan harga mahal, mereka akan kesulitan mendapatkan rokok.\nMengusulkan pemerintah tidak berhenti dengan menaikkan harga saja. Pemerintah harus melakukan sosialisasi yang masif dan melakukan penindakan yang tegas terhadap orang-orang yang merokok di tempat umum.",
         quote: [
@@ -914,30 +914,12 @@ const legislatif = [
       {
         link: {
           year: "2023",
-          href: "https://investor.id/lifestyle/319157/cairan-vape-mengandung-narkoba-dpr-desak-pemerintah-setop-rokok-elektrik",
+          href: "https://drive.google.com/drive/folders/1KziShd73qCf4Yk0qmVRbSG4H_YzS4y4s?usp=drive_link",
         },
         text: "",
         quote: [
           "Dengan adanya tambahan data bahwa cairan vape rawan disalahgunakan bahkan terbukti ada yang mengandung narkoba jenis sabu, maka sudah saatnya pemerintah membuka mata, stop peredaran rokok elektrik dan teliti lebih jauh lagi manfaat dan mudaratnya.",
         ],
-      },
-      {
-        link: {
-          year: "2016",
-          href: "https://www.suara.com/bisnis/2016/08/22/143459/harga-rokok-naik-nasdem-takut-banyak-phk-buruh-pabrik-rokok",
-        },
-        text: "Irma beranggapan, kenaikan harga rokok cenderung hanya menguntungkan pabrik rokok saja dan tidak berdampak pada kesejahteraan buruh dan petani tembakau.",
-        quote: [
-          "Saya tidak yakin jumlah Perokok dewasa Dan Perokok Remaja akan berkurang (karena kenaikan cukai), paling paling yang akan berkurang adalah jumlah konsumsinya, yang tadinya sehari 2 bungkus, Karena mahal menjadi  sehari hanya Satu bungkus,",
-        ],
-      },
-      {
-        link: {
-          year: "2016",
-          href: "https://aktual.com/rokok-naik-bukan-solusi-komisi-ix-dpr-minta-pemerintah-perhatikan-6-hal/",
-        },
-        text: "Menilai, kenaikan harga rokok hingga Rp50.000 per bungkus bukanlah solusi untuk bisa menurunkan jumlah perokok.",
-        quote: [],
       },
     ],
   },
@@ -950,7 +932,7 @@ const legislatif = [
       {
         link: {
           year: "2019",
-          href: "https://www.antaranews.com/berita/1172412/legislator-berharap-bpom-bisa-tegas-terhadap-rokok-elektronik",
+          href: "https://drive.google.com/drive/folders/1Bw2wOBqv4VUaHArm4chon-AVmRij4CGb?usp=drive_link",
         },
         text: "Menilai RUU Pengawasan Obat dan Makanan penting untuk memberikan payung hukum kepada BPOM, wewenang, dan kemandirian dalam penyidikan dan penindakan terhadap produsen obat dan makanan yang melanggar dan berharap BPOM juga bisa melakukan pengawasan terhadap produsen bahan-bahan kimia yang digunakan untuk vape, khususnya produsen cairan untuk vape yang berdampak buruk bagi kesehatan.",
         quote: [],
@@ -958,7 +940,7 @@ const legislatif = [
       {
         link: {
           year: "2021",
-          href: "https://fraksi.pks.id/2021/09/16/mufida-dukung-kebijakan-gubernur-anies-menutup-etalase-rokok-di-minimarket/",
+          href: "https://drive.google.com/drive/folders/1rOr3D1d4TMFcgw-i3LJPfOHLTmvnt86w?usp=drive_link",
         },
         text: "Mendukung Seruan Gubernur DKI Nomor 8 Tahun 2021 Tentang Pembinaan Kawasan Dilarang Merokok yang menjabat saat itu, Anies Baswedan,  sebagai bagian pembinaan kawasan dilarang merokok.",
         quote: [
@@ -984,7 +966,7 @@ const legislatif = [
       {
         link: {
           year: "2022",
-          href: "https://orbitdigitaldaily.com/sosialisasi-kie-dan-program-bangga-kencana-di-pakpak-bharat-ansory-siregar-jelaskan-bahaya-kebiasaan-merokok-bagi-calon-pengantin-pria/",
+          href: "https://drive.google.com/drive/folders/1t-HjTyn-UWkPP0AZcq0BN5LBmzUyXfAx?usp=drive_link",
         },
         text: "Pada acara sosialisasi KIE dan Program Bangga Kencana di Kabupaten Pakpak Bharat tepatnya di Desa Boang Manalu Kecamatan Salak, mengatakan bahwa menyampaikan betapa bahayanya Calon Pengantin (Catin) pria yang mempunyai kebiasaan merokok, yang notabene bukan hanya membahayakan diri mereka sendiri, namun juga orang di sekitarnya dengan resiko keterpaparan asap rokok tersebut.",
         quote: [
@@ -1002,7 +984,7 @@ const legislatif = [
       {
         link: {
           year: "2021",
-          href: "https://twitter.com/netty_heryawan/status/1399276660466143236",
+          href: "https://drive.google.com/drive/folders/1YDPLGNLef4NmFJuNyf_w6iakaNZYm8-k?usp=drive_link",
         },
         text: "Mendukung gerakan berhenti merokok dengan memberikan edukasi kesehatan pada Hari Tanpa Tembakau Sedunia di sosial media pribadinya.",
         quote: [
@@ -1012,7 +994,7 @@ const legislatif = [
       {
         link: {
           year: "2022",
-          href: "https://kumparan.com/kumparannews/komisi-ix-dukung-larangan-penjualan-rokok-batangan-ada-9-perokok-anak-1zWLWu4CxnS",
+          href: "https://drive.google.com/drive/folders/1twQ8y3k3MSk0zRqOybWVegxGj8vK7SLR?usp=drive_link",
         },
         text: "Mendorong rencana Presiden Jokowi melarang penjualan rokok batangan atau eceran dan berharap dengan adanya larangan membeli rokok batangan akan menjaga anak-anak dari bahaya rokok. Sebab, kebanyakan membeli batangan atau eceran.",
         quote: [
@@ -1022,7 +1004,7 @@ const legislatif = [
       {
         link: {
           year: "2022",
-          href: "https://prohealth.id/komisi-ix-dpr-dukung-revisi-pp-pengamanan-zat-adiktif-demi-alasan-kesehatan/",
+          href: "https://drive.google.com/drive/folders/1IuFfmnsFlheCPyaKzJ2sfGmpOFAxtrHx?usp=drive_link",
         },
         text: "Setuju jika PP 109 tahun 2012 tentang pengamanan bahan yang mengandung zat adiktif direvisi jika dianggap diperlukan dan mengingatkan bahwa hari ini perokok anak prevalensinya justru meningkat.",
         quote: [
@@ -1040,7 +1022,7 @@ const legislatif = [
       {
         link: {
           year: "2022",
-          href: "https://fraksi.pks.id/2022/04/12/terima-aspirasi-soal-pengelolaan-tembakau-dan-konsumsi-rokok-aleg-pks-kami-akan-tindaklanjuti/",
+          href: "https://drive.google.com/drive/folders/18Vl3pKFOI4q9IQZWDMRPE45nb6skOl19?usp=drive_link",
         },
         text: "Saat bertemu dengan tim Pusat Kajian Jaminan Sosial Sekolah Kajian Strategik dan Global Universitas Indonesia dalam rangka mendengarkan aspirasi yang dilaksanakan secara luring di gedung DPR RI, menyampaikan:",
         quote: [
@@ -1058,9 +1040,9 @@ const legislatif = [
       {
         link: {
           year: "2021",
-          href: "https://fraksi.pks.id/2022/04/12/terima-aspirasi-soal-pengelolaan-tembakau-dan-konsumsi-rokok-aleg-pks-kami-akan-tindaklanjuti/",
+          href: "https://drive.google.com/drive/folders/1pm6Rau8iQRPoYzbTCMO1LGD97Ya9snqS?usp=drive_link",
         },
-        text: "Menyatakan bahwa hanya kalangan tertentu yang membutuhkan tembakau. Khususnya adalah industri rokok yang nantinya diproduksi hanya untuk penikmat rokok.",
+        text: "Saat menjabat sebagai anggota Komisi IX DPR-RI, menyatakan bahwa hanya kalangan tertentu yang membutuhkan tembakau. Khususnya adalah industri rokok yang nantinya diproduksi hanya untuk penikmat rokok.",
         quote: [
           "Perlu keterlibatan semua elemen terkait untuk melaksanakan hal tersebut (pengendalian konsumsi rokok). Selain itu, juga berkomitmen untuk mengendalikan tembakau.",
           "Contohnya Ibu-Ibu khususnya yang hamil, kemudian anak-anak serta bayi harus terlindungi dari bahaya rokok.",
@@ -1069,7 +1051,7 @@ const legislatif = [
       {
         link: {
           year: "2021",
-          href: "https://malangkota.go.id/2021/05/27/bersinergi-bangun-kewaspadaan-penyakit-tidak-menular/",
+          href: "https://drive.google.com/drive/folders/1l74q6kJ8c5y-xmcj6Zi7HaZFQIMgvzYJ?usp=drive_link",
         },
         text: "",
         quote: [
