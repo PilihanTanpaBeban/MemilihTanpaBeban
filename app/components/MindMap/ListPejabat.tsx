@@ -1365,7 +1365,7 @@ const eksekutif = {
       nama: "Susiwijono Moegiarso",
       position: { x: 307, y: 229 },
       jabatan: "Sekretaris",
-      image: "eksekutif_1_4.jpg",
+      image: "eksekutif_1_4.png",
       fakta: [],
       details: [
         {
@@ -1403,7 +1403,7 @@ const eksekutif = {
       nama: "Eddy Abdurachman",
       position: { x: 454, y: 169 },
       jabatan: "Direktur Utama BPDPKS",
-      image: "eksekutif_child_2_1.jpg",
+      image: "eksekutif_child_2_1.png",
       fakta: [],
       details: [
         {
@@ -1429,7 +1429,7 @@ const eksekutif = {
       nama: "Hendratmojo Bagus Hudoro",
       position: { x: 186, y: 502 },
       jabatan: "Direktur Tanaman Semusim dan Rempah",
-      image: "eksekutif_child_2_2.jpg",
+      image: "eksekutif_child_2_2.png",
       fakta: [4],
       details: [
         {
@@ -1533,7 +1533,7 @@ const eksekutif = {
       nama: "Putu Juli Ardika",
       position: { x: 755, y: 760 },
       jabatan: "Direktur Jenderal Industri Agro",
-      image: "eksekutif_3_2.jpg",
+      image: "eksekutif_3_2.png",
       fakta: [],
       details: [
         {
@@ -1575,7 +1575,7 @@ const eksekutif = {
       nama: "Agus Gumiwang Kartasasmita",
       position: { x: 915, y: 502 },
       jabatan: "Menteri Perindustrian",
-      image: "eksekutif_3_3.jpg",
+      image: "eksekutif_3_3.png",
       fakta: [2, 3],
       details: [
         {
@@ -1744,7 +1744,7 @@ const eksekutif = {
       position: { x: 915, y: 315 },
       jabatan:
         "Direktur Jenderal Pembinaan Hubungan Industrial dan Jaminan Sosial Tenaga Kerja",
-      image: "eksekutif_5_5.jpg",
+      image: "eksekutif_5_5.png",
       fakta: [3, 4],
       details: [
         {

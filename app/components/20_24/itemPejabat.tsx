@@ -61,7 +61,7 @@ const BoxPejabat: React.FC<boxPejabatProps> = ({ data }) => {
                   color={primaryColor}
                   cite={`– ${data.nama}`}
                   icon={icon}
-                  mt="sm"
+                  mt="md"
                   ml="sm"
                 >
                   {quote}
@@ -146,14 +146,23 @@ const BoxPejabat: React.FC<boxPejabatProps> = ({ data }) => {
                 src={`../../assets/images/20_24/${data.image}`}
               />
 
-              <Title tt="capitalize" c={primaryColor}>
+              <Title ta={"center"} w={"100%"} tt="capitalize" c={primaryColor}>
                 {data.nama}
               </Title>
               <Text w="100%">{data.jabatan}</Text>
             </Group>
             <div>
               <ScrollArea h={mobile ? "100vh" : "50vh"}>
-                <Flex direction="column">{ListItem}</Flex>
+                {data.urlEmbed != "" && (
+                  <iframe
+                    width="100%"
+                    height="315"
+                    src={data.urlEmbed}
+                  ></iframe>
+                )}
+                <Flex mb="md" direction="column">
+                  {ListItem}
+                </Flex>
               </ScrollArea>
               <Flex
                 direction="row"

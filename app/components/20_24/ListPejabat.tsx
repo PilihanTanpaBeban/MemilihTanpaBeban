@@ -5,6 +5,7 @@ const eksekutif = [
     jabatan:
       "Deputi Bidang Kesetaraan Gender Kementerian Pemberdayaan Perempuan dan Perlindungan Anak",
     image: "eksekutif_1.png",
+    urlEmbed: "",
     details: [
       {
         link: {
@@ -24,6 +25,7 @@ const eksekutif = [
     jabatan:
       "Menteri Pemberdayaan Perempuan dan Perlindungan Anak Republik Indonesia",
     image: "eksekutif_2.png",
+    urlEmbed: "",
     details: [
       {
         link: {
@@ -43,6 +45,7 @@ const eksekutif = [
     jabatan:
       "Plt Asisten Deputi Pemenuhan Hak Anak atas Kesehatan dan Pendidikan Kementerian Pemberdayaan Perempuan dan Perlindungan Anak",
     image: "eksekutif_3.png",
+    urlEmbed: "",
     details: [
       {
         link: {
@@ -72,6 +75,7 @@ const eksekutif = [
     jabatan:
       "Asisten Deputi Pemenuhan Hak Anak atas Kesehatan dan Pendidikan Kementerian Pemberdayaan Perempuan dan Perlindungan Anak",
     image: "eksekutif_4.png",
+    urlEmbed: "",
     details: [
       {
         link: {
@@ -91,6 +95,7 @@ const eksekutif = [
     jabatan:
       "Deputi Bidang Perlindungan Khusus Anak Kementerian Pemberdayaan Perempuan dan Perlindungan Anak",
     image: "eksekutif_5.png",
+    urlEmbed: "https://www.youtube.com/embed/dMurBhSJ0GQ?si=KLu-qCgBlpz7gd5o",
     details: [
       {
         link: {
@@ -110,6 +115,7 @@ const eksekutif = [
     jabatan:
       "Menteri Koordinator Bidang Pembangunan Manusia dan Kebudayaan Republik Indonesia",
     image: "eksekutif_6.png",
+    urlEmbed: "",
     details: [
       {
         link: {
@@ -129,6 +135,7 @@ const eksekutif = [
     jabatan:
       "Staf Ahli Bidang Pembangunan Berkelanjutan Kementerian Koordinator Bidang Pembangunan Manusia dan Kebudayaan Republik Indonesia",
     image: "eksekutif_7.png",
+    urlEmbed: "",
     details: [
       {
         link: {
@@ -148,6 +155,7 @@ const eksekutif = [
     jabatan:
       "Kepala Pusat Kebijakan Anggaran Pendapatan dan Belanja Negara (APBN) Badan Kebijakan Fiskal Kementerian Keuangan",
     image: "eksekutif_8.png",
+    urlEmbed: "",
     details: [
       {
         link: {
@@ -167,6 +175,7 @@ const eksekutif = [
     jabatan:
       "Analisis Kebijakan Fiskal Kementerian Keuangan Republik Indonesia",
     image: "placeholder_male.jpeg",
+    urlEmbed: "",
     details: [
       {
         link: {
@@ -186,6 +195,7 @@ const eksekutif = [
     jabatan:
       "Analis Kebijakan Badan Kebijakan Fiskal Kementerian Keuangan Republik Indonesia\nKepala Pusat Kebijakan Anggaran Pendapatan dan Belanja Negara (APBN)\nBadan Kebijakan Fiskal Kementerian Keuangan",
     image: "eksekutif_10.png",
+    urlEmbed: "",
     details: [
       {
         link: {
@@ -215,6 +225,7 @@ const eksekutif = [
     jabatan:
       "Direktur Pencegahan dan Pengendalian Penyakit Tidak Menular Kementerian Kesehatan RI",
     image: "placeholder_female.jpeg",
+    urlEmbed: "",
     details: [
       {
         link: {
@@ -243,6 +254,7 @@ const eksekutif = [
     nama: "Dante Saksono Harbuwono",
     jabatan: "Wakil Menteri Kesehatan Republik Indonesia",
     image: "eksekutif_12.png",
+    urlEmbed: "",
     details: [
       {
         link: {
@@ -261,6 +273,7 @@ const eksekutif = [
     nama: "Budi Gunadi Sadikin",
     jabatan: "Menteri Kesehatan Republik Indonesia",
     image: "eksekutif_13.png",
+    urlEmbed: "",
     details: [
       {
         link: {
@@ -290,6 +303,7 @@ const eksekutif = [
     jabatan:
       "Ketua Tim Kerja Pengendalian Penyakit Akibat Tembakau Direktorat Pencegahan dan Pengendalian Penyakit Tidak Menular Kementerian Kesehatan RI",
     image: "placeholder_male.jpeg",
+    urlEmbed: "",
     details: [
       {
         link: {
@@ -319,6 +333,7 @@ const eksekutif = [
     jabatan:
       "Deputi Bidang Kemaritiman dan Sumber Daya Alam Kementerian Perencanaan Pembangunan Nasional",
     image: "eksekutif_15.png",
+    urlEmbed: "",
     details: [
       {
         link: {
@@ -342,6 +357,7 @@ const eksekutif = [
     jabatan:
       "Staf Ahli Bidang Sosial dan Penanggulangan Kemiskinan Kementerian Perencanaan Pembangunan Nasional",
     image: "eksekutif_16.png",
+    urlEmbed: "",
     details: [
       {
         link: {
@@ -372,6 +388,7 @@ const eksekutif = [
     jabatan:
       "Deputi Bidang Pembangunan Manusia, Masyarakat, dan Kebudayaan Kementerian Perencanaan Pembangunan Nasional",
     image: "eksekutif_17.png",
+    urlEmbed: "",
     details: [
       {
         link: {
@@ -410,6 +427,7 @@ const eksekutif = [
     nama: "Penny Kusumastuti Lukito",
     jabatan: "Perencana Ahli Utama Badan Pengawas Obat dan Makanan",
     image: "eksekutif_18.png",
+    urlEmbed: "",
     details: [
       {
         link: {
@@ -437,6 +455,7 @@ const eksekutif = [
     nama: "Elin Herlina",
     jabatan: "Inspektur Utama Badan Pengawas Obat dan Makanan",
     image: "eksekutif_19.png",
+    urlEmbed: "",
     details: [
       {
         link: {
@@ -456,6 +475,7 @@ const eksekutif = [
     jabatan:
       "Deputi Bidang Pengawasan Pangan Olahan Badan Pengawas Obat dan Makanan",
     image: "eksekutif_20.png",
+    urlEmbed: "",
     details: [
       {
         link: {
@@ -495,6 +515,7 @@ const eksekutif = [
     jabatan:
       "Deputi Bidang Pengawasan Obat, Narkotika, Psikotropika, Prekursor dan Zat Adiktif Badan Pengawas Obat dan Makanan",
     image: "placeholder_female.jpeg",
+    urlEmbed: "",
     details: [
       {
         link: {
@@ -526,6 +547,7 @@ const eksekutif = [
     jabatan:
       "Kasubdit Pengawasan Produk Tembakau Badan Pengawas Obat dan Makanan",
     image: "eksekutif_22.png",
+    urlEmbed: "",
     details: [
       {
         link: {
@@ -545,6 +567,7 @@ const eksekutif = [
     nama: "Hasto Wardoyo",
     jabatan: "Kepala Badan Kependudukan dan Keluarga Berencana Nasional",
     image: "eksekutif_23.png",
+    urlEmbed: "",
     details: [
       {
         link: {
@@ -585,6 +608,7 @@ const eksekutif = [
     jabatan:
       "Deputi Bidang Pelatihan, Penelitian dan Pengembangan Badan Kependudukan dan Keluarga Berencana Nasional",
     image: "eksekutif_24.png",
+    urlEmbed: "",
     details: [
       {
         link: {
@@ -615,7 +639,8 @@ const eksekutif = [
   //   jabatan:
   //     "Direktur Jenderal Perlindungan Konsumen dan Tertib Niaga Kementerian Perdagangan",
   //   image: "placeholder_male.jpeg",
-  //   details: [
+  //   urlEmbed:"",
+  // details: [
   //     {
   //       link: {
   //         year: "2023",
@@ -632,7 +657,8 @@ const eksekutif = [
   //   jabatan:
   //     "Direktur Pengawasan Barang Beredar dan Jasa Kementerian Perdagangan",
   //   image: "placeholder_male.jpeg",
-  //   details: [
+  //   urlEmbed:"",
+  // details: [
   //     {
   //       link: {
   //         year: "2023",
@@ -648,6 +674,7 @@ const eksekutif = [
     nama: "Kanya Eka Santi",
     jabatan: "Direktur Rehabilitasi Sosial Anak Kementerian Sosial",
     image: "placeholder_female.jpeg",
+    urlEmbed: "",
     details: [
       {
         link: {
@@ -668,6 +695,7 @@ const eksekutif = [
     jabatan:
       "Sekretaris Direktorat Jenderal Rehabilitasi Sosial Kementerian Sosial",
     image: "placeholder_male.jpeg",
+    urlEmbed: "",
     details: [
       {
         link: {
@@ -697,6 +725,7 @@ const eksekutif = [
     nama: "Tri Rismaharini",
     jabatan: "Menteri Sosial Republik Indonesia",
     image: "eksekutif_29.png",
+    urlEmbed: "",
     details: [
       {
         link: {
@@ -717,7 +746,8 @@ const legislatif = [
     id: 1,
     nama: "Puan Maharani",
     jabatan: "Ketua Dewan Perwakilan Rakyat Republik Indonesia (DPR-RI)",
-    image: "placeholder_female.jpeg",
+    image: "legislatif_34.jpg",
+    urlEmbed: "",
     details: [
       {
         link: {
@@ -736,6 +766,7 @@ const legislatif = [
     nama: "Djarot Saiful Hidayat",
     jabatan: "Komisi IV",
     image: "legislatif_35.png",
+    urlEmbed: "",
     details: [
       {
         link: {
@@ -754,6 +785,7 @@ const legislatif = [
     nama: "Anggia Erma Rini",
     jabatan: "Komisi IV",
     image: "legislatif_36.png",
+    urlEmbed: "",
     details: [
       {
         link: {
@@ -782,6 +814,7 @@ const legislatif = [
     nama: "Andi Akmal Pasluddin",
     jabatan: "Komisi IV",
     image: "legislatif_37.png",
+    urlEmbed: "",
     details: [
       {
         link: {
@@ -808,6 +841,7 @@ const legislatif = [
     nama: "Tuti Nusandari Roosdiono",
     jabatan: "Komisi IX",
     image: "legislatif_38.png",
+    urlEmbed: "",
     details: [
       {
         link: {
@@ -826,6 +860,7 @@ const legislatif = [
     nama: "Suir Syam",
     jabatan: "Komisi IX",
     image: "legislatif_39.png",
+    urlEmbed: "",
     details: [
       {
         link: {
@@ -863,7 +898,8 @@ const legislatif = [
     id: 7,
     nama: "Sri Meliyana",
     jabatan: "Komisi IX",
-    image: "placeholder_female.jpeg",
+    image: "legislatif_40.jpg",
+    urlEmbed: "",
     details: [
       {
         link: {
@@ -899,7 +935,8 @@ const legislatif = [
     id: 8,
     nama: "Irma Suryani Chaniago",
     jabatan: "Komisi IX",
-    image: "placeholder_female.jpeg",
+    image: "legislatif_41.jpg",
+    urlEmbed: "https://www.youtube.com/embed/Byv3OJxCRpI?si=lp4VGNodjffGq62n",
     details: [
       {
         link: {
@@ -927,7 +964,8 @@ const legislatif = [
     id: 9,
     nama: "Kurniasih Mufidayati",
     jabatan: "Komisi IX",
-    image: "placeholder_female.jpeg",
+    image: "legislatif_42.jpg",
+    urlEmbed: "",
     details: [
       {
         link: {
@@ -961,7 +999,8 @@ const legislatif = [
     id: 10,
     nama: "Ansory Siregar",
     jabatan: "Komisi IX",
-    image: "placeholder_male.jpeg",
+    image: "legislatif_43.jpg",
+    urlEmbed: "",
     details: [
       {
         link: {
@@ -979,7 +1018,8 @@ const legislatif = [
     id: 11,
     nama: "Netty Prasetiyani",
     jabatan: "Komisi IX",
-    image: "placeholder_female.jpeg",
+    image: "legislatif_44.jpg",
+    urlEmbed: "",
     details: [
       {
         link: {
@@ -1017,7 +1057,8 @@ const legislatif = [
     id: 12,
     nama: "Alifudin",
     jabatan: "Komisi IX",
-    image: "placeholder_male.jpeg",
+    image: "legislatif_45.jpg",
+    urlEmbed: "",
     details: [
       {
         link: {
@@ -1035,7 +1076,8 @@ const legislatif = [
     id: 13,
     nama: "Ali Ahmad",
     jabatan: "Komisi VI",
-    image: "placeholder_male.jpeg",
+    image: "legislatif_46.jpg",
+    urlEmbed: "",
     details: [
       {
         link: {
