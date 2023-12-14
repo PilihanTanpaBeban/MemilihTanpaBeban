@@ -20,13 +20,18 @@ import DetailNode from "./DetailNode";
 import listNodes from "./ListPejabat";
 import listEdges from "./ListEdges";
 
-import { SmartStepEdge, SmartStraightEdge } from '@tisoap/react-flow-smart-edge'
+import {
+  SmartStepEdge,
+  SmartStraightEdge,
+} from "@tisoap/react-flow-smart-edge";
+import EdgeNode from "./EdgeNode";
 
 const nodeTypes = {
   imageNode: ImageNode,
   rootNode: RootNode,
   default: DetailNode,
   titleNode: TitleNode,
+  edgeNode: EdgeNode
 };
 
 const defaultViewport = { x: 0, y: 0, zoom: 0.2 };
@@ -71,8 +76,9 @@ const defaultNodes = [
 ];
 
 const edgeTypes = {
-	smart: SmartStraightEdge
-}
+  smartStraight: SmartStraightEdge,
+  smartStep: SmartStepEdge,
+};
 
 const MindMap = () => {
   const [nodes, setNodes, onNodesChange] = useNodesState([]);
@@ -82,6 +88,20 @@ const MindMap = () => {
     for (const item of defaultNodes) {
       setNodes((oldVal) => [...oldVal, item]);
     }
+
+    setNodes((oldVal)=>[
+      ...oldVal,
+      {
+        id: listNodes.edgePosition.id,
+        type: "edgeNode",
+        data :{
+          image: listNodes.edgePosition.image
+        },
+        position: listNodes.edgePosition.position,
+        isDraggable: false,
+        zIndex:-100
+      },
+    ])
 
     listNodes.legislatif.details.map((data) => {
       setNodes((oldVal) => [
@@ -94,6 +114,7 @@ const MindMap = () => {
             description: data.description,
           },
           position: data.position,
+          isDraggable: false,
         },
       ]);
 
@@ -115,6 +136,7 @@ const MindMap = () => {
                 bg: "white",
               },
               position: data.position,
+              isDraggable: false,
             },
           ]);
         });
@@ -139,6 +161,7 @@ const MindMap = () => {
             bg: "white",
           },
           position: data.position,
+          isDraggable: false,
         },
       ]);
     });
@@ -161,6 +184,7 @@ const MindMap = () => {
             bg: bgOrange,
           },
           position: data.position,
+          isDraggable: false,
         },
       ]);
     });
@@ -183,26 +207,28 @@ const MindMap = () => {
             bg: bgOrange,
           },
           position: data.position,
+          isDraggable: false,
         },
       ]);
     });
 
-    listEdges.map((data) => {
-      setEdges((oldVal) => [
-        ...oldVal,
-        {
-          id: data.id,
-          source: data.source,
-          target: data.target,
-          type: data.type,
-          style: {
-            stroke: data.color,
-          },
-          sourceHandle: data.sourceHandle,
-          targetHandle: data.targetHandle,
-        },
-      ]);
-    });
+    // listEdges.map((data) => {
+    //   setEdges((oldVal) => [
+    //     ...oldVal,
+    //     {
+    //       id: data.id,
+    //       source: data.source,
+    //       target: data.target,
+    //       type: "smoothStep",
+    //       style: {
+    //         stroke: data.color,
+    //         strokeWidth: 3,
+    //       },
+    //       sourceHandle: data.sourceHandle,
+    //       targetHandle: data.targetHandle,
+    //     },
+    //   ]);
+    // });
   }, [setEdges, setNodes]);
 
   return (
@@ -215,13 +241,12 @@ const MindMap = () => {
         nodeTypes={nodeTypes}
         edgeTypes={edgeTypes}
         fitView
+        nodesDraggable={false}
         attributionPosition="bottom-left"
         minZoom={0.1}
       >
         <MiniMap zoomable pannable />
         <Controls />
-
-        <Background />
       </ReactFlow>
     </Center>
   );

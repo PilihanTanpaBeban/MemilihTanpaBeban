@@ -144,6 +144,7 @@ const ImageNode: React.FC<imageNodeProps> = ({ data, isConnectable }) => {
         align="center"
         justify="center"
         w={data.width}
+        bg="white"
         h={data.bg == bgOrange ? data.height+20 : data.height}
         style={{
           borderRadius: rem(5),

@@ -1,18 +1,18 @@
 const legislatif = {
   id: "90",
   nama: "Legislatif",
-  position: { x: 968, y: 2364 },
+  position: { x: 968, y: 2270 },
   details: [
     {
       id: "1",
       nama: "Komisi IV",
-      position: { x: 1461, y: 1744 },
+      position: { x: 1431, y: 1680 },
       description: "(Pertanian, Lingkungan Hidup dan Kehutanan, dan, Kelautan)",
       anggota: [
         {
           id: "2",
           nama: "Mukhamad Misbakhun",
-          position: { x: 1517.5, y: 1450 },
+          position: { x: 1475, y: 1400 },
           jabatan: "Golkar, Dapil Jatim II",
           image: "legislatif_1_1.jpg",
           fakta: [4, 5],
@@ -88,7 +88,7 @@ const legislatif = {
         {
           id: "3",
           nama: "Ir. Panggah Susanto, M.M.",
-          position: { x: 1379, y: 1492.5 },
+          position: { x: 1350, y: 1445 },
           jabatan: "Golkar, Jateng VI",
           image: "legislatif_1_2.jpg",
           fakta: [3, 4],
@@ -130,7 +130,7 @@ const legislatif = {
         {
           id: "5",
           nama: "Firman Soebagyo",
-          position: { x: 1645, y: 1492 },
+          position: { x: 1600, y: 1430 },
           jabatan: "Golkar. Dapil Jawa Tengah III",
           image: "legislatif_1_4.jpg",
           fakta: [2, 3],
@@ -180,7 +180,7 @@ const legislatif = {
         {
           id: "6",
           nama: "Drs. H. Ibnu Multazam",
-          position: { x: 1785.5, y: 1563},
+          position: { x: 1740, y: 1500},
           jabatan: "PKB, Jawa Timur VII\nBaleg",
           image: "legislatif_1_5.jpg",
           fakta: [3, 4],
@@ -214,7 +214,7 @@ const legislatif = {
         {
           id: "7",
           nama: "Vita Ervina, S.E.",
-          position: { x: 1833, y: 1712.5},
+          position: { x: 1790, y: 1670},
           jabatan: "PDIP, Jateng VI",
           image: "legislatif_1_6.jpg",
           fakta: [2],
@@ -256,7 +256,7 @@ const legislatif = {
         {
           id: "8",
           nama: "Daniel Johan, SE, MM",
-          position: { x: 1786, y: 1864 },
+          position: { x: 1750, y: 1820 },
           jabatan: "PKB, Kalbar I",
           image: "legislatif_1_7.jpg",
           fakta: [4],
@@ -282,7 +282,7 @@ const legislatif = {
         {
           id: "9",
           nama: "Ir. KRT H. DARORI WONODIPURO, M.M., IPU.",
-          position: { x: 1370, y: 1945 },
+          position: { x: 1340, y: 1865 },
           jabatan: "Gerindra, Jateng VII",
           image: "legislatif_1_8.jpg",
           fakta: [],
@@ -308,7 +308,7 @@ const legislatif = {
         {
           id: "10",
           nama: "Sunarna",
-          position: { x: 1517.5, y: 1976 },
+          position: { x: 1480, y: 1870 },
           jabatan: "PDIP, Jateng VIII",
           image: "legislatif_1_9.jpg",
           fakta: [4],
@@ -326,7 +326,7 @@ const legislatif = {
         {
           id: "11",
           nama: "BAMBANG PURWANTO, S.ST., M.H.",
-          position: { x: 1657, y: 1945},
+          position: { x: 1600, y: 1845},
           jabatan: "Demokrat, Kalteng",
           image: "legislatif_1_10.jpg",
           fakta: [4],
@@ -354,13 +354,13 @@ const legislatif = {
     {
       id: "12",
       nama: "Komisi VI",
-      position: { x: 381, y: 2374 },
+      position: { x: 400, y: 2274 },
       description: "(Industri, Investasi, Persaingan Usaha)",
       anggota: [
         {
           id: "13",
           nama: "Nusron Wahid",
-          position: { x: 152, y: 2342.5 },
+          position: { x: 182, y: 2247 },
           jabatan: "Golkar, Dapil Jateng II",
           image: "legislatif_2_1.jpg",
           fakta: [3, 4],
@@ -378,7 +378,7 @@ const legislatif = {
         {
           id: "14",
           nama: "Adisatrya Suryo Sulisto",
-          position: { x: 347, y: 2050 },
+          position: { x: 347, y: 1990 },
           jabatan: "PDIP, Dapil Jateng VIII",
           image: "legislatif_2_2.jpg",
           fakta: [3, 7],
@@ -412,7 +412,7 @@ const legislatif = {
         {
           id: "15",
           nama: "M. SARMUJI, SE., M.Si.",
-          position: { x: 206, y: 2507 },
+          position: { x: 226, y: 2407 },
           jabatan: "Fraksi Golkar. Dapil Jawa Timur VI",
           image: "legislatif_2_3.jpg",
           fakta: [3, 4],
@@ -430,7 +430,7 @@ const legislatif = {
         {
           id: "16",
           nama: "Dr. SUPRATMAN ANDI AGTAS, S.H., M.H.",
-          position: { x: 359, y: 2612 },
+          position: { x: 359, y: 2490 },
           jabatan: "Gerindra. Dapil Sulawesi Tengah\nKetua BALEG 2016-Sekarang",
           image: "legislatif_2_4.jpg",
           fakta: [],
@@ -458,7 +458,7 @@ const legislatif = {
         {
           id: "17",
           nama: "LULUK NUR HAMIDAH, M.Si., M.PA.",
-          position: { x: 507, y: 2612 },
+          position: { x: 507, y: 2500 },
           jabatan:
             "PKB. Dapil Jawa Tengah IV\nAnggota Baleg, Pansus dan Komisi VI",
           image: "legislatif_2_5.jpg",
@@ -495,7 +495,7 @@ const legislatif = {
         {
           id: "18",
           nama: "Johanes Aria Bima Trihastoto",
-          position: { x: 656, y: 2612 },
+          position: { x: 656, y: 2440 },
           jabatan: "Fraksi PDIP. Dapil Jawa Tengah V",
           image: "legislatif_2_6.jpg",
           fakta: [3, 4],
@@ -533,7 +533,7 @@ const legislatif = {
         {
           id: "19",
           nama: "I Nyoman Parta, S.H.",
-          position: { x: 638, y: 2050 },
+          position: { x: 638, y: 2000 },
           jabatan: "PDIP. Dapil Bali",
           image: "legislatif_2_7.jpg",
           fakta: [8],
@@ -551,7 +551,7 @@ const legislatif = {
         {
           id: "20",
           nama: "Rieke Diah Pitaloka M.Hum",
-          position: { x: 488, y: 2050 },
+          position: { x: 488, y: 1980 },
           jabatan:
             "PDIP. Dapil Jawa Barat VII\nKetua Umum Konfederasi Rakyat Pekerja Indonesia (KPRI)",
           image: "legislatif_2_8.jpg",
@@ -582,7 +582,7 @@ const legislatif = {
         {
           id: "21",
           nama: "Faisol Riza",
-          position: { x: 205, y: 2182 },
+          position: { x: 225, y: 2100 },
           jabatan: "PKB. Dapil Jawa Timur II\nKetua Komisi VI",
           image: "legislatif_2_9.jpg",
           fakta: [3, 4],
@@ -610,13 +610,13 @@ const legislatif = {
     {
       id: "22",
       nama: "Komisi VII",
-      position: { x: 1423, y: 2892 },
+      position: { x: 1388, y: 2775 },
       description: "(Energi, Riset dan Teknologi, dan Lingkungan Hidup)",
       anggota: [
         {
           id: "24",
           nama: "Sartono Hutomo",
-          position: { x: 1398, y: 2643 },
+          position: { x: 1358, y: 2547 },
           jabatan: "Demokrat, Dapil Jatim VII",
           image: "legislatif_3_2.jpg",
           fakta: [3, 4],
@@ -642,7 +642,7 @@ const legislatif = {
         {
           id: "25",
           nama: "Bambang Haryadi",
-          position: { x: 1754, y: 2861 },
+          position: { x: 1710, y: 2741 },
           jabatan: "Gerindra, Dapil Jatim IV",
           image: "legislatif_3_3.jpg",
           fakta: [3, 4],
@@ -664,7 +664,7 @@ const legislatif = {
         {
           id: "26",
           nama: "Abdul Kadir Karding",
-          position: { x: 1705, y: 2690 },
+          position: { x: 1665, y: 2590 },
           jabatan: "PKB, Dapil Jateng V",
           image: "legislatif_3_4.jpg",
           fakta: [3, 4],
@@ -722,7 +722,7 @@ const legislatif = {
         {
           id: "27",
           nama: "Ir H.M.Ridwan Hisjam",
-          position: { x: 1705, y: 3041 },
+          position: { x: 1660, y: 2900 },
           jabatan: "Golkar, Dapil Jatim V",
           image: "legislatif_3_5.jpg",
           fakta: [1, 9],
@@ -756,7 +756,7 @@ const legislatif = {
         {
           id: "28",
           nama: "Ribka Tjiptaning Proletariyati",
-          position: { x: 1551, y: 2643 },
+          position: { x: 1501, y: 2543 },
           jabatan: "PDIP, Dapil Jabar IV",
           image: "legislatif_3_6.jpg",
           fakta: [],
@@ -782,7 +782,7 @@ const legislatif = {
         {
           id: "29",
           nama: "Syaikhul Islam Ali",
-          position: { x: 1556, y: 3094 },
+          position: { x: 1520, y: 2960 },
           jabatan: "PKB, Dapil Jatim I",
           image: "legislatif_3_7.jpg",
           fakta: [1, 10],
@@ -800,7 +800,7 @@ const legislatif = {
         {
           id: "93",
           nama: "Marwan Jafar",
-          position: { x: 1398, y: 3094 },
+          position: { x: 1370, y: 2944 },
           jabatan: "PKB, Dapil Jatim I",
           image: "legislatif_3_8.jpg",
           fakta: [1, 10],
@@ -839,13 +839,13 @@ const legislatif = {
     {
       id: "30",
       nama: "Komisi IX",
-      position: { x: 379, y: 3179 },
+      position: { x: 395, y: 3045 },
       description: "(Kesehatan, Ketenagakerjaan, Kependudukan)",
       anggota: [
         {
           id: "31",
           nama: "Hj. NUR NADLIFAH, S.Ag., M.M.",
-          position: { x: 221, y: 3029 },
+          position: { x: 240, y: 2929 },
           jabatan: "PKB, Jawa Tengah IX",
           image: "legislatif_4_1.jpg",
           fakta: [2, 3, 4],
@@ -895,7 +895,7 @@ const legislatif = {
         {
           id: "32",
           nama: "Dra. Lucy Kurniasari",
-          position: { x: 435.5, y: 2936 },
+          position: { x: 440, y: 2826 },
           jabatan: "Demokrat, Jawa Timur I",
           image: "legislatif_4_2.jpg",
           fakta: [2, 4],
@@ -913,7 +913,7 @@ const legislatif = {
         {
           id: "33",
           nama: "M. Yahya Zaini, S.H",
-          position: { x: 221, y: 3294 },
+          position: { x: 245, y: 3150 },
           jabatan: "Golkar, Jawa Tengah VIII",
           image: "legislatif_4_3.jpg",
           fakta: [3, 4, 9],
@@ -939,7 +939,7 @@ const legislatif = {
         {
           id: "34",
           nama: "H. Abidin Fikri, S.H. M.H",
-          position: { x: 435.5, y: 3371 },
+          position: { x: 440, y: 3210 },
           jabatan: "PDIP, Jawa Tengah IX",
           image: "legislatif_4_4.jpg",
           fakta: [],
@@ -965,7 +965,7 @@ const legislatif = {
         {
           id: "95",
           nama: "Nihayatul Wafiroh",
-          position: { x: 670, y: 3326},
+          position: { x: 670, y: 3190},
           jabatan: "PKB, Dapil Jawa Timur III",
           image: "legislatif_4_5.jpg",
           fakta: [3, 4],
@@ -998,14 +998,14 @@ const legislatif = {
     {
       id: "35",
       nama: "Komisi XI",
-      position: { x: 423, y: 1536 },
+      position: { x: 433, y: 1480 },
       description:
         "(Keuangan, Perencanaan Pembangunan Nasional, serta Perbankan)",
       anggota: [
         {
           id: "36",
           nama: "Ir. Andreas Eddy Susetyo",
-          position: { x: 625, y: 1760 },
+          position: { x: 625, y: 1660 },
           jabatan: "PDIP, Dapil Jatim V",
           image: "legislatif_5_1.jpg",
           fakta: [3, 4],
@@ -1031,7 +1031,7 @@ const legislatif = {
         {
           id: "37",
           nama: "Prof. Dr. Hendrawan Supratikno",
-          position: { x: 333, y: 1759 },
+          position: { x: 350, y: 1695 },
           jabatan: "PDIP, Dapil Jateng X",
           image: "legislatif_5_2.jpg",
           fakta: [3, 4],
@@ -1113,7 +1113,7 @@ const legislatif = {
         {
           id: "39",
           nama: "H. M. Amir Uskara",
-          position: { x: 479.5, y: 1773 },
+          position: { x: 480, y: 1700 },
           jabatan: "PPP, Dapil Sulsel I",
           image: "legislatif_5_4.jpg",
           fakta: [3, 4],
@@ -1134,7 +1134,7 @@ const legislatif = {
         {
           id: "40",
           nama: "Willy Aditya",
-          position: { x: 192, y: 1350 },
+          position: { x: 215, y: 1300 },
           jabatan:
             "Wakil Ketua Fraksi Partai NasDem DPR RI.\nDapil Jawa Timur XI\nWakil Ketua Badan Legislasi DPR RI\nKetua DPP Partai Nasdem",
           image: "legislatif_5_5.jpg",
@@ -1211,7 +1211,7 @@ const legislatif = {
         {
           id: "43",
           nama: "Dr. H. Mustofa, SE., MM",
-          position: { x: 147, y: 1504.5 },
+          position: { x: 168, y: 1450 },
           jabatan: "PDIP, Dapil Jateng II",
           image: "legislatif_5_8.jpg",
           fakta: [4],
@@ -1239,7 +1239,7 @@ const legislatif = {
         {
           id: "44",
           nama: "Said Abdullah",
-          position: { x: 192, y: 1648},
+          position: { x: 220, y: 1628},
           jabatan: "PDIP, Dapil Jatim XI",
           image: "legislatif_5_9.jpeg",
           fakta: [4],
@@ -1279,7 +1279,7 @@ const eksekutif = {
     {
       id: "47",
       nama: "Atong Soekirman",
-      position: { x: 307, y: 795 },
+      position: { x: 327, y: 775 },
       jabatan: "Asisten Deputi Pengembangan Industri",
       image: "eksekutif_1_1.png",
       fakta: [4, 5],
@@ -1307,7 +1307,7 @@ const eksekutif = {
     {
       id: "48",
       nama: "Airlangga Hartanto",
-      position: { x: 462, y: 825 },
+      position: { x: 475, y: 805 },
       jabatan: "Menko Perekonomian, Golkar",
       image: "eksekutif_1_2.png",
       fakta: [3, 9],
@@ -1343,7 +1343,7 @@ const eksekutif = {
     {
       id: "49",
       nama: "Moch Edy Yusuf",
-      position: { x: 605, y: 825 },
+      position: { x: 615, y: 805 },
       jabatan: "Asisten Deputi Pengembangan Agribisnis Perkebunan",
       image: "placeholder_male.jpeg",
       fakta: [4],
@@ -1363,7 +1363,7 @@ const eksekutif = {
     {
       id: "50",
       nama: "Susiwijono Moegiarso",
-      position: { x: 322, y: 229 },
+      position: { x: 307, y: 229 },
       jabatan: "Sekretaris",
       image: "eksekutif_1_4.jpg",
       fakta: [],
@@ -1427,7 +1427,7 @@ const eksekutif = {
     {
       id: "52",
       nama: "Hendratmojo Bagus Hudoro",
-      position: { x: 135, y: 502 },
+      position: { x: 186, y: 502 },
       jabatan: "Direktur Tanaman Semusim dan Rempah",
       image: "eksekutif_child_2_2.jpg",
       fakta: [4],
@@ -1531,7 +1531,7 @@ const eksekutif = {
     {
       id: "56",
       nama: "Putu Juli Ardika",
-      position: { x: 740, y: 795 },
+      position: { x: 755, y: 760 },
       jabatan: "Direktur Jenderal Industri Agro",
       image: "eksekutif_3_2.jpg",
       fakta: [],
@@ -1631,7 +1631,7 @@ const eksekutif = {
     {
       id: "59",
       nama: "Yaqub Ginting",
-      position: { x: 156, y: 319 },
+      position: { x: 180, y: 319 },
       jabatan: "Ketua Tim Kerja Tanaman Semusim dan yang Lainnya",
       image: "placeholder_male.jpeg",
       fakta: [4, 9],
@@ -1669,7 +1669,7 @@ const eksekutif = {
     {
       id: "60",
       nama: "Kasdi Subagyono",
-      position: { x: 156.5, y: 682 },
+      position: { x: 190, y: 682 },
       jabatan: "Sekertaris Jenderal Perkebunan Kementan",
       image: "placeholder_male.jpeg",
       fakta: [3, 4],
@@ -1723,7 +1723,7 @@ const eksekutif = {
     {
       id: "62",
       nama: "Nyoman Adhiarna",
-      position: { x: 745, y: 229 },
+      position: { x: 760, y: 229 },
       jabatan: "Sekretaris Direktorat Jenderal Aplikasi Informatika",
       image: "eksekutif_5_4.jpg",
       fakta: [],
@@ -1773,32 +1773,32 @@ const eksekutif = {
 const tobacco_industri = {
   id: "92",
   nama: "Tobacco Industry (& afiliasi)",
-  position: { x: 2646.5, y: 1007 },
+  position: { x: 2565, y: 985 },
 
   details: [
     {
       id: "66",
       nama: "PT HM Sampoerna Tbk",
       image: "sampoerna.jpg",
-      position: { x: 2408, y: 999 },
+      position: { x: 2330, y: 980 },
     },
     {
       id: "67",
       nama: "PT Gudang Garam",
       image: "gudang-garam.jpg",
-      position: { x: 2734, y: 787 },
+      position: { x: 2645, y: 775 },
     },
     {
       id: "68",
       nama: "PT Bentoel Internasional Investama Tbk",
       image: "bentoel.jpg",
-      position: { x: 2734, y: 1204 },
+      position: { x: 2643, y: 1160 },
     },
     {
       id: "69",
       nama: "PT Djarum",
       image: "djarum.jpg",
-      position: { x: 3061, y: 999  },
+      position: { x: 2957, y: 975  },
     },
   ],
 };
@@ -2210,11 +2210,18 @@ const front_group_ti = {
   ],
 };
 
+const edgePosition = {
+  id: "100",
+  position: { x:38, y:38},
+  image:"edge.png"
+}
+
 const listNodes = {
   legislatif: legislatif,
   eksekutif: eksekutif,
   tobacco_industri: tobacco_industri,
   front_group_ti: front_group_ti,
+  edgePosition: edgePosition
 };
 
 export default listNodes;
