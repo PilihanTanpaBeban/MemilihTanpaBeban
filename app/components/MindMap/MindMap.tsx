@@ -31,7 +31,7 @@ const nodeTypes = {
   rootNode: RootNode,
   default: DetailNode,
   titleNode: TitleNode,
-  edgeNode: EdgeNode
+  edgeNode: EdgeNode,
 };
 
 const defaultViewport = { x: 0, y: 0, zoom: 0.2 };
@@ -89,19 +89,27 @@ const MindMap = () => {
       setNodes((oldVal) => [...oldVal, item]);
     }
 
-    setNodes((oldVal)=>[
+    setNodes((oldVal) => [
       ...oldVal,
       {
         id: listNodes.edgePosition.id,
         type: "edgeNode",
-        data :{
-          image: listNodes.edgePosition.image
+        data: {
+          image: listNodes.edgePosition.image,
         },
         position: listNodes.edgePosition.position,
-        isDraggable: false,
-        zIndex:-100
+        style: {
+          position: "absolute",
+          zIndex: -100,
+        },
+
+        selected: false,
+        dragging: false,
+        draggable: false,
+        selectable: false,
+        connectable: false,
       },
-    ])
+    ]);
 
     listNodes.legislatif.details.map((data) => {
       setNodes((oldVal) => [
@@ -114,7 +122,6 @@ const MindMap = () => {
             description: data.description,
           },
           position: data.position,
-          isDraggable: false,
         },
       ]);
 
@@ -136,7 +143,7 @@ const MindMap = () => {
                 bg: "white",
               },
               position: data.position,
-              isDraggable: false,
+              zIndex: 1,
             },
           ]);
         });
@@ -161,7 +168,7 @@ const MindMap = () => {
             bg: "white",
           },
           position: data.position,
-          isDraggable: false,
+          zIndex: 1,
         },
       ]);
     });
@@ -184,7 +191,7 @@ const MindMap = () => {
             bg: bgOrange,
           },
           position: data.position,
-          isDraggable: false,
+          zIndex: 1,
         },
       ]);
     });
@@ -207,7 +214,7 @@ const MindMap = () => {
             bg: bgOrange,
           },
           position: data.position,
-          isDraggable: false,
+          zIndex: 1,
         },
       ]);
     });

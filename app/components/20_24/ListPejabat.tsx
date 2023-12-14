@@ -1060,24 +1060,6 @@ const legislatif = [
       },
     ],
   },
-  {
-    id: 12,
-    nama: "M. Nasim Khan",
-    jabatan: "Komisi VI",
-    image: "placeholder_male.jpeg",
-    details: [
-      {
-        link: {
-          year: "2015",
-          href: "https://ekonomi.republika.co.id/berita/nlgvkl/dpr-ingin-tembakau-dan-rokok-diekspor",
-        },
-        text: "Mengakui, kebiasaan merokok pada dasarnya berpeluang memiskinkan. Misalnya, lanjut Nasim, tidak sedikit orang berpenghasilan minim yang menganggap, lebih baik tidak makan daripada tidak merokok.",
-        quote: [
-          "Pemiskinan yang tidak benar. Hal-hal seperti itu harus dihapuskan. Makanya dengan peraturan sistem lingkungan perokok, area rokok, itu sangat penting untuk meminimalkan (konsumsi) rokok.",
-        ],
-      },
-    ],
-  },
 ];
 
 const listPejabat2024 = {
