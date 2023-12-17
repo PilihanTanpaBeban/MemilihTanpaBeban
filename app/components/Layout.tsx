@@ -1,15 +1,15 @@
-import React, { ReactNode } from 'react';
-import { Header } from '../header/header';
-import { Footer } from '../footer/footer';
+import React, { ReactNode } from "react";
+import { Header } from "../header/header";
+import { Footer } from "../footer/footer";
 
 interface LayoutProps {
-    children: ReactNode;
-  }
-  
+  children: ReactNode;
+}
+
 const Layout: React.FC<LayoutProps> = ({ children }) => (
   <>
     <Header />
-    {children}
+    <div style={{ paddingTop: "100px" }}>{children}</div>
     <Footer />
   </>
 );
