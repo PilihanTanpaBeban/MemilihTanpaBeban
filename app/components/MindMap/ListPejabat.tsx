@@ -802,7 +802,7 @@ const legislatif = {
           nama: "Marwan Jafar",
           position: { x: 1370, y: 2944 },
           jabatan: "PKB, Dapil Jatim I",
-          image: "legislatif_3_8.jpg",
+          image: "legislatif_3_8.png",
           fakta: [1, 10],
           details: [
             {
@@ -1274,7 +1274,7 @@ const legislatif = {
 const eksekutif = {
   id: "91",
   nama: "Eksekutif",
-  position: { x: 435, y: 524 },
+  position: { x: 445, y: 515 },
   details: [
     {
       id: "47",
