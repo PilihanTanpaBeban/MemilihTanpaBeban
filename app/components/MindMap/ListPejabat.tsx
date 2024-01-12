@@ -1757,14 +1757,6 @@ const eksekutif = {
             "Dampaknya banyak. Misalnya larangan iklan. Jangan dilarang banget lah. Kita selama ini tahu iklan rokok kan (berkontribusi) besar, di pabrik (rokok) sendiri, juga pasti ada pengurangan tenaga kerja (jika pelarangan ini dilakukan)",
           ],
         },
-        {
-          link: {
-            year: "2022",
-            href: "https://drive.google.com/drive/folders/1zJusaDPnHvl6LWDODcObMqzG3hsoxiej?usp=drive_link",
-          },
-          text: "Di samping direktur utama BPDPKS, beliau menjabat juga sebagai Komisaris Independen di PT Bentoel Internasional Investama Tbk sejak Februari 2015 hingga saat ini (Dewan Komisaris bertugas mengawasi manajemen Perusahaan dan memberikan arahan kepada Direksi terkait pengembangan bisnis sejalan dengan visi dan misi Perusahaan untuk tahun buku berjalan).",
-          quote: [],
-        },
       ],
     },
   ],
