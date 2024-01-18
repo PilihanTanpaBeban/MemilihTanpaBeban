@@ -14,7 +14,7 @@ import "reactflow/dist/style.css";
 import ImageNode from "./imageNode";
 import RootNode from "./RootNode";
 import TitleNode from "./TitleNode";
-import { Center, rem } from "@mantine/core";
+import { Center, Flex, Text, Title, rem } from "@mantine/core";
 import { bgOrange, primaryColor } from "../../../public/colors";
 import DetailNode from "./DetailNode";
 import listNodes from "./ListPejabat";
@@ -218,28 +218,11 @@ const MindMap = () => {
         },
       ]);
     });
-
-    // listEdges.map((data) => {
-    //   setEdges((oldVal) => [
-    //     ...oldVal,
-    //     {
-    //       id: data.id,
-    //       source: data.source,
-    //       target: data.target,
-    //       type: "smoothStep",
-    //       style: {
-    //         stroke: data.color,
-    //         strokeWidth: 3,
-    //       },
-    //       sourceHandle: data.sourceHandle,
-    //       targetHandle: data.targetHandle,
-    //     },
-    //   ]);
-    // });
   }, [setEdges, setNodes]);
 
   return (
-    <Center w={"90vw"} h={"100vh"}>
+    <Flex direction="column" align="center" justify="center" w={"90vw"} h={"100vh"}>
+    <Text style={{fontSize:rem(24)}} fw="bold" c={primaryColor}>Zoom untuk lihat lebih dekat</Text>
       <ReactFlow
         nodes={nodes}
         edges={edges}
@@ -255,7 +238,7 @@ const MindMap = () => {
         <MiniMap zoomable pannable />
         <Controls />
       </ReactFlow>
-    </Center>
+    </Flex>
   );
 };
 
