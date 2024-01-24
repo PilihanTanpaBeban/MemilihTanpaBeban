@@ -739,6 +739,35 @@ const eksekutif = [
       },
     ],
   },
+  {
+    id: 30,
+    nama: "Suprayoga Hadi",
+    jabatan: "Deputi Bidang Dukungan Kebijakan Pembangunan Manusia dan Pemerataan Pembangunan, Sekretariat Wakil Presiden RI",
+    image: "eksekutif_30.png",
+    urlEmbed: "https://www.youtube.com/embed/Oy4jS4ElaX4?si=oaUIKiiZBrMoeXnS",
+    details: [
+      {
+        link: {
+          year: "2023",
+          href: "https://drive.google.com/drive/folders/1vcBW7ET4UdCBkbRsnpl4oEnjqWF2gxOG?usp=drive_link",
+        },
+        text: "Mengatakan bahwa anak usia dini banyak tinggal dengan anggota keluarga yang merokok dan sebagian besar tergolong keluarga miskin. Mereka lebih berisiko karena menjadi second-hand smoker. Belanja rokok juga cukup besar yaitu Rp82.000, dan ini cukup merugikan karena dana tersebut bisa digunakan untuk membeli telur.",
+        quote: [
+          "Kedepannya kita berharap bantuan pangan non-tunai dapat memenuhi konsumsi gizi masyarakat agar semakin banyak mengonsumsi telur. Bantuan pangan secara tunai memiliki potensi dapat digunakan untuk membeli rokok"
+        ],
+      },
+      {
+        link: {
+          year: "2023",
+          href: "https://drive.google.com/drive/folders/170pXG8FQkic76-DC1MgrY5FikTI55DsD?usp=drive_link",
+        },
+        text: "Menyatakan keprihatinan pada konsumsi rokok yang tinggi di Indonesia yang menurutnya ini adalah bentuk keputusan tidak bijak yang akan berdampak pada generasi berikut.",
+        quote: [
+          "Angka perokok kita di bawah 18 tahun itu sebesar 3,44 persen pada 2022, sedangkan pada anak muda di atas 20 tahun lebih banyak lagi, kalau ini tidak kita hentikan maka pada 2030 ini akan meningkat sebanyak 16 persen, meski memprihatinkan namun saya rasa at least we still on the right track"
+        ],
+      },
+    ],
+  },
 ];
 
 const legislatif = [

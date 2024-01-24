@@ -109,7 +109,7 @@ function KonflikKepentinganPage() {
               <Grid px={60}>
                 <Grid.Col span={{ base: 12, sm: 6, md: 4 }}>
                   <Flex align={"center"} justify={mobile?"center":"flex-start"} style={{textDecoration:"none"}}>
-                    <Image mr="sm" src={`../../assets/images/Partai/pkb.png`} />
+                    <Image w={rem(112)} mah={rem(110)} mr="sm" src={`../../assets/images/Partai/pkb.png`} />
                     <Text mx={rem(10)}>
                       <a style={{ color: primaryColor, fontWeight:"bold",textDecoration:"none"}} 
                         href="https://drive.google.com/file/d/1dJGXMl06DT3YqN0qbPQbCtn-VjmBgMgY/view?usp=drive_link"
@@ -130,7 +130,7 @@ function KonflikKepentinganPage() {
 
                 <Grid.Col span={{ base: 12, sm: 6, md: 4 }}>
                   <Flex align={"center"} justify={mobile?"center":"flex-start"}>
-                    <Image mr="sm" src={`../../assets/images/Partai/golkar.png`} />
+                    <Image w={rem(112)} mah={rem(110)} mr="sm" src={`../../assets/images/Partai/golkar.png`} />
                     <Text mx={rem(10)}>
                       <a style={{ color: primaryColor, fontWeight:"bold",textDecoration:"none"}} 
                         href="https://drive.google.com/file/d/16yA6j87zN7nm5Wkin_5FBVN16ytQsEoX/view?usp=drive_link"
@@ -159,7 +159,7 @@ function KonflikKepentinganPage() {
 
                 <Grid.Col span={{ base: 12, sm: 6, md: 4 }}>
                   <Flex align={"center"} justify={mobile?"center":"flex-start"}>
-                    <Image mr="sm" src={`../../assets/images/Partai/hanura.png`} />
+                    <Image w={rem(112)} mah={rem(110)} mr="sm" src={`../../assets/images/Partai/hanura.png`} />
                     <Text mx={rem(10)}>
                       <a style={{ color: primaryColor, fontWeight:"bold",textDecoration:"none"}} 
                         href="https://drive.google.com/file/d/1tKRalJ0S82gpLlqRT0gJncr2IVg84aKS/view?usp=drive_link"
@@ -174,28 +174,7 @@ function KonflikKepentinganPage() {
 
                 <Grid.Col span={{ base: 12, sm: 6, md: 4 }}>
                   <Flex align={"center"} justify={mobile?"center":"flex-start"}>
-                    <Image mr="sm" src={`../../assets/images/Partai/gerindra.png`} />
-                    <Text mx={rem(10)}>
-                      <a style={{ color: primaryColor, fontWeight:"bold",textDecoration:"none"}} 
-                        href="https://drive.google.com/file/d/1s9liMF-Np9CccoQ4d9-Ue4DHDwm6NQom/view?usp=drive_link"
-                        target="_blank"
-                      >
-                        Menolak
-                      </a>
-                      <br />
-                      <a style={{ color: primaryColor, fontWeight:"bold",textDecoration:"none"}} 
-                        href="https://drive.google.com/file/d/1s9liMF-Np9CccoQ4d9-Ue4DHDwm6NQom/view?usp=drive_link"
-                        target="_blank"
-                      >
-                        (sumber lain)
-                      </a>
-                    </Text>
-                  </Flex>
-                </Grid.Col>
-
-                <Grid.Col span={{ base: 12, sm: 6, md: 4 }}>
-                  <Flex align={"center"} justify={mobile?"center":"flex-start"}>
-                    <Image mr="sm" src={`../../assets/images/Partai/nasdem.png`} />
+                    <Image w={rem(112)} mah={rem(110)} mr="sm" src={`../../assets/images/Partai/nasdem.png`} />
                     <Text mx={rem(10)}>
                       <a style={{ color: primaryColor, fontWeight:"bold",textDecoration:"none"}} 
                         href="https://drive.google.com/file/d/1TH3BJTHO3TMjWu1gxngaceHb-yOorOck/view?usp=drive_link"
@@ -216,7 +195,7 @@ function KonflikKepentinganPage() {
 
                 <Grid.Col span={{ base: 12, sm: 6, md: 4 }}>
                   <Flex align={"center"} justify={mobile?"center":"flex-start"}>
-                    <Image mr="sm" src={`../../assets/images/Partai/gerindra.png`} />
+                    <Image w={rem(112)} mah={rem(110)} mr="sm" src={`../../assets/images/Partai/gerindra.png`} />
                     <Text mx={rem(10)}>
                       <a style={{ color: primaryColor, fontWeight:"bold",textDecoration:"none"}} 
                         href="https://drive.google.com/file/d/1QPiymJLlkfSMi6noeXPWLVBoCfPFEl6k/view?usp=drive_link"
@@ -237,7 +216,7 @@ function KonflikKepentinganPage() {
 
                 <Grid.Col span={{ base: 12, sm: 6, md: 4 }}>
                   <Flex align={"center"} justify={mobile?"center":"flex-start"}>
-                    <Image mr="sm" src={`../../assets/images/Partai/pdi.png`} />
+                    <Image w={rem(112)} mah={rem(110)} mr="sm" src={`../../assets/images/Partai/pdi.png`} />
                     <Text mx={rem(10)}>
                       <a style={{ color: primaryColor, fontWeight:"bold",textDecoration:"none"}} 
                         href="https://drive.google.com/file/d/1LmKQL6kNkILaypU6YEviYe03BX1pQvv3/view?usp=drive_link"
@@ -256,9 +235,9 @@ function KonflikKepentinganPage() {
                   </Flex>
                 </Grid.Col>
 
-                <Grid.Col span={{ base: 12, sm: 6, md: 4 }}>
-                  <Flex align={"center"} justify={mobile?"center":"flex-start"}>
-                    <Image mr="sm" src={`../../assets/images/Partai/pks.png`} />
+                <Grid.Col span={{ base: 12, sm: 6, md: 6 }}>
+                  <Flex align="center" justify={"center"}>
+                    <Image w={rem(112)} mah={rem(110)} mr="sm" src={`../../assets/images/Partai/pks.png`} />
                     <Text mx={rem(10)}>
                       <a style={{ color: primaryColor, fontWeight:"bold",textDecoration:"none"}} 
                         href="https://drive.google.com/file/d/1MKM5jWHL2WEGuel5JNbaPU_MyGAS30Vv/view?usp=drive_link"
@@ -277,9 +256,9 @@ function KonflikKepentinganPage() {
                   </Flex>
                 </Grid.Col>
 
-                <Grid.Col span={{ base: 12, sm: 6, md: 4 }}>
-                  <Flex align={"center"} justify={mobile?"center":"flex-start"}>
-                    <Image mr="sm" src={`../../assets/images/Partai/ppp.png`} />
+                <Grid.Col span={{ base: 12, sm: 6, md: 6}}>
+                  <Flex align={"center"} justify={"center"}>
+                    <Image w={rem(112)} mah={rem(110)} mr="sm" src={`../../assets/images/Partai/ppp.png`} />
                     <Text mx={rem(10)}>
                       <a style={{ color: primaryColor, fontWeight:"bold",textDecoration:"none"}} 
                         href="https://drive.google.com/file/d/1kN3N6v8Fm2eS5QfVKs7ef5iHCNPqahKv/view?usp=drive_link"

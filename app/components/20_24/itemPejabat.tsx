@@ -129,7 +129,7 @@ const BoxPejabat: React.FC<boxPejabatProps> = ({ data }) => {
           withCloseButton={false}
           opened={openModal}
           onClose={closeModal}
-          size={mobile ? "xl" : "55%"}
+          size={mobile ? "xl" : "80%"}
           bg={lightPurple}
           centered
         >

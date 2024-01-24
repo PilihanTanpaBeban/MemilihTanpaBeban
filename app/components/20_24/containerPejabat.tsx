@@ -51,11 +51,6 @@ const ContainerPejabat: React.FC<containerPejabatProps> = ({
         >
             {caroselPejabat}
         </Carousel>
-        // <ScrollArea w="100%">
-        //   <Flex direction="row" gap="md" p={rem(20)}>
-        //     {dataPejabat}
-        //   </Flex>
-        // </ScrollArea>
       )}
     </>
   );
