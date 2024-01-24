@@ -34,6 +34,7 @@ const BoxPejabat: React.FC<boxPejabatProps> = ({ data }) => {
   const icon = <IconInfoCircle />;
 
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.sm})`);
+  const laptop = useMediaQuery(`(max-width: ${theme.breakpoints?.md})`);
 
   const ListItem = data.details.map((item: any) => (
     <React.Fragment key={item.id}>
@@ -129,7 +130,7 @@ const BoxPejabat: React.FC<boxPejabatProps> = ({ data }) => {
           withCloseButton={false}
           opened={openModal}
           onClose={closeModal}
-          size={mobile ? "xl" : "80%"}
+          size={laptop ? "xl" : "70%"}
           bg={lightPurple}
           centered
         >
@@ -154,11 +155,14 @@ const BoxPejabat: React.FC<boxPejabatProps> = ({ data }) => {
             <div>
               <ScrollArea h={mobile ? "100vh" : "50vh"}>
                 {data.urlEmbed != "" && (
-                  <iframe
-                    width="100%"
-                    height="315"
-                    src={data.urlEmbed}
-                  ></iframe>
+                  <Flex w="100%" justify="center">
+                    <iframe
+                      width={(laptop||mobile)?"100%":"70%"}
+                      height="315"
+                      src={data.urlEmbed}
+                      style={{ marginBottom: rem(20) }}
+                    ></iframe>
+                  </Flex>
                 )}
                 <Flex mb="md" direction="column">
                   {ListItem}

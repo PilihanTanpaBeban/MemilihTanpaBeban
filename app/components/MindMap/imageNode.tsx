@@ -51,6 +51,7 @@ const ImageNode: React.FC<imageNodeProps> = ({ data, isConnectable }) => {
   };
 
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.sm})`);
+  const laptop = useMediaQuery(`(max-width: ${theme.breakpoints?.md})`);
 
   const ListItem = data.details.map((item: any) => (
     <React.Fragment key={item.id}>
@@ -226,7 +227,7 @@ const ImageNode: React.FC<imageNodeProps> = ({ data, isConnectable }) => {
           withCloseButton={false}
           opened={openModal}
           onClose={closeModal}
-          size={mobile ? "xl" : "80%"}
+          size={laptop ? "xl" : "70%"}
           bg={lightPurple}
           centered
         >
