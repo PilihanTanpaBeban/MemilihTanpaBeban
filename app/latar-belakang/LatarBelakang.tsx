@@ -109,7 +109,7 @@ const LatarBelakang = () => {
               textAlign: mobile ? "center" : "right",
             }}
           >
-            596,19 Triliun
+            591,61 Triliun
           </Text>
           <Text
             style={{
