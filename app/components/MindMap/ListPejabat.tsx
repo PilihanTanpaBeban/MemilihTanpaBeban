@@ -914,7 +914,7 @@ const legislatif = {
           id: "33",
           nama: "M. Yahya Zaini, S.H",
           position: { x: 245, y: 3150 },
-          jabatan: "Golkar, Jawa Tengah VIII",
+          jabatan: "Golkar, Jawa Timur VIII",
           image: "legislatif_4_3.png",
           fakta: [3, 4, 9],
           details: [
@@ -938,7 +938,7 @@ const legislatif = {
         },
         {
           id: "34",
-          nama: "H. Abidin Fikri, S.H. M.H",
+          nama: "H. Abidin Pikri, S.H. M.H",
           position: { x: 440, y: 3210 },
           jabatan: "PDIP, Jawa Tengah IX",
           image: "legislatif_4_4.png",
