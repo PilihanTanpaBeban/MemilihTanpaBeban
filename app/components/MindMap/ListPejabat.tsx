@@ -411,9 +411,9 @@ const legislatif = {
         },
         {
           id: "15",
-          nama: "M. SARMUJI, SE., M.Si.",
+          nama: "M. Sarmuji, SE., M.Si.",
           position: { x: 226, y: 2407 },
-          jabatan: "Fraksi Golkar. Dapil Jawa Timur VI",
+          jabatan: "Fraksi Golkar, Dapil Jawa Timur VI",
           image: "legislatif_2_3.png",
           fakta: [3, 4],
           details: [
@@ -429,9 +429,9 @@ const legislatif = {
         },
         {
           id: "16",
-          nama: "Dr. SUPRATMAN ANDI AGTAS, S.H., M.H.",
+          nama: "Dr. Supratman Andi Agtas, S.H., M.H.",
           position: { x: 359, y: 2490 },
-          jabatan: "Gerindra. Dapil Sulawesi Tengah\nKetua BALEG 2016-Sekarang",
+          jabatan: "Gerindra. Dapil Sulawesi Tengah",
           image: "legislatif_2_4.png",
           fakta: [],
           details: [
@@ -457,10 +457,10 @@ const legislatif = {
         },
         {
           id: "17",
-          nama: "LULUK NUR HAMIDAH, M.Si., M.PA.",
+          nama: "Luluk Nur Hamidah, M.Si., M.PA.",
           position: { x: 507, y: 2500 },
           jabatan:
-            "PKB. Dapil Jawa Tengah IV\nAnggota Baleg, Pansus dan Komisi VI",
+            "PKB. Dapil Jawa Tengah IV",
           image: "legislatif_2_5.png",
           fakta: [2],
           details: [
@@ -553,7 +553,7 @@ const legislatif = {
           nama: "Rieke Diah Pitaloka M.Hum",
           position: { x: 488, y: 1980 },
           jabatan:
-            "PDIP. Dapil Jawa Barat VII\nKetua Umum Konfederasi Rakyat Pekerja Indonesia (KPRI)",
+            "PDIP. Dapil Jawa Barat VII",
           image: "legislatif_2_8.png",
           fakta: [],
           details: [
@@ -1136,7 +1136,7 @@ const legislatif = {
           nama: "Willy Aditya",
           position: { x: 215, y: 1300 },
           jabatan:
-            "Wakil Ketua Fraksi Partai NasDem DPR RI.\nDapil Jawa Timur XI\nWakil Ketua Badan Legislasi DPR RI\nKetua DPP Partai Nasdem",
+            "Dapil Jawa Timur XI",
           image: "legislatif_5_5.png",
           fakta: [3, 5],
           details: [
@@ -1280,7 +1280,7 @@ const eksekutif = {
       id: "47",
       nama: "Atong Soekirman",
       position: { x: 327, y: 775 },
-      jabatan: "Asisten Deputi Pengembangan Industri",
+      jabatan: "Kementerian Perindustrian",
       image: "eksekutif_1_1.png",
       fakta: [4, 5],
       details: [
@@ -1344,7 +1344,7 @@ const eksekutif = {
       id: "49",
       nama: "Moch Edy Yusuf",
       position: { x: 615, y: 805 },
-      jabatan: "Asisten Deputi Pengembangan Agribisnis Perkebunan",
+      jabatan: "Kementerian Koordinator Perekonomian",
       image: "placeholder_male.jpeg",
       fakta: [4],
       details: [
@@ -1364,7 +1364,7 @@ const eksekutif = {
       id: "50",
       nama: "Susiwijono Moegiarso",
       position: { x: 307, y: 229 },
-      jabatan: "Sekretaris",
+      jabatan: "Sekretaris\nKementerian Koordinator Perekonomian",
       image: "eksekutif_1_4.png",
       fakta: [],
       details: [
@@ -1428,7 +1428,7 @@ const eksekutif = {
       id: "52",
       nama: "Hendratmojo Bagus Hudoro",
       position: { x: 186, y: 502 },
-      jabatan: "Direktur Tanaman Semusim dan Rempah",
+      jabatan: "Kementerian Pertanian",
       image: "eksekutif_child_2_2.png",
       fakta: [4],
       details: [
@@ -1632,7 +1632,7 @@ const eksekutif = {
       id: "59",
       nama: "Yaqub Ginting",
       position: { x: 180, y: 319 },
-      jabatan: "Ketua Tim Kerja Tanaman Semusim dan yang Lainnya",
+      jabatan: "Kementerian Pertanian",
       image: "placeholder_male.jpeg",
       fakta: [4, 9],
       details: [
@@ -1670,7 +1670,7 @@ const eksekutif = {
       id: "60",
       nama: "Kasdi Subagyono",
       position: { x: 190, y: 682 },
-      jabatan: "Sekertaris Jenderal Perkebunan Kementan",
+      jabatan: "Kementerian Pertanian",
       image: "placeholder_male.jpeg",
       fakta: [3, 4],
       details: [
