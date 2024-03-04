@@ -487,7 +487,7 @@ const legislatif = {
                 year: "2023",
                 href: "https://drive.google.com/drive/folders/1-d6tmn1bPOqHzzDS2KfLNJqfZcTQwzHK?usp=drive_link",
               },
-              text: "LHKPN 2019 sebesar Rp 10.416.946.398 dan melaporkan total sumbangan dana kampanye ke partDalam RUU Kesehatan, bunyi pasal 154 menyamakan tembakau dg alkohol, narkotika, dan psikotropika rawan terjadi kriminalisasi, tembakau tidak sama dengan barang yang bisa dikategorikan kriminal bagi penggunanya, yang mengedarkannya, apalagi yang memproduksinya. Masuknya pasal penyetaraan tembakau dengan narkoba sbg bagian dr agenda menghancurkan industri tembakau di Indonesia, perang ekonomi yg diprakarsai asing. Mereka akan menggiring negara seperti Indonesia untuk mendukung terhadap ketentuan yang mereka buat, yang tertuang dalam Framework Convention on Tobacco Control (FCTC)ai sebesar Rp.2.437.411.000  atau sekitar >20% dari LHKPN.",
+              text: "Dalam RUU Kesehatan, bunyi pasal 154 menyamakan tembakau dengan alkohol, narkotika, dan psikotropika rawan terjadi kriminalisasi, tembakau tidak sama dengan barang yang bisa dikategorikan kriminal bagi penggunanya, yang mengedarkannya, apalagi yang memproduksinya. Masuknya pasal penyetaraan tembakau dengan narkoba sbg bagian dr agenda menghancurkan industri tembakau di Indonesia, perang ekonomi yg diprakarsai asing. Mereka akan menggiring negara seperti Indonesia untuk mendukung terhadap ketentuan yang mereka buat, yang tertuang dalam Framework Convention on Tobacco Control (FCTC)",
               quote: [],
             },
           ],
