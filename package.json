@@ -23,7 +23,7 @@
     "embla-carousel-react": "^7.1.0",
     "firebase": "^10.5.0",
     "jsmind": "^0.7.5",
-    "next": "13.4.4",
+    "next": "13.5.6",
     "react": "18.2.0",
     "react-chartjs-2": "^5.2.0",
     "react-d3-tree": "^3.6.1",
