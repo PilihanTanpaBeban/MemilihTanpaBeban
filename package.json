@@ -21,7 +21,7 @@
     "chartjs-plugin-datalabels": "^2.2.0",
     "embla-carousel-autoplay": "^7.1.0",
     "embla-carousel-react": "^7.1.0",
-    "firebase": "^10.5.0",
+    "firebase": "^10.13.0",
     "jsmind": "^0.7.5",
     "next": "13.4.4",
     "react": "18.2.0",
