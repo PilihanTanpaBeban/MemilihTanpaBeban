@@ -33,9 +33,8 @@ jobs:
           # Ensure Node.js is in the path
           export PATH="$HOME/.asdf/bin:$HOME/.asdf/shims:$PATH"
 
-          # Limit memory and install dependencies
-          export NODE_OPTIONS="--max-old-space-size=512"
-          npm install --max-parallel=1
+          # Install dependencies with limited memory usage
+          npm install --max-parallel=1 --no-audit --no-fund
 
-          # Build the project
-          npm run build
+          # Build the project with limited memory
+          NODE_OPTIONS="--max-old-space-size=512" npm run build
