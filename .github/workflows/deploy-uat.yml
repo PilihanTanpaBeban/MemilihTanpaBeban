@@ -35,8 +35,8 @@ jobs:
 
           # Install remaining dependencies one by one to manage memory
           for package in $(jq -r '.dependencies | keys | .[]' package.json); do
-              NODE_OPTIONS="--max-old-space-size=512" npm install $package --no-audit --no-fund
+              NODE_OPTIONS="--max-old-space-size=256" npm install $package --no-audit --no-fund
           done
 
           # Build the project with limited memory
-          NODE_OPTIONS="--max-old-space-size=512" npm run build
+          NODE_OPTIONS="--max-old-space-size=256" npm run build
