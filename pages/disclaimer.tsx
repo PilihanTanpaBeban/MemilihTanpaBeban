@@ -41,7 +41,6 @@ const charactersList = [
       textAfter: "",
     },
   },
-
   {
     id: "2",
     icon: "mail.png",
@@ -62,7 +61,6 @@ const charactersList = [
         "Sumber data yang digunakan, diharapkan dapat mengakomodasi berbagai sudut pandang dan membantu pengunjung situs untuk memahami isu dengan informasi yang akurat.\nSebagai bentuk pertanggungjawaban, tim penulis mencantumkan semua sumber yang digunakan dalam penulisan yang dapat dilihat pada pautan kata.",
     },
   },
-
   {
     id: "3",
     icon: "mail.png",
@@ -76,6 +74,19 @@ const charactersList = [
         "Data eksekutif dan legislatif yang kami cari merupakan institusi atau badan yang terkait dengan masalah pengendalian tembakau.",
         "Komisi DPR RI yang kami prioritaskan untuk didalami adalah komisi:\nIV (Pertanian, Lingkungan Hidup dan Kehutanan, dan Kelautan)\nVI (Perdagangan, Koperasi UKM, BUMN, Investasi, dan Standarisasi Nasional)\nVII (Energi, Riset dan Inovasi, dan Industri)\nIX (Kesehatan, Ketenagakerjaan dan Kependudukan)\nXI (Keuangan, Perencanaan Pembangunan Nasional dan Perbankan)",
         "Kementerian dan Lembaga Negara* yang kami prioritaskan untuk didalami adalah: \nKementerian Koordinator Bidang Pembangunan Manusia dan Kebudayaan\nKementerian Koordinator Bidang Perekonomian\nKementerian Sekretariat Negara Republik Indonesia\nKementerian Kesehatan\nKementerian Pemberdayaan Perempuan dan Perlindungan Anak\nKementerian Keuangan\nKementerian Perindustrian\nKementerian Pertanian\nKementerian Perdagangan\nKementerian Ketenagakerjaan\nKementerian Sosial\nKementerian Komunikasi dan Informasi\nKementerian Pendidikan, Kebudayaan, Riset, dan Teknologi\nKementerian Pemuda dan Olahraga\nBadan Pengawas Obat dan Makanan\nBadan Kependudukan dan Keluarga Berencana Nasional \nBadan Perencanaan Pembangunan Nasional",
+      ],
+      textAfter:""
+    },
+  },
+  {
+    id: "4",
+    icon: "mail.png",
+    label: "1.4. Pembaruan Fase 3",
+    content: {
+      textBefore: "",
+      list: [
+        "Pada Fase 3, pengumpulan data yang dilakukan merupakan kumpulan pernyataan/sikap terkait pengendalian zat adiktif berupa produk tembakau oleh Calon Kepala Daerah di tingkat provinsi.",
+        "Informasi dasar untuk Calon Kepala Daerah (Gubernur) berupa nama, foto, dan partai bersumber dari situs kpu.go.id"
       ],
       textAfter:
         "Kami menyadari bahwa figur dalam Kementerian/Lembaga Negara non Menteri ataupun Wakil Menteri bukanlah tokoh politik yang dipilih berdasarkan keputusan politik. Namun demikian, kehadiran mereka tetap penting dalam  perumusan-perumusan kebijakan publik sehingga masih perlu didorong komitmennya terhadap masalah pengendalian tembakau.\nIYCTC bukanlah satu-satunya organisasi yang mengawal Pemilu 2024. Jika kamu tertarik untuk mendalami isu pemilu lebih jauh dari berbagai macam sudut pandang, berikut adalah rekomendasi tautan yang bisa kamu buka:",
@@ -97,7 +108,7 @@ const charactersList = [
         },
       ],
     },
-  },
+  }
 ];
 
 function DisclaimerPage() {
@@ -179,8 +190,8 @@ function DisclaimerPage() {
         <Text mb={rem(24)}>
           Isu pengendalian konsumsi rokok memang sudah lama pembahasannya.
           Sayangnya, belum belum banyak tokoh politik yang cukup berani untuk
-          bersuara dan membela kepentingan kesehatan masyarakat. Pemilu 2024
-          adalah momentum penting bagi orang muda Indonesia untuk mencari lebih
+          bersuara dan membela kepentingan kesehatan masyarakat. Pemilihan Umum Presiden dan Legislatif 2024 yang lalu, 
+          dan Pemilihan Kepala Daerah 2024 yang akan datang merupakan momentum penting bagi orang muda Indonesia untuk mencari lebih
           banyak tokoh politik yang berani berbicara soal masalah kesehatan dan
           konsumsi rokok.
         </Text>

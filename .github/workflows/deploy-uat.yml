@@ -1,0 +1,31 @@
+name: Deploy to UAT
+
+on:
+  push:
+    branches:
+      - uat
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+
+    - name: Install Dependencies
+      run: |
+        npm install
+        npm run build
+
+    - name: Deploy via SSH
+      uses: appleboy/ssh-action@v0.1.3
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        script: |
+          cd /public_html/dev
+          rm -rf *
+          git pull origin uat
+          npm install
+          npm run build
