@@ -29,5 +29,11 @@ jobs:
           git fetch origin
           git reset --hard origin/uat
           git pull origin uat
+
+          . $HOME/.asdf/asdf.sh
+          . $HOME/.asdf/completions/asdf.bash
+          
+          export PATH="$HOME/.asdf/bin:$HOME/.asdf/shims:$PATH"
+
           npm install
           npm run build
