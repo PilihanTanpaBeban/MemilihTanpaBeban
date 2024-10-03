@@ -26,6 +26,8 @@ jobs:
         port: 64000
         script: |
           cd /home/pilihan2/repositories/MemilihTanpaBebanUAT
-          git pull origin uat --force
+          git fetch origin
+          git reset --hard origin/uat
+          git pull origin uat
           npm install
           npm run build
