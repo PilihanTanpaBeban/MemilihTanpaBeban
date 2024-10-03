@@ -1,7 +1,7 @@
 {
   "name": "pilihan-tanpa-beban",
   "version": "0.1.0",
-  "homepage": "https://pilihantanpabeban.id",
+  "homepage": "https://dev.pilihantanpabeban.id",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -10,10 +10,10 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@mantine/carousel": "^7.1.5",
-    "@mantine/core": "7.1.5",
+    "@mantine/carousel": "^7.13.2",
+    "@mantine/core": "7.13.2",
     "@mantine/form": "^7.1.7",
-    "@mantine/hooks": "7.1.5",
+    "@mantine/hooks": "7.13.2",
     "@tabler/icons-react": "^2.39.0",
     "@tisoap/react-flow-smart-edge": "^3.0.0",
     "axios": "^1.7.4",

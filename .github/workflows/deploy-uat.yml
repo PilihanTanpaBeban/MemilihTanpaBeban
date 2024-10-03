@@ -25,8 +25,7 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 64000
         script: |
-          cd /home/pilihan2/public_html/dev
-          rm -rf *
+          cd /home/pilihan2/repositories/MemilihTanpaBebanUAT
           git pull origin uat
           npm install
           npm run build
