@@ -30,10 +30,12 @@ jobs:
           git reset --hard origin/uat
           git pull origin uat
 
-          . $HOME/.asdf/asdf.sh
-          . $HOME/.asdf/completions/asdf.bash
-          
+          # Ensure Node.js is in the path
           export PATH="$HOME/.asdf/bin:$HOME/.asdf/shims:$PATH"
 
-          npm install
+          # Limit memory and install dependencies
+          export NODE_OPTIONS="--max-old-space-size=512"
+          npm install --max-parallel=1
+
+          # Build the project
           npm run build
