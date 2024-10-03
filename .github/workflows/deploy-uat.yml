@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Install Dependencies
       run: |
@@ -34,9 +34,7 @@ jobs:
           export PATH="$HOME/.asdf/bin:$HOME/.asdf/shims:$PATH"
 
           # Install remaining dependencies one by one to manage memory
-          for package in $(jq -r '.dependencies | keys | .[]' package.json); do
-              NODE_OPTIONS="--max-old-space-size=256" npm install $package --no-audit --no-fund
-          done
+          NODE_OPTIONS="--max-old-space-size=256" npm install --no-audit --no-fund
 
           # Build the project with limited memory
           NODE_OPTIONS="--max-old-space-size=256" npm run build
