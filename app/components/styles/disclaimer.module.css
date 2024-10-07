@@ -1,0 +1,42 @@
+.chevron {
+  &[data-rotate] {
+    transform: rotate(180deg);
+  }
+}
+
+.icon {
+  width: rem(30px);
+  height: rem(30px);
+}
+
+.accordionControl {
+  background-color: white;
+  border-radius: inherit;
+  border: none;
+}
+
+.accordionControlActive {
+  background-color: white;
+  border: none;
+  border-radius: inherit;
+  /* box-shadow: 0 6px 6px rgba(0, 0, 0, 0.05); */
+}
+
+.accordionItem {
+  background-color: white;
+  border: none;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1rem;
+}
+
+.mantine-List-item::marker {
+  color: #4F3B78;
+  /* Change the color of the marker */
+  font-size: 16px;
+  /* Change the size of the marker */
+}
+
+
+a.no-decoration {
+  text-decoration: none;
+}
