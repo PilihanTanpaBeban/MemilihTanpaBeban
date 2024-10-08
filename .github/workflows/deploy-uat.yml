@@ -20,25 +20,25 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build project
-        run: npm run build
+      # - name: Build project
+      #   run: npm run build
       
-      - name: Deploy to server via SSH
-        uses: appleboy/ssh-action@v0.1.6
-        with:
-          host: ${{ secrets.SERVER_HOST }}
-          port: 64000
-          username: ${{ secrets.SSH_USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            cd /home/pilihan2/repositories/MemilihTanpaBebanUAT/
-            git pull origin uat
+      # - name: Deploy to server via SSH
+      #   uses: appleboy/ssh-action@v0.1.6
+      #   with:
+      #     host: ${{ secrets.SERVER_HOST }}
+      #     port: 64000
+      #     username: ${{ secrets.SSH_USERNAME }}
+      #     key: ${{ secrets.SSH_PRIVATE_KEY }}
+      #     script: |
+      #       cd /home/pilihan2/repositories/MemilihTanpaBebanUAT/
+      #       git pull origin uat
 
-      - name: Deploy to cPanel via FTP
-        uses: SamKirkland/FTP-Deploy-Action@4.3.0
-        with:
-          server: ftp.pilihantanpabeban.id
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: './.next/'
-          server-dir: '/repositories/MemilihTanpaBebanUAT/.next/'
+      # - name: Deploy to cPanel via FTP
+      #   uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      #   with:
+      #     server: ftp.pilihantanpabeban.id
+      #     username: ${{ secrets.FTP_USERNAME }}
+      #     password: ${{ secrets.FTP_PASSWORD }}
+      #     local-dir: './.next/'
+      #     server-dir: '/repositories/MemilihTanpaBebanUAT/.next/'
