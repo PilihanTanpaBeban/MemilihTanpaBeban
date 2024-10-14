@@ -33,7 +33,7 @@
 //   const icon = <IconInfoCircle />;
 
 //   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.sm})`);
-//   const tablet = useMediaQuery(`(max-width: ${theme.breakpoints?.md})`);
+//   const tablet = useMediaQuery(`(max-width: ${theme.breakpoints?.lg})`);
 
 //   const ListItem = data.details.map((item: any) => (
 //     <React.Fragment key={item.id}>

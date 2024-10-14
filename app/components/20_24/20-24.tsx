@@ -12,18 +12,18 @@ import {
   Button,
 } from "@mantine/core";
 import React, { useEffect, useState } from "react";
-import HeroBgImg from "../app/hero-image-bg/hero-image-bg";
-import { lightPurple, primaryColor, secondaryColor } from "../public/colors";
-import { PrimaryButton, SecondaryButton } from "../app/components/Button";
-import PieChart from "../app/components/PieChart";
-import { updateNoVote, updateYesVote } from "../public/firebase.service";
+import HeroBgImg from "../../hero-image-bg/hero-image-bg";
+import { lightPurple, primaryColor, secondaryColor } from "../../../public/colors";
+import { PrimaryButton, SecondaryButton } from "../Button";
+import PieChart from "../PieChart";
+import { updateNoVote, updateYesVote } from "../../../public/firebase.service";
 import { IconChecks } from "@tabler/icons-react";
 import { useMediaQuery } from "@mantine/hooks";
-import { theme } from "../theme";
-import ContainerPejabat from "../app/components/20_24/containerPejabat";
-import listPejabat2024 from "../app/components/20_24/ListPejabat";
-import HeroVector from "../app/hero-vector/HeroVector";
-import { renderTextWithLineBreaks } from "../app/components/LineBreakRender";
+import { theme } from "../../../theme";
+import ContainerPejabat from "./containerPejabat";
+import listPejabat2024 from "./ListPejabat";
+import HeroVector from "../../hero-vector/HeroVector";
+import { renderTextWithLineBreaks } from "../LineBreakRender";
 
 function Page2024() {
   const [pressed, setPressed] = useState(false);

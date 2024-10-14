@@ -34,46 +34,50 @@ const BoxPejabat: React.FC<boxPejabatProps> = ({ data }) => {
   const icon = <IconInfoCircle />;
 
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.sm})`);
-  const laptop = useMediaQuery(`(max-width: ${theme.breakpoints?.md})`);
+  const laptop = useMediaQuery(`(max-width: ${theme.breakpoints?.lg})`);
 
-  const ListItem = data.details.map((item: any) => (
-    <React.Fragment key={item.id}>
-      <Flex direction="row" ta="justify" pr={mobile ? "" : rem(12)}>
-        <a href={item.link.href} target="_blank">
-          <Badge size="lg" mr={rem(12)} color={secondaryColor}>
-            {item.link.year}
-          </Badge>
-        </a>{" "}
-        <Group>
-          {item.text != "" && <Text>{item.text}</Text>}
-          {item.list && item.list.length != 0 && (
-            <List>
-              {item.list.map((content: any, index: number) => (
+  let ListItem = null;
+
+  if (data.details) {
+    ListItem = data.details.map((item: any) => (
+      <React.Fragment key={item.id}>
+        <Flex direction="row" ta="justify" pr={mobile ? "" : rem(12)}>
+          <a href={item.link.href} target="_blank">
+            <Badge size="lg" mr={rem(12)} color={secondaryColor}>
+              {item.link.year}
+            </Badge>
+          </a>{" "}
+          <Group>
+            {item.text != "" && <Text>{item.text}</Text>}
+            {item.list && item.list.length != 0 && (
+              <List>
+                {item.list.map((content: any, index: number) => (
+                  <React.Fragment key={index}>
+                    <List.Item>{content}</List.Item>
+                  </React.Fragment>
+                ))}
+              </List>
+            )}
+            {item.quote.length > 0 &&
+              item.quote.map((quote: any, index: number) => (
                 <React.Fragment key={index}>
-                  <List.Item>{content}</List.Item>
+                  <Blockquote
+                    color={primaryColor}
+                    cite={`– ${data.nama}`}
+                    icon={icon}
+                    mt="md"
+                    ml="sm"
+                  >
+                    {quote}
+                  </Blockquote>
                 </React.Fragment>
               ))}
-            </List>
-          )}
-          {item.quote.length > 0 &&
-            item.quote.map((quote: any, index: number) => (
-              <React.Fragment key={index}>
-                <Blockquote
-                  color={primaryColor}
-                  cite={`– ${data.nama}`}
-                  icon={icon}
-                  mt="md"
-                  ml="sm"
-                >
-                  {quote}
-                </Blockquote>
-              </React.Fragment>
-            ))}
-        </Group>
-      </Flex>
-      <Divider my={rem(12)} />
-    </React.Fragment>
-  ));
+          </Group>
+        </Flex>
+        <Divider my={rem(12)} />
+      </React.Fragment>
+    ));
+  }
 
   const closeModal = () => {
     setModalOpen(false);
@@ -122,7 +126,8 @@ const BoxPejabat: React.FC<boxPejabatProps> = ({ data }) => {
             fontSize: data.image == "eksekutif_10.png" ? rem(11) : rem(14),
           }}
         >
-          {renderTextWithLineBreaksNoSpaces(data.jabatan)}
+          {data.details && renderTextWithLineBreaksNoSpaces(data.jabatan)}
+          {!data.details && data.jabatan}
         </Text>
       </Flex>
       {data.details && openModal && (
@@ -157,7 +162,7 @@ const BoxPejabat: React.FC<boxPejabatProps> = ({ data }) => {
                 {data.urlEmbed != "" && (
                   <Flex w="100%" justify="center">
                     <iframe
-                      width={(laptop||mobile)?"100%":"70%"}
+                      width={(laptop || mobile) ? "100%" : "70%"}
                       height="315"
                       src={data.urlEmbed}
                       style={{ marginBottom: rem(20) }}
@@ -165,7 +170,7 @@ const BoxPejabat: React.FC<boxPejabatProps> = ({ data }) => {
                   </Flex>
                 )}
                 <Flex mb="md" direction="column">
-                  {ListItem}
+                  {data.details && ListItem}
                 </Flex>
               </ScrollArea>
               <Flex

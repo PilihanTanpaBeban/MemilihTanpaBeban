@@ -25,7 +25,7 @@ const links = [
   { link: "/disclaimer", label: "Disclaimer" },
   { link: "/cek-fakta", label: "Cek Fakta" },
   { link: "/konflik-kepentingan", label: "Potensi Konflik Kepentingan" },
-  { link: "/20-24", label: "20.24" },
+  // { link: "/20-24", label: "20.24" },
   { link: "https://www.instagram.com/iyctc.id/", label: "Tentang IYCTC" },
 ];
 
@@ -94,7 +94,7 @@ export function Header() {
 
   const rightPosition = opened ? 0 : -700; // Replace with your colors
 
-  const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.md})`);
+  const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.lg})`);
 
   return (
     <header className={classes.header}>
