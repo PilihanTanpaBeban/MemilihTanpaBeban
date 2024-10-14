@@ -53,8 +53,8 @@ const BoxChosenDpr: React.FC<boxPejabatProps> = ({ data, style }) => {
             {/* <AspectRatio ratio={107 / 122}> */}
                     <Image
                         mb={rem(14)}
-                        h={rem(122)}
-                        w={rem(107)}
+                        // h={rem(122)}
+                        // w={rem(107)}
                         src={`../../assets/images/photos/${data.image}`}
                         bgsz={"contain"}
                         bgr="no-repeat"
