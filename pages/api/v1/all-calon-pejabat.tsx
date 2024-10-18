@@ -2,6 +2,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { connectToDatabase } from "../../../app/config/db";
 import rateLimit from "express-rate-limit";
 import helmet from "helmet";
+import { constants } from "buffer";
 const StringBuilder = require("string-builder");
 
 // Rate limiter middleware
@@ -23,7 +24,7 @@ export default async function handler(
 
     const apiKey = req.headers['x-api-key'];
 
-    if (req.method !== 'POST') {
+    if (req.method !== 'GET') {
         return res.status(405).json({ error: "Method Not Allowed" });
     }
 
@@ -35,10 +36,6 @@ export default async function handler(
     const connection = await connectToDatabase();
 
     try {
-        const queryParams: any[] = [];
-
-        console.log('Request body: ' + req.body);
-
         const sql = new StringBuilder();
         sql.append('select tp.Pejabat_id, tp.Pejabat_Name, t.Alignment_Name, tpp.Partai_Name, tpv.Province_Name from Tbl_Pejabat tp');
 
@@ -47,29 +44,8 @@ export default async function handler(
 
         const joinSql = new StringBuilder();
         joinSql.append(' left join Tbl_PejabatAlignment t on tp.Alignment_id = t.Alignment_id');
-        joinSql.append(' left join Tbl_PejabatType tt on tp.Pejabat_type_id = tt.Pejabat_type_id');
         joinSql.append(' left join Tbl_Province tpv on tp.Province_id = tpv.Province_id');
         joinSql.append(' left join Tbl_Partai tpp on tp.Partai_id = tpp.Partai_id');
-
-        const whereSql = new StringBuilder();
-        const paramWhereSql: any[] = [];
-        if (req.body.pejabat_type_id || req.body.province_id) {
-            whereSql.append(' where');
-
-            if (req.body.pejabat_type_id) {
-                whereSql.append(' tp.Pejabat_type_id = ? ');
-                paramWhereSql.push(req.body.pejabat_type_id);
-            }
-
-            if (req.body.province_id) {
-                if (req.body.pejabat_type_id) {
-                    whereSql.append(' AND');
-                }
-                whereSql.append(' tp.Province_id = ? ');
-                paramWhereSql.push(req.body.province_id);
-            }
-        }
-        queryParams.push(...paramWhereSql);
 
         const orderOffsetSql = new StringBuilder();
         orderOffsetSql.append(' ORDER BY tp.Pejabat_id ASC');
@@ -78,13 +54,14 @@ export default async function handler(
         const offset = page > 0 ? (page - 1) * 16 : 0; // Default offset to 0
 
         orderOffsetSql.append(' LIMIT 16 OFFSET ?');
-        queryParams.push(offset); // Add offset to queryParams as a string
-        console.log('Query Parameters:', queryParams);
 
-        const formattedQuery = sql + joinSql + whereSql + orderOffsetSql;
-        const [rows] = await connection.query(sql + joinSql + whereSql + orderOffsetSql, queryParams);
+        const formattedQuery = sql + joinSql + orderOffsetSql;
+        console.log('Formatted SQL Query:', formattedQuery);
+        console.log('Query Parameters:', [offset]);
 
-        const [totalData] = await connection.query(countSql + joinSql + whereSql, paramWhereSql);
+        const [rows] = await connection.query(sql + joinSql + orderOffsetSql, [offset]);
+
+        const [totalData] = await connection.query(countSql + joinSql);
 
         res.send({
             status: 200,
@@ -94,7 +71,7 @@ export default async function handler(
         });
 
     } catch (error: any) {
-        console.error("Error:", error.response ? error.response.data : error.message);
+        console.error("Error:", error.response ? error.response.data : error.message); // Log error details
 
         console.error('Stack trace:', error.stack);
         res.status(500).send({

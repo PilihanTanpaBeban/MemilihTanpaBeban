@@ -12,7 +12,15 @@ const nextConfig = {
     MYSQL_DATABASE: process.env.MYSQL_DATABASE,
     MYSQL_PORT: process.env.MYSQL_PORT,
     X_API_KEY: process.env.X_API_KEY
-  }
+  },
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
+
+    return config;
+  },
 }
 
 module.exports = nextConfig
