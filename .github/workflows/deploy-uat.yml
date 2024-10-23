@@ -24,9 +24,6 @@ jobs:
 
       - name: List workspace contents
         run: ls -la
-      
-      - name: List all files in .next
-        run: find .next -type f
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3
@@ -35,41 +32,41 @@ jobs:
           path: .next/**
           include-hidden-files: true
 
-  # deploy:
-  #   runs-on: ubuntu-latest
-  #   needs: build
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
 
-  #   steps:
-  #     - uses: actions/checkout@v2
+    steps:
+      - uses: actions/checkout@v2
 
-  #     - name: Download build artifacts
-  #       uses: actions/download-artifact@v3
-  #       with:
-  #         name: build-artifacts
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: build-artifacts
 
-  #     - name: List downloaded artifacts
-  #       run: ls -la
+      - name: List downloaded artifacts
+        run: ls -la
 
-  #     - name: List .next contents after download
-  #       run: ls -la .next
+      - name: List .next contents after download
+        run: ls -la .next
 
-  #     - name: Deploy to server via SSH
-  #       uses: appleboy/ssh-action@v0.1.6
-  #       with:
-  #         host: ${{ secrets.SERVER_HOST }}
-  #         port: 64000
-  #         username: ${{ secrets.SSH_USERNAME }}
-  #         key: ${{ secrets.SSH_PRIVATE_KEY }}
-  #         script: |
-  #           cd /home/pilihan2/repositories/MemilihTanpaBebanUAT/
-  #           git pull origin uat
-  #           npm install
+      # - name: Deploy to server via SSH
+      #   uses: appleboy/ssh-action@v0.1.6
+      #   with:
+      #     host: ${{ secrets.SERVER_HOST }}
+      #     port: 64000
+      #     username: ${{ secrets.SSH_USERNAME }}
+      #     key: ${{ secrets.SSH_PRIVATE_KEY }}
+      #     script: |
+      #       cd /home/pilihan2/repositories/MemilihTanpaBebanUAT/
+      #       git pull origin uat
+      #       npm install
 
-  #     - name: Deploy to cPanel via FTP
-  #       uses: SamKirkland/FTP-Deploy-Action@4.3.0
-  #       with:
-  #         server: ftp.pilihantanpabeban.id
-  #         username: ${{ secrets.FTP_USERNAME }}
-  #         password: ${{ secrets.FTP_PASSWORD }}
-  #         local-dir: './.next'
-  #         server-dir: '/home/pilihan2/repositories/MemilihTanpaBebanUAT/.next'
+      # - name: Deploy to cPanel via FTP
+      #   uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      #   with:
+      #     server: ftp.pilihantanpabeban.id
+      #     username: ${{ secrets.FTP_USERNAME }}
+      #     password: ${{ secrets.FTP_PASSWORD }}
+      #     local-dir: './.next'
+      #     server-dir: '/home/pilihan2/repositories/MemilihTanpaBebanUAT/.next'
