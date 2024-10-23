@@ -27,7 +27,7 @@ export const HeroImageBackground = () => {
             <Flex direction={'column'} c={primaryColor} maw={mobile ? '100%' : tablet ? rem(350) : rem(500)}>
               <Image src={'/assets/images/home_redflag.jpg'} w={mobile ? rem('100%') : tablet ? rem(300) : rem(518)} h={'auto'} />
               <Box>
-                <Text mt={rem(45)} ta={mobile ? 'center' : 'left'} style={{ fontSize: tablet ? rem(20) : rem(24), fontWeight: 800 }}>Daftar Nama Anggota DPR RI Terpilih yang Punya Rekam Jejak Buruk Terkait Dengan Kebijakan Pengendalian Tembakau
+                <Text mt={rem(45)} ta={mobile ? 'center' : 'left'} style={{ fontSize: tablet ? rem(20) : rem(24), fontWeight: 800 }}>Daftar Nama Anggota DPR RI Terpilih yang Punya Rekam Jejak Buruk Terkait Dengan Kebijakan Pengendalian Zat Adiktif berupa Produk Tembakau
                 </Text>
                 <Text mt={rem(60)} ta={mobile ? 'center' : undefined} style={{ fontSize: tablet ? rem(12) : rem(14), fontWeight: 600 }}>
                   Klik

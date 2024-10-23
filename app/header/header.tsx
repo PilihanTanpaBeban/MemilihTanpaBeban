@@ -26,7 +26,7 @@ const links = [
   { link: "/cek-fakta", label: "Cek Fakta" },
   { link: "/konflik-kepentingan", label: "Potensi Konflik Kepentingan" },
   // { link: "/20-24", label: "20.24" },
-  { link: "/calon", label: "Calon" },
+  { link: "/pemetaan-sikap", label: "Pemetaan Sikap" },
   { link: "https://www.instagram.com/iyctc.id/", label: "Tentang IYCTC" },
 ];
 
@@ -93,7 +93,7 @@ export function Header() {
     </a>
   ));
 
-  const rightPosition = opened ? 0 : -700; // Replace with your colors
+  const rightPosition = opened ? 0 : -700;
 
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.lg})`);
 
@@ -101,10 +101,9 @@ export function Header() {
     <header className={classes.header}>
       <Container size="xl" className={classes.inner}>
         <LogoPTB />
-        <Group gap={5} visibleFrom="md">
+        <Group gap={2} visibleFrom="md">
           {items}
           <Button
-            // text=""
             radius="xl"
             size="md"
             onClick={handleModalOpen}
@@ -137,7 +136,6 @@ export function Header() {
           >
             {burgerItems}
             <Button
-              // text=""
               radius="xl"
               size="md"
               onClick={handleModalOpen}
