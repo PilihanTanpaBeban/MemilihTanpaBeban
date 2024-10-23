@@ -43,12 +43,14 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: build-artifacts
-
-      - name: List downloaded artifacts
-        run: ls -la
-
-      - name: List .next contents after download
-        run: ls -la .next
+          path: ./
+      
+      - name: List all workspace contents recursively
+        run: ls -Rla
+        
+      - name: Check for .next directory
+        run: find . -type d -name ".next"
+        
 
       # - name: Deploy to server via SSH
       #   uses: appleboy/ssh-action@v0.1.6
