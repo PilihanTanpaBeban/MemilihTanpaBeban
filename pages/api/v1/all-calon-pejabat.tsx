@@ -17,10 +17,10 @@ export default async function handler(
     res: NextApiResponse
 ): Promise<void> {
     // Apply rate limiting
-    // await limiter(req, res, () => {});
+    await limiter(req, res, () => {});
 
     // Apply security headers
-    // helmet()(req, res, () => {});
+    helmet()(req, res, () => {});
 
     const apiKey = req.headers['x-api-key'];
 
@@ -33,11 +33,13 @@ export default async function handler(
         console.log(process.env.X_API_KEY);
         return res.status(401).json({ error: "Unauthorized" });
     }
-    const connection = await connectToDatabase();
+
+    let connection;
 
     try {
+        connection = await connectToDatabase();
         const sql = new StringBuilder();
-        sql.append('select tp.Pejabat_id, tp.Pejabat_Name, t.Alignment_Name, tpp.Partai_Name, tpv.Province_Name from Tbl_Pejabat tp');
+        sql.append('select tp.Pejabat_id, tp.Pejabat_Name, t.Alignment_Name, tpp.Partai_Name, tpv.Province_Name, tp.Dapil_id from Tbl_Pejabat tp');
 
         const countSql = new StringBuilder();
         countSql.append('SELECT COUNT(*) as total FROM Tbl_Pejabat tp');
@@ -56,8 +58,6 @@ export default async function handler(
         orderOffsetSql.append(' LIMIT 16 OFFSET ?');
 
         const formattedQuery = sql + joinSql + orderOffsetSql;
-        console.log('Formatted SQL Query:', formattedQuery);
-        console.log('Query Parameters:', [offset]);
 
         const [rows] = await connection.query(sql + joinSql + orderOffsetSql, [offset]);
 

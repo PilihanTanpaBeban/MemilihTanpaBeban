@@ -6,6 +6,8 @@ import { theme } from '../../../theme';
 import { getDetailPejabat } from './model/APIService';
 import { DetailRequestBody } from './model/Requests';
 import { useMediaQuery } from '@mantine/hooks';
+import { renderTextWithHtml } from '../LineBreakRender';
+import classes from './ModalDetailPejabat.module.css';
 
 interface ModalDetailPejabatProps {
     data: number;
@@ -16,6 +18,7 @@ const ModalDetailPejabat: React.FC<ModalDetailPejabatProps> = ({ data }) => {
     const [loading, setLoading] = useState(false);
 
     const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.sm})`);
+    const tablet = useMediaQuery(`(max-width: ${theme.breakpoints?.md})`);
     const fetchDetailPejabat = async () => {
         setLoading(true);
         const request: DetailRequestBody = {
@@ -23,6 +26,7 @@ const ModalDetailPejabat: React.FC<ModalDetailPejabatProps> = ({ data }) => {
         }
         try {
             const response = await getDetailPejabat(request);
+            console.log('response', response.data[0]);
             setDetailPejabat(response.data[0]);
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -45,9 +49,9 @@ const ModalDetailPejabat: React.FC<ModalDetailPejabatProps> = ({ data }) => {
             />
             {
                 !loading && detailPejabat &&
-                <Box p={rem(57)} pos={'relative'}>
-                    <Flex gap={"33px"} direction={"row"}>
-                        <Image width={rem(260)} height={"auto"} src={"/assets/images/20_24/placeholder_female.jpeg"} />
+                <Box p={mobile || tablet ? rem(20) : rem(57)} pos={'relative'}>
+                    <Flex gap={"33px"} direction={mobile ? 'column' : "row"}>
+                        <Image w={mobile ? '100%' : tablet ? rem(170) : rem(260)} h={"auto"} src={`/assets/images/IndonesiaMap/${detailPejabat.Province_Name}/${detailPejabat.Pejabat_Name}.jpeg`} />
                         <Flex direction={"column"}>
                             <Flex
                                 bg="white"
@@ -64,48 +68,33 @@ const ModalDetailPejabat: React.FC<ModalDetailPejabatProps> = ({ data }) => {
                             </Flex>
                             <Title mt={rem(10)}>{detailPejabat.Pejabat_Name}</Title>
                             <Flex gap={"xl"} mt={rem(20)} direction={"row"}>
-                                <Flex gap={'sm'} direction={"column"} align={'center'} justify={'center'}>
+                                <Flex gap={'sm'} direction={"column"} align={'center'}>
                                     <Text style={{ fontSize: rem(14) }} ta={'center'}>
                                         Partai
                                     </Text>
-                                    <Image src={`/assets/images/partai/${detailPejabat.Partai_Name?.toLowerCase()}.png`} />
+                                    <Image maw={rem(75)} src={`/assets/images/partai/${detailPejabat.Partai_Name?.toLowerCase()}.png`} />
                                 </Flex>
-                                <Flex miw={rem(135)} gap={'sm'} direction={"column"} align={'center'} >
-                                    <Text style={{ fontSize: rem(14) }} ta={'center'}>
+                                <Flex miw={rem(135)} gap={'sm'} direction={"column"} >
+                                    <Text style={{ fontSize: rem(14) }}>
                                         Daerah Pemilihan
                                     </Text>
-                                    <Text style={{ fontSize: rem(20), fontWeight: '500' }} ta={'center'}>
-                                        {detailPejabat.Province_Name}
+                                    <Text style={{ fontSize: rem(20), fontWeight: '500' }}>
+                                        {detailPejabat.Province_Name} {detailPejabat.Dapil_id}
                                     </Text>
                                 </Flex>
                             </Flex>
                         </Flex>
 
                     </Flex>
-                    <Flex gap={'md'} mt={rem(60)} direction={'column'}>
-                        <Title mb={rem(12)} style={{ fontSize: rem(24) }} c={primaryColor}>Quote:</Title>
-                        {(detailPejabat.quote == null || detailPejabat.quote.length == 0) && <Text style={{ fontSize: rem(16) }}>Belum ada statement di media massa terkait isu pengendalian tembakau</Text>}
-                        {detailPejabat.quote && detailPejabat.quote.length > 0 && <List>
-                            {detailPejabat.quote.map((item: string, index: number) => {
-                                return (
-                                    <List.Item key={index}><Text style={{ fontSize: rem(16) }}>
-                                        {item}</Text></List.Item>
-                                );
-                            })}
-                        </List>}
+                    <Flex className={classes.textQuote} gap={'md'} mt={rem(60)} direction={'column'}>
+                        <Title style={{ fontSize: rem(24) }} c={primaryColor}>Quote:</Title>
+
+                        {detailPejabat.Quote_Desc == null && <Text style={{ fontSize: rem(16) }}>Belum ada statement di media massa terkait isu pengendalian tembakau</Text>}
+                        <Text ta={'justify'}>
+                        {detailPejabat.Quote_Desc != null && renderTextWithHtml(detailPejabat.Quote_Desc)}
+                        </Text>
+
                     </Flex>
-                    {(detailPejabat.Insight_Desc != null && detailPejabat.Insight_Desc.length > 0) &&
-                        <Flex gap={'md'} direction={'column'}>
-                            <Divider mt={rem(30)} my="md" />
-                            <Title mb={rem(12)} style={{ fontSize: rem(24) }} c={primaryColor}>Insight:</Title><List spacing={'sm'}>
-                                {detailPejabat.Insight_Desc.map((item: string, index: number) => {
-                                    return (
-                                        <List.Item key={index}>
-                                            <Text style={{ fontSize: rem(16) }}>{item}</Text></List.Item>
-                                    );
-                                })}
-                            </List>
-                        </Flex>}
                 </Box>
             }
         </Box>

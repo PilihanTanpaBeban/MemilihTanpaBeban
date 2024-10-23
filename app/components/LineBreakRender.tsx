@@ -30,7 +30,7 @@ export const renderTextWithLineBreaksNoSpaces = (text: String) => {
 
 const sanitizeHTML = (html: string) => {
   return sanitizeHtml(html, {
-    allowedTags: ['b', 'i', 'em', 'strong', 'a', 'br'],
+    allowedTags: ['b', 'i', 'em', 'strong', 'a', 'br', 'ul', 'li'],
     allowedAttributes: {
       'a': ['href', 'style']
     }
@@ -56,3 +56,9 @@ export const renderTextWithLineBreaksList = (text: String) => {
     </List>
   );
 };
+
+export const renderTextWithHtml = (text: string) => {
+  return (
+    <div dangerouslySetInnerHTML={{ __html: sanitizeHTML(text) }} />
+  );
+}

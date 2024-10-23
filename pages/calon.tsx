@@ -12,23 +12,11 @@ import { useEffect } from 'react';
 import { getAllData, getSearchResult } from '../app/components/calon/model/APIService';
 import { AllRequestBody, SearchRequestBody } from '../app/components/calon/model/Requests';
 
-// export const sampleData =
-//     [
-//         { id: 1, name: "H. Irmawan, S.Sos.", partai: "PKB", jabatan: "Sample Jabatan 1", opini: "Pro" },
-//         { id: 2, name: "A. Budi, M.T.", partai: "PDI", jabatan: "Sample Jabatan 2", opini: "Contra" },
-//         { id: 3, name: "C. Dewi, S.H.", partai: "Golkar", jabatan: "Sample Jabatan 3", opini: "Pro" },
-//         { id: 4, name: "D. Eka, S.E.", partai: "Gerindra", jabatan: "Sample Jabatan 4", opini: "Normative" },
-//         { id: 5, name: "E. Fajar, S.Kom.", partai: "PKS", jabatan: "Sample Jabatan 5", opini: "Pro" },
-//         { id: 6, name: "F. Gita, M.Sc.", partai: "Nasdem", jabatan: "Sample Jabatan 6", opini: "Contra" },
-//         { id: 7, name: "G. Hadi, S.T.", partai: "PAN", jabatan: "Sample Jabatan 7", opini: "Normative" },
-//         { id: 8, name: "H. Indra, S.Pd.", partai: "PPP", jabatan: "Sample Jabatan 8", opini: "Pro" },
-//         { id: 9, name: "I. Joko, S.Si.", partai: "Demokrat", jabatan: "Sample Jabatan 9", opini: "Contra" },
-//         { id: 10, name: "J. Kartika, S.Psi.", partai: "Hanura", jabatan: "Sample Jabatan 10", opini: "Normative" }
-//     ]
-
 const Calon: React.FC = () => {
     // select search
     const [selectedProvince, setSelectedProvince] = useState<string | null>(null);
+    const [searchProvince, setSearchProvince] = useState<string | null>(null);
+    const [province, setProvince] = useState<string | null>(null);
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
     const [modalVisible, { open, close }] = useDisclosure(false);
@@ -64,9 +52,10 @@ const Calon: React.FC = () => {
         try {
             const searchRequestBody: SearchRequestBody = {
                 pejabat_type_id: selectedCategory === '1' ? 1 : selectedCategory === '2' ? 2 : null,
-                province_id: selectedProvince ? selectedProvince : null
+                province_id: searchProvince ? searchProvince : selectedProvince ? selectedProvince : null
             };
             if (!searchRequestBody.pejabat_type_id && !searchRequestBody.province_id) {
+                console.log('if');
                 setData([]);
                 fetchData(1);
                 setIsSearch(false);
@@ -75,6 +64,7 @@ const Calon: React.FC = () => {
                 const response = await getSearchResult(page, searchRequestBody);
                 page == 1 ? setData(response.data) : setData([...data, ...response.data])
                 setLimit(response.totalData)
+                setPage(page);
                 setIsSearch(true);
             }
         } catch (error) {
@@ -105,33 +95,51 @@ const Calon: React.FC = () => {
         open();
     };
 
+    const handleProvinceClick = (Province_id: string) => {
+        setSelectedProvince(null);
+        setSearchProvince(Province_id);
+        // handleSearch(1);
+    };
+
+    const handleSelectProvince = (province: string | null) => {
+        setSearchProvince(null);
+        setProvince(province);
+        console.log(province);
+    }
+
+    useEffect(() => {
+        if (searchProvince !== null || province !== null) {
+            console.log(searchProvince, province);
+            handleSearch(1);
+        }
+    }, [searchProvince, province]);
+
     const calonPejabatBox = data.map((data: any, index: number) => {
+        const url = `/assets/images/IndonesiaMap/${data.Province_Name}/${data.Pejabat_Name}.jpeg`;
         return (
-            <CalonPejabatBox
-                key={data.index}
-                pejabat_id={data.Pejabat_id}
-                opini={data.Alignment_Name}
-                name={data.Pejabat_Name}
-                partai={data.Partai_Name}
-                province={data.Province_Name}
-                onBoxClick={handleModalOpen}
-            />
+            <React.Fragment key={index}>
+                <CalonPejabatBox
+                    dapil={data.Dapil_id}
+                    pejabat_id={data.Pejabat_id}
+                    opini={data.Alignment_Name}
+                    name={data.Pejabat_Name}
+                    partai={data.Partai_Name}
+                    province={data.Province_Name}
+                    onBoxClick={handleModalOpen}
+                />
+            </React.Fragment>
         );
     });
 
-    const handleProvinceClick = (provinceName: string) => {
-        setSelectedProvince(provinceName);
-    };
-
     return (
-        <Box bg={"#F7FAFF"}>
+        <Box pb={rem(150)} bg={"#F7FAFF"}>
             <Box bg={lightPurple}>
                 <Container size="xl" py={rem(56)}>
                     <Flex direction={"column"} align={"center"} justify={"center"}>
                         <Title mb={rem(40)} c={primaryColor} fw={"800"} style={{ fontSize: rem(36) }}>
                             Pilih Berdasarkan Daerah Pemilihan
                         </Title>
-                        <Map mapWidth={mobile ? 400 : tablet ? 800 : 1150} onProvinceClick={handleProvinceClick} />
+                        <Map mapWidth={mobile ? 400 : tablet ? 800 : 1150} onProvinceClick={handleProvinceClick} province={selectedProvince}/>
                     </Flex>
                 </Container>
             </Box>
@@ -141,30 +149,31 @@ const Calon: React.FC = () => {
                         classNames={{ input: classes.input }}
                         placeholder="Categori"
                         data={categories.map(category => ({ value: category.id, label: category.position }))}
-                        searchable
                         nothingFoundMessage="Jabatan tidak ditemukan..."
-                        onChange={(value) => setSelectedCategory(value)}
+                        value={'1'}
+                        disabled
+                    // onChange={(value) => setSelectedCategory(value)}
                     />
 
                     <Select
                         classNames={{ input: classes.input }}
-                        value={selectedProvince}
+                        value={selectedProvince || searchProvince}
                         placeholder="Provinsi"
                         data={indonesiaProvinces.map(category => ({ value: category.id, label: category.title }))}
                         maxDropdownHeight={200}
                         searchable
                         clearable
                         nothingFoundMessage="Provinsi tidak ditemukan..."
-                        onChange={(value) => setSelectedProvince(value)}
+                        onChange={setSelectedProvince}
                     />
-                    <Button onClick={() => handleSearch(1)} h={'100%'} px={rem(40)} py={rem(11)} style={{ fontSize: rem(16), backgroundColor: primaryColor, color: 'white', border: 'none', borderRadius: rem(8) }}>
+                    <Button onClick={() => handleSelectProvince(selectedProvince)} h={'100%'} px={rem(40)} py={rem(11)} style={{ fontSize: rem(16), backgroundColor: primaryColor, color: 'white', border: 'none', borderRadius: rem(8) }}>
                         <Text fw={'600'}>Search</Text>
                     </Button>
                 </Flex>
 
                 <Title ta={"center"} mb={rem(50)} c={primaryColor}>Klik Untuk Deskripsi Lebih Detail</Title>
 
-                <Box pos="relative" pb={rem(150)} style={{ padding: mobile || tablet ? "0 12px" : "0" }}>
+                <Box pos="relative" style={{ padding: mobile || tablet ? "0 12px" : "0" }}>
                     <LoadingOverlay
                         visible={loading}
                         zIndex={1000}
@@ -183,7 +192,7 @@ const Calon: React.FC = () => {
             </Container>
 
             <Modal centered
-                size={mobile ? "100%" : "70%"} opened={modalVisible} onClose={close} withCloseButton={false}>
+                size={mobile || tablet ? "100%" : "70%"} opened={modalVisible} onClose={close} withCloseButton={false}>
                 {selectedPejabat !== undefined && <ModalDetailPejabat data={selectedPejabat} />}
             </Modal>
         </Box>

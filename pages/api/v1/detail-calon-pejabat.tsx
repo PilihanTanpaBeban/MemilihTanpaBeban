@@ -17,10 +17,10 @@ export default async function handler(
     res: NextApiResponse
 ): Promise<void> {
     // Apply rate limiting
-    // await limiter(req, res, () => {});
+    await limiter(req, res, () => {});
 
     // Apply security headers
-    // helmet()(req, res, () => {});
+    helmet()(req, res, () => {});
 
     const apiKey = req.headers['x-api-key'];
 
@@ -33,18 +33,18 @@ export default async function handler(
         console.log(process.env.X_API_KEY);
         return res.status(401).json({ error: "Unauthorized" });
     }
-    const connection = await connectToDatabase();
+    let connection
 
     try {
+         connection = await connectToDatabase();
         const sql = new StringBuilder();
-        sql.append('select tp.Pejabat_id, tp.Pejabat_Name, t.Alignment_Name, tpp.Partai_Name, tpv.Province_Name, ti.Insight_Desc, tq.Quote_Desc from Tbl_Pejabat tp');
+        sql.append('select tp.Pejabat_id, tp.Pejabat_Name, t.Alignment_Name, tpp.Partai_Name, tpv.Province_Name, tp.Dapil_id,tq.Quote_Desc from Tbl_Pejabat tp');
 
         const queryParams: any[] = [];
 
         const joinSql = new StringBuilder();
         joinSql.append(' left join Tbl_PejabatAlignment t on tp.Alignment_id = t.Alignment_id');
         joinSql.append(' left join Tbl_PejabatType tt on tp.Pejabat_type_id = tt.Pejabat_type_id');
-        joinSql.append(' left join Tbl_PejabatInsight ti on tp.Pejabat_id = ti.Pejabat_id');
         joinSql.append(' left join Tbl_PejabatQuote tq on tp.Pejabat_id = tq.Pejabat_id');
         joinSql.append(' left join Tbl_Province tpv on tp.Province_id = tpv.Province_id');
         joinSql.append(' left join Tbl_Partai tpp on tp.Partai_id = tpp.Partai_id');
@@ -57,19 +57,9 @@ export default async function handler(
 
         const [rows] = await connection.query(sql + joinSql + whereSql, queryParams);
 
-        const processedRows = rows.map((row: any) => {
-            if (row.Insight_Desc) {
-                row.Insight_Desc = row.Insight_Desc.split(';');
-            }
-            if (row.Quote_Desc) {
-                row.Quote_Desc = row.Quote_Desc.split(';');
-            }
-            return row
-        })
-
         res.send({
             status: 200,
-            data: processedRows
+            data: rows
         });
 
     } catch (error: any) {

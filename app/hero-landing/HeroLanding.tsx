@@ -1,4 +1,4 @@
-import { Title, Text, Container, Image, Group, Flex, rem, Box, Grid, useMantineTheme, DrawerOverlay, Divider } from "@mantine/core";
+import { Title, Text, Container, Image, Group, Flex, rem, Box, Grid, useMantineTheme, DrawerOverlay, Divider, Button } from "@mantine/core";
 import classes from "./HeroLanding.module.css";
 import BoxChosenDpr from "./chosen-dpr-box/chosen-dpt-box.module";
 import { useMediaQuery } from "@mantine/hooks";
@@ -8,8 +8,11 @@ import { chosenDpr } from "./chosen-drp";
 import { primaryColor, white, lightPurple } from "../../public/colors";
 import { useState, useEffect } from "react";
 import { PrimaryButton } from "../components/Button"; // Adjust the path as necessary
+import React from "react";
+import router, { useRouter } from "next/router";
 
 export const HeroImageBackground = () => {
+  const router = useRouter();
 
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.sm})`);
   const tablet = useMediaQuery(`(max-width: ${theme.breakpoints?.md})`);
@@ -18,63 +21,55 @@ export const HeroImageBackground = () => {
 
   return (
     <>
-      <HeroVector
-        pt={rem(16)}
-        pb={rem(33)}
-        imgFileName={"home_redflag.jpg"}
-      >
-        <Text mb={rem(23)} style={{ fontSize: rem(32), fontWeight: 400 }}>Selamat kepada</Text>
-        <Text mt={0} mb={rem(23)} style={{ fontSize: tablet ? rem(32) : rem(40), fontWeight: 800 }}>Dewan Perwakilan Rakyat Terpilih</Text>
-        <Text lh={rem(40)} style={{ fontSize: tablet ? rem(24) : rem(32), fontWeight: 600 }}>atas pelantikannya pada <br /> hari Selasa, 1 Oktober 2024.</Text>
-      </HeroVector>
-      <Container style={{ padding: mobile || tablet ? "0 12px" : "0" }}>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: mobile ? 'repeat(2, 1fr)' : tablet ? 'repeat(5, 1fr)' : 'repeat(9, 1fr)',
-          gap: '12px',
-          marginTop: rem(84),
-          marginBottom: rem(36),
-        }}>
-          {
-            chosenDpr.map((item: any, index: number) => (
-              <>
-                {(index == 18 && !laptop) ? <div></div> : null}
-                <BoxChosenDpr
-                  className={classes.gridItem}
-                  key={index}
-                  data={item}
-                  style={{ boxSizing: 'border-box' }}
-                />
-              </>
-            ))
-          }
-        </div>
-      </Container>
+      <Box pt={rem(25)} pb={rem(60)} bg={lightPurple}>
+        <Container size={'xl'}>
+          <Flex direction={mobile ? 'column' : 'row'} gap={rem(28)} justify={'space-between'}>
+            <Flex direction={'column'} c={primaryColor} maw={mobile ? '100%' : tablet ? rem(350) : rem(500)}>
+              <Image src={'/assets/images/home_redflag.jpg'} w={mobile ? rem('100%') : tablet ? rem(300) : rem(518)} h={'auto'} />
+              <Box>
+                <Text mt={rem(45)} ta={mobile ? 'center' : 'left'} style={{ fontSize: tablet ? rem(20) : rem(24), fontWeight: 800 }}>Daftar Nama Anggota DPR RI Terpilih yang Punya Rekam Jejak Buruk Terkait Dengan Kebijakan Pengendalian Tembakau
+                </Text>
+                <Text mt={rem(60)} ta={mobile ? 'center' : undefined} style={{ fontSize: tablet ? rem(12) : rem(14), fontWeight: 600 }}>
+                  Klik
+                  {/* <a href={'/konflik-kepentingan'}> */}
+                    <Button
+                      variant="filled"
+                      radius={"xl"}
+                      size={"sm"}
+                      onClick={() => router.push('/konflik-kepentingan')}
+                      color={primaryColor}
+                      mx={rem(5)}
+                    > <Text style={{ fontWeight: '700', fontSize: tablet ? rem(12) : rem(14) }}>Potensi Konflik Kepentingan</Text>
+                    </Button>
+                  {/* </a> */}
+                  untuk cari tahu lebih lanjut
+                </Text>
+              </Box>
+            </Flex>
 
-      <Container p={!mobile && !tablet && !laptop ? "30px" : ""} mx={mobile || tablet ? "5%" : "auto"} bg={primaryColor} style={{ borderRadius: "21px" }}>
-        <Flex gap={'xl'} justify="center" align={'center'} p={tablet ? rem(40) : rem(20)} direction={mobile ? 'column-reverse' : 'row'}>
-          <Flex direction={"column"} justify={"center"} c={white} >
-            <Text maw={!mobile ? '670px' : ''} style={{ textAlign: 'justify', fontSize: mobile || tablet ? rem(16) : rem(24), fontWeight: "600", marginBottom: "50px" }}>Teruntuk Bapak dan Ibu Dewan diatas, Jangan ulangi lagi rekam jejak burukmu dalam menghambat upaya pengendalian konsumsi rokok dan membela kepentingan industri rokok ya!</Text>
-            <Text style={{ textAlign: 'justify', fontSize: rem(16), fontWeight: "500" }}>Semoga Bapak dan Ibu hanya khilaf dan bisa melindungi masyarakat dengan baik</Text></Flex>
-          <Image
-            pt={rem(20)}
-            pb={rem(20)}
-            src={"../../assets/images/afraid.png"}
-            style={{ width: mobile || tablet ? rem(200) : rem(300), height: mobile || tablet ? rem(200) : rem(300) }}
-          ></Image>
-        </Flex>
-      </Container>
-
-      <Flex mt={rem(41)} py={rem(54)} direction={"column"} justify={"center"} align={"center"} px={"8%"} bg={lightPurple}>
-        <Text ta={"center"} mb={rem(16)} style={{ fontWeight: "500", fontSize: rem(20) }}>Untuk mengetahui rekam jejak buruk pengendalian konsumsi rokok Anggota DPR RI terpilih 2024-2029 pada periode-periode sebelumnya silakan kunjungi:</Text>
-
-        <PrimaryButton
-          text={"Potensi Konflik Kepentingan"}
-          radius={"xl"}
-          size={"md"}
-          w={mobile ? "100%" : undefined}
-        />
-      </Flex>
+            <Box style={{ padding: mobile || tablet ? "0 12px" : "0" }}>
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: mobile ? 'repeat(2, 1fr)' : tablet ? 'repeat(5, 1fr)' : 'repeat(5, 1fr)',
+                gap: '2px',
+              }}>
+                {
+                  chosenDpr.map((item: any, index: number) => (
+                    <React.Fragment key={index}>
+                      {/* {index == 21 && tablet ? <><div></div></> : null} */}
+                      <BoxChosenDpr
+                        className={classes.gridItem}
+                        data={item}
+                        style={{ boxSizing: 'border-box' }}
+                      />
+                    </React.Fragment>
+                  ))
+                }
+              </div>
+            </Box>
+          </Flex>
+        </Container>
+      </Box>
     </>
   );
 };
