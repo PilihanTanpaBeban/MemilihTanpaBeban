@@ -32,7 +32,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: build-artifacts
-          path: .next
+          path: .next/**
 
   # deploy:
   #   runs-on: ubuntu-latest
@@ -46,6 +46,12 @@ jobs:
   #       with:
   #         name: build-artifacts
 
+  #     - name: List downloaded artifacts
+  #       run: ls -la
+
+  #     - name: List .next contents after download
+  #       run: ls -la .next
+
   #     - name: Deploy to server via SSH
   #       uses: appleboy/ssh-action@v0.1.6
   #       with:
@@ -57,15 +63,6 @@ jobs:
   #           cd /home/pilihan2/repositories/MemilihTanpaBebanUAT/
   #           git pull origin uat
   #           npm install
-      
-  #     - name: check Path
-  #       run: |
-  #         cd .next
-  #         pwd
-      
-  #     - name: check list
-  #       run: |
-  #         ls -lrt
 
   #     - name: Deploy to cPanel via FTP
   #       uses: SamKirkland/FTP-Deploy-Action@4.3.0
