@@ -29,8 +29,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: build-artifacts
-          path: |
-            .next
+          path: .next
 
   # deploy:
   #   runs-on: ubuntu-latest
