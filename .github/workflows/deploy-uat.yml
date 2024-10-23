@@ -24,9 +24,9 @@ jobs:
 
       - name: List workspace contents
         run: ls -la
-
-      - name: List .next contents
-        run: ls -la .next
+      
+      - name: List all files in .next
+        run: find .next -type f
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3
