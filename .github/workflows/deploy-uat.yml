@@ -23,15 +23,15 @@ jobs:
         run: npm run build
 
       - name: List workspace contents
-        run: ls -la
+        run: ls
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3
         with:
           name: build-artifacts
           path: |
-            .next/**
-          include-hidden-files: true
+            .next/
+          include-hidden-files: true      
 
   deploy:
     runs-on: ubuntu-latest
@@ -47,7 +47,7 @@ jobs:
           path: ./
       
       - name: List all workspace contents recursively
-        run: ls -la
+        run: ls
 
       - name: Deploy to server via SSH
         uses: appleboy/ssh-action@v0.1.6
@@ -58,7 +58,7 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /home/pilihan2/repositories/MemilihTanpaBebanUAT/
+            cd /repositories/MemilihTanpaBebanUAT/
             git pull origin uat
 
       - name: List contents before FTP upload
