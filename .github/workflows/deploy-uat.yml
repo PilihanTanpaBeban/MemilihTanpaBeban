@@ -49,6 +49,9 @@ jobs:
       - name: Verify downloaded artifact contents
         run: ls -la
 
+      - name: Print full path of .next
+        run: pwd
+
       - name: Deploy to server via SSH
         uses: appleboy/ssh-action@v0.1.6
         with:
