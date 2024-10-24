@@ -51,7 +51,7 @@ const ImageNode: React.FC<imageNodeProps> = ({ data, isConnectable }) => {
   };
 
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.sm})`);
-  const laptop = useMediaQuery(`(max-width: ${theme.breakpoints?.md})`);
+  const laptop = useMediaQuery(`(max-width: ${theme.breakpoints?.lg})`);
 
   const ListItem = data.details.map((item: any) => (
     <React.Fragment key={item.id}>

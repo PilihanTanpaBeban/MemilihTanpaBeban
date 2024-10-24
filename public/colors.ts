@@ -1,8 +1,10 @@
 export const primaryColor = '#4F3B78'
 export const secondaryColor = '#A2668A'
 export const lightPurple = '#ECE3FF'
+export const dotLightPurple = '#966fa2'
 export const bgGrayColor = '#F7FAFF'
 export const bgOrange = '#F57D00'
+export const white = '#FFFFFF'
 
 // line colors
 export const linePink = '#FC5FD0'

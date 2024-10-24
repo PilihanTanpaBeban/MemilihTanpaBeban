@@ -12,7 +12,7 @@ import {
   Container,
   ChipGroup,
 } from "@mantine/core";
-import React from "react";
+import React, { ReactNode } from "react";
 import classes from "./hero-vector.module.css";
 import { lightPurple, primaryColor, secondaryColor } from "../../public/colors";
 import { renderTextWithLineBreaks } from "../components/LineBreakRender";
@@ -20,15 +20,16 @@ import { useMediaQuery } from "@mantine/hooks";
 import { theme } from "../../theme";
 
 interface TextProps {
-  text: String;
+  text?: String;
   imgFileName: String;
   pt?: StyleProp<MantineSpacing>;
   pb?: StyleProp<MantineSpacing>;
   subtitle?: String;
   backgroundColor?: String;
+  children?: ReactNode;
 }
 
-const HeroVector: React.FC<TextProps> = ({ text, imgFileName, subtitle, pt, pb }) => {
+const HeroVector: React.FC<TextProps> = ({ text, imgFileName, subtitle, pt, pb, children }) => {
   const backgroundImageUrl = `../../assets/images/${imgFileName}`;
 
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.sm})`);
@@ -49,7 +50,8 @@ const HeroVector: React.FC<TextProps> = ({ text, imgFileName, subtitle, pt, pb }
         >
           <div className={classes.inner}>
             <Title className={classes.title} c={primaryColor}>
-              {renderTextWithLineBreaks(text)}
+              {text && renderTextWithLineBreaks(text)}
+              {!text && children}
             </Title>
             <Text ta="justify" mt="md">{subtitle}</Text>
           </div>

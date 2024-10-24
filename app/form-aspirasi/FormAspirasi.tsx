@@ -108,7 +108,7 @@ const FormAspirasi = () => {
           ) : null}
           <Text style={{ textAlign: mobile?"center":"justify", marginTop: rem(16) }}>
             Sampaikan keresahan dan prioritas isu yang harus didahulukan oleh
-            para Calon Legislatif dan Calon Eksekutif terkait permasalahan rokok
+            pemerintah terkait permasalahan rokok
             di Indonesia.
           </Text>
 

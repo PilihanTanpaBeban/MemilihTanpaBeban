@@ -1,5 +1,10 @@
-import { List, ListItem } from "@mantine/core";
+import { List, ListItem, rem, ThemeIcon, Text } from "@mantine/core";
 import React from "react";
+import { primaryColor } from "../../public/colors";
+import { IconCircle, IconCircleCheck, IconCircleDashed, IconCircleFilled } from "@tabler/icons-react";
+import classes from "../components/styles/linebreak.module.css";
+import sanitizeHtml from 'sanitize-html';
+
 
 export const renderTextWithLineBreaks = (text: String) => {
   const lines = text.split("\n");
@@ -22,14 +27,38 @@ export const renderTextWithLineBreaksNoSpaces = (text: String) => {
   ));
 };
 
+
+const sanitizeHTML = (html: string) => {
+  return sanitizeHtml(html, {
+    allowedTags: ['b', 'i', 'em', 'strong', 'a', 'br', 'ul', 'li'],
+    allowedAttributes: {
+      'a': ['href', 'style']
+    }
+  });
+};
+
 export const renderTextWithLineBreaksList = (text: String) => {
   const lines = text.split("\n");
-  return lines.map((line, index) => (
-    <React.Fragment key={index}>
-      <div style={{textAlign:"justify"}}>
-        {index > 0 && <List.Item>{line}</List.Item>}
-        {index == 0 && line}
-      </div>
-    </React.Fragment>
-  ));
+  return (
+    <List
+      icon={<IconCircleFilled style={{ color: '#966fa2', borderRadius: '50%', width: rem(7), height: rem(7) }} />}
+      classNames={{
+        item: classes['mantine-List-item']
+      }}
+    >
+      {
+        lines.map((line, index) => (
+          <React.Fragment key={index}>
+            <Text dangerouslySetInnerHTML={{ __html: sanitizeHTML(line) }} />
+          </React.Fragment>
+        ))
+      }
+    </List>
+  );
 };
+
+export const renderTextWithHtml = (text: string) => {
+  return (
+    <div dangerouslySetInnerHTML={{ __html: sanitizeHTML(text) }} />
+  );
+}
