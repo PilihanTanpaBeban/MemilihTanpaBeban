@@ -58,9 +58,12 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd /home/pilihan2/repositories/MemilihTanpaBebanUAT/
-            pwd
-            ls -al
+            if [ -d ".next" ]; then
+              mv .next .next-$(date +'%Y%m%d%H%M%S')
+            fi
+            mkdir .next
             git pull origin uat
+            rsync -av --progress /home/pilihan2/repositories/MemilihTanpaBebanUAT/.next/ .next/
 
       # - name: List contents before FTP upload
       #   run: ls -la
