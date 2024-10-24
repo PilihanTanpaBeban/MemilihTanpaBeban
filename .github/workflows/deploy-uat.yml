@@ -63,7 +63,7 @@ jobs:
             fi
             mkdir .next
             git pull origin uat
-            rsync -av --progress /home/pilihan2/repositories/MemilihTanpaBebanUAT/.next/ .next/
+            rsync -av --progress .next/ /home/pilihan2/repositories/MemilihTanpaBebanUAT/.next/
 
       # - name: List contents before FTP upload
       #   run: ls -la
