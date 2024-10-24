@@ -52,23 +52,27 @@ jobs:
         run: find . -type d -name ".next"
         
 
-      # - name: Deploy to server via SSH
-      #   uses: appleboy/ssh-action@v0.1.6
-      #   with:
-      #     host: ${{ secrets.SERVER_HOST }}
-      #     port: 64000
-      #     username: ${{ secrets.SSH_USERNAME }}
-      #     key: ${{ secrets.SSH_PRIVATE_KEY }}
-      #     script: |
-      #       cd /home/pilihan2/repositories/MemilihTanpaBebanUAT/
-      #       git pull origin uat
-      #       npm install
+      - name: Deploy to server via SSH
+        uses: appleboy/ssh-action@v0.1.6
+        with:
 
-      # - name: Deploy to cPanel via FTP
-      #   uses: SamKirkland/FTP-Deploy-Action@4.3.0
-      #   with:
-      #     server: ftp.pilihantanpabeban.id
-      #     username: ${{ secrets.FTP_USERNAME }}
-      #     password: ${{ secrets.FTP_PASSWORD }}
-      #     local-dir: './.next'
-      #     server-dir: '/home/pilihan2/repositories/MemilihTanpaBebanUAT/.next'
+          host: ${{ secrets.SERVER_HOST }}
+          port: 64000
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /home/pilihan2/repositories/MemilihTanpaBebanUAT/
+            git pull origin uat
+            npm install
+
+      - name: List .next contents before FTP upload
+        run: ls -la .next
+
+      - name: Deploy to cPanel via FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ftp.pilihantanpabeban.id
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: './.next'
+          server-dir: '/home/pilihan2/repositories/MemilihTanpaBebanUAT/.next'
