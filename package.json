@@ -1,7 +1,7 @@
 {
   "name": "pilihan-tanpa-beban",
   "version": "0.1.0",
-  "homepage": "https://dev.pilihantanpabeban.id",
+  "homepage": "https://pilihantanpabeban.id",
   "private": true,
   "scripts": {
     "dev": "next dev",

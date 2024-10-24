@@ -72,7 +72,7 @@ const ModalDetailPejabat: React.FC<ModalDetailPejabatProps> = ({ data }) => {
                                     <Text style={{ fontSize: rem(14) }} ta={'center'}>
                                         Partai
                                     </Text>
-                                    <Image maw={rem(75)} src={`/assets/images/partai/${detailPejabat.Partai_Name?.toLowerCase()}.png`} />
+                                    <Image maw={rem(75)} src={`/assets/images/Partai/${detailPejabat.Partai_Name?.toLowerCase()}.png`} />
                                 </Flex>
                                 <Flex miw={rem(135)} gap={'sm'} direction={"column"} >
                                     <Text style={{ fontSize: rem(14) }}>
