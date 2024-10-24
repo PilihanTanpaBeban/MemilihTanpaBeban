@@ -33,6 +33,7 @@ jobs:
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
           lftp -u "$FTP_USERNAME","$FTP_PASSWORD" "$FTP_HOST" <<-EOF
+            set ssl:verify-certificate no
             mirror -R --delete --verbose /home/runner/work/MemilihTanpaBeban/MemilihTanpaBeban/.next /home/pilihan2/repositories/MemilihTanpaBebanUAT/.next
             mirror -R --delete --verbose /home/runner/work/MemilihTanpaBeban/MemilihTanpaBeban/node_modules /home/pilihan2/repositories/MemilihTanpaBebanUAT/node_modules
             bye
