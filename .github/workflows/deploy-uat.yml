@@ -47,12 +47,11 @@ jobs:
           path: .next/
       
       - name: Verify downloaded artifact contents
-        run: ls -Rla .next
+        run: ls -la
 
       - name: Deploy to server via SSH
         uses: appleboy/ssh-action@v0.1.6
         with:
-
           host: ${{ secrets.SERVER_HOST }}
           port: 64000
           username: ${{ secrets.SSH_USERNAME }}
@@ -60,7 +59,7 @@ jobs:
           script: |
             cd /home/pilihan2/repositories/MemilihTanpaBebanUAT/
             pwd
-            ls -lrt
+            ls -al
             git pull origin uat
 
       # - name: List contents before FTP upload
