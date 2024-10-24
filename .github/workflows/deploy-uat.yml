@@ -44,10 +44,10 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: build-artifacts
-          path: ./
+          path: .next/
       
-      - name: List all workspace contents recursively
-        run: ls
+      - name: Verify downloaded artifact contents
+        run: ls -Rla .next
 
       - name: Deploy to server via SSH
         uses: appleboy/ssh-action@v0.1.6
@@ -58,17 +58,19 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /repositories/MemilihTanpaBebanUAT/
+            cd /home/pilihan2/repositories/MemilihTanpaBebanUAT/
+            pwd
+            ls -lrt
             git pull origin uat
 
-      - name: List contents before FTP upload
-        run: ls -la
+      # - name: List contents before FTP upload
+      #   run: ls -la
 
-      - name: Deploy to cPanel via FTP
-        uses: SamKirkland/FTP-Deploy-Action@4.3.0
-        with:
-          server: ftp.pilihantanpabeban.id
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: './'
-          server-dir: '/home/pilihan2/repositories/MemilihTanpaBebanUAT/.next/'
+      # - name: Deploy to cPanel via FTP
+      #   uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      #   with:
+      #     server: ftp.pilihantanpabeban.id
+      #     username: ${{ secrets.FTP_USERNAME }}
+      #     password: ${{ secrets.FTP_PASSWORD }}
+      #     local-dir: './.next/'
+      #     server-dir: '/home/pilihan2/repositories/MemilihTanpaBebanUAT/.next/'
