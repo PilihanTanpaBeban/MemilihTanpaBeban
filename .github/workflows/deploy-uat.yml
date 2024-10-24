@@ -29,7 +29,9 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: build-artifacts
-          path: .next/**
+          path: |
+            .next/**
+            node_modules/**
           include-hidden-files: true
 
   deploy:
@@ -46,11 +48,7 @@ jobs:
           path: ./
       
       - name: List all workspace contents recursively
-        run: ls -Rla
-        
-      - name: Check for .next directory
-        run: find . -type d -name ".next"
-        
+        run: ls -la
 
       - name: Deploy to server via SSH
         uses: appleboy/ssh-action@v0.1.6
@@ -67,8 +65,8 @@ jobs:
             npm -v
             npm install
 
-      - name: List .next contents before FTP upload
-        run: ls -la .next
+      - name: List contents before FTP upload
+        run: ls -la
 
       - name: Deploy to cPanel via FTP
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
