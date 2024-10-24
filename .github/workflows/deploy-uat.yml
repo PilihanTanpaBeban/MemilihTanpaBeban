@@ -1,0 +1,81 @@
+name: Deploy to UAT
+on:
+  push:
+    branches:
+      - uat
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: List workspace contents
+        run: ls
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-artifacts
+          path: |
+            .next/
+          include-hidden-files: true      
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: build-artifacts
+          path: .next/
+      
+      - name: Verify downloaded artifact contents
+        run: ls -la
+
+      - name: Print full path of .next
+        run: pwd
+
+      - name: Deploy to server via SSH
+        uses: appleboy/ssh-action@v0.1.6
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          port: 64000
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /home/pilihan2/repositories/MemilihTanpaBebanUAT/
+            if [ -d ".next" ]; then
+              mv .next .next-$(date +'%Y%m%d%H%M%S')
+            fi
+            mkdir .next
+            git pull origin uat
+            rsync -av --progress /home/runner/work/MemilihTanpaBeban/MemilihTanpaBeban/.next/ /home/pilihan2/repositories/MemilihTanpaBebanUAT/.next/
+
+      # - name: List contents before FTP upload
+      #   run: ls -la
+
+      # - name: Deploy to cPanel via FTP
+      #   uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      #   with:
+      #     server: ftp.pilihantanpabeban.id
+      #     username: ${{ secrets.FTP_USERNAME }}
+      #     password: ${{ secrets.FTP_PASSWORD }}
+      #     local-dir: './.next/'
+      #     server-dir: '/home/pilihan2/repositories/MemilihTanpaBebanUAT/.next/'

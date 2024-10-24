@@ -9,10 +9,6 @@ export default function App({ Component, pageProps }: any) {
   return (
     <MantineProvider theme={theme}>
       <Head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
-          rel="stylesheet"
-        />
         <title>Pilihan Tanpa Beban</title>
         <meta
           name="viewport"

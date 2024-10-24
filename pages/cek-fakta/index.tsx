@@ -101,18 +101,11 @@ function MitosVsFaktaPage() {
   const receivedData = router.query.fakta;
 
   useEffect(() => {
-    // Get the value of the "comp-id" query parameter
   const receivedData = router.query.fakta;
 
-    // If compId exists, scroll to the corresponding component
     if (receivedData) {
-      // Use the value of compId to construct the actual ID
       const targetId = `fakta-${receivedData}`;
-
-      // Get a reference to the element with the target ID
       const targetElement = document.getElementById(targetId);
-
-      // Scroll to the target element if it exists
       if (targetElement) {
         targetElement.scrollIntoView({ behavior: "smooth", block:"center" });
       }

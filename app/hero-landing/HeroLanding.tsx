@@ -1,57 +1,75 @@
-import { Title, Text, Container, Image, Group, Flex } from "@mantine/core";
+import { Title, Text, Container, Image, Group, Flex, rem, Box, Grid, useMantineTheme, DrawerOverlay, Divider, Button } from "@mantine/core";
 import classes from "./HeroLanding.module.css";
-import { PrimaryButton, SecondaryButton } from "../components/Button";
-import { useEffect } from "react";
+import BoxChosenDpr from "./chosen-dpr-box/chosen-dpt-box.module";
 import { useMediaQuery } from "@mantine/hooks";
 import { theme } from "../../theme";
-import { lightPurple, primaryColor, secondaryColor } from "../../public/colors";
-import heroImg from "../../public/assets/images/Home Illustration_1 1.png";
+import HeroVector from "../hero-vector/HeroVector";
+import { chosenDpr } from "./chosen-drp";
+import { primaryColor, white, lightPurple } from "../../public/colors";
+import { useState, useEffect } from "react";
+import { PrimaryButton } from "../components/Button"; // Adjust the path as necessary
+import React from "react";
+import router, { useRouter } from "next/router";
 
 export const HeroImageBackground = () => {
-  const scrollToBottom = () => {
-    window.scrollTo({
-      top: document.body.scrollHeight,
-      behavior: "smooth",
-    });
-  };
+  const router = useRouter();
+
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.sm})`);
+  const tablet = useMediaQuery(`(max-width: ${theme.breakpoints?.md})`);
+  const laptop = useMediaQuery(`(max-width: ${theme.breakpoints?.lg})`);
+  const desktop = useMediaQuery(`(max-width: ${theme.breakpoints?.xl})`);
+
   return (
-    <Group py={mobile ? 100 : 200} className={classes.wrapper} bg={lightPurple}>
-      <Container size="xl">
-        <Flex
-          gap="md"
-          justify="between"
-          align="center"
-          direction={mobile? "column-reverse" : "row"}
-        >
-          <div className={classes.inner}>
-            <Title className={classes.title} c={primaryColor}>
-              Pilihan Tanpa Beban
-            </Title>
+    <>
+      <Box pt={rem(25)} pb={rem(60)} bg={lightPurple}>
+        <Container size={'xl'}>
+          <Flex direction={mobile ? 'column' : 'row'} gap={rem(28)} justify={'space-between'}>
+            <Flex direction={'column'} c={primaryColor} maw={mobile ? '100%' : tablet ? rem(350) : rem(500)}>
+              <Image src={'/assets/images/home_redflag.jpg'} w={mobile ? rem('100%') : tablet ? rem(300) : rem(518)} h={'auto'} />
+              <Box>
+                <Text mt={rem(45)} ta={mobile ? 'center' : 'left'} style={{ fontSize: tablet ? rem(20) : rem(24), fontWeight: 800 }}>Daftar Nama Anggota DPR RI Terpilih yang Punya Rekam Jejak Buruk Terkait Dengan Kebijakan Pengendalian Zat Adiktif berupa Produk Tembakau
+                </Text>
+                <Text mt={rem(60)} ta={mobile ? 'center' : undefined} style={{ fontSize: tablet ? rem(12) : rem(14), fontWeight: 600 }}>
+                  Klik
+                  {/* <a href={'/konflik-kepentingan'}> */}
+                    <Button
+                      variant="filled"
+                      radius={"xl"}
+                      size={"sm"}
+                      onClick={() => router.push('/konflik-kepentingan')}
+                      color={primaryColor}
+                      mx={rem(5)}
+                    > <Text style={{ fontWeight: '700', fontSize: tablet ? rem(12) : rem(14) }}>Potensi Konflik Kepentingan</Text>
+                    </Button>
+                  {/* </a> */}
+                  untuk cari tahu lebih lanjut
+                </Text>
+              </Box>
+            </Flex>
 
-            <Group mt={20}>
-              <Text className={classes.description}>
-                Pernah gak kamu kepikiran kalau satu batang rokok yang
-                diperjual-belikan punya banyak potensi konflik kepentingan dalam
-                politik? <br />
-                <br />
-                Website ini akan ngebantu kamu untuk melihat fenomena politik
-                dan rokok dalam satu platform informasi menjelang Pemilu 2024.
-              </Text>
-            </Group>
-
-            <div className={classes.controls}>
-              <SecondaryButton
-                text="Sampaikan Aspirasi"
-                radius={"xl"}
-                size={"md"}
-                onClick={scrollToBottom}
-              />
-            </div>
-          </div>
-          <Image src="/assets/images/hero_vector.png"></Image>
-        </Flex>
-      </Container>
-    </Group>
+            <Box style={{ padding: mobile || tablet ? "0 12px" : "0" }}>
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: mobile ? 'repeat(2, 1fr)' : tablet ? 'repeat(5, 1fr)' : 'repeat(5, 1fr)',
+                gap: '2px',
+              }}>
+                {
+                  chosenDpr.map((item: any, index: number) => (
+                    <React.Fragment key={index}>
+                      {/* {index == 21 && tablet ? <><div></div></> : null} */}
+                      <BoxChosenDpr
+                        className={classes.gridItem}
+                        data={item}
+                        style={{ boxSizing: 'border-box' }}
+                      />
+                    </React.Fragment>
+                  ))
+                }
+              </div>
+            </Box>
+          </Flex>
+        </Container>
+      </Box>
+    </>
   );
 };

@@ -1,0 +1,11 @@
+.mantine-List-item::marker {
+    color: #966fa2;
+    /* Change the color of the marker */
+    font-size: 16px;
+    /* Change the size of the marker */
+    border-radius: 50%;
+}
+
+a.no-decoration {
+    text-decoration: none;
+}
