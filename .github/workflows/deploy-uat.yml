@@ -20,6 +20,11 @@ jobs:
         run: |
           npm ci
           npm run build
+
+      - name: Check files
+        run: |
+          pwd
+          ls -la
   
       - name: Install lftp
         run: |
@@ -35,6 +40,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd /home/pilihan2/repositories/MemilihTanpaBebanUAT/
+            ls -la
             rm -rf .next
 
       - name: Upload .next folder to cPanel server
