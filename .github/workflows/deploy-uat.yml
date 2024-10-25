@@ -35,8 +35,6 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd /home/pilihan2/repositories/MemilihTanpaBebanUAT/
-            ls -la
-            git pull origin uat
             rm -rf .next
 
       - name: Upload .next folder to cPanel server
@@ -47,6 +45,10 @@ jobs:
         run: |
           lftp -u "$FTP_USERNAME","$FTP_PASSWORD" "$FTP_HOST" <<-EOF
             set ssl:verify-certificate no
-            mirror -R --delete --verbose /home/runner/work/MemilihTanpaBeban/MemilihTanpaBeban/.next /repositories/MemilihTanpaBebanUAT/.next
+            mirror -R --delete --verbose \
+              --exclude-glob node_modules/ \
+              --exclude-glob assets/ \
+              /home/runner/work/MemilihTanpaBeban/MemilihTanpaBeban/ \
+              /home/pilihan2/repositories/MemilihTanpaBebanUAT/
             bye
           EOF
