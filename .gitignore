@@ -130,3 +130,6 @@ dist
 .next.zip
 package-lock.json
 yarn.lock
+
+# Quiz
+Quiz.jsx
