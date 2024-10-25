@@ -47,7 +47,8 @@ jobs:
             set ssl:verify-certificate no
             mirror -R --delete --verbose \
               --exclude-glob node_modules/ \
-              --exclude-glob assets/ \
+              --exclude-glob public/ \
+              --exclude-glob .git/ \
               /home/runner/work/MemilihTanpaBeban/MemilihTanpaBeban/ \
               /home/pilihan2/repositories/MemilihTanpaBebanUAT/
             bye
