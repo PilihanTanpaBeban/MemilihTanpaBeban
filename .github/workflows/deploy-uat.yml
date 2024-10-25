@@ -56,6 +56,6 @@ jobs:
               --exclude-glob public/ \
               --exclude-glob .git/ \
               /home/runner/work/MemilihTanpaBeban/MemilihTanpaBeban/ \
-              /home/pilihan2/repositories/MemilihTanpaBebanUAT/
+              /repositories/MemilihTanpaBebanUAT/
             bye
           EOF
