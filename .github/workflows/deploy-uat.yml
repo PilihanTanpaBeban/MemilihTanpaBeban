@@ -25,7 +25,20 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y lftp
-  
+
+      - name: Deploy to server via SSH
+        uses: appleboy/ssh-action@v0.1.6
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          port: 64000
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /home/pilihan2/repositories/MemilihTanpaBebanUAT/
+            ls -la
+            git pull origin uat
+            rm -rf .next
+
       - name: Upload .next folder to cPanel server
         env:
           FTP_HOST: ${{ secrets.SERVER_HOST }}
