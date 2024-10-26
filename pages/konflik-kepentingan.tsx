@@ -30,8 +30,8 @@ function KonflikKepentinganPage() {
         pb={rem(0)}
         subtitle="Situs ini bertujuan untuk mengedukasi dan membuka wawasan para pengunjung mengenai konflik kepentingan yang mungkin terjadi pada calon anggota legislatif, calon eksekutif, para incumbent baik di tingkat legislatif maupun eksekutif, dengan industri rokok. Agar, para pengunjung dapat lebih mengenal para calon yang benar-benar memihak kepentingan masyarakat, dan menggunakan hak pilih dengan lebih bijak."
         imgFileName={"konflik_kepentingan.webp"}
-      ><Title fw={"800"} lts={rem(-1)} ta={mobile ? 'center' : 'left'} lh={'1.1'} style={{ fontSize: mobile ? rem(28) : rem(64) }}>Potensi<br />Konflik Kepentingan</Title>
-        <Text fw={'600'} mt={mobile ? rem(10) : rem(0)} style={{ fontSize: mobile ? rem(16) : rem(24) }}>DPR-RI Periode 2019-2024</Text>
+      ><Title c={primaryColor} fw={"800"} lts={rem(-1)} ta={mobile ? 'center' : 'left'} lh={'1.1'} style={{ fontSize: mobile ? rem(28) : rem(64) }}>Potensi<br />Konflik Kepentingan</Title>
+        <Text c={primaryColor} fw={'600'} mt={mobile ? rem(10) : rem(0)} style={{ fontSize: mobile ? rem(16) : rem(24) }}>DPR-RI Periode 2019-2024</Text>
       </HeroVector>
       <div style={{ marginInline: "5%", marginTop: 50 }}>
         <MindMap />
