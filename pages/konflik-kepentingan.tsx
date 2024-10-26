@@ -28,10 +28,11 @@ function KonflikKepentinganPage() {
       <HeroVector
         pt={rem(50)}
         pb={rem(0)}
-        text={"Potensi\nKonflik Kepentingan"}
         subtitle="Situs ini bertujuan untuk mengedukasi dan membuka wawasan para pengunjung mengenai konflik kepentingan yang mungkin terjadi pada calon anggota legislatif, calon eksekutif, para incumbent baik di tingkat legislatif maupun eksekutif, dengan industri rokok. Agar, para pengunjung dapat lebih mengenal para calon yang benar-benar memihak kepentingan masyarakat, dan menggunakan hak pilih dengan lebih bijak."
         imgFileName={"konflik_kepentingan.webp"}
-      ></HeroVector>
+      ><Title fw={"800"} lts={rem(-1)} ta={mobile ? 'center' : 'left'} lh={'1.1'} style={{ fontSize: mobile ? rem(28) : rem(64) }}>Potensi<br />Konflik Kepentingan</Title>
+        <Text fw={'600'} mt={mobile ? rem(10) : rem(0)} style={{ fontSize: mobile ? rem(16) : rem(24) }}>DPR-RI Periode 2019-2024</Text>
+      </HeroVector>
       <div style={{ marginInline: "5%", marginTop: 50 }}>
         <MindMap />
       </div>
@@ -108,31 +109,31 @@ function KonflikKepentinganPage() {
               </Title>
               <Grid px={60}>
                 <Grid.Col span={{ base: 12, sm: 6, md: 4 }}>
-                  <Flex align={"center"} justify={mobile?"center":"flex-start"} style={{textDecoration:"none"}}>
+                  <Flex align={"center"} justify={mobile ? "center" : "flex-start"} style={{ textDecoration: "none" }}>
                     <Image w={rem(112)} mah={rem(110)} mr="sm" src={`../../assets/images/Partai/pkb.png`} />
                     <Text mx={rem(10)}>
-                      <a style={{ color: primaryColor, fontWeight:"bold",textDecoration:"none"}} 
+                      <a style={{ color: primaryColor, fontWeight: "bold", textDecoration: "none" }}
                         href="https://drive.google.com/file/d/1dJGXMl06DT3YqN0qbPQbCtn-VjmBgMgY/view?usp=drive_link"
                         target="_blank"
                       >
                         Mendukung
                       </a>
                       <br />
-                      <a style={{ color: primaryColor, fontWeight:"bold",textDecoration:"none"}} 
+                      <a style={{ color: primaryColor, fontWeight: "bold", textDecoration: "none" }}
                         href="https://drive.google.com/file/d/11Md2CQAAtlHQV5nPcxVS4MW95agZg3JW/view?usp=drive_link"
                         target="_blank"
                       >
-                      (sumber lain)
+                        (sumber lain)
                       </a>
                     </Text>
                   </Flex>
                 </Grid.Col>
 
                 <Grid.Col span={{ base: 12, sm: 6, md: 4 }}>
-                  <Flex align={"center"} justify={mobile?"center":"flex-start"}>
+                  <Flex align={"center"} justify={mobile ? "center" : "flex-start"}>
                     <Image w={rem(112)} mah={rem(110)} mr="sm" src={`../../assets/images/Partai/golkar.png`} />
                     <Text mx={rem(10)}>
-                      <a style={{ color: primaryColor, fontWeight:"bold",textDecoration:"none"}} 
+                      <a style={{ color: primaryColor, fontWeight: "bold", textDecoration: "none" }}
                         href="https://drive.google.com/file/d/16yA6j87zN7nm5Wkin_5FBVN16ytQsEoX/view?usp=drive_link"
                         target="_blank"
                       >
@@ -140,14 +141,14 @@ function KonflikKepentinganPage() {
                       </a>{" "}
                       &
                       <br />
-                      <a style={{ color: primaryColor, fontWeight:"bold",textDecoration:"none"}} 
+                      <a style={{ color: primaryColor, fontWeight: "bold", textDecoration: "none" }}
                         href="https://drive.google.com/file/d/12561rDxmMsQYDhTXABrMmrLMzCBH6a0C/view?usp=drive_link"
                         target="_blank"
                       >
                         Pengusul
                       </a>
                       <br />
-                      <a style={{ color: primaryColor, fontWeight:"bold",textDecoration:"none"}} 
+                      <a style={{ color: primaryColor, fontWeight: "bold", textDecoration: "none" }}
                         href="https://drive.google.com/file/d/17269PvTgaNE8C8Eg67d2m_vcjXUNQGH7/view?usp=drive_link"
                         target="_blank"
                       >
@@ -158,10 +159,10 @@ function KonflikKepentinganPage() {
                 </Grid.Col>
 
                 <Grid.Col span={{ base: 12, sm: 6, md: 4 }}>
-                  <Flex align={"center"} justify={mobile?"center":"flex-start"}>
+                  <Flex align={"center"} justify={mobile ? "center" : "flex-start"}>
                     <Image w={rem(112)} mah={rem(110)} mr="sm" src={`../../assets/images/Partai/hanura.png`} />
                     <Text mx={rem(10)}>
-                      <a style={{ color: primaryColor, fontWeight:"bold",textDecoration:"none"}} 
+                      <a style={{ color: primaryColor, fontWeight: "bold", textDecoration: "none" }}
                         href="https://drive.google.com/file/d/1tKRalJ0S82gpLlqRT0gJncr2IVg84aKS/view?usp=drive_link"
                         target="_blank"
                       >
@@ -173,17 +174,17 @@ function KonflikKepentinganPage() {
                 </Grid.Col>
 
                 <Grid.Col span={{ base: 12, sm: 6, md: 4 }}>
-                  <Flex align={"center"} justify={mobile?"center":"flex-start"}>
+                  <Flex align={"center"} justify={mobile ? "center" : "flex-start"}>
                     <Image w={rem(112)} mah={rem(110)} mr="sm" src={`../../assets/images/Partai/nasdem.png`} />
                     <Text mx={rem(10)}>
-                      <a style={{ color: primaryColor, fontWeight:"bold",textDecoration:"none"}} 
+                      <a style={{ color: primaryColor, fontWeight: "bold", textDecoration: "none" }}
                         href="https://drive.google.com/file/d/1TH3BJTHO3TMjWu1gxngaceHb-yOorOck/view?usp=drive_link"
                         target="_blank"
                       >
                         Mendukung & <br /> Pengusul
                       </a>
                       <br />
-                      <a style={{ color: primaryColor, fontWeight:"bold",textDecoration:"none"}} 
+                      <a style={{ color: primaryColor, fontWeight: "bold", textDecoration: "none" }}
                         href="https://drive.google.com/file/d/16dwFZcXQ2X0vxeDaZ1tzrBR_4m-8HQIO/view?usp=drive_link"
                         target="_blank"
                       >
@@ -194,17 +195,17 @@ function KonflikKepentinganPage() {
                 </Grid.Col>
 
                 <Grid.Col span={{ base: 12, sm: 6, md: 4 }}>
-                  <Flex align={"center"} justify={mobile?"center":"flex-start"}>
+                  <Flex align={"center"} justify={mobile ? "center" : "flex-start"}>
                     <Image w={rem(112)} mah={rem(110)} mr="sm" src={`../../assets/images/Partai/gerindra.png`} />
                     <Text mx={rem(10)}>
-                      <a style={{ color: primaryColor, fontWeight:"bold",textDecoration:"none"}} 
+                      <a style={{ color: primaryColor, fontWeight: "bold", textDecoration: "none" }}
                         href="https://drive.google.com/file/d/1QPiymJLlkfSMi6noeXPWLVBoCfPFEl6k/view?usp=drive_link"
                         target="_blank"
                       >
                         Menolak
                       </a>
                       <br />
-                      <a style={{ color: primaryColor, fontWeight:"bold",textDecoration:"none"}} 
+                      <a style={{ color: primaryColor, fontWeight: "bold", textDecoration: "none" }}
                         href="https://drive.google.com/file/d/1-aok66P-c3sQXHWA6WmNJlzRgohdOFDM/view?usp=drive_link"
                         target="_blank"
                       >
@@ -215,17 +216,17 @@ function KonflikKepentinganPage() {
                 </Grid.Col>
 
                 <Grid.Col span={{ base: 12, sm: 6, md: 4 }}>
-                  <Flex align={"center"} justify={mobile?"center":"flex-start"}>
+                  <Flex align={"center"} justify={mobile ? "center" : "flex-start"}>
                     <Image w={rem(112)} mah={rem(110)} mr="sm" src={`../../assets/images/Partai/pdi.png`} />
                     <Text mx={rem(10)}>
-                      <a style={{ color: primaryColor, fontWeight:"bold",textDecoration:"none"}} 
+                      <a style={{ color: primaryColor, fontWeight: "bold", textDecoration: "none" }}
                         href="https://drive.google.com/file/d/1LmKQL6kNkILaypU6YEviYe03BX1pQvv3/view?usp=drive_link"
                         target="_blank"
                       >
                         Mendukung & <br /> Pengusul
                       </a>
                       <br />
-                      <a style={{ color: primaryColor, fontWeight:"bold",textDecoration:"none"}} 
+                      <a style={{ color: primaryColor, fontWeight: "bold", textDecoration: "none" }}
                         href="https://drive.google.com/file/d/1AuWSOHkc-iGnbIRwZk7XJaDHSJP-JcS4/view?usp=drive_link"
                         target="_blank"
                       >
@@ -239,14 +240,14 @@ function KonflikKepentinganPage() {
                   <Flex align="center" justify={"center"}>
                     <Image w={rem(112)} mah={rem(110)} mr="sm" src={`../../assets/images/Partai/pks.png`} />
                     <Text mx={rem(10)}>
-                      <a style={{ color: primaryColor, fontWeight:"bold",textDecoration:"none"}} 
+                      <a style={{ color: primaryColor, fontWeight: "bold", textDecoration: "none" }}
                         href="https://drive.google.com/file/d/1MKM5jWHL2WEGuel5JNbaPU_MyGAS30Vv/view?usp=drive_link"
                         target="_blank"
                       >
                         Masih Meninjau
                       </a>
                       <br />
-                      <a style={{ color: primaryColor, fontWeight:"bold",textDecoration:"none"}} 
+                      <a style={{ color: primaryColor, fontWeight: "bold", textDecoration: "none" }}
                         href="https://drive.google.com/file/d/1BFmdISLLAQbX0T9BmS0Ms7HmSytnkU3p/view?usp=drive_link"
                         target="_blank"
                       >
@@ -256,18 +257,18 @@ function KonflikKepentinganPage() {
                   </Flex>
                 </Grid.Col>
 
-                <Grid.Col span={{ base: 12, sm: 6, md: 6}}>
+                <Grid.Col span={{ base: 12, sm: 6, md: 6 }}>
                   <Flex align={"center"} justify={"center"}>
                     <Image w={rem(112)} mah={rem(110)} mr="sm" src={`../../assets/images/Partai/ppp.png`} />
                     <Text mx={rem(10)}>
-                      <a style={{ color: primaryColor, fontWeight:"bold",textDecoration:"none"}} 
+                      <a style={{ color: primaryColor, fontWeight: "bold", textDecoration: "none" }}
                         href="https://drive.google.com/file/d/1kN3N6v8Fm2eS5QfVKs7ef5iHCNPqahKv/view?usp=drive_link"
                         target="_blank"
                       >
                         Memberi Catatan
                       </a>
                       <br />
-                      <a style={{ color: primaryColor, fontWeight:"bold",textDecoration:"none"}} 
+                      <a style={{ color: primaryColor, fontWeight: "bold", textDecoration: "none" }}
                         href="https://drive.google.com/file/d/1ZNnwmxcm_DceYbNQDI9ETRYguh_KuWyg/view?usp=drive_link"
                         target="_blank"
                       >
