@@ -12,7 +12,6 @@ export const getAllData = async (params: AllRequestBody) => {
         });
         return response.data;
     } catch (error) {
-        console.error('Error fetching local data:', error);
         throw error;
     }
 };
@@ -30,7 +29,6 @@ export const getSearchResult = async (page: number, searchRequestBody: SearchReq
         });
         return response.data;
     } catch (error) {
-        console.error('Error fetching local data:', error);
         throw error;
     }
 }

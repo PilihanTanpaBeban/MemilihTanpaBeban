@@ -18,6 +18,7 @@ const Calon: React.FC = () => {
     const [searchProvince, setSearchProvince] = useState<string | null>(null);
     const [province, setProvince] = useState<string | null>(null);
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+    const [searchCategory, setSearchCategory] = useState<string | null>(null);
 
     const [modalVisible, { open, close }] = useDisclosure(false);
     const [selectedPejabat, setSelectedPejabat] = useState<number>()
@@ -55,7 +56,6 @@ const Calon: React.FC = () => {
                 province_id: searchProvince ? searchProvince : selectedProvince ? selectedProvince : null
             };
             if (!searchRequestBody.pejabat_type_id && !searchRequestBody.province_id) {
-                console.log('if');
                 setData([]);
                 fetchData(1);
                 setIsSearch(false);
@@ -101,18 +101,19 @@ const Calon: React.FC = () => {
         // handleSearch(1);
     };
 
-    const handleSelectProvince = (province: string | null) => {
+    const handleButtonSearch = (province: string | null, category: string | null) => {
         setSearchProvince(null);
         setProvince(province);
-        console.log(province);
+        setSearchCategory(category);
+        console.log(province, category);
     }
 
     useEffect(() => {
-        if (searchProvince !== null || province !== null) {
-            console.log(searchProvince, province);
+        if (searchProvince !== null || province !== null || selectedCategory !== null) {
+            console.log(searchProvince, province, selectedCategory);
             handleSearch(1);
         }
-    }, [searchProvince, province]);
+    }, [searchProvince, province, searchCategory]);
 
     const calonPejabatBox = data.map((data: any, index: number) => {
         const url = `/assets/images/IndonesiaMap/${data.Province_Name}/${data.Pejabat_Name}.jpeg`;
@@ -139,7 +140,7 @@ const Calon: React.FC = () => {
                         <Title mb={rem(40)} c={primaryColor} fw={"800"} style={{ fontSize: rem(36) }}>
                             Pilih Berdasarkan Daerah Pemilihan
                         </Title>
-                        <Map mapWidth={mobile ? 400 : tablet ? 800 : 1150} onProvinceClick={handleProvinceClick} province={selectedProvince}/>
+                        <Map mapWidth={mobile ? 400 : tablet ? 800 : 1150} onProvinceClick={handleProvinceClick} province={selectedProvince} />
                     </Flex>
                 </Container>
             </Box>
@@ -147,12 +148,10 @@ const Calon: React.FC = () => {
                 <Flex h={!mobile ? rem(44) : '100%'} mt={rem(56)} mb={!mobile ? rem(100) : rem(50)} gap={"xl"} direction={mobile ? "column" : "row"} align="center" justify={mobile || tablet ? 'center' : "start"}>
                     <Select
                         classNames={{ input: classes.input }}
-                        placeholder="Categori"
+                        placeholder="Kategori"
                         data={categories.map(category => ({ value: category.id, label: category.position }))}
                         nothingFoundMessage="Jabatan tidak ditemukan..."
-                        value={'1'}
-                        disabled
-                    // onChange={(value) => setSelectedCategory(value)}
+                        onChange={(value) => setSelectedCategory(value)}
                     />
 
                     <Select
@@ -166,7 +165,7 @@ const Calon: React.FC = () => {
                         nothingFoundMessage="Provinsi tidak ditemukan..."
                         onChange={setSelectedProvince}
                     />
-                    <Button onClick={() => handleSelectProvince(selectedProvince)} h={'100%'} px={rem(40)} py={rem(11)} style={{ fontSize: rem(16), backgroundColor: primaryColor, color: 'white', border: 'none', borderRadius: rem(8) }}>
+                    <Button onClick={() => handleButtonSearch(selectedProvince, selectedCategory)} h={'100%'} px={rem(40)} py={rem(11)} style={{ fontSize: rem(16), backgroundColor: primaryColor, color: 'white', border: 'none', borderRadius: rem(8) }}>
                         <Text fw={'600'}>Search</Text>
                     </Button>
                 </Flex>

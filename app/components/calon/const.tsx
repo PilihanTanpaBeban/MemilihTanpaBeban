@@ -1,9 +1,11 @@
 export const categories: { id: string, position: string }[] = [
+    { id: '0', position: 'Semua' },
     { id: '1', position: 'DPR RI' },
-    // { id: '2', position: 'Calon Gubernur' }
+    { id: '2', position: 'Calon Gubernur' }
 ];
 
 export const indonesiaProvinces: { id: string, title: string }[] = [
+    { id: "ID", title: "Semua" },
     { id: "ID-AC", title: "Aceh" },
     { id: "ID-BA", title: "Bali" },
     { id: "ID-BB", title: "Bangka Belitung" },

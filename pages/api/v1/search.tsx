@@ -57,12 +57,12 @@ export default async function handler(
         if (req.body.pejabat_type_id || req.body.province_id) {
             whereSql.append(' where');
 
-            if (req.body.pejabat_type_id) {
+            if (req.body.pejabat_type_id || req.body.pejabat_id != '0') {
                 whereSql.append(' tp.Pejabat_type_id = ? ');
                 paramWhereSql.push(req.body.pejabat_type_id);
             }
 
-            if (req.body.province_id) {
+            if (req.body.province_id || req.body.province_id != 'ID') {
                 if (req.body.pejabat_type_id) {
                     whereSql.append(' AND');
                 }
