@@ -22,7 +22,6 @@ export const getSearchResult = async (page: number, searchRequestBody: SearchReq
         const request = {
             ...Object.fromEntries(Object.entries(searchRequestBody).filter(([_, value]) => value !== null && value !== undefined))
         }
-        console.log(request.toString())
         const response = await axios.post(`${API_SEARCH}?page=${page}`, request, {
             headers: {
                 'x-api-key': process.env.X_API_KEY
@@ -37,7 +36,6 @@ export const getSearchResult = async (page: number, searchRequestBody: SearchReq
 
 export const getDetailPejabat = async (detailRequestBody: DetailRequestBody) => {
     try {
-        console.log('detailRequestBody:', detailRequestBody);
         const response = await axios.post(API_DETAIL_PEJABAT, detailRequestBody, {
             headers: {
                 'x-api-key': process.env.X_API_KEY
