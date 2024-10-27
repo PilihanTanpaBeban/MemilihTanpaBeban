@@ -55,7 +55,8 @@ const Calon: React.FC = () => {
                 pejabat_type_id: selectedCategory === '1' ? 1 : selectedCategory === '2' ? 2 : null,
                 province_id: searchProvince ? searchProvince : selectedProvince ? selectedProvince : null
             };
-            if (!searchRequestBody.pejabat_type_id && !searchRequestBody.province_id) {
+            console.log('Search Request Body:', searchRequestBody.pejabat_type_id, searchRequestBody.province_id);
+            if (!searchRequestBody.pejabat_type_id && (!searchRequestBody.province_id)) {
                 setData([]);
                 fetchData(1);
                 setIsSearch(false);
@@ -98,19 +99,16 @@ const Calon: React.FC = () => {
     const handleProvinceClick = (Province_id: string) => {
         setSelectedProvince(null);
         setSearchProvince(Province_id);
-        // handleSearch(1);
     };
 
-    const handleButtonSearch = (province: string | null, category: string | null) => {
+    const handleRequestSearch = (province: string | null, category: string | null) => {
         setSearchProvince(null);
         setProvince(province);
         setSearchCategory(category);
-        console.log(province, category);
     }
 
     useEffect(() => {
-        if (searchProvince !== null || province !== null || selectedCategory !== null) {
-            console.log(searchProvince, province, selectedCategory);
+        if (searchProvince !== null || province !== null || searchCategory !== null) {
             handleSearch(1);
         }
     }, [searchProvince, province, searchCategory]);
@@ -148,9 +146,10 @@ const Calon: React.FC = () => {
                 <Flex h={!mobile ? rem(44) : '100%'} mt={rem(56)} mb={!mobile ? rem(100) : rem(50)} gap={"xl"} direction={mobile ? "column" : "row"} align="center" justify={mobile || tablet ? 'center' : "start"}>
                     <Select
                         classNames={{ input: classes.input }}
-                        placeholder="Kategori"
+                        placeholder="Categori"
                         data={categories.map(category => ({ value: category.id, label: category.position }))}
                         nothingFoundMessage="Jabatan tidak ditemukan..."
+                        value={selectedCategory}
                         onChange={(value) => setSelectedCategory(value)}
                     />
 
@@ -165,12 +164,12 @@ const Calon: React.FC = () => {
                         nothingFoundMessage="Provinsi tidak ditemukan..."
                         onChange={setSelectedProvince}
                     />
-                    <Button onClick={() => handleButtonSearch(selectedProvince, selectedCategory)} h={'100%'} px={rem(40)} py={rem(11)} style={{ fontSize: rem(16), backgroundColor: primaryColor, color: 'white', border: 'none', borderRadius: rem(8) }}>
+                    <Button onClick={() => handleRequestSearch(selectedProvince, selectedCategory)} h={'100%'} px={rem(40)} py={rem(11)} style={{ fontSize: rem(16), backgroundColor: primaryColor, color: 'white', border: 'none', borderRadius: rem(8) }}>
                         <Text fw={'600'}>Search</Text>
                     </Button>
                 </Flex>
 
-                <Title ta={"center"} mb={rem(50)} c={primaryColor}>Klik Untuk Deskripsi Lebih Detail</Title>
+                {data.length > 0 && <Title ta={"center"} mb={rem(50)} c={primaryColor}>Klik Untuk Deskripsi Lebih Detail</Title>}
 
                 <Box pos="relative" style={{ padding: mobile || tablet ? "0 12px" : "0" }}>
                     <LoadingOverlay
@@ -185,8 +184,9 @@ const Calon: React.FC = () => {
                         gap: '20px',
                         rowGap: '20px',
                     }}>
-                        {calonPejabatBox}
+                        {data.length > 0 && calonPejabatBox}
                     </div>
+                    {data.length === 0 && <Text fw={'bold'} ta={"center"}>Data tidak ditemukan</Text>}
                 </Box>
             </Container>
 
