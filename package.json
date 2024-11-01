@@ -23,7 +23,7 @@
     "embla-carousel-autoplay": "^7.1.0",
     "embla-carousel-react": "^7.1.0",
     "express-rate-limit": "^7.4.0",
-    "firebase": "^10.5.0",
+    "firebase": "^10.14.1",
     "helmet": "^7.1.0",
     "jsmind": "^0.7.5",
     "mysql2": "^3.11.0",
