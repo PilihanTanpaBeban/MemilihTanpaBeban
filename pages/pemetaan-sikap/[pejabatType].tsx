@@ -255,7 +255,7 @@ const Calon: React.FC = () => {
             </Modal>
 
             <Modal centered
-                size={mobile || tablet ? "100%" : "70%"} opened={modalVisibleGubernur} onClose={closeGubernur} withCloseButton={false}>
+                size={'auto'} opened={modalVisibleGubernur} onClose={closeGubernur} withCloseButton={false}>
                 {selectedGubernur !== undefined && <ModalDetailGubernur data={selectedGubernur} />}
             </Modal>
         </Box>

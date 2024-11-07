@@ -18,6 +18,7 @@ const ModalDetailGubernur: React.FC<ModalDetailGubernurProps> = ({ data }) => {
 
     const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.sm})`);
     const tablet = useMediaQuery(`(max-width: ${theme.breakpoints?.md})`);
+
     const fetchDetailPejabat = async () => {
         setLoading(true);
         const request: DetailRequestBodyV2 = {
@@ -52,9 +53,9 @@ const ModalDetailGubernur: React.FC<ModalDetailGubernurProps> = ({ data }) => {
                 !loading && detailPejabat &&
                 <Box p={mobile || tablet ? rem(20) : rem(40)} pos={'relative'}>
                     {detailPejabat.map((pejabat, index) => (
-                        <><Flex gap={'md'} direction={!mobile ? 'row' : 'column'} key={pejabat.Pejabat_id}>
+                        <><Flex gap={'md'} direction={mobile || tablet? 'column' : 'row'} key={pejabat.Pejabat_id}>
                             <Flex gap={"33px"} direction={mobile ? 'column' : "row"}>
-                                <Image mah={rem(300)} w={mobile ? '100%' : tablet ? rem(170) : rem(220)} fit='cover' alt='Calon Gubernur' src={`/assets/images/FotoCagub/${pejabat.Province_Name}/${pejabat.Dapil_id}/${pejabat.Pejabat_Name}.jpeg`} />
+                                <Image mah={mobile ? '100%' : tablet ? rem(250) : rem(300)} w={mobile ? '100%' : tablet ? rem(170) : rem(220)} fit='cover' alt='Calon Gubernur' src={`/assets/images/FotoCagub/${pejabat.Province_Name}/${pejabat.Dapil_id}/${pejabat.Pejabat_Name}.jpeg`} />
                                 <Flex direction={"column"} gap={rem(10)}>
                                     <Flex
                                         bg="white"
@@ -92,7 +93,7 @@ const ModalDetailGubernur: React.FC<ModalDetailGubernurProps> = ({ data }) => {
                                     </Flex>
                                 </Flex>
                             </Flex>
-                            <Flex className={classes.textQuote} gap={'md'} mt={rem(60)} direction={'column'}>
+                            <Flex className={classes.textQuote} gap={'md'} mt={mobile||tablet? rem(25):rem(60)} direction={'column'}>
                                 <Title style={{ fontSize: rem(24) }} c={primaryColor}>Quote:</Title>
                                 {pejabat.Quote_Desc == null && <Text style={{ fontSize: rem(16) }}>Belum ada statement di media massa terkait isu pengendalian tembakau</Text>}
                                 <Text ta={'justify'}>
