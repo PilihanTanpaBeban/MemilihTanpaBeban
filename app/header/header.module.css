@@ -57,3 +57,22 @@
     color: var(--mantine-color-white);
   }
 }
+
+.burgerLinkSublink {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  width: 100%;
+
+  &:hover {
+    color: #4f3b78;
+  }
+}
+
+.headlinkControl {
+  background-color: #4f3b78;
+
+  &:hover {
+    background-color: 'white';
+  }
+}

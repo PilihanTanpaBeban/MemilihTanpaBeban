@@ -11,6 +11,7 @@ import {
   Stack,
   Divider,
   Menu,
+  Accordion,
 } from "@mantine/core";
 import { useDisclosure, useMediaQuery } from "@mantine/hooks";
 import classes from "./header.module.css";
@@ -125,15 +126,42 @@ export function Header() {
   ));
 
   const burgerItems = links.map((link) => (
-    <a key={link.label} href={link.link} className={classes.burgerLink}>
-      <strong>{link.label}</strong>
-    </a>
+    link.label != 'Pemetaan Sikap' ? (
+      <a key={link.label} href={link.link} className={classes.burgerLink}>
+        <strong>{link.label}</strong>
+      </a>
+    ) : (
+      <Accordion mb={rem(16)} className={classes.burgerLinkSublink} key={link.label} chevronPosition="right" variant="filled">
+        <Accordion.Item p={0} value="pemetaan-sikap">
+          <Accordion.Control className={classes.headlinkControl}>
+            <Text ta={'center'} fw={'bold'} c={'white'} style={{ fontSize: rem(16) }}>Pemetaan Sikap</Text>
+          </Accordion.Control>
+          <Accordion.Panel mt={'sm'}>
+            {link.sublink &&
+              link.sublink.map((sublink, index) => (
+                <a
+                  href={`/pemetaan-sikap/${encodeURIComponent(sublink.slug)}`}
+                  style={{ cursor: 'pointer', textDecoration: 'none', color: 'black' }}
+                  key={sublink.label}>
+                  <div>
+                    <span>
+                      {sublink.label}
+                    </span>
+                  </div>
+                  {index < link.sublink.length - 1 &&
+                    <Divider my={rem(10)} />}
+                </a>
+              ))
+            }
+          </Accordion.Panel>
+        </Accordion.Item>
+      </Accordion>
+    )
   ));
 
   const rightPosition = opened ? 0 : -700;
 
-  const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.lg})`);
-
+  const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.md})`);
   return (
     <header className={classes.header}>
       <Container size="xl" className={classes.inner}>
@@ -157,6 +185,7 @@ export function Header() {
             zIndex: 100,
             position: "fixed",
             width: "50vw",
+            maxWidth: "300px",
             height: "100vh",
             top: 0,
             right: rightPosition,
@@ -213,6 +242,6 @@ export function Header() {
           )} */}
         </Modal>
       </Container>
-    </header>
+    </header >
   );
 }
