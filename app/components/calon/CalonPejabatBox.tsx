@@ -58,7 +58,7 @@ const CalonPejabatBox: React.FC<CalonPejabatBoxProps> = ({ pejabat_id, opini, na
             </Stack>
 
             <Flex bg="white" align="center" justify="center" px={rem(15)} py={rem(10)} direction="column">
-                <Flex h={mobile?rem(90):rem(65)} mb={rem(13)} align={'center'}>
+                <Flex h={mobile ? rem(90) : rem(65)} mb={rem(13)} align={'center'}>
                     <Text style={{ fontSize: rem(16) }} fw="600" ta={'center'}>
                         {name} ({partai})
                     </Text></Flex>

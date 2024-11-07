@@ -1,26 +1,12 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { connectToDatabase } from "../../../app/config/db";
-import rateLimit from "express-rate-limit";
-import helmet from "helmet";
-import { constants } from "buffer";
 const StringBuilder = require("string-builder");
 
-// Rate limiter middleware
-const limiter = rateLimit({
-    windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 50, // limit each IP to 50 requests per windowMs
-    message: "Too many requests, please try again later.",
-});
 
 export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse
 ): Promise<void> {
-    // Apply rate limiting
-    // await limiter(req, res, () => {});
-
-    // Apply security headers
-    // helmet()(req, res, () => {});
 
     const apiKey = req.headers['x-api-key'];
 
@@ -48,6 +34,10 @@ export default async function handler(
         joinSql.append(' left join Tbl_PejabatAlignment t on tp.Alignment_id = t.Alignment_id');
         joinSql.append(' left join Tbl_Province tpv on tp.Province_id = tpv.Province_id');
         joinSql.append(' left join Tbl_Partai tpp on tp.Partai_id = tpp.Partai_id');
+
+        const whereSql = new StringBuilder();
+        if (req.query.pejabat_type_id == '1')
+            whereSql.append(` where tp.Pejabat_type_id = ${req.query.pejabat_type_id}`);
 
         const orderOffsetSql = new StringBuilder();
         orderOffsetSql.append(' ORDER BY tp.Pejabat_id ASC');

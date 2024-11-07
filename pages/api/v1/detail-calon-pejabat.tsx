@@ -16,11 +16,6 @@ export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse
 ): Promise<void> {
-    // Apply rate limiting
-    // await limiter(req, res, () => {});
-
-    // Apply security headers
-    // helmet()(req, res, () => {});
 
     const apiKey = req.headers['x-api-key'];
 

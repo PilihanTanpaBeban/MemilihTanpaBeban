@@ -7,7 +7,10 @@ import {
   Flex,
   rem,
   Button,
-  Center,
+  Text,
+  Stack,
+  Divider,
+  Menu,
 } from "@mantine/core";
 import { useDisclosure, useMediaQuery } from "@mantine/hooks";
 import classes from "./header.module.css";
@@ -19,6 +22,7 @@ import { IconX } from "@tabler/icons-react";
 import { theme } from "../../theme";
 import { RefObject, useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
+import Link from "next/link";
 
 const links = [
   { link: "/", label: "Home" },
@@ -26,7 +30,13 @@ const links = [
   { link: "/cek-fakta", label: "Cek Fakta" },
   { link: "/konflik-kepentingan", label: "Potensi Konflik Kepentingan" },
   // { link: "/20-24", label: "20.24" },
-  { link: "/pemetaan-sikap", label: "Pemetaan Sikap" },
+  {
+    label: "Pemetaan Sikap",
+    sublink: [
+      { slug: "calon-gubernur", label: "Calon Gubernur" },
+      { slug: "dpr-ri", label: "DPR-RI" }
+    ]
+  },
   { link: "https://www.instagram.com/iyctc.id/", label: "Tentang IYCTC" },
 ];
 
@@ -80,11 +90,38 @@ export function Header() {
   };
 
   const router = useRouter();
+  const handleNavigation = (url: string) => {
+    router.push(url);
+  };
 
   const items = links.map((link) => (
-    <a key={link.label} href={link.link} target={link.label=="Tentang IYCTC"?"_blank":""} className={classes.link}>
-      <strong>{link.label}</strong>
-    </a>
+    link.label != 'Pemetaan Sikap' ? (
+      <a key={link.label} href={link.link} target={link.label == "Tentang IYCTC" ? "_blank" : ""} className={classes.link}>
+        <strong>{link.label}</strong>
+      </a>
+    ) : (
+      <Menu key={link.label} position="bottom-start" trigger="hover" openDelay={100} closeDelay={400}>
+        <Menu.Target>
+          <Text className={classes.link} style={{ cursor: 'pointer' }}><strong>{link.label}</strong></Text>
+        </Menu.Target>
+        <Menu.Dropdown w={rem(200)}>
+          {link.sublink &&
+            link.sublink.map((sublink, index) => (
+              <div
+                key={sublink.label}>
+                <Menu.Item p={rem(10)} onClick={() => handleNavigation(`/pemetaan-sikap/${encodeURIComponent(sublink.slug)}`)}>
+                  <span style={{ textDecoration: 'none', fontSize: rem(14), color: 'black', fontWeight: '500' }}>
+                    {sublink.label}
+                  </span>
+                </Menu.Item>
+                {index < link.sublink.length - 1 &&
+                  <Divider />}
+              </div>
+            ))
+          }
+        </Menu.Dropdown>
+      </Menu>
+    )
   ));
 
   const burgerItems = links.map((link) => (
@@ -159,7 +196,7 @@ export function Header() {
           onClose={handleModalClose}
           centered
         >
-        <Quiz />
+          <Quiz />
           {/* {isVerified ? (
             // Display the content after captcha is verified
             <Quiz />

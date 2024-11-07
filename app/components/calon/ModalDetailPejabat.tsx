@@ -4,7 +4,7 @@ import { checkColor } from './calonService';
 import { primaryColor } from '../../../public/colors';
 import { theme } from '../../../theme';
 import { getDetailPejabat } from './model/APIService';
-import { DetailRequestBody } from './model/Requests';
+import { DetailRequestBody, DetailRequestBodyV2 } from './model/Requests';
 import { useMediaQuery } from '@mantine/hooks';
 import { renderTextWithHtml } from '../LineBreakRender';
 import classes from './ModalDetailPejabat.module.css';
@@ -12,7 +12,6 @@ import classes from './ModalDetailPejabat.module.css';
 interface ModalDetailPejabatProps {
     data: number;
 }
-const insights: string[] = new Array(2).fill('');
 const ModalDetailPejabat: React.FC<ModalDetailPejabatProps> = ({ data }) => {
     const [detailPejabat, setDetailPejabat] = useState<any>(null);
     const [loading, setLoading] = useState(false);
@@ -22,11 +21,11 @@ const ModalDetailPejabat: React.FC<ModalDetailPejabatProps> = ({ data }) => {
     const fetchDetailPejabat = async () => {
         setLoading(true);
         const request: DetailRequestBody = {
-            pejabat_id: data
+            pejabat_id: data,
         }
         try {
             const response = await getDetailPejabat(request);
-            console.log('response', response.data[0]);
+            console.log('response', response.data);
             setDetailPejabat(response.data[0]);
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -47,11 +46,12 @@ const ModalDetailPejabat: React.FC<ModalDetailPejabatProps> = ({ data }) => {
                 overlayProps={{ radius: 'sm', blur: 2 }}
                 loaderProps={{ color: primaryColor, type: 'bars' }}
             />
+            {!loading && !detailPejabat && <Text ta={'center'} style={{ fontSize: rem(16) }}>Silahkan coba kembali</Text>}
             {
                 !loading && detailPejabat &&
                 <Box p={mobile || tablet ? rem(20) : rem(57)} pos={'relative'}>
                     <Flex gap={"33px"} direction={mobile ? 'column' : "row"}>
-                        <Image w={mobile ? '100%' : tablet ? rem(170) : rem(260)} h={"auto"} src={`/assets/images/IndonesiaMap/${detailPejabat.Province_Name}/${detailPejabat.Pejabat_Name}.jpeg`} />
+                        <Image w={mobile ? '100%' : tablet ? rem(170) : rem(260)} h={"auto"} alt='Pejabat' src={`/assets/images/IndonesiaMap/${detailPejabat.Province_Name}/${detailPejabat.Pejabat_Name}.jpeg`} />
                         <Flex direction={"column"}>
                             <Flex
                                 bg="white"
@@ -72,7 +72,7 @@ const ModalDetailPejabat: React.FC<ModalDetailPejabatProps> = ({ data }) => {
                                     <Text style={{ fontSize: rem(14) }} ta={'center'}>
                                         Partai
                                     </Text>
-                                    <Image maw={rem(75)} src={`/assets/images/Partai/${detailPejabat.Partai_Name?.toLowerCase()}.png`} />
+                                    <Image alt='Partai' maw={rem(75)} src={`/assets/images/Partai/${detailPejabat.Partai_Name?.toLowerCase()}.png`} />
                                 </Flex>
                                 <Flex miw={rem(135)} gap={'sm'} direction={"column"} >
                                     <Text style={{ fontSize: rem(14) }}>

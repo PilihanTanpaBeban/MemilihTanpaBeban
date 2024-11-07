@@ -38,8 +38,6 @@ export default async function handler(
         connection = await connectToDatabase();
         const queryParams: any[] = [];
 
-        console.log('Request body: ' + req.body);
-
         const sql = new StringBuilder();
         sql.append('select tp.Pejabat_id, tp.Pejabat_Name, t.Alignment_Name, tpp.Partai_Name, tpv.Province_Name from Tbl_Pejabat tp');
 
