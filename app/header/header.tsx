@@ -131,7 +131,12 @@ export function Header() {
         <strong>{link.label}</strong>
       </a>
     ) : (
-      <Accordion mb={rem(16)} className={classes.burgerLinkSublink} key={link.label} chevronPosition="right" variant="filled">
+      <Accordion mb={rem(16)} className={classes.burgerLinkSublink} key={link.label} chevronPosition="right"
+        styles={{
+          chevron: {
+            color: 'white',
+          },
+        }} variant="filled">
         <Accordion.Item p={0} value="pemetaan-sikap">
           <Accordion.Control className={classes.headlinkControl}>
             <Text ta={'center'} fw={'bold'} c={'white'} style={{ fontSize: rem(16) }}>Pemetaan Sikap</Text>
