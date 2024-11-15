@@ -1,17 +1,17 @@
 import { Box, Button, Container, Flex, rem, Select, Title, Text, Modal, LoadingOverlay } from '@mantine/core';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { theme } from '../../theme';
 import { lightPurple, primaryColor } from '../../public/colors';
 import Map from '../../app/components/Map/Map';
-import { categories, indonesiaProvinces } from '../../app/components/calon/const';
+import { indonesiaProvinces } from '../../app/components/calon/const';
 import CalonPejabatBox from '../../app/components/calon/CalonPejabatBox';
 import CalonGubernurBox from '../../app/components/calon/CalonGubernurBox'; // Ensure this is a valid React component
 import { useDisclosure, useMediaQuery } from '@mantine/hooks';
 import ModalDetailPejabat from '../../app/components/calon/ModalDetailPejabat';
 import classes from '../../app/components/calon/calon.module.css';
 import { useEffect } from 'react';
-import { getAllData, getAllDataV2, getSearchResult, getSearchResultV2 } from '../../app/components/calon/model/APIService';
-import { SearchRequestBody, SearchRequestBodyV2 } from '../../app/components/calon/model/Requests';
+import { getAllDataV2, getSearchResultV2 } from '../../app/components/calon/model/APIService';
+import { SearchRequestBodyV2 } from '../../app/components/calon/model/Requests';
 import { useRouter } from 'next/router';
 import ModalDetailGubernur from '../../app/components/calon/ModalDetailGubernur';
 
@@ -20,6 +20,7 @@ const Calon: React.FC = () => {
     const [selectedProvince, setSelectedProvince] = useState<string | null>(null);
     const [searchProvince, setSearchProvince] = useState<string | null>(null);
     const [province, setProvince] = useState<string | null>(null);
+    const searchTarget = useRef<HTMLDivElement>(null);
 
     const [modalVisibleDPR, { open: openDPR, close: closeDPR }] = useDisclosure(false);
     const [modalVisibleGubernur, { open: openGubernur, close: closeGubernur }] = useDisclosure(false);
@@ -138,7 +139,12 @@ const Calon: React.FC = () => {
     const handleProvinceClick = (Province_id: string) => {
         setSelectedProvince(null);
         setSearchProvince(Province_id);
+        scrollAfterProvClick();
     };
+
+    const scrollAfterProvClick = ()=>{
+        if (searchTarget.current)
+            searchTarget.current.scrollIntoView({ behavior: 'smooth' })};
 
     const handleRequestSearch = (province: string | null) => {
         setSearchProvince(null);
@@ -192,7 +198,7 @@ const Calon: React.FC = () => {
                     </Flex>
                 </Container>
             </Box>
-            <Container size={"xl"}>
+            <Container size={"xl"} ref={searchTarget}>
                 <Flex h={!mobile ? rem(44) : '100%'} mt={rem(56)} mb={!mobile ? rem(100) : rem(50)} gap={"xl"} direction={mobile ? "column" : "row"} align="center" justify={mobile || tablet ? 'center' : "start"}>
                     <Select
                         classNames={{ input: classes.input }}
