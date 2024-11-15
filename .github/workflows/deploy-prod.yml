@@ -1,8 +1,8 @@
-name: Deploy to UAT
+name: Deploy to Prod
 on:
   push:
     branches:
-      - uat
+      - master
 
 jobs:
   build-and-deploy:
@@ -39,7 +39,7 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /home/pilihan2/repositories/MemilihTanpaBebanUAT/
+            cd /home/pilihan2/repositories/MemilihTanpaBeban/
             ls -la
             rm -rf .next
 
@@ -56,6 +56,6 @@ jobs:
               --exclude-glob public/ \
               --exclude-glob .git/ \
               /home/runner/work/MemilihTanpaBeban/MemilihTanpaBeban/ \
-              /repositories/MemilihTanpaBebanUAT/
+              /repositories/MemilihTanpaBebanProd/
             bye
           EOF
