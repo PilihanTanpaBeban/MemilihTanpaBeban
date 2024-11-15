@@ -150,6 +150,7 @@ const BoxPejabat: React.FC<boxPejabatProps> = ({ data }) => {
                 w="225px"
                 m="auto"
                 src={`../../assets/images/20_24/${data.image}`}
+                alt="Pejabat"
               />
 
               <Title ta={"center"} w={"100%"} tt="capitalize" c={primaryColor}>
