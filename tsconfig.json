@@ -28,8 +28,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
-, "app/components/Quiz.jsx"  ],
+    ".next/types/**/*.ts", "app/components/Quiz.jsx"  ],
   "exclude": [
     "node_modules"
   ]

@@ -38,8 +38,6 @@ export default async function handler(
         connection = await connectToDatabase();
         const queryParams: any[] = [];
 
-        console.log('Request body: ' + req.body);
-
         const sql = new StringBuilder();
         sql.append('select tp.Pejabat_id, tp.Pejabat_Name, t.Alignment_Name, tpp.Partai_Name, tpv.Province_Name from Tbl_Pejabat tp');
 
@@ -54,15 +52,15 @@ export default async function handler(
 
         const whereSql = new StringBuilder();
         const paramWhereSql: any[] = [];
-        if (req.body.pejabat_type_id || req.body.province_id) {
+        if ((req.body.pejabat_type_id && req.body.pejabat_id != '0') || (req.body.province_id && req.body.province_id != 'ID')) {
             whereSql.append(' where');
 
-            if (req.body.pejabat_type_id) {
+            if (req.body.pejabat_type_id && req.body.pejabat_id != '0') {
                 whereSql.append(' tp.Pejabat_type_id = ? ');
                 paramWhereSql.push(req.body.pejabat_type_id);
             }
 
-            if (req.body.province_id) {
+            if (req.body.province_id && req.body.province_id != 'ID') {
                 if (req.body.pejabat_type_id) {
                     whereSql.append(' AND');
                 }
@@ -83,6 +81,7 @@ export default async function handler(
         console.log('Query Parameters:', queryParams);
 
         const formattedQuery = sql + joinSql + whereSql + orderOffsetSql;
+        console.log('Formatted Query:', formattedQuery);
         const [rows] = await connection.query(sql + joinSql + whereSql + orderOffsetSql, queryParams);
 
         const [totalData] = await connection.query(countSql + joinSql + whereSql, paramWhereSql);
