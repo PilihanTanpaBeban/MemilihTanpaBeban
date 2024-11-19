@@ -25,7 +25,7 @@ export default async function handler(
     try {
         connection = await connectToDatabase();
         const sql = new StringBuilder();
-        sql.append('select tp.Pejabat_id, tp.Pejabat_Name, t.Alignment_Name, tpt.Pejabat_Type_Name as Pejabat_Type, tpv.Province_Name, tp.Dapil_id, tq.Quote_Desc from Tbl_Pejabat tp');
+        sql.append('select tp.Pejabat_id, tp.Pejabat_Name, t.Alignment_Name, tpt.Pejabat_Type_Name as Pejabat_Type, tpv.Province_Name, tp.Dapil_id, GROUP_CONCAT(tp2.Partai_Name) as Partai_Names, tq.Quote_Desc from Tbl_Pejabat tp');
 
         const queryParams: any[] = [];
 
@@ -35,19 +35,26 @@ export default async function handler(
         joinSql.append(' left join Tbl_PejabatQuote tq on tp.Pejabat_id = tq.Pejabat_id');
         joinSql.append(' left join Tbl_Province tpv on tp.Province_id = tpv.Province_id');
         joinSql.append(' left join Tbl_PejabatType tpt on tpt.Pejabat_Type_id = tp.Pejabat_Type_id');
+        joinSql.append(' left join Tbl_Partai tp2 on FIND_IN_SET(tp2.Partai_Id, tp.Supported_Partai_Id) > 0');
 
         const whereSql = new StringBuilder();
-
-        whereSql.append(' where tp.Pejabat_id in (?) ')
+        whereSql.append(' where tp.Pejabat_id in (?) ');
         queryParams.push(req.body.pejabat_id);
 
-        const [rows] = await connection.query(sql + joinSql + whereSql, queryParams);
+        const groupBySql = new StringBuilder();
+        groupBySql.append(' group by tp.Pejabat_id');
+
+        const [rows] = await connection.query(sql + joinSql + whereSql + groupBySql, queryParams);
+
+        // Split the Partai_Names string into an array
+        const result = rows.map((row: any) => ({
+            ...row,
+            Partai_Names: row.Partai_Names ? row.Partai_Names.split(',') : []
+        }));
 
         res.send({
             status: 200,
-            data:
-                rows
-
+            data: result
         });
 
     } catch (error: any) {

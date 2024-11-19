@@ -40,8 +40,10 @@ const Calon: React.FC = () => {
     const router = useRouter()
     const pejabatTypeParam = router.query.pejabatType as string;
 
+    const mini = useMediaQuery(`(max-width: ${theme.breakpoints?.xs})`);
     const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.sm})`);
     const tablet = useMediaQuery(`(max-width: ${theme.breakpoints?.md})`);
+    const laptop = useMediaQuery(`(max-width: ${theme.breakpoints?.lg})`);
 
     const fetchData = async (page: number) => {
         setLoading(true);
@@ -196,7 +198,7 @@ const Calon: React.FC = () => {
                         <Title mb={rem(40)} c={primaryColor} fw={"800"} style={{ fontSize: rem(36) }}>
                             Pilih {pejabatTypeParam == 'dpr-ri' ? 'DPR RI' : pejabatTypeParam == 'calon-gubernur' ? 'Calon Gubernur' : undefined} Berdasarkan Daerah Pemilihan
                         </Title>
-                        <Map mapWidth={mobile ? 400 : tablet ? 800 : 1150} onProvinceClick={handleProvinceClick} province={selectedProvince} />
+                        <Map mapWidth={mini ? 300 : mobile ? 700 : tablet ? 800 : laptop ? 1000 : 1200} onProvinceClick={handleProvinceClick} province={selectedProvince} />
                     </Flex>
                 </Container>
             </Box>
