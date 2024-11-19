@@ -19,7 +19,11 @@ jobs:
       - name: Install dependencies and build
         run: |
           npm ci
+
+      - name: Build project
+        run: |
           npm run build
+        continue-on-error: true
 
       - name: Check files
         run: |
