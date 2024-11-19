@@ -16,9 +16,9 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install dependencies and build
+      - name: Install dependencies
         run: |
-          npm install
+          npm ci
 
       - name: Build project
         run: |

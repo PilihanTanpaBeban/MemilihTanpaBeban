@@ -143,6 +143,7 @@ const ModalDetailGubernur: React.FC<ModalDetailGubernurProps> = ({ data }) => {
                       <Flex direction={"row"} gap={'sm'} wrap={'wrap'}>
                         {pejabat.Partai_Names?.map((partai: string) => (
                           <Image
+                            key={partai}
                             alt={`${partai}`}
                             mah={rem(50)}
                             src={`/assets/images/Partai/${partai.toLowerCase()}.png`}
