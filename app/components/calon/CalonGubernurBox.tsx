@@ -19,7 +19,6 @@ const CalonGubernurBox: React.FC<CalonGubernurBoxProps> = ({ Dapil_id, Province_
 
     const handleBoxClick = () => {
         if (onBoxClick) {
-            console.log(data[0].Pejabat_id, data[1].Pejabat_id);
             onBoxClick([data[0].Pejabat_id, data[1].Pejabat_id]);
         }
     }

@@ -35,8 +35,8 @@ const links = [
     label: "Pemetaan Sikap",
     sublink: [
       { slug: "calon-gubernur", label: "Calon Gubernur" },
-      { slug: "dpr-ri", label: "DPR-RI" }
-    ]
+      { slug: "dpr-ri", label: "DPR-RI" },
+    ],
   },
   { link: "https://www.instagram.com/iyctc.id/", label: "Tentang IYCTC" },
 ];
@@ -53,6 +53,12 @@ export function Header() {
   const [captcha, setCaptcha] = useState(CAPTCHA);
   const recaptcha: RefObject<ReCAPTCHA> = useRef(null);
   const [isVerified, setIsVerified] = useState(false);
+
+  const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.lg})`);
+  const laptop = useMediaQuery(
+    `(min-width: ${theme.breakpoints?.md})` &&
+      `(max-width: ${theme.breakpoints?.lg})`
+  );
 
   const openQuiz = async () => {
     fetch("/api/enquiry", {
@@ -95,87 +101,125 @@ export function Header() {
     router.push(url);
   };
 
-  const items = links.map((link) => (
-    link.label != 'Pemetaan Sikap' ? (
-      <a key={link.label} href={link.link} target={link.label == "Tentang IYCTC" ? "_blank" : ""} className={classes.link}>
+  const items = links.map((link) =>
+    link.label != "Pemetaan Sikap" ? (
+      <a
+        key={link.label}
+        href={link.link}
+        target={link.label == "Tentang IYCTC" ? "_blank" : ""}
+        className={classes.link}
+        style={{ fontSize: laptop ? rem(12) : rem(14), padding: laptop?rem(6):undefined }}
+      >
         <strong>{link.label}</strong>
       </a>
     ) : (
-      <Menu key={link.label} position="bottom-start" trigger="hover" openDelay={100} closeDelay={400}>
+      <Menu
+        key={link.label}
+        position="bottom-start"
+        trigger="hover"
+        openDelay={100}
+        closeDelay={400}
+      >
         <Menu.Target>
-          <Text className={classes.link} style={{ cursor: 'pointer' }}><strong>{link.label}</strong></Text>
+          <Text className={classes.link} style={{ cursor: "pointer",fontSize: laptop ? rem(12) : rem(14)  }}>
+            <strong>{link.label}</strong>
+          </Text>
         </Menu.Target>
         <Menu.Dropdown w={rem(200)}>
           {link.sublink &&
             link.sublink.map((sublink, index) => (
-              <div
-                key={sublink.label}>
-                <Menu.Item p={rem(10)} onClick={() => handleNavigation(`/pemetaan-sikap/${encodeURIComponent(sublink.slug)}`)}>
-                  <span style={{ textDecoration: 'none', fontSize: rem(14), color: 'black', fontWeight: '500' }}>
+              <div key={sublink.label}>
+                <Menu.Item
+                  p={rem(10)}
+                  onClick={() =>
+                    handleNavigation(
+                      `/pemetaan-sikap/${encodeURIComponent(sublink.slug)}`
+                    )
+                  }
+                >
+                  <span
+                    style={{
+                      textDecoration: "none",
+                      fontSize: laptop ? rem(12) : rem(14),
+                      color: "black",
+                      fontWeight: "500",
+                    }}
+                  >
                     {sublink.label}
                   </span>
                 </Menu.Item>
-                {index < link.sublink.length - 1 &&
-                  <Divider />}
+                {index < link.sublink.length - 1 && <Divider />}
               </div>
-            ))
-          }
+            ))}
         </Menu.Dropdown>
       </Menu>
     )
-  ));
+  );
 
-  const burgerItems = links.map((link) => (
-    link.label != 'Pemetaan Sikap' ? (
+  const burgerItems = links.map((link) =>
+    link.label != "Pemetaan Sikap" ? (
       <a key={link.label} href={link.link} className={classes.burgerLink}>
         <strong>{link.label}</strong>
       </a>
     ) : (
-      <Accordion mb={rem(16)} className={classes.burgerLinkSublink} key={link.label} chevronPosition="right"
+      <Accordion
+        mb={rem(16)}
+        className={classes.burgerLinkSublink}
+        key={link.label}
+        chevronPosition="right"
         styles={{
           chevron: {
-            color: 'white',
+            color: "white",
           },
-        }} variant="filled">
+        }}
+        variant="filled"
+      >
         <Accordion.Item p={0} value="pemetaan-sikap">
           <Accordion.Control className={classes.headlinkControl}>
-            <Text ta={'center'} fw={'bold'} c={'white'} style={{ fontSize: rem(16) }}>Pemetaan Sikap</Text>
+            <Text
+              ta={"center"}
+              fw={"bold"}
+              c={"white"}
+              style={{ fontSize: rem(16) }}
+            >
+              Pemetaan Sikap
+            </Text>
           </Accordion.Control>
-          <Accordion.Panel mt={'sm'}>
+          <Accordion.Panel mt={"sm"}>
             {link.sublink &&
               link.sublink.map((sublink, index) => (
                 <a
                   href={`/pemetaan-sikap/${encodeURIComponent(sublink.slug)}`}
-                  style={{ cursor: 'pointer', textDecoration: 'none', color: 'black' }}
-                  key={sublink.label}>
+                  style={{
+                    cursor: "pointer",
+                    textDecoration: "none",
+                    color: "black",
+                  }}
+                  key={sublink.label}
+                >
                   <div>
-                    <span>
-                      {sublink.label}
-                    </span>
+                    <span>{sublink.label}</span>
                   </div>
-                  {index < link.sublink.length - 1 &&
-                    <Divider my={rem(10)} />}
+                  {index < link.sublink.length - 1 && <Divider my={rem(10)} />}
                 </a>
-              ))
-            }
+              ))}
           </Accordion.Panel>
         </Accordion.Item>
       </Accordion>
     )
-  ));
+  );
 
   const rightPosition = opened ? 0 : -700;
 
-  const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.md})`);
   return (
     <header className={classes.header}>
       <Container size="xl" className={classes.inner}>
         <LogoPTB />
-        <Group gap={2} visibleFrom="md">
+        <Group gap={'xs'} visibleFrom="md" >
           {items}
           <Button
             radius="xl"
-            size="md"
+            size= {laptop ? "sm" :"md"}
             onClick={handleModalOpen}
             color={primaryColor}
           >
@@ -247,6 +291,6 @@ export function Header() {
           )} */}
         </Modal>
       </Container>
-    </header >
+    </header>
   );
 }
