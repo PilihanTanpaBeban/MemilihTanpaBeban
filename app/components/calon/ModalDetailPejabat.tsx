@@ -25,7 +25,6 @@ const ModalDetailPejabat: React.FC<ModalDetailPejabatProps> = ({ data }) => {
         }
         try {
             const response = await getDetailPejabat(request);
-            console.log('response', response.data);
             setDetailPejabat(response.data[0]);
         } catch (error) {
             console.error('Error fetching data:', error);
