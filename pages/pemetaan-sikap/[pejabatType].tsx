@@ -1,17 +1,17 @@
 import { Box, Button, Container, Flex, rem, Select, Title, Text, Modal, LoadingOverlay } from '@mantine/core';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { theme } from '../../theme';
 import { lightPurple, primaryColor } from '../../public/colors';
 import Map from '../../app/components/Map/Map';
-import { categories, indonesiaProvinces } from '../../app/components/calon/const';
+import { indonesiaProvinces } from '../../app/components/calon/const';
 import CalonPejabatBox from '../../app/components/calon/CalonPejabatBox';
 import CalonGubernurBox from '../../app/components/calon/CalonGubernurBox'; // Ensure this is a valid React component
 import { useDisclosure, useMediaQuery } from '@mantine/hooks';
 import ModalDetailPejabat from '../../app/components/calon/ModalDetailPejabat';
 import classes from '../../app/components/calon/calon.module.css';
 import { useEffect } from 'react';
-import { getAllData, getAllDataV2, getSearchResult, getSearchResultV2 } from '../../app/components/calon/model/APIService';
-import { SearchRequestBody, SearchRequestBodyV2 } from '../../app/components/calon/model/Requests';
+import { getAllDataV2, getSearchResultV2 } from '../../app/components/calon/model/APIService';
+import { SearchRequestBodyV2 } from '../../app/components/calon/model/Requests';
 import { useRouter } from 'next/router';
 import ModalDetailGubernur from '../../app/components/calon/ModalDetailGubernur';
 
@@ -20,6 +20,7 @@ const Calon: React.FC = () => {
     const [selectedProvince, setSelectedProvince] = useState<string | null>(null);
     const [searchProvince, setSearchProvince] = useState<string | null>(null);
     const [province, setProvince] = useState<string | null>(null);
+    const searchTarget = useRef<HTMLDivElement>(null);
 
     const [modalVisibleDPR, { open: openDPR, close: closeDPR }] = useDisclosure(false);
     const [modalVisibleGubernur, { open: openGubernur, close: closeGubernur }] = useDisclosure(false);
@@ -39,8 +40,10 @@ const Calon: React.FC = () => {
     const router = useRouter()
     const pejabatTypeParam = router.query.pejabatType as string;
 
+    const mini = useMediaQuery(`(max-width: ${theme.breakpoints?.xs})`);
     const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.sm})`);
     const tablet = useMediaQuery(`(max-width: ${theme.breakpoints?.md})`);
+    const laptop = useMediaQuery(`(max-width: ${theme.breakpoints?.lg})`);
 
     const fetchData = async (page: number) => {
         setLoading(true);
@@ -97,6 +100,8 @@ const Calon: React.FC = () => {
                     }
                 }
             }
+
+        scrollAfterProvClick();
         } catch (error) {
             console.error('Error searching data:', error);
         } finally {
@@ -138,7 +143,12 @@ const Calon: React.FC = () => {
     const handleProvinceClick = (Province_id: string) => {
         setSelectedProvince(null);
         setSearchProvince(Province_id);
+        scrollAfterProvClick();
     };
+
+    const scrollAfterProvClick = ()=>{
+        if (searchTarget.current)
+            searchTarget.current.scrollIntoView({ behavior: 'smooth' })};
 
     const handleRequestSearch = (province: string | null) => {
         setSearchProvince(null);
@@ -188,11 +198,11 @@ const Calon: React.FC = () => {
                         <Title mb={rem(40)} c={primaryColor} fw={"800"} style={{ fontSize: rem(36) }}>
                             Pilih {pejabatTypeParam == 'dpr-ri' ? 'DPR RI' : pejabatTypeParam == 'calon-gubernur' ? 'Calon Gubernur' : undefined} Berdasarkan Daerah Pemilihan
                         </Title>
-                        <Map mapWidth={mobile ? 400 : tablet ? 800 : 1150} onProvinceClick={handleProvinceClick} province={selectedProvince} />
+                        <Map mapWidth={mini ? 300 : mobile ? 700 : tablet ? 800 : laptop ? 1000 : 1200} onProvinceClick={handleProvinceClick} province={selectedProvince} />
                     </Flex>
                 </Container>
             </Box>
-            <Container size={"xl"}>
+            <Container size={"xl"} ref={searchTarget}>
                 <Flex h={!mobile ? rem(44) : '100%'} mt={rem(56)} mb={!mobile ? rem(100) : rem(50)} gap={"xl"} direction={mobile ? "column" : "row"} align="center" justify={mobile || tablet ? 'center' : "start"}>
                     <Select
                         classNames={{ input: classes.input }}

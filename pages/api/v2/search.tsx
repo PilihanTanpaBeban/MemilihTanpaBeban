@@ -84,7 +84,11 @@ export default async function handler(
     }
 
     const orderOffsetSql = new StringBuilder();
-    orderOffsetSql.append('ORDER BY tp.Pejabat_id ASC');
+    if(req.body.pejabat_type == 'DPR') 
+        orderOffsetSql.append('ORDER BY tp.Pejabat_id ASC');
+    else
+        orderOffsetSql.append('ORDER BY tp.Dapil_id ASC');
+
     const page = parseInt(req.body.page as string) || 1; // Default page to 1
     const offset = page > 0 ? (page - 1) * 16 : 0; // Default offset to 0
 

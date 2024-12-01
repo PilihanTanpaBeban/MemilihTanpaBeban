@@ -137,3 +137,5 @@ Quiz.jsx
 
 # Workflow
 .github/workflows
+
+.DS_Store
