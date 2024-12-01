@@ -33,7 +33,7 @@ export default async function handler(
     try {
          connection = await connectToDatabase();
         const sql = new StringBuilder();
-        sql.append('select tp.Pejabat_id, tp.Pejabat_Name, t.Alignment_Name, tpp.Partai_Name, tpv.Province_Name, tp.Dapil_id,tq.Quote_Desc from Tbl_Pejabat tp');
+        sql.append('select tp.Pejabat_id, tp.Pejabat_Name, t.Alignment_Name, tpp.Partai_Name, tpv.Province_Name, tp.Dapil_id,tq.Quote_Desc, tp.Komisi_Pejabat from Tbl_Pejabat tp');
 
         const queryParams: any[] = [];
 

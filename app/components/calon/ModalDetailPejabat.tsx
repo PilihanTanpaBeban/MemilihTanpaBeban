@@ -67,6 +67,7 @@ const ModalDetailPejabat: React.FC<ModalDetailPejabatProps> = ({ data }) => {
                                 </Text>
                             </Flex>
                             <Title mt={rem(10)}>{detailPejabat.Pejabat_Name}</Title>
+                            <Text>Komisi {detailPejabat.Komisi_Pejabat}</Text>
                             <Flex gap={"xl"} mt={rem(20)} direction={"row"}>
                                 <Flex gap={'sm'} direction={"column"} align={'center'}>
                                     <Text style={{ fontSize: rem(14) }} ta={'center'}>
