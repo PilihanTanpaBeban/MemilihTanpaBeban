@@ -66,6 +66,8 @@ const ModalDetailPejabat: React.FC<ModalDetailPejabatProps> = ({ data }) => {
                                 </Text>
                             </Flex>
                             <Title mt={rem(10)}>{detailPejabat.Pejabat_Name}</Title>
+                            {(detailPejabat.Komisi_Pejabat != null && detailPejabat.Komisi_Pejabat != '') &&
+                                <Text fw={'600'}>Komisi {detailPejabat.Komisi_Pejabat}</Text>}
                             <Flex gap={"xl"} mt={rem(20)} direction={"row"}>
                                 <Flex gap={'sm'} direction={"column"} align={'center'}>
                                     <Text style={{ fontSize: rem(14) }} ta={'center'}>
@@ -90,7 +92,7 @@ const ModalDetailPejabat: React.FC<ModalDetailPejabatProps> = ({ data }) => {
 
                         {detailPejabat.Quote_Desc == null && <Text style={{ fontSize: rem(16) }}>Belum ada statement di media massa terkait isu pengendalian tembakau</Text>}
                         <Text ta={'justify'}>
-                        {detailPejabat.Quote_Desc != null && renderTextWithHtml(detailPejabat.Quote_Desc)}
+                            {detailPejabat.Quote_Desc != null && renderTextWithHtml(detailPejabat.Quote_Desc)}
                         </Text>
 
                     </Flex>
