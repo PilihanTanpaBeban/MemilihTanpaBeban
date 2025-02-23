@@ -48,14 +48,14 @@ const Calon: React.FC = () => {
     const fetchData = async (page: number) => {
         setLoading(true);
         try {
-            const pejabat_type = pejabatTypeParam == 'calon-gubernur' ? 'Gubernur' : pejabatTypeParam == 'dpr-ri' ? 'DPR' : null;
+            const pejabat_type = pejabatTypeParam == 'gubernur' ? 'Gubernur' : pejabatTypeParam == 'dpr-ri' ? 'DPR' : null;
             const response = await getAllDataV2({ page, pejabat_type });
-            if (pejabatTypeParam == 'calon-gubernur') {
+            if (pejabatTypeParam == 'gubernur') {
                 setDataGubernur((prevData: any[]) => [...prevData, ...response.data]);
             } else if (pejabatTypeParam == 'dpr-ri') {
                 setDataDPR((prevData: any[]) => [...prevData, ...response.data]);
             }
-            pejabatTypeParam == 'calon-gubernur' ? setLimitGubernur(response.totalData) : setLimitDPR(response.totalData);
+            pejabatTypeParam == 'gubernur' ? setLimitGubernur(response.totalData) : setLimitDPR(response.totalData);
             // setLimit(response.totalData);
             setPage(page);
         } catch (error) {
@@ -71,7 +71,7 @@ const Calon: React.FC = () => {
         try {
             const searchRequestBody: SearchRequestBodyV2 = {
                 page: page,
-                pejabat_type: pejabatTypeParam == 'calon-gubernur' ? 'Gubernur' : pejabatTypeParam == 'dpr-ri' ? 'DPR' : null,
+                pejabat_type: pejabatTypeParam == 'gubernur' ? 'Gubernur' : pejabatTypeParam == 'dpr-ri' ? 'DPR' : null,
                 province_id: searchProvince ? searchProvince : selectedProvince ? selectedProvince : null
             };
             if (!searchRequestBody.province_id) {
@@ -82,18 +82,18 @@ const Calon: React.FC = () => {
             } else {
                 const response = await getSearchResultV2(page, searchRequestBody);
                 if (page == 1) {
-                    if (pejabatTypeParam == 'calon-gubernur') {
+                    if (pejabatTypeParam == 'gubernur') {
                         setDataGubernur(response.data);
                     } else if (pejabatTypeParam == 'dpr-ri') {
                         setDataDPR(response.data);
                     }
-                    pejabatTypeParam == 'calon-gubernur' ? setLimitGubernur(response.totalData) : setLimitDPR(response.totalData)
+                    pejabatTypeParam == 'gubernur' ? setLimitGubernur(response.totalData) : setLimitDPR(response.totalData)
                     // setLimit(response.totalData)
                     setPage(page);
                     setIsSearch(true);
                 } else {
                     setPage(page);
-                    if (pejabatTypeParam == 'calon-gubernur') {
+                    if (pejabatTypeParam == 'gubernur') {
                         setDataGubernur((prevData: any[]) => [...prevData, ...response.data]);
                     } else if (pejabatTypeParam == 'dpr-ri') {
                         setDataDPR((prevData: any[]) => [...prevData, ...response.data]);
@@ -196,7 +196,7 @@ const Calon: React.FC = () => {
                 <Container size="xl" py={rem(56)}>
                     <Flex direction={"column"} align={"center"} justify={"center"}>
                         <Title mb={rem(40)} c={primaryColor} fw={"800"} style={{ fontSize: rem(36) }}>
-                            Pilih {pejabatTypeParam == 'dpr-ri' ? 'DPR RI' : pejabatTypeParam == 'calon-gubernur' ? 'Calon Gubernur' : undefined} Berdasarkan Daerah Pemilihan
+                            Pilih {pejabatTypeParam == 'dpr-ri' ? 'DPR RI' : pejabatTypeParam == 'gubernur' ? 'Gubernur' : undefined} Berdasarkan Daerah Pemilihan
                         </Title>
                         <Map mapWidth={mini ? 300 : mobile ? 700 : tablet ? 800 : laptop ? 1000 : 1200} onProvinceClick={handleProvinceClick} province={selectedProvince} />
                     </Flex>
@@ -229,7 +229,7 @@ const Calon: React.FC = () => {
                         overlayProps={{ radius: 'sm', blur: 2 }}
                         loaderProps={{ color: primaryColor, type: 'bars' }}
                     />
-                    {pejabatTypeParam == 'calon-gubernur' && (
+                    {pejabatTypeParam == 'gubernur' && (
                         <>
                             <div style={{
                                 display: 'grid',

@@ -26,7 +26,9 @@ const CalonGubernurBox: React.FC<CalonGubernurBoxProps> = ({ Dapil_id, Province_
 
     return (
         <div onClick={handleBoxClick} style={{ padding: '0 20px 20px 20px', backgroundColor: white, borderRadius: rem(5), cursor: 'pointer', maxWidth: rem(584), height: 'auto', boxShadow: '0 4px 4px rgba(0, 0, 0, 0.25)', overflow: 'hidden' }}>
-            <Text my={rem(17)} ta={'center'} style={{ fontSize: rem(20) }} fw={'bold'}>Calon Gubernur {Province_Name}<br />Nomor Urut {Dapil_id} </Text>
+            <Text my={rem(17)} ta={'center'} style={{ fontSize: rem(20) }} fw={'bold'}>Gubernur {Province_Name}
+                {/* <br />Nomor Urut {Dapil_id}  */}
+                </Text>
             <Flex display={'row'} gap={'md'}>
                 {data.map((item, index) => (
                     <Stack key={index} w={'100%'}>

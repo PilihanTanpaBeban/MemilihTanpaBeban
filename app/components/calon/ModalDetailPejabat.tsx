@@ -25,7 +25,7 @@ const ModalDetailPejabat: React.FC<ModalDetailPejabatProps> = ({ data }) => {
         }
         try {
             const response = await getDetailPejabat(request);
-            console.log('response', response.data);
+            
             setDetailPejabat(response.data[0]);
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -77,9 +77,6 @@ const ModalDetailPejabat: React.FC<ModalDetailPejabatProps> = ({ data }) => {
                                     <Image alt='Partai' maw={rem(75)} src={`/assets/images/Partai/${detailPejabat.Partai_Name?.toLowerCase()}.png`} />
                                 </Flex>
                                 <Flex miw={rem(135)} gap={'sm'} direction={"column"} >
-                                    <Text style={{ fontSize: rem(14) }}>
-                                        Daerah Pemilihan
-                                    </Text>
                                     <Text style={{ fontSize: rem(20), fontWeight: '500' }}>
                                         {detailPejabat.Province_Name} {detailPejabat.Dapil_id}
                                     </Text>

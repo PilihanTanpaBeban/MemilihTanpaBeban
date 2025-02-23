@@ -28,8 +28,8 @@ export default async function handler(
     }
 
     if (!apiKey || apiKey !== process.env.X_API_KEY) {
-        console.log(apiKey);
-        console.log(process.env.X_API_KEY);
+        
+        
         return res.status(401).json({ error: "Unauthorized" });
     }
     let connection;
@@ -78,10 +78,10 @@ export default async function handler(
 
         orderOffsetSql.append(' LIMIT 16 OFFSET ?');
         queryParams.push(offset); // Add offset to queryParams as a string
-        console.log('Query Parameters:', queryParams);
+        
 
         const formattedQuery = sql + joinSql + whereSql + orderOffsetSql;
-        console.log('Formatted Query:', formattedQuery);
+        
         const [rows] = await connection.query(sql + joinSql + whereSql + orderOffsetSql, queryParams);
 
         const [totalData] = await connection.query(countSql + joinSql + whereSql, paramWhereSql);
