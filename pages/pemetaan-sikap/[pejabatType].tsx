@@ -236,6 +236,7 @@ const Calon: React.FC = () => {
                                 gridTemplateColumns: mobile ? 'repeat(1, 1fr)' : 'repeat(2, 1fr)',
                                 gap: '20px',
                                 rowGap: '20px',
+                                placeItems:mobile?'center':''
                             }}>
                                 {dataGubernur && dataGubernur.length > 0 && calonGubernurBox}
                             </div>
