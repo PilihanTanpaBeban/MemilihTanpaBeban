@@ -11,12 +11,13 @@ interface CalonGubernurBoxProps {
     Dapil_id: number;
     Province_Name: string;
     data: any[];
+    isSingle?: boolean;
     onBoxClick?: (pejabat_id: number[]) => void;
 }
 
-const CalonGubernurBox: React.FC<CalonGubernurBoxProps> = ({ Dapil_id, Province_Name, data, onBoxClick }) => {
+const CalonGubernurBox: React.FC<CalonGubernurBoxProps> = ({ Dapil_id, Province_Name, data, isSingle, onBoxClick }) => {
     const url = "/assets/images/20_24/placholder_user.jpeg";
-
+    console.log(isSingle)
     const handleBoxClick = () => {
         if (onBoxClick) {
             onBoxClick([data[0].Pejabat_id, data[1].Pejabat_id]);
@@ -24,11 +25,11 @@ const CalonGubernurBox: React.FC<CalonGubernurBoxProps> = ({ Dapil_id, Province_
     }
     const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.sm})`);
     const mini = useMediaQuery(`(max-width: ${theme.breakpoints?.xs})`);
+    const tablet = useMediaQuery(`(max-width: ${theme.breakpoints?.md})`);
 
     return (
-        <div onClick={handleBoxClick} style={{ padding: '0 20px 20px 20px', backgroundColor: white, borderRadius: rem(5), cursor: 'pointer', maxWidth: rem(584), height: 'auto', width: mini ? 'auto' : mobile ? rem(400) : 'auto', boxShadow: '0 4px 4px rgba(0, 0, 0, 0.25)', overflow: 'hidden' }}>
+        <div onClick={handleBoxClick} style={{ padding: '0 20px 20px 20px', backgroundColor: white, borderRadius: rem(5), cursor: 'pointer', maxWidth: rem(584), height: 'auto', width: mini ? '100%' : mobile ? rem(400) : isSingle ? rem(584) : 'auto', boxShadow: '0 4px 4px rgba(0, 0, 0, 0.25)', overflow: 'hidden' }}>
             <Text my={rem(17)} ta={'center'} style={{ fontSize: rem(20) }} fw={'bold'}>Gubernur {Province_Name}
-                {/* <br />Nomor Urut {Dapil_id}  */}
             </Text>
             <Flex display={'row'} gap={'md'}>
                 {data.map((item, index) => (

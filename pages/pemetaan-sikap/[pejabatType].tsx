@@ -101,7 +101,7 @@ const Calon: React.FC = () => {
                 }
             }
 
-        scrollAfterProvClick();
+            scrollAfterProvClick();
         } catch (error) {
             console.error('Error searching data:', error);
         } finally {
@@ -146,9 +146,10 @@ const Calon: React.FC = () => {
         scrollAfterProvClick();
     };
 
-    const scrollAfterProvClick = ()=>{
+    const scrollAfterProvClick = () => {
         if (searchTarget.current)
-            searchTarget.current.scrollIntoView({ behavior: 'smooth' })};
+            searchTarget.current.scrollIntoView({ behavior: 'smooth' })
+    };
 
     const handleRequestSearch = (province: string | null) => {
         setSearchProvince(null);
@@ -178,12 +179,15 @@ const Calon: React.FC = () => {
     });
 
     const calonGubernurBox = dataGubernur.map((data: any, index: number) => {
+        const isSingle = dataGubernur.length == 1
+        console.log(isSingle);
         return (
             <React.Fragment key={index}>
                 <CalonGubernurBox
                     Dapil_id={data.Dapil_id}
                     Province_Name={data.Province_Name}
                     data={data.data}
+                    isSingle={isSingle}
                     onBoxClick={handleModalGubernurOpen}
                 />
             </React.Fragment>
@@ -230,16 +234,22 @@ const Calon: React.FC = () => {
                         loaderProps={{ color: primaryColor, type: 'bars' }}
                     />
                     {pejabatTypeParam == 'gubernur' && (
-                        <>
-                            <div style={{
-                                display: 'grid',
-                                gridTemplateColumns: mobile ? 'repeat(1, 1fr)' : 'repeat(2, 1fr)',
-                                gap: '20px',
-                                rowGap: '20px',
-                                placeItems:mobile?'center':''
-                            }}>
-                                {dataGubernur && dataGubernur.length > 0 && calonGubernurBox}
-                            </div>
+                        <>  {dataGubernur.length == 1 &&
+                            <Flex w={'100%'} align={'center'} justify={'center'}>
+                                {calonGubernurBox}
+                            </Flex>
+                        }
+
+                            {dataGubernur.length > 1 &&
+                                <div style={{
+                                    display: 'grid',
+                                    gridTemplateColumns: mobile ? 'repeat(1, 1fr)' : 'repeat(2, 1fr)',
+                                    gap: '20px',
+                                    rowGap: '20px',
+                                    placeItems: mobile ? 'center' : ''
+                                }}>
+                                    {dataGubernur && dataGubernur.length > 0 && calonGubernurBox}
+                                </div>}
                             {dataGubernur.length === 0 && <Text fw={'bold'} ta={"center"}>Data tidak ditemukan</Text>}
                         </>
                     )}
