@@ -1,7 +1,7 @@
 export const categories: { id: string, position: string }[] = [
     { id: '0', position: 'Semua' },
     { id: '1', position: 'DPR RI' },
-    { id: '2', position: 'Calon Gubernur' }
+    { id: '2', position: 'Gubernur' }
 ];
 
 export const indonesiaProvinces: { id: string, title: string }[] = [

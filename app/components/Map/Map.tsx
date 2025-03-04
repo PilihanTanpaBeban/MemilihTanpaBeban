@@ -30,7 +30,6 @@ const Map: React.FC<MapProps> = ({ mapWidth, mapHeight, onProvinceClick, provinc
 
   useEffect(() => {
     if (svgContent && province) {
-      console.log('province', province);
       const svgContainer = document.getElementById('svg-map');
       if (svgContainer) {
         const svgElement = svgContainer.querySelector('svg');

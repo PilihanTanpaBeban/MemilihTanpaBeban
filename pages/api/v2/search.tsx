@@ -75,7 +75,7 @@ export default async function handler(
     // let whereSql = `
     // where ${pejabatTypeSql} `;
     const whereSql = new StringBuilder();
-    whereSql.append('WHERE ');
+    whereSql.append('WHERE deletedOn is null AND ');
     whereSql.append(pejabatTypeSql);
 
     if (req.body.province_id && req.body.province_id != 'ID') {

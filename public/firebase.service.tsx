@@ -8,13 +8,11 @@ const yesValue = ref(database, `${votingPath}/yes/`);
 const noValue = ref(database, `${votingPath}/no/`);
 
 export function updateYesVote() {
-  console.log(yesValue);
   updateVoteCount(yesValue);
 }
 
 export function updateNoVote() {
-    console.log(noValue);
-    updateVoteCount(noValue);
+  updateVoteCount(noValue);
 }
 
 function updateVoteCount(voteRef: any) {
