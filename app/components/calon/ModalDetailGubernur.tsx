@@ -76,7 +76,7 @@ const ModalDetailGubernur: React.FC<ModalDetailGubernurProps> = ({ data }) => {
                     mah={mobile ? "100%" : tablet ? rem(250) : rem(300)}
                     w={mobile ? "100%" : tablet ? rem(170) : rem(220)}
                     fit="cover"
-                    alt="Calon Gubernur"
+                    alt="Gubernur"
                     src={`/assets/images/FotoCagub/${pejabat.Province_Name}/${pejabat.Dapil_id}/${pejabat.Pejabat_Name}.jpeg`}
                   />
                   <Flex direction={"column"} gap={rem(10)}>
@@ -121,15 +121,11 @@ const ModalDetailGubernur: React.FC<ModalDetailGubernurProps> = ({ data }) => {
                     </Flex>
                     <Flex gap={"xl"} mt={rem(20)} direction={"row"}>
                       <Flex miw={rem(135)} gap={"sm"} direction={"column"}>
-                        <Text style={{ fontSize: rem(14) }}>
-                          Daerah Pemilihan
-                        </Text>
                         <Text style={{ fontSize: rem(18), fontWeight: "500" }}>
                           {pejabat.Province_Name}
                         </Text>
                       </Flex>
                       <Flex miw={rem(135)} gap={"sm"} direction={"column"}>
-                        <Text style={{ fontSize: rem(14) }}>Nomor Urut</Text>
                         <Text style={{ fontSize: rem(18), fontWeight: "500" }}>
                           {pejabat.Dapil_id}
                         </Text>

@@ -34,7 +34,7 @@ const links = [
   {
     label: "Pemetaan Sikap",
     sublink: [
-      { slug: "calon-gubernur", label: "Calon Gubernur" },
+      { slug: "gubernur", label: "Gubernur" },
       { slug: "dpr-ri", label: "DPR-RI" },
     ],
   },

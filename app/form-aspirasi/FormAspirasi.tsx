@@ -69,7 +69,6 @@ const FormAspirasi = () => {
         if (response.ok) {
           // Handle success
           setSubmitted(true);
-          console.log("Form data submitted successfully");
         } else {
           // Handle error
           console.error("Failed to submit form data");
