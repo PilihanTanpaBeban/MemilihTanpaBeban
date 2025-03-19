@@ -13,7 +13,8 @@ const playball = Playball({
   display: "swap",
 })
 */
-export default function Home() {
+
+function HeroImageBackground() {
   const isMobile = useMediaQuery("(max-width: 768px)")
   const primaryColor = "linear-gradient(45deg, #8c44d6 0%, #6a1fa9 100%)"
   const white = "#ffffff"
@@ -129,5 +130,7 @@ export default function Home() {
       </Container>
     </Box>
   )
-}
+};
+
+export default function HeroImageBackground;
 
