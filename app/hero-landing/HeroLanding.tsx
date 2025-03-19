@@ -4,7 +4,7 @@ import { Box, Container, Title, Text, Button, Group, Stack, Flex, Image, Highlig
 import Link from "next/link"
 import { useMediaQuery } from "@mantine/hooks"
 import { rem } from "@mantine/core"
-import { Playball } from "next/font/google"
+import  {Playball}  from "next/font/google"
 
 // Load Playball font
 const playball = Playball({
@@ -47,9 +47,7 @@ export default function Home() {
           borderColor: "transparent transparent transparent #e9dffc",
         }}
       />
-
-      {/* Content */}
-      <Container
+      <Container 
         pos="relative"
         size="lg"
         py="xl"
@@ -57,9 +55,8 @@ export default function Home() {
           zIndex: 10,
           height: "100vh",
           display: "flex",
-          alignItems: "center",
-        }}
-      >
+          alignItems: "center">
+      
         <Flex direction={{ base: "column", md: "row" }} align="center" gap={{ base: "xl", md: 50 }} w="100%">
           {/* Image Section */}
           <Box style={{ flex: "1", maxWidth: isMobile ? "100%" : "50%" }}>
@@ -76,14 +73,7 @@ export default function Home() {
           {/* Text Content Section */}
           <Box style={{ flex: "1", maxWidth: isMobile ? "100%" : "50%" }}>
             <Stack gap="xl" ta={{ base: "center", md: "left" }}>
-              <Title
-                order={1}
-                fw={800}
-                className={playball.className}
-                style={{
-                  fontSize: "clamp(2.5rem, 5vw, 4rem)",
-                }}
-              >
+                          <Title fw={800} className={playball.className} style={{fontSize: "clamp(2.5rem, 5vw, 4rem)"}}>
                 Selamat & Sukses
               </Title>
 
@@ -132,15 +122,6 @@ export default function Home() {
                 Semoga dapat mengemban tugas dan amanah dengan baik, mengedepankan kepentingan kesehatan masyarakat, dan
                 meniadakan interaksi dengan industri rokok serta kepentingannya.
               </Text>
-
-              <Group justify={{ base: "center", md: "flex-start" }} gap="md" mt="md">
-                <Button component={Link} href="/get-started" size="lg" radius="md" variant="filled" color="violet">
-                  Get Started
-                </Button>
-                <Button component={Link} href="/learn-more" size="lg" radius="md" variant="outline" color="violet">
-                  Learn More
-                </Button>
-              </Group>
             </Stack>
           </Box>
         </Flex>
