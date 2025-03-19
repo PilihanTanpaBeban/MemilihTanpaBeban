@@ -75,7 +75,7 @@ export default function Home() {
 
           {/* Text Content Section */}
           <Box style={{ flex: "1", maxWidth: isMobile ? "100%" : "50%" }}>
-            <Stack spacing="xl" ta={{ base: "center", md: "left" }}>
+            <Stack gap="xl" ta={{ base: "center", md: "left" }}>
               <Title
                 order={1}
                 fw={800}
