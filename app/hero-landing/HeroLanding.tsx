@@ -4,17 +4,8 @@ import { Box, Container, Title, Text, Button, Group, Stack, Flex, Image, Highlig
 import Link from "next/link"
 import { useMediaQuery } from "@mantine/hooks"
 import { rem } from "@mantine/core"
-/*import  {Playball}  from "next/font/google"
 
-// Load Playball font
-const playball = Playball({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
-})
-*/
-
-const HeroImageBackground =()=> {
+const HeroImageBackground = () => {
   const isMobile = useMediaQuery("(max-width: 768px)")
   const primaryColor = "linear-gradient(45deg, #8c44d6 0%, #6a1fa9 100%)"
   const white = "#ffffff"
@@ -120,7 +111,7 @@ const HeroImageBackground =()=> {
                 </Box>
               </Box>
 
-              <Text c={white} bg="violet.7" p="sm" style={{ borderRadius: "5px" }}>
+              <Text c={white} bg={primaryColor} p="sm" style={{ borderRadius: "5px" }}>
                 Semoga dapat mengemban tugas dan amanah dengan baik, mengedepankan kepentingan kesehatan masyarakat, dan
                 meniadakan interaksi dengan industri rokok serta kepentingannya.
               </Text>
