@@ -5,7 +5,7 @@ import Link from "next/link"
 import { useMediaQuery } from "@mantine/hooks"
 import { rem } from "@mantine/core"
 
-const HeroImageBackground = () => {
+export const HeroImageBackground = () => {
   const isMobile = useMediaQuery("(max-width: 768px)")
   const primaryColor = "linear-gradient(45deg, #8c44d6 0%, #6a1fa9 100%)"
   const white = "#ffffff"
@@ -122,6 +122,4 @@ const HeroImageBackground = () => {
     </Box>
   )
 };
-
-export default HeroImageBackground;
 
