@@ -17,7 +17,6 @@ interface CalonGubernurBoxProps {
 
 const CalonGubernurBox: React.FC<CalonGubernurBoxProps> = ({ Dapil_id, Province_Name, data, isSingle, onBoxClick }) => {
     const url = "/assets/images/20_24/placholder_user.jpeg";
-    console.log(isSingle)
     const handleBoxClick = () => {
         if (onBoxClick) {
             onBoxClick([data[0].Pejabat_id, data[1].Pejabat_id]);

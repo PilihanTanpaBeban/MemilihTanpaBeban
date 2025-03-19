@@ -126,7 +126,6 @@ const ModalDetailGubernur: React.FC<ModalDetailGubernurProps> = ({ data }) => {
                         </Text>
                       </Flex>
                       <Flex miw={rem(135)} gap={"sm"} direction={"column"}>
-                        {/* <Text style={{ fontSize: rem(14) }}>Nomor Urut</Text> */}
                         <Text style={{ fontSize: rem(18), fontWeight: "500" }}>
                           {pejabat.Dapil_id}
                         </Text>
