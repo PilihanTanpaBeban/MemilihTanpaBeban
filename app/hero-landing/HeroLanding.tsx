@@ -123,5 +123,5 @@ const HeroImageBackground = () => {
   )
 };
 
-export default function HeroImageBackground;
+export default HeroImageBackground;
 
