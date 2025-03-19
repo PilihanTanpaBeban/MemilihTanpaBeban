@@ -4,7 +4,7 @@ import { Box, Container, Title, Text, Button, Group, Stack, Flex, Image, Highlig
 import Link from "next/link"
 import { useMediaQuery } from "@mantine/hooks"
 import { rem } from "@mantine/core"
-import  {Playball}  from "next/font/google"
+/*import  {Playball}  from "next/font/google"
 
 // Load Playball font
 const playball = Playball({
@@ -12,15 +12,15 @@ const playball = Playball({
   subsets: ["latin"],
   display: "swap",
 })
-
+*/
 export default function Home() {
   const isMobile = useMediaQuery("(max-width: 768px)")
   const primaryColor = "linear-gradient(45deg, #8c44d6 0%, #6a1fa9 100%)"
   const white = "#ffffff"
 
   return (
-    <Box pos="relative" mih="100vh" style={{ overflow: "hidden", backgroundColor: "#f5f0ff" }}>
-      {/* Top right triangle */}
+    <Box pos="relative" style={{overflow: "hidden", backgroundColor: white}}>
+
       <Box
         pos="absolute"
         style={{
@@ -34,7 +34,6 @@ export default function Home() {
         }}
       />
 
-      {/* Bottom left triangle */}
       <Box
         pos="absolute"
         style={{
@@ -47,6 +46,7 @@ export default function Home() {
           borderColor: "transparent transparent transparent #e9dffc",
         }}
       />
+
       <Container 
         pos="relative"
         size="lg"
@@ -55,7 +55,8 @@ export default function Home() {
           zIndex: 10,
           height: "100vh",
           display: "flex",
-          alignItems: "center">
+          alignItems: "center"}}
+          >
       
         <Flex direction={{ base: "column", md: "row" }} align="center" gap={{ base: "xl", md: 50 }} w="100%">
           {/* Image Section */}
