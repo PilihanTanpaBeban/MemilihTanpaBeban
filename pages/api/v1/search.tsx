@@ -28,8 +28,6 @@ export default async function handler(
     }
 
     if (!apiKey || apiKey !== process.env.X_API_KEY) {
-        
-        
         return res.status(401).json({ error: "Unauthorized" });
     }
     let connection;

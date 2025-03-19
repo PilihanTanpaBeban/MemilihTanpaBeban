@@ -14,37 +14,30 @@ import { getAllDataV2, getSearchResultV2 } from '../../app/components/calon/mode
 import { SearchRequestBodyV2 } from '../../app/components/calon/model/Requests';
 import { useRouter } from 'next/router';
 import ModalDetailGubernur from '../../app/components/calon/ModalDetailGubernur';
-
 const Calon: React.FC = () => {
     // select search
     const [selectedProvince, setSelectedProvince] = useState<string | null>(null);
     const [searchProvince, setSearchProvince] = useState<string | null>(null);
     const [province, setProvince] = useState<string | null>(null);
     const searchTarget = useRef<HTMLDivElement>(null);
-
     const [modalVisibleDPR, { open: openDPR, close: closeDPR }] = useDisclosure(false);
     const [modalVisibleGubernur, { open: openGubernur, close: closeGubernur }] = useDisclosure(false);
     const [selectedDPR, setSelectedDPR] = useState<number>()
     const [selectedGubernur, setSelectedGubernur] = useState<number[]>()
-
     // data
     const [dataDPR, setDataDPR] = useState<any[]>([]);
     const [dataGubernur, setDataGubernur] = useState<any[]>([]);
     const [page, setPage] = useState(1);
     const [limitDPR, setLimitDPR] = useState(0);
     const [limitGubernur, setLimitGubernur] = useState(0);
-
     const [loading, setLoading] = useState(false);
     const [isSearch, setIsSearch] = useState(false);
-
     const router = useRouter()
     const pejabatTypeParam = router.query.pejabatType as string;
-
     const mini = useMediaQuery(`(max-width: ${theme.breakpoints?.xs})`);
     const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.sm})`);
     const tablet = useMediaQuery(`(max-width: ${theme.breakpoints?.md})`);
     const laptop = useMediaQuery(`(max-width: ${theme.breakpoints?.lg})`);
-
     const fetchData = async (page: number) => {
         setLoading(true);
         try {
@@ -65,7 +58,6 @@ const Calon: React.FC = () => {
             setLoading(false);
         }
     };
-
     const handleSearch = async (page: number) => {
         setLoading(true);
         try {
@@ -108,7 +100,6 @@ const Calon: React.FC = () => {
             setLoading(false);
         }
     };
-
     useEffect(() => {
         if (pejabatTypeParam) {
             setPage(1); // Reset page to 1 when pejabatType changes
@@ -117,29 +108,24 @@ const Calon: React.FC = () => {
             fetchData(page)
         };
     }, [router.query.pejabatType]);
-
     const handleScroll = () => {
         if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2 && !loading) {
             if ((dataDPR.length > 1 && dataDPR.length < limitDPR) || (dataGubernur.length > 1 && dataGubernur.length < limitGubernur))
                 isSearch ? handleSearch(page + 1) : fetchData(page + 1);
         }
     };
-
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, [page, loading]);
-
     const handleModalDPROpen = (pejabatId: number) => {
         setSelectedDPR(pejabatId);
         openDPR();
     };
-
     const handleModalGubernurOpen = (pejabatId: number[]) => {
         setSelectedGubernur([pejabatId[0], pejabatId[1]]);
         openGubernur();
     };
-
     const handleProvinceClick = (Province_id: string) => {
         setSelectedProvince(null);
         setSearchProvince(Province_id);
@@ -155,13 +141,11 @@ const Calon: React.FC = () => {
         setSearchProvince(null);
         setProvince(province);
     }
-
     useEffect(() => {
         if (searchProvince !== null || province !== null) {
             handleSearch(1);
         }
     }, [searchProvince, province]);
-
     const calonPejabatBox = dataDPR.map((data: any, index: number) => {
         return (
             <React.Fragment key={index}>
@@ -193,7 +177,6 @@ const Calon: React.FC = () => {
             </React.Fragment>
         );
     });
-
     return (
         <Box pb={rem(150)} bg={"#F7FAFF"}>
             <Box bg={lightPurple}>
@@ -223,9 +206,7 @@ const Calon: React.FC = () => {
                         <Text fw={'600'}>Search</Text>
                     </Button>
                 </Flex>
-
                 {(dataDPR.length > 0 || dataGubernur.length > 0) && <Title ta={"center"} mb={rem(50)} c={primaryColor}>Klik Untuk Deskripsi Lebih Detail</Title>}
-
                 <Box pos="relative" style={{ padding: mobile || tablet ? "0 12px" : "0" }}>
                     <LoadingOverlay
                         visible={loading}
@@ -253,7 +234,6 @@ const Calon: React.FC = () => {
                             {dataGubernur.length === 0 && <Text fw={'bold'} ta={"center"}>Data tidak ditemukan</Text>}
                         </>
                     )}
-
                     {pejabatTypeParam == 'dpr-ri' && (
                         <>
                             <div style={{
@@ -269,12 +249,10 @@ const Calon: React.FC = () => {
                     )}
                 </Box>
             </Container>
-
             <Modal centered
                 size={mobile || tablet ? "100%" : "70%"} opened={modalVisibleDPR} onClose={closeDPR} withCloseButton={false}>
                 {selectedDPR !== undefined && <ModalDetailPejabat data={selectedDPR} />}
             </Modal>
-
             <Modal centered
                 size={'auto'} opened={modalVisibleGubernur} onClose={closeGubernur} withCloseButton={false}>
                 {selectedGubernur !== undefined && <ModalDetailGubernur data={selectedGubernur} />}
@@ -282,5 +260,4 @@ const Calon: React.FC = () => {
         </Box>
     );
 };
-
 export default Calon;

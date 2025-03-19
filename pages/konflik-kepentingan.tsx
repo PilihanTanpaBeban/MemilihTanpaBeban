@@ -32,6 +32,7 @@ function KonflikKepentinganPage() {
         imgFileName={"konflik_kepentingan.webp"}
       ><Title fw={"800"} lts={rem(-1)} ta={mobile ? 'center' : 'left'} lh={'1.1'} style={{ fontSize: mobile ? rem(28) : rem(64) }}>Potensi<br />Konflik Kepentingan</Title>
         <Text fw={'600'} mt={mobile?rem(10):rem(0)} style={{fontSize:mobile?rem(16):rem(24)}}>DPR-RI Periode 2019-2024</Text>
+
       </HeroVector>
       <div style={{ marginInline: "5%", marginTop: 50 }}>
         <MindMap />
