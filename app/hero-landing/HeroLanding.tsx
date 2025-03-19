@@ -21,7 +21,7 @@ export const HeroImageBackground = () => {
 
   return (
 
-    <Box pos="relative" mih="100vh" style={{ overflow: "hidden", backgroundColor: { lightPurple } }}>
+    <Box pos="relative" mih="100vh" style={{ overflow: "hidden", backgroundColor: lightPurple  }}>
       <Box
         pos="absolute"
         style={{
