@@ -14,7 +14,6 @@ export default async function handler(
 ): Promise<void> {
 
     const apiKey = req.headers['x-api-key'];
-    console.log("body", req.body);
 
     if (req.method !== 'POST') {
         return res.status(405).json({ error: "Method Not Allowed" });
@@ -25,7 +24,7 @@ export default async function handler(
     }
 
     if (!req.body.pejabat_type) {
-        console.log(!req.body.pejabat_type);
+        
         return res.status(400).json({ error: "Bad Request" });
     }
 
@@ -37,8 +36,6 @@ export default async function handler(
 
         if (!connection)
             throw new Error('Failed to connect to the database');
-
-        console.log("Database connection established");
 
         const sql = `
             select tp.Pejabat_id, 
@@ -60,9 +57,9 @@ export default async function handler(
 	        left join Tbl_Partai tpp on tp.Partai_id = tpp.Partai_id `;
 
         // id=1 for DPR, id=2 for gubernur, id=3 for wakil gubernur
-        const pejabatTypeSql = req.body.pejabat_type == 'DPR' ? ' tp.Pejabat_type_id = 1' : ' tp.Pejabat_type_id = 2 or tp.Pejabat_type_id = 3';
+        const pejabatTypeSql = req.body.pejabat_type == 'DPR' ? ' tp.Pejabat_type_id = 1' : ' (tp.Pejabat_type_id = 2 or tp.Pejabat_type_id = 3)';
         const whereSql = `
-        where ${pejabatTypeSql} `;
+        where ${pejabatTypeSql} and deletedOn is null`;
 
         const orderOffsetSql = new StringBuilder();
         orderOffsetSql.append(' ORDER BY tp.Pejabat_id ASC');
@@ -73,8 +70,8 @@ export default async function handler(
         orderOffsetSql.append(' LIMIT 16 OFFSET ?');
 
         const formattedQuery = sql + joinSql + whereSql + orderOffsetSql;
-        console.log(formattedQuery);
-
+        console.log(formattedQuery)
+        
         const [rows] = await connection.query(formattedQuery, [offset]);
 
         const [totalData] = await connection.query(countSql + joinSql + whereSql);
@@ -122,7 +119,7 @@ export default async function handler(
         });
     } finally {
         if (connection) {
-            console.log("Closing database connection");
+            
             await connection.release();
         }
     }
