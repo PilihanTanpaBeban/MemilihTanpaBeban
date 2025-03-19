@@ -14,7 +14,7 @@ export default async function handler(
 ): Promise<void> {
 
     const apiKey = req.headers['x-api-key'];
-    console.log("body", req.body);
+    
 
     if (req.method !== 'POST') {
         return res.status(405).json({ error: "Method Not Allowed" });
@@ -25,7 +25,7 @@ export default async function handler(
     }
 
     if (!req.body.pejabat_type) {
-        console.log(!req.body.pejabat_type);
+        
         return res.status(400).json({ error: "Bad Request" });
     }
     function formatQuery(query: string, params: any[]): string {
@@ -47,7 +47,7 @@ export default async function handler(
     if (!connection)
         throw new Error('Failed to connect to the database');
 
-    console.log("Database connection established");
+    
 
     const sql = `
             select tp.Pejabat_id, 
@@ -94,16 +94,18 @@ export default async function handler(
 
     orderOffsetSql.append(' LIMIT 16 OFFSET ? ');
     queryParams.push(offset);
-    console.log("Param :", queryParams);
+    
 
     try {
         const formattedQuery = sql + joinSql + whereSql + orderOffsetSql;
+
+        console.log(formattedQuery)
 
         const [rows] = await connection.query(formattedQuery, queryParams);
 
         const [totalData] = await connection.query(countSql + joinSql + whereSql, queryParams[0] ? [queryParams[0]] : []);
 
-        console.log("Query:", formatQuery(countSql + joinSql + whereSql, [queryParams[0]]));
+        
 
         if (rows.length > 0 && req.body.pejabat_type != 'DPR') {
             let result: any[] = [];
@@ -148,7 +150,7 @@ export default async function handler(
         });
     } finally {
         if (connection) {
-            console.log("Closing database connection");
+            
             await connection.release();
         }
     }
