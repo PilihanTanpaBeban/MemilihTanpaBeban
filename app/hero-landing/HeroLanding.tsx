@@ -74,7 +74,7 @@ export default function Home() {
           {/* Text Content Section */}
           <Box style={{ flex: "1", maxWidth: isMobile ? "100%" : "50%" }}>
             <Stack gap="xl" ta={{ base: "center", md: "left" }}>
-                          <Title fw={800} className={playball.className} style={{fontSize: "clamp(2.5rem, 5vw, 4rem)"}}>
+                          <Title fw={800} style={{fontSize: "clamp(2.5rem, 5vw, 4rem)"}}>
                 Selamat & Sukses
               </Title>
 
