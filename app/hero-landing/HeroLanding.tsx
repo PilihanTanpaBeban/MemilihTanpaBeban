@@ -1,18 +1,31 @@
-"use client"
+"use client";
 
-import { Box, Container, Title, Text, Button, Group, Stack, Flex, Image, Highlight } from "@mantine/core"
-import Link from "next/link"
-import { useMediaQuery } from "@mantine/hooks"
-import { rem } from "@mantine/core"
+import {
+  Box,
+  Container,
+  Title,
+  Text,
+  Button,
+  Group,
+  Stack,
+  Flex,
+  Image,
+  Highlight,
+} from "@mantine/core";
+import Link from "next/link";
+import { useMediaQuery } from "@mantine/hooks";
+import { rem } from "@mantine/core";
+import { lightPurple, primaryColor } from "../../public/colors";
+import styles from "./HeroLanding.module.css";
 
 export const HeroImageBackground = () => {
-  const isMobile = useMediaQuery("(max-width: 768px)")
-  const primaryColor = "linear-gradient(45deg, #8c44d6 0%, #6a1fa9 100%)"
-  const white = "#ffffff"
+  const isMobile = useMediaQuery("(max-width: 768px)");
 
   return (
-    <Box pos="relative" style={{overflow: "hidden", backgroundColor: white}}>
-
+    <Box
+      pos="relative"
+      style={{ overflow: "hidden", backgroundColor: lightPurple }}
+    >
       <Box
         pos="absolute"
         style={{
@@ -21,8 +34,8 @@ export const HeroImageBackground = () => {
           width: 0,
           height: 0,
           borderStyle: "solid",
-          borderWidth: "0 200px 200px 0",
-          borderColor: "transparent #e9dffc transparent transparent",
+          borderWidth: "0 45vw 100px 0",
+          borderColor: `transparent ${primaryColor} transparent transparent`,
         }}
       />
 
@@ -34,92 +47,89 @@ export const HeroImageBackground = () => {
           width: 0,
           height: 0,
           borderStyle: "solid",
-          borderWidth: "200px 0 0 200px",
-          borderColor: "transparent transparent transparent #e9dffc",
+          borderWidth: "100px 0 0 55vw",
+          borderColor: `transparent transparent transparent ${primaryColor}`,
         }}
       />
 
-      <Container 
+      <Container
         pos="relative"
-        size="lg"
-        py="xl"
+        size="xl"
+        py={rem(125)}
         style={{
           zIndex: 10,
-          height: "100vh",
           display: "flex",
-          alignItems: "center"}}
-          >
-      
-        <Flex direction={{ base: "column", md: "row" }} align="center" gap={{ base: "xl", md: 50 }} w="100%">
+          alignItems: "center",
+        }}
+      >
+        <Flex direction={{ base: "column", md: "row" }} gap={'xl'} align="center" justify={'center'} w="100%">
           {/* Image Section */}
-          <Box style={{ flex: "1", maxWidth: isMobile ? "100%" : "50%" }}>
-            <Box maw={500} mx="auto">
-              <Image
-                src="/placeholder.svg?height=500&width=500"
-                alt="Hero image"
-                radius="md"
-                style={{ width: "100%", height: "auto" }}
-              />
-            </Box>
+          <Box w={'35%'}>
+            <Image
+              src="/assets/images/logo_png_1_1.png?height=500&width=auto"
+              alt="Hero image"
+              style={{ width: "100%", height: "auto" }}
+            />
           </Box>
 
           {/* Text Content Section */}
           <Box style={{ flex: "1", maxWidth: isMobile ? "100%" : "50%" }}>
-            <Stack gap="xl" ta={{ base: "center", md: "left" }}>
-                          <Title fw={800} style={{fontSize: "clamp(2.5rem, 5vw, 4rem)"}}>
+            <Stack gap={0} ta={{ base: "center", md: "left" }}>
+              <Title
+                className={styles.greatVibes}
+                style={{ fontSize: isMobile ? rem(56):rem(90) }}
+              >
                 Selamat & Sukses
               </Title>
 
-              <Text>
+              <Text style={{ fontSize: rem(18) }} c={primaryColor}>
                 atas pelantikan{" "}
-                <Text span fw="bold">
+                <Text span fw="bold" style={{ fontSize: rem(18) }}>
                   Gubernur dan Wakil Gubernur (Kepala Daerah)
                 </Text>
               </Text>
 
               <Box pos="relative" py={rem(20)}>
-                {/* Opening quote - top left */}
-                <Box pos="absolute" top={0} left={0}>
-                  <Image src="/assets/images/quote.png" w={rem(16)} h={rem(16)} alt="Opening quote" />
+                <Box>
+                  <Image
+                    src="/assets/images/quote.png"
+                    w={rem(36)}
+                    h={rem(36)}
+                    alt="Opening quote"
+                  />
                 </Box>
 
                 {/* Quote text */}
-                <Box px={rem(20)}>
+                <Box px={rem(36)}>
                   <Highlight
                     highlightStyles={{
-                      backgroundImage: primaryColor,
-                      color: white,
-                      padding: "0 5px",
-                      borderRadius: "3px",
+                      backgroundColor: primaryColor,
+                      color: "white",
                     }}
                     highlight="Semoga dapat mengemban tugas dan amanah dengan baik, mengedepankan kepentingan kesehatan masyarakat, dan meniadakan interaksi dengan industri rokok serta kepentingannya."
                   >
-                    Semoga dapat mengemban tugas dan amanah dengan baik, mengedepankan kepentingan kesehatan masyarakat,
-                    dan meniadakan interaksi dengan industri rokok serta kepentingannya.
+                    Semoga dapat mengemban tugas dan amanah dengan baik,
+                    mengedepankan kepentingan kesehatan masyarakat, dan
+                    meniadakan interaksi dengan industri rokok serta
+                    kepentingannya.
                   </Highlight>
                 </Box>
 
                 {/* Closing quote - bottom right */}
-                <Box pos="absolute" bottom={0} right={0}>
+                <Flex justify={"end"} w={"100%"}>
                   <Image
                     src="/assets/images/quote.png"
-                    w={rem(16)}
-                    h={rem(16)}
+                    w={rem(36)}
+                    h={rem(36)}
                     alt="Closing quote"
                     style={{ transform: "rotate(180deg)" }}
                   />
-                </Box>
+                </Flex>
               </Box>
-
-              <Text c={white} bg={primaryColor} p="sm" style={{ borderRadius: "5px" }}>
-                Semoga dapat mengemban tugas dan amanah dengan baik, mengedepankan kepentingan kesehatan masyarakat, dan
-                meniadakan interaksi dengan industri rokok serta kepentingannya.
-              </Text>
             </Stack>
           </Box>
         </Flex>
       </Container>
     </Box>
-  )
+  );
 };
-
