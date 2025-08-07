@@ -92,8 +92,6 @@ const Calon: React.FC = () => {
                     }
                 }
             }
-
-            scrollAfterProvClick();
         } catch (error) {
             console.error('Error searching data:', error);
         } finally {
