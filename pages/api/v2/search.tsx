@@ -66,8 +66,8 @@ export default async function handler(
   // id=1 for DPR, id=2 for gubernur, id=3 for wakil gubernur
   const pejabatTypeSql =
     req.body.pejabat_type == "DPR"
-      ? "tp.Pejabat_type_id = 1"
-      : "(tp.Pejabat_type_id = 2 or tp.Pejabat_type_id = 3)";
+      ? "tp.Pejabat_type_id = 1 "
+      : "(tp.Pejabat_type_id = 2 or tp.Pejabat_type_id = 3) ";
 
   // let whereSql = `
   // where ${pejabatTypeSql} `;
