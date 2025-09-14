@@ -38,7 +38,7 @@ const links = [
       { slug: "dpr-ri", label: "DPR-RI" },
     ],
   },
-  { link: "https://www.instagram.com/iyctc.id/", label: "Tentang IYCTC" },
+  { link: "https://iyctc.id/", label: "Tentang IYCTC" },
 ];
 
 const CAPTCHA: {
