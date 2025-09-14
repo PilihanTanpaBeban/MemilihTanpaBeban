@@ -15,6 +15,7 @@ export interface SearchRequestBodyV2 {
     page?: number;
     pejabat_type: string | null;
     province_id?: string | null;
+    alignment_type?: string | null;
 }
 
 export interface DetailRequestBody {

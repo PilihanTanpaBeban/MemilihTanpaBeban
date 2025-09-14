@@ -45,3 +45,12 @@ export const indonesiaProvinces: { id: string, title: string }[] = [
     { id: "ID-SU", title: "Sumatera Utara" },
     { id: "ID-YO", title: "Daerah Istimewa Yogyakarta" }
 ];
+
+export const alignmentTypes: { id: string, title: string }[] = [
+    { id: "0", title: "Semua" },
+    { id: "1", title: "Pro" },
+    { id: "2", title: "Cons" },
+    { id: "3", title: "Mixed" },
+    { id: "4", title: "No Argument" },
+    { id: "5", title: "Normative" }
+];

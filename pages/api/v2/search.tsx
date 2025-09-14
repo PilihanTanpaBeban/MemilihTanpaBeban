@@ -3,53 +3,47 @@ import { connectToDatabase } from "../../../app/config/db";
 const StringBuilder = require("string-builder");
 
 interface GubernurResponseInterface {
-    Province_Name: string;
-    Dapil_id: number;
-    data: any[];
+  Province_Name: string;
+  Dapil_id: number;
+  data: any[];
 }
 
 export default async function handler(
-    req: NextApiRequest,
-    res: NextApiResponse
+  req: NextApiRequest,
+  res: NextApiResponse
 ): Promise<void> {
+  const apiKey = req.headers["x-api-key"];
 
-    const apiKey = req.headers['x-api-key'];
-    
+  if (req.method !== "POST") {
+    return res.status(405).json({ error: "Method Not Allowed" });
+  }
 
-    if (req.method !== 'POST') {
-        return res.status(405).json({ error: "Method Not Allowed" });
-    }
+  if (!apiKey || apiKey !== process.env.X_API_KEY) {
+    return res.status(401).json({ error: "Unauthorized" });
+  }
 
-    if (!apiKey || apiKey !== process.env.X_API_KEY) {
-        return res.status(401).json({ error: "Unauthorized" });
-    }
+  if (!req.body.pejabat_type) {
+    return res.status(400).json({ error: "Bad Request" });
+  }
+  function formatQuery(query: string, params: any[]): string {
+    let i = 0;
+    return query.replace(/\?/g, () => {
+      const param = params[i++];
+      if (typeof param === "string") {
+        return `'${param}'`;
+      }
+      return param;
+    });
+  }
+  let connection;
 
-    if (!req.body.pejabat_type) {
-        
-        return res.status(400).json({ error: "Bad Request" });
-    }
-    function formatQuery(query: string, params: any[]): string {
-        let i = 0;
-        return query.replace(/\?/g, () => {
-            const param = params[i++];
-            if (typeof param === 'string') {
-                return `'${param}'`;
-            }
-            return param;
-        });
-    }
-    let connection;
+  const pool = await connectToDatabase();
+  connection = await pool.getConnection();
+  const queryParams: any[] = [];
 
-    const pool = await connectToDatabase();
-    connection = await pool.getConnection();
-    const queryParams: any[] = [];
+  if (!connection) throw new Error("Failed to connect to the database");
 
-    if (!connection)
-        throw new Error('Failed to connect to the database');
-
-    
-
-    const sql = `
+  const sql = `
             select tp.Pejabat_id, 
             case 
                 when tp.Pejabat_type_id = 1
@@ -61,97 +55,104 @@ export default async function handler(
             end as Pejabat_type, 
             tpp.Partai_Name, tp.Pejabat_Name, t.Alignment_Name, tpv.Province_Name, tp.Dapil_id from Tbl_Pejabat tp `;
 
-    const countSql = 'SELECT COUNT(*) as total FROM Tbl_Pejabat tp ';
+  const countSql = "SELECT COUNT(*) as total FROM Tbl_Pejabat tp ";
 
-    const joinSql = `	
+  const joinSql = `	
             left join Tbl_PejabatAlignment t on tp.Alignment_id = t.Alignment_id
 	        left join Tbl_Province tpv on tp.Province_id = tpv.Province_id
 	        left join Tbl_Partai tpp on tp.Partai_id = tpp.Partai_id 
             `;
 
-    // id=1 for DPR, id=2 for gubernur, id=3 for wakil gubernur
-    const pejabatTypeSql = req.body.pejabat_type == 'DPR' ? 'tp.Pejabat_type_id = 1' : '(tp.Pejabat_type_id = 2 or tp.Pejabat_type_id = 3)';
+  // id=1 for DPR, id=2 for gubernur, id=3 for wakil gubernur
+  const pejabatTypeSql =
+    req.body.pejabat_type == "DPR"
+      ? "tp.Pejabat_type_id = 1"
+      : "(tp.Pejabat_type_id = 2 or tp.Pejabat_type_id = 3)";
 
-    // let whereSql = `
-    // where ${pejabatTypeSql} `;
-    const whereSql = new StringBuilder();
-    whereSql.append('WHERE deletedOn is null AND ');
-    whereSql.append(pejabatTypeSql);
+  // let whereSql = `
+  // where ${pejabatTypeSql} `;
+  const whereSql = new StringBuilder();
+  whereSql.append("WHERE deletedOn is null AND ");
+  whereSql.append(pejabatTypeSql);
 
-    if (req.body.province_id && req.body.province_id != 'ID') {
-        whereSql.append(' AND tp.Province_id = ? ');
-        queryParams.push(req.body.province_id);
+  if (req.body.province_id && req.body.province_id != "ID") {
+    whereSql.append(" AND tp.Province_id = ? ");
+    queryParams.push(req.body.province_id);
+  }
+
+  if (req.body.alignment_type && req.body.alignment_type != "0") {
+    whereSql.append(" AND tp.Alignment_id = ? ");
+    queryParams.push(req.body.alignment_type);
+  }
+
+  const orderOffsetSql = new StringBuilder();
+  if (req.body.pejabat_type == "DPR")
+    orderOffsetSql.append("ORDER BY tp.Pejabat_id ASC");
+  else orderOffsetSql.append("ORDER BY tp.Dapil_id ASC");
+
+  const page = parseInt(req.body.page as string) || 1; // Default page to 1
+  const offset = page > 0 ? (page - 1) * 16 : 0; // Default offset to 0
+
+  orderOffsetSql.append(" LIMIT 16 OFFSET ? ");
+  queryParams.push(offset);
+
+  try {
+    const formattedQuery = sql + joinSql + whereSql + orderOffsetSql;
+
+    console.log("Executing row query:", formatQuery(formattedQuery, queryParams));
+    const [rows] = await connection.query(formattedQuery, queryParams);
+    console.log("Executing count query:", formatQuery(countSql + joinSql + whereSql, queryParams));
+    const [totalData] = await connection.query(
+      countSql + joinSql + whereSql,
+      queryParams
+    );
+
+    if (rows.length > 0 && req.body.pejabat_type != "DPR") {
+      let result: any[] = [];
+      const groupedData: { [key: string]: GubernurResponseInterface } = {};
+
+      rows.forEach((row: any) => {
+        const key = `${row.Province_Name}-${row.Dapil_id}`;
+        if (!groupedData[key]) {
+          groupedData[key] = {
+            Dapil_id: row.Dapil_id,
+            Province_Name: row.Province_Name,
+            data: [],
+          };
+        }
+        const { Dapil_id, Province_Name, ...dataWithoutDapilAndProvince } = row;
+        groupedData[key].data.push(dataWithoutDapilAndProvince);
+      });
+
+      result = Object.values(groupedData);
+
+      res.send({
+        status: 200,
+        page: offset + 1,
+        totalData: totalData[0].total / 2,
+        data: result,
+      });
     }
 
-    const orderOffsetSql = new StringBuilder();
-    if(req.body.pejabat_type == 'DPR') 
-        orderOffsetSql.append('ORDER BY tp.Pejabat_id ASC');
-    else
-        orderOffsetSql.append('ORDER BY tp.Dapil_id ASC');
+    res.send({
+      status: 200,
+      page: offset + 1,
+      totalData: totalData[0].total,
+      data: rows,
+    });
+  } catch (error: any) {
+    console.error(
+      "Error:",
+      error.response ? error.response.data : error.message
+    ); // Log error details
 
-    const page = parseInt(req.body.page as string) || 1; // Default page to 1
-    const offset = page > 0 ? (page - 1) * 16 : 0; // Default offset to 0
-
-    orderOffsetSql.append(' LIMIT 16 OFFSET ? ');
-    queryParams.push(offset);
-    
-
-    try {
-        const formattedQuery = sql + joinSql + whereSql + orderOffsetSql;
-
-        console.log(formattedQuery)
-
-        const [rows] = await connection.query(formattedQuery, queryParams);
-
-        const [totalData] = await connection.query(countSql + joinSql + whereSql, queryParams[0] ? [queryParams[0]] : []);
-
-        
-
-        if (rows.length > 0 && req.body.pejabat_type != 'DPR') {
-            let result: any[] = [];
-            const groupedData: { [key: string]: GubernurResponseInterface } = {};
-
-            rows.forEach((row: any) => {
-                const key = `${row.Province_Name}-${row.Dapil_id}`;
-                if (!groupedData[key]) {
-                    groupedData[key] = {
-                        Dapil_id: row.Dapil_id,
-                        Province_Name: row.Province_Name,
-                        data: []
-                    };
-                }
-                const { Dapil_id, Province_Name, ...dataWithoutDapilAndProvince } = row;
-                groupedData[key].data.push(dataWithoutDapilAndProvince);
-            });
-
-            result = Object.values(groupedData);
-
-            res.send({
-                status: 200,
-                page: offset + 1,
-                totalData: (totalData[0].total) / 2,
-                data: result
-            });
-        }
-
-        res.send({
-            status: 200,
-            page: offset + 1,
-            totalData: totalData[0].total,
-            data: rows
-        });
-
-    } catch (error: any) {
-        console.error("Error:", error.response ? error.response.data : error.message); // Log error details
-
-        console.error('Stack trace:', error.stack);
-        res.status(500).send({
-            error: "Internal server error.",
-        });
-    } finally {
-        if (connection) {
-            
-            await connection.release();
-        }
+    console.error("Stack trace:", error.stack);
+    res.status(500).send({
+      error: "Internal server error.",
+    });
+  } finally {
+    if (connection) {
+      await connection.release();
     }
+  }
 }
