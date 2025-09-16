@@ -19,6 +19,7 @@
     "axios": "^1.7.4",
     "chart.js": "^4.4.0",
     "chartjs-plugin-datalabels": "^2.2.0",
+    "dompurify": "^3.2.6",
     "dotenv": "^16.4.5",
     "embla-carousel-autoplay": "^7.1.0",
     "embla-carousel-react": "^7.1.0",
