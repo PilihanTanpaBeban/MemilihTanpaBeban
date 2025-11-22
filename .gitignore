@@ -136,3 +136,4 @@ yarn.lock
 Quiz.jsx
 
 .DS_Store
+.env

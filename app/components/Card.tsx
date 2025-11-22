@@ -14,11 +14,13 @@ import { primaryColor, secondaryColor } from "../../public/colors";
 import { IconArrowNarrowRight } from "@tabler/icons-react";
 import { useDisclosure, useHover } from "@mantine/hooks";
 import ModalDetail from "./Modal";
+import type { FactItem } from "../util/FactsService";
 
 interface CardProps {
   id: number;
   textMitos: string;
   textFakta: string;
+  fact?: FactItem;
   style?: CSSProperties;
 }
 
@@ -26,11 +28,15 @@ const CardMitosFakta: React.FC<CardProps> = ({
   id,
   textMitos,
   textFakta,
+  fact,
   style,
 }) => {
   const { hovered, ref } = useHover();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const backgroundImageUrl = `../../assets/images/Mitos_Fakta_Image/${id}.png`;
+  const backgroundImageUrl =
+    typeof fact?.thumbnailImg === "string" && fact?.thumbnailImg.length
+      ? `https://pilihantanpabeban.id/assets/images${fact.thumbnailImg}`
+      : `../../assets/images/Mitos_Fakta_Image/${id}.png`;
 
   return (
     <Card
@@ -45,7 +51,7 @@ const CardMitosFakta: React.FC<CardProps> = ({
         cursor: "pointer",
         minHeight: rem(550),
       }}
-      onClick={() => setIsModalOpen(!isModalOpen)}
+      onClick={() => setIsModalOpen(true)}
       ref={ref}
     >
       <Card.Section>
@@ -105,6 +111,7 @@ const CardMitosFakta: React.FC<CardProps> = ({
         id={id}
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
+        fact={fact}
       />
     </Card>
   );

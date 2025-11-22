@@ -7,6 +7,7 @@ import { getDetailPejabat } from './model/APIService';
 import { DetailRequestBody, DetailRequestBodyV2 } from './model/Requests';
 import { useMediaQuery } from '@mantine/hooks';
 import { renderTextWithHtml } from '../LineBreakRender';
+import { parseQuoteItems } from '../../util/QuotesUtil';
 import classes from './ModalDetailPejabat.module.css';
 
 interface ModalDetailPejabatProps {
@@ -87,10 +88,48 @@ const ModalDetailPejabat: React.FC<ModalDetailPejabatProps> = ({ data }) => {
                     <Flex className={classes.textQuote} gap={'md'} mt={rem(60)} direction={'column'}>
                         <Title style={{ fontSize: rem(24) }} c={primaryColor}>Quote:</Title>
 
-                        {detailPejabat.Quote_Desc == null && <Text style={{ fontSize: rem(16) }}>Belum ada statement di media massa terkait isu pengendalian tembakau</Text>}
-                        <Text ta={'justify'}>
-                            {detailPejabat.Quote_Desc != null && renderTextWithHtml(detailPejabat.Quote_Desc)}
-                        </Text>
+                        {detailPejabat.Quote_Desc == null && (
+                            <Text style={{ fontSize: rem(16) }}>
+                                Belum ada statement di media massa terkait isu pengendalian tembakau
+                            </Text>
+                        )}
+                        {detailPejabat.Quote_Desc != null && (
+                            (() => {
+                                const items = parseQuoteItems(detailPejabat.Quote_Desc);
+                                if (items.length > 1) {
+                                    return (
+                                        <List
+                                            spacing="sm"
+                                            withPadding
+                                            styles={{ item: { '&::marker': { color: primaryColor } } }}
+                                        >
+                                            {items.map((it) => (
+                                                <List.Item key={it.quote}>
+                                                    <Text ta={'justify'}>
+                                                        {it.quote}{' '}
+                                                        {it.link && (
+                                                            <a href={it.link} target="_blank" rel="noopener noreferrer">
+                                                                Info Detail
+                                                            </a>
+                                                        )}
+                                                    </Text>
+                                                </List.Item>
+                                            ))}
+                                        </List>
+                                    );
+                                }
+                                return items.map((it) => (
+                                    <Text ta={'justify'} key={it.quote}>
+                                        {it.quote}{' '}
+                                        {it.link && (
+                                            <a href={it.link} target="_blank" rel="noopener noreferrer">
+                                                Info Detail
+                                            </a>
+                                        )}
+                                    </Text>
+                                ));
+                            })()
+                        )}
 
                     </Flex>
                 </Box>

@@ -39,7 +39,8 @@
     "reactflow": "^11.10.1",
     "reaptcha": "^1.12.1",
     "sanitize-html": "^2.13.1",
-    "string-builder": "^0.1.8"
+    "string-builder": "^0.1.8",
+    "tunnel-ssh": "^5.2.0"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
