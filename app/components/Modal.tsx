@@ -60,30 +60,40 @@ const ModalDetail: React.FC<ModalDetailProps> = ({ id, isOpen, onClose, fact }) 
         }}
         radius={"xl"}
       >
-        <BackgroundImage
-          src={backgroundImageUrl}
-          h={rem(400)}
-          ta={"right"}
+        <div
           style={{
             position: "relative",
+            height: rem(400),
           }}
         >
-          {[2, 4, 5, 6, 7, 9,10, 11].includes(id) ? (
-            <Overlay zIndex={0} color="#000" backgroundOpacity={0} blur={4} />
+          <BackgroundImage
+            src={backgroundImageUrl}
+            h={rem(400)}
+            ta={"right"}
+            style={{
+              position: "absolute",
+              inset: 0,
+              filter: "blur(4px)",
+              zIndex: 0,
+            }}
+          />
+          {[2, 4, 5, 6, 7, 9, 10, 11].includes(id) ? (
+            <Overlay zIndex={1} color="#000" backgroundOpacity={0.15} />
           ) : null}
           <IconX
             style={{
+              position: "absolute",
+              top: "1rem",
+              right: "1rem",
               width: rem(30),
               height: rem(30),
               color: "white",
-              marginTop: "1rem",
-              marginRight: "1rem",
-              zIndex:"100"
+              zIndex: 2,
             }}
             onClick={onClose}
             stroke={1.5}
           />
-        </BackgroundImage>
+        </div>
         <div style={{ padding: rem(50) }}>
           <Title c={secondaryColor} order={3} w={"100%"}>
             Pernyataan:
