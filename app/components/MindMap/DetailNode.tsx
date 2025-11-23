@@ -13,7 +13,6 @@ const DetailNode: React.FC<RootNodeProps> = ({ data,isConnectable }) => {
       <Handle
         type="target"
         position={Position.Left}
-        onConnect={(params) => console.log("handle onConnect", params)}
         isConnectable={isConnectable}
       />
       <Handle

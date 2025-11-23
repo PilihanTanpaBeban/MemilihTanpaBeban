@@ -216,7 +216,6 @@ const Calon: React.FC = () => {
 
   const calonGubernurBox = dataGubernur.map((data: any, index: number) => {
     const isSingle = dataGubernur.length == 1;
-    console.log(isSingle);
     return (
       <React.Fragment key={index}>
         <CalonGubernurBox

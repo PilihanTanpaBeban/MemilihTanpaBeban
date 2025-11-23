@@ -29,11 +29,22 @@
   margin-bottom: 1rem;
 }
 
-.mantine-List-item::marker {
+/* Keep Mantine List bullets themed (scoped to local container to satisfy CSS Modules purity) */
+.accordionControlActive :global(.mantine-List-item)::marker {
   color: #4F3B78;
-  /* Change the color of the marker */
   font-size: 16px;
-  /* Change the size of the marker */
+}
+
+/* Ensure HTML lists inside the accordion panel use primary-colored markers */
+.accordionControlActive ul,
+.accordionControlActive ol {
+  padding-left: 1.25rem;
+  margin: 0.5rem 0;
+}
+
+.accordionControlActive ul li::marker,
+.accordionControlActive ol li::marker {
+  color: #4F3B78;
 }
 
 
