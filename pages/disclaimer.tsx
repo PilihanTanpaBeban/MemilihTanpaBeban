@@ -62,7 +62,7 @@ function DisclaimerPage() {
   }, []);
 
   const items = disclaimers.map((item) => {
-    const iconSrc = `https://pilihantanpabeban.id/assets/images/${item.iconUrl}`;
+    const iconSrc = `/assets/images/${item.iconUrl}`;
 
     return (
       <Accordion.Item key={item.id} value={String(item.id)} className={classes.accordionItem}>

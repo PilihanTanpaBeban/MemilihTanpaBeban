@@ -35,7 +35,7 @@ const CardMitosFakta: React.FC<CardProps> = ({
   const [isModalOpen, setIsModalOpen] = useState(false);
   const backgroundImageUrl =
     typeof fact?.thumbnailImg === "string" && fact?.thumbnailImg.length
-      ? `https://pilihantanpabeban.id/assets/images${fact.thumbnailImg}`
+      ? `/assets/images${fact.thumbnailImg}`
       : `../../assets/images/Mitos_Fakta_Image/${id}.png`;
 
   return (

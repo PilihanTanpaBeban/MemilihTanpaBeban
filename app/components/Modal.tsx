@@ -42,7 +42,7 @@ const ModalDetail: React.FC<ModalDetailProps> = ({ id, isOpen, onClose, fact }) 
 
   const backgroundImageUrl =
     (typeof selectedData?.thumbnailImg === "string" && selectedData?.thumbnailImg?.length
-      ? `https://pilihantanpabeban.id/assets/images${selectedData.thumbnailImg}`
+      ? `/assets/images${selectedData.thumbnailImg}`
       : `../../assets/images/Mitos_Fakta_Image/${id}.png`);
   return (
     <>
