@@ -1,8 +1,8 @@
-name: Deploy to Prod
+name: Deploy to UAT
 on:
   push:
     branches:
-      - master
+      - UAT
 
 jobs:
   build-and-deploy:
@@ -14,7 +14,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '18'
+          node-version: '22'
 
       - name: Install dependencies and build
         run: |
@@ -39,7 +39,7 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /home/pilihan2/repositories/MemilihTanpaBeban/
+            cd /home/pilihan2/repositories/MemilihTanpaBebanUAT/
             ls -la
             rm -rf .next
 
@@ -55,7 +55,7 @@ jobs:
               --exclude-glob node_modules/ \
               --exclude-glob public/ \
               --exclude-glob .git/ \
-              /home/runner/work/MemilihTanpaBeban/MemilihTanpaBeban/ \
-              /repositories/MemilihTanpaBebanProd/
+              /home/runner/work/MemilihTanpaBebanUAT/MemilihTanpaBebanUAT/ \
+              /repositories/MemilihTanpaBebanUAT/
             bye
           EOF
